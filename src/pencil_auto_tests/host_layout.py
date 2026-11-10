@@ -10,16 +10,14 @@ from pathlib import Path
 
 ##
 ## === LAYOUT
-## one test name ties the checkout, the trigger file, and the results directory together; `run-test.sh` names
+## the test name ties the checkout, the trigger file, and the results directory together; `run-test.sh` names
 ## <test-root> `HOME_DIR` and <results-dir> `TARGET_DIR`.
 ##
-
-TEST_NAME = "intel-bonn"
-RUN_TEST_SCRIPT_PATH = Path(__file__).parent / "upstream" / "run-test.sh"
 
 
 @dataclass(frozen=True)
 class HostLayout:
+    test_name: str
     test_root: Path
     results_dir: Path
 
@@ -27,7 +25,7 @@ class HostLayout:
     def checkout_dir(
         self,
     ) -> Path:
-        return self.test_root / TEST_NAME
+        return self.test_root / self.test_name
 
     @property
     def update_dir(
@@ -39,13 +37,13 @@ class HostLayout:
     def trigger_path(
         self,
     ) -> Path:
-        return self.update_dir / TEST_NAME
+        return self.update_dir / self.test_name
 
     @property
     def test_results_dir(
         self,
     ) -> Path:
-        return self.results_dir / TEST_NAME
+        return self.results_dir / self.test_name
 
     @property
     def results_page_path(

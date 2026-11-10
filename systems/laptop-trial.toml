@@ -1,0 +1,11 @@
+# Development trial on the laptop of <username>; removed once the office PC runs intel-bonn.
+
+test_root = "~/tmp/pencil-code/auto-tests"
+results_dir = "~/tmp/pencil-code/auto-tests/results"
+levels = "0"
+auto_test_options = [
+    "--config-files=GNU-GCC_MPI+GNU-GCC_debug",
+    "--auto-clean",
+    "--bisect",
+    "--local-lock",
+]

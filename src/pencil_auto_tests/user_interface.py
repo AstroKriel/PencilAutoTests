@@ -6,6 +6,7 @@
 
 ## stdlib
 from pathlib import Path
+from typing import ClassVar
 
 ## personal
 from huginn import (
@@ -17,14 +18,40 @@ from huginn import (
 
 ## local
 from pencil_auto_tests import (
-    host_layout,
     pencil_test_page,
+    repo_paths,
     run_summary,
+    system_settings,
 )
+
+##
+## === INPUT VALUE TYPES
+##
+
+
+class InputValueTypes(cmd_args.InputValueTypes):
+    TEST_NAME: ClassVar[cmd_args.InputValueType] = cmd_args.InputValueType(
+        placeholder_name="test-name",
+        convert_fn=str,
+    )
+
 
 ##
 ## === HELPERS
 ##
+
+
+def _read_settings_or_exit(
+    *,
+    test_name: str,
+) -> system_settings.SystemSettings:
+    settings_path = repo_paths.get_settings_path(test_name=test_name)
+    if not settings_path.is_file():
+        manage_log.exit_with_error(f"no settings for `{test_name}`: expected {settings_path}")
+    try:
+        return system_settings.read_settings_file(settings_path=settings_path)
+    except ValueError as error:
+        manage_log.exit_with_error(f"could not read {settings_path}: {error}")
 
 
 def _get_modified_time_or_none(
@@ -45,10 +72,11 @@ def _fill_trigger_file(
 
 def _summarise_results_page(
     *,
-    results_page: Path,
-    runs_dir: Path,
+    settings: system_settings.SystemSettings,
 ) -> None:
-    """Turn a `pencil-test --html` results page into a dated summary in `runs_dir`, and copy it to `latest.txt`."""
+    """Turn the results page of the test into a dated summary in runs/<test-name>/, and copy it to `latest.txt`."""
+    results_page = settings.layout.results_page_path
+    runs_dir = repo_paths.get_test_runs_dir(test_name=settings.test_name)
     if not results_page.is_file():
         manage_log.exit_with_error(f"no results page at {results_page}")
     try:
@@ -88,16 +116,11 @@ def _summarise_results_page(
 
 def run_tests(
     *,
-    test_root: Path,
-    results_dir: Path,
-    runs_dir: Path,
-    levels: str,
+    test: str,
 ) -> None:
     """Fill the trigger file, call `run-test.sh`, and summarise the run if it produced a new results page."""
-    layout = host_layout.HostLayout(
-        test_root=test_root.expanduser().resolve(),
-        results_dir=results_dir.expanduser().resolve(),
-    )
+    settings = _read_settings_or_exit(test_name=test)
+    layout = settings.layout
     missing_dirs = layout.get_missing_dirs()
     if len(missing_dirs) > 0:
         missing_dirs_text = ", ".join(str(_missing_dir) for _missing_dir in missing_dirs)
@@ -113,10 +136,11 @@ def run_tests(
         f"PENCIL_TEST_HOME_DIR={layout.test_root}",
         f"PENCIL_TEST_TARGET_DIR={layout.results_dir}",
         f"PENCIL_TEST_UPDATE_DIR={layout.update_dir}",
+        f"PENCIL_AUTO_TEST_OPT={','.join(settings.auto_test_options)}",
         "bash",
-        str(host_layout.RUN_TEST_SCRIPT_PATH),
-        levels,
-        host_layout.TEST_NAME,
+        str(repo_paths.RUN_TEST_SCRIPT_PATH),
+        settings.levels,
+        settings.test_name,
     ]
     script_has_succeeded = manage_shell.run_cmd_and_show_output(
         cmd_parts=cmd_run_test_script,
@@ -132,64 +156,40 @@ def run_tests(
             status=manage_log.OutcomeStatus.SUCCESS,
         )
         return
-    _summarise_results_page(
-        results_page=layout.results_page_path,
-        runs_dir=runs_dir,
-    )
+    _summarise_results_page(settings=settings)
 
 
 def write_summary(
     *,
-    results_page: Path,
-    runs_dir: Path,
+    test: str,
 ) -> None:
-    _summarise_results_page(
-        results_page=results_page,
-        runs_dir=runs_dir,
-    )
+    settings = _read_settings_or_exit(test_name=test)
+    _summarise_results_page(settings=settings)
 
 
 ##
 ## === COMMAND TABLE
 ##
 
+_TEST_ARG = cmd_args.NamedArgument(
+    long_arg_name="test",
+    description="test name; its settings are in systems/<test-name>.toml",
+    input_value_type=InputValueTypes.TEST_NAME,
+    is_required=True,
+)
+
 COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
     name="pencil_auto_tests",
-    description="run and publish the intel-bonn Pencil Code auto-tests",
+    description="run and publish Pencil Code auto-tests at AIfA",
     cmd_groups=[
         manage_cli.CommandGroup(
             title="Running tests",
             cmds=[
                 manage_cli.Command(
                     name="run",
-                    description="run the tests if trunk has new commits, then summarise the run into runs/",
+                    description="run the tests if trunk has new commits, then summarise the run into runs/<test-name>/",
                     fn=run_tests,
-                    args=[
-                        cmd_args.NamedArgument(
-                            long_arg_name="test-root",
-                            description="directory holding the intel-bonn checkout and UPDATE/",
-                            input_value_type=cmd_args.InputValueTypes.DIR,
-                            is_required=True,
-                        ),
-                        cmd_args.NamedArgument(
-                            long_arg_name="results-dir",
-                            description="directory that pencil-test writes intel-bonn/ results into",
-                            input_value_type=cmd_args.InputValueTypes.DIR,
-                            is_required=True,
-                        ),
-                        cmd_args.NamedArgument(
-                            long_arg_name="runs-dir",
-                            description="directory that holds the dated summaries",
-                            input_value_type=cmd_args.InputValueTypes.DIR,
-                            is_required=True,
-                        ),
-                        cmd_args.NamedArgument(
-                            long_arg_name="levels",
-                            description="test levels to run, e.g. 0,1 or 2-3",
-                            input_value_type=cmd_args.InputValueTypes.TEXT,
-                            is_required=True,
-                        ),
-                    ],
+                    args=[_TEST_ARG],
                 ),
             ],
         ),
@@ -198,22 +198,9 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
             cmds=[
                 manage_cli.Command(
                     name="write-summary",
-                    description="turn a results page into runs/<date>_r<revision>.txt and copy it to runs/latest.txt",
+                    description="summarise the latest results page into runs/<test-name>/ without running tests",
                     fn=write_summary,
-                    args=[
-                        cmd_args.NamedArgument(
-                            long_arg_name="results-page",
-                            description="the index.html that pencil-test wrote",
-                            input_value_type=cmd_args.InputValueTypes.PATH,
-                            is_required=True,
-                        ),
-                        cmd_args.NamedArgument(
-                            long_arg_name="runs-dir",
-                            description="directory that holds the dated summaries",
-                            input_value_type=cmd_args.InputValueTypes.DIR,
-                            is_required=True,
-                        ),
-                    ],
+                    args=[_TEST_ARG],
                 ),
             ],
         ),
