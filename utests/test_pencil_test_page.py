@@ -37,7 +37,9 @@ class TestReadPage_RealPages:
         run_result = pencil_test_page.read_page_file(page_path=_PASSED_PAGE_PATH)
         assert run_result.start_date == datetime.date(2026, 11, 10)
         assert run_result.svn_revision == 46255
-        test_statuses = [(_test_result.test_name, _test_result.status_text) for _test_result in run_result.test_results]
+        test_statuses = [
+            (_test_result.test_name, _test_result.status_text) for _test_result in run_result.test_results
+        ]
         assert test_statuses == [("no-modules", "ok"), ("most-modules", "ok")]
 
     def test_failed_page_names_the_failed_phase(
@@ -45,7 +47,9 @@ class TestReadPage_RealPages:
     ) -> None:
         run_result = pencil_test_page.read_page_file(page_path=_FAILED_PAGE_PATH)
         assert run_result.svn_revision == 46255
-        test_statuses = [(_test_result.test_name, _test_result.status_text) for _test_result in run_result.test_results]
+        test_statuses = [
+            (_test_result.test_name, _test_result.status_text) for _test_result in run_result.test_results
+        ]
         assert test_statuses == [("no-modules", "failed validating results"), ("most-modules", "ok")]
 
 
@@ -94,7 +98,8 @@ class TestReadPage_Edges:
     ) -> None:
         page_text = self._make_page(
             start_time_text="Mon Nov  9 02:00:00 2026",
-            test_block="    Compiling..   ok\n    Running..   not ok: 00:10\n    Validating results..   not ok:\n",
+            test_block=
+            "    Compiling..   ok\n    Running..   not ok: 00:10\n    Validating results..   not ok:\n",
         )
         run_result = pencil_test_page.read_page(page_text=page_text)
         assert run_result.test_results[0].status_text == "failed running"

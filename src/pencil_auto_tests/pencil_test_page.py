@@ -129,8 +129,7 @@ def read_page(
         _read_test_result(
             test_name=_test_name,
             test_block=_test_block,
-        )
-        for _test_name, _test_block in zip(test_names, test_blocks)
+        ) for _test_name, _test_block in zip(test_names, test_blocks)
     ]
     return RunResult(
         start_date=start_time.date(),
