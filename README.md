@@ -13,8 +13,12 @@ This README is also the setup guide. It is built up as each step is checked, so 
 | machine | The computer the tests run on |
 | system | One configured setup on a machine: where Pencil is checked out, where its logs go, which levels run, and which compiler configs build them. One machine can host several systems, for example one with Intel and one with GNU |
 | system config | The file describing a system, `system_configs/<system-name>.toml` |
+| sample | One problem under `samples/` in the Pencil code, such as `no-modules`, that `pc_auto-test` builds, runs, and checks |
+| test logs | Everything Pencil writes while testing: the build, start, and run output of each sample |
+| test report | The page `pencil-test` writes to summarise the test logs of one run, `index.html` |
+| test summary | One line per sample from a test report, kept for every run in `test_history/<system-name>/` |
 
-Pencil uses its own words in places, such as "test" for a checked sample and "config" for its compiler configuration files. Values passed to Pencil keep Pencil's spelling.
+Pencil uses its own words in places, such as "test" for a checked sample and "config" for its build configuration files. Values passed to Pencil keep the spelling Pencil uses.
 
 ## How it works
 
@@ -23,7 +27,7 @@ Pencil uses its own words in places, such as "test" for a checked sample and "co
 | `setup --system-name <system-name>` | Checks the required tools, creates the system directories, and checks out trunk |
 | `run --system-name <system-name>` | Calls `run-test.sh`, which tests only if `svn up` finds new commits, and, if tests ran, writes the summary and publishes it |
 | `publish --system-name <system-name>` | Summarises and publishes the latest test report again, for example after a failed push |
-| `write-summary --system-name <system-name>` | Writes the test summary of the latest test report, without running or publishing anything |
+| `write-test-summary --system-name <system-name>` | Writes the test summary of the latest test report, without running or publishing anything |
 
 The system name is the unique id of a system, and its system config is the file of the same name: `--system-name laptop-trial` loads `system_configs/laptop-trial.toml`.
 
@@ -65,14 +69,14 @@ test_history/
     └── 2026-11-10_r46257.txt
 ```
 
-A test summary condenses the test report of one run to one line per test, in the order the tests ran:
+A test summary condenses the test report of one run to one line per sample, in the order the samples ran:
 
 ```text
 no-modules    failed validating results
 most-modules  ok
 ```
 
-A test is `ok`, `failed <phase>` with the first phase that failed, or `unfinished` if it stopped before its results were validated. `diff` between two files shows which tests changed, and the two revisions bracket the commits that changed them.
+A sample is `ok`, `failed <phase>` with the first phase that failed, or `unfinished` if it stopped before its results were validated. `diff` between two files shows which samples changed, and the two revisions bracket the commits that changed them.
 
 The latest test report of each system, as `pencil-test` writes it, is served with its test logs by GitHub Pages at `https://<owner>.github.io/<repository>/<system-name>/`.
 

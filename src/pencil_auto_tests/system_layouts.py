@@ -49,6 +49,12 @@ class SystemLayout:
         return PENCIL_AUTO_TESTS_DIR / "test_history" / self.system_name
 
     @property
+    def latest_test_summary_path(
+        self,
+    ) -> Path:
+        return self.test_history_dir / "latest.txt"
+
+    @property
     def cronjob_script_path(
         self,
     ) -> Path:

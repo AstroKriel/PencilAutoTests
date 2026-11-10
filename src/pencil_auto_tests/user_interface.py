@@ -18,11 +18,11 @@ from huginn import (
 
 ## local
 from pencil_auto_tests import (
-    machine_setup,
-    pencil_test_page,
-    publish,
-    run_summary,
+    publish_to_github,
+    required_tools,
     system_configs,
+    test_reports,
+    test_summaries,
 )
 
 ##
@@ -41,9 +41,8 @@ class InputValueTypes(cmd_args.InputValueTypes):
 ## === HELPERS
 ##
 
-## clean and rebuild a sample whose build fails, find the commit that broke a failing sample, and allow several checkouts
-## on one machine to run at once.
-_FIXED_PC_AUTO_TEST_OPTIONS = [
+_PENCIL_SVN_TRUNK_URL = "https://pencil-code.org/svn/trunk/"
+_BASE_PENCIL_AUTO_TEST_OPTIONS = [
     "--auto-clean",
     "--bisect",
     "--local-lock",
@@ -88,49 +87,54 @@ def _create_dir_if_missing(
 def _summarise_test_report(
     *,
     system_config: system_configs.SystemConfig,
-) -> str:
-    """Turn the latest test report of the system into a dated test summary, and copy it to `latest.txt`."""
-    latest_test_report_path = system_config.system_layout.latest_test_report_path
-    test_history_dir = system_config.system_layout.test_history_dir
-    if not latest_test_report_path.is_file():
-        manage_log.exit_with_error(f"no test report at {latest_test_report_path}")
+) -> Path:
+    """Turn the latest test report of the system into a dated test summary, copy it to the latest test summary, and
+    return the dated test summary path."""
+    system_layout = system_config.system_layout
+    latest_test_report_path = system_layout.latest_test_report_path
+    latest_test_summary_path = system_layout.latest_test_summary_path
     try:
-        run_result = pencil_test_page.read_page_file(page_path=latest_test_report_path)
+        test_report = test_reports.load_test_report(test_report_path=latest_test_report_path)
+    except FileNotFoundError:
+        manage_log.exit_with_error(f"no test report at {latest_test_report_path}")
     except ValueError as error:
         manage_log.exit_with_error(f"could not read {latest_test_report_path}: {error}")
-    summary_path = run_summary.get_summary_path(
-        run_result=run_result,
-        test_history_dir=test_history_dir,
+    test_summary_path = test_summaries.get_test_summary_path(
+        test_report=test_report,
+        test_history_dir=system_layout.test_history_dir,
     )
     manage_shell.run_fn(
-        description=f"write {summary_path} and copy it to {run_summary.LATEST_FILE_NAME}",
-        fn=lambda: run_summary.write_summary_files(
-            run_result=run_result,
-            test_history_dir=test_history_dir,
+        description=f"write {test_summary_path} and copy it to {latest_test_summary_path}",
+        fn=lambda: test_summaries.write_test_summary_files(
+            test_report=test_report,
+            test_summary_path=test_summary_path,
+            latest_test_summary_path=latest_test_summary_path,
         ),
     )
-    num_not_ok_tests = sum(1 for _test_result in run_result.test_results if not _test_result.test_is_ok)
+    num_not_ok_samples = sum(
+        1 for _sample_outcome in test_report.sample_outcomes if not _sample_outcome.sample_is_ok
+    )
     manage_log.log_outcome(
-        f"summarised the run as {summary_path.name}",
+        f"summarised the test report as {test_summary_path.name}",
         status=manage_log.OutcomeStatus.SUCCESS,
         items={
-            "tests": len(run_result.test_results),
-            "not ok": num_not_ok_tests,
+            "samples": len(test_report.sample_outcomes),
+            "not ok": num_not_ok_samples,
         },
     )
-    return summary_path.stem
+    return test_summary_path
 
 
 def _summarise_and_publish(
     *,
     system_config: system_configs.SystemConfig,
 ) -> None:
-    summary_name = _summarise_test_report(system_config=system_config)
-    publish.publish_summary(
+    test_summary_path = _summarise_test_report(system_config=system_config)
+    publish_to_github.publish_test_summary(
         system_layout=system_config.system_layout,
-        summary_name=summary_name,
+        test_summary_path=test_summary_path,
     )
-    publish.publish_page(system_config=system_config)
+    publish_to_github.publish_test_report(system_layout=system_config.system_layout)
 
 
 ##
@@ -145,12 +149,12 @@ def set_up_system(
     """Check the required tools, create the system directories, and check out trunk; safe to repeat."""
     system_config = _load_system_config_or_exit(system_name=system_name)
     system_layout = system_config.system_layout
-    missing_tools = machine_setup.get_missing_tools()
+    missing_tools = required_tools.get_missing_tools()
     if len(missing_tools) > 0:
+        missing_tool_reasons = {_missing_tool.name: _missing_tool.reason for _missing_tool in missing_tools}
         manage_log.log_note(
             "these tools are missing",
-            items={_missing_tool.name: _missing_tool.reason
-                   for _missing_tool in missing_tools},
+            items=missing_tool_reasons,
         )
         manage_log.exit_with_error("install the missing tools first")
     _create_dir_if_missing(dir_path=system_layout.latest_test_logs_dir)
@@ -161,7 +165,7 @@ def set_up_system(
             "svn",
             "checkout",
             "--quiet",
-            machine_setup.PENCIL_SVN_TRUNK_URL,
+            _PENCIL_SVN_TRUNK_URL,
             str(system_layout.pencil_code_dir),
         ]
         manage_shell.run_cmd_and_show_output(cmd_parts=cmd_check_out_trunk)
@@ -175,7 +179,7 @@ def set_up_system(
     )
 
 
-def run_tests(
+def run_pencil_tests(
     *,
     system_name: str,
 ) -> None:
@@ -187,24 +191,25 @@ def run_tests(
         missing_dirs_text = ", ".join(str(_missing_dir) for _missing_dir in missing_dirs)
         manage_log.exit_with_error(f"run `setup` first; missing: {missing_dirs_text}")
     report_time_before_run = _get_modified_time_or_none(file_path=system_layout.latest_test_report_path)
-    pc_auto_test_options = [
-        f"--config-files={'+'.join(system_config.pencil_build_configs)}",
-        *_FIXED_PC_AUTO_TEST_OPTIONS,
+    pencil_build_configs_text = "+".join(system_config.pencil_build_configs)
+    pencil_auto_test_options = [
+        f"--config-files={pencil_build_configs_text}",
+        *_BASE_PENCIL_AUTO_TEST_OPTIONS,
     ]
-    ## run-test.sh exits non-zero when tests fail, so a new test report, not the exit code, says whether tests ran.
-    cmd_run_test_script = [
+    pencil_auto_test_options_text = ",".join(pencil_auto_test_options)
+    cmd_run_cronjob_script = [
         "env",
         f"PENCIL_TEST_DIR={system_layout.pencil_code_dir}",
         f"PENCIL_TEST_TARGET_DIR={system_layout.test_logs_dir}",
         "PENCIL_TEST_NO_TRIGGER=yes",
-        f"PENCIL_AUTO_TEST_OPT={','.join(pc_auto_test_options)}",
+        f"PENCIL_AUTO_TEST_OPT={pencil_auto_test_options_text}",
         "bash",
         str(system_layout.cronjob_script_path),
         system_config.test_levels,
         system_config.system_name,
     ]
     script_has_succeeded = manage_shell.run_cmd_and_show_output(
-        cmd_parts=cmd_run_test_script,
+        cmd_parts=cmd_run_cronjob_script,
         raise_error=False,
     )
     report_time_after_run = _get_modified_time_or_none(file_path=system_layout.latest_test_report_path)
@@ -220,7 +225,7 @@ def run_tests(
     _summarise_and_publish(system_config=system_config)
 
 
-def publish_results(
+def publish_latest_test_report(
     *,
     system_name: str,
 ) -> None:
@@ -228,7 +233,7 @@ def publish_results(
     _summarise_and_publish(system_config=system_config)
 
 
-def write_summary(
+def write_test_summary(
     *,
     system_name: str,
 ) -> None:
@@ -262,27 +267,28 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
                 ),
                 manage_cli.Command(
                     name="run",
-                    description="run the tests if trunk has new commits, then summarise and publish the run",
-                    fn=run_tests,
+                    description=
+                    "run the tests if trunk has new commits, then summarise and publish the test report",
+                    fn=run_pencil_tests,
                     args=[_SYSTEM_NAME_ARG],
                 ),
             ],
         ),
         manage_cli.CommandGroup(
-            title="Publishing results",
+            title="Publishing test reports",
             cmds=[
                 manage_cli.Command(
                     name="publish",
                     description=
                     "summarise the latest test report, push the summary to main, and replace the folder on gh-pages",
-                    fn=publish_results,
+                    fn=publish_latest_test_report,
                     args=[_SYSTEM_NAME_ARG],
                 ),
                 manage_cli.Command(
-                    name="write-summary",
+                    name="write-test-summary",
                     description=
-                    "summarise the latest test report into test_history/<system-name>/ without running tests",
-                    fn=write_summary,
+                    "summarise the latest test report into test_history/<system-name>/ without publishing",
+                    fn=write_test_summary,
                     args=[_SYSTEM_NAME_ARG],
                 ),
             ],

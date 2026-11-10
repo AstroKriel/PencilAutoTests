@@ -9,12 +9,10 @@ import shutil
 from dataclasses import dataclass
 
 ##
-## === REQUIREMENTS
-## the tools every machine needs, whatever the system; the compilers and MPI depend on the Pencil configs named in
-## each system config, so `pc_auto-test` reports those itself.
+## === REQUIRED TOOLS
+## the tools every machine needs, whatever the system; the compilers and MPI depend on the Pencil build configs named
+## in each system config, so `pc_auto-test` reports those itself.
 ##
-
-PENCIL_SVN_TRUNK_URL = "https://pencil-code.org/svn/trunk/"
 
 
 @dataclass(frozen=True)
