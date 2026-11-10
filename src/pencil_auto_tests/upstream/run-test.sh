@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Copied from Pencil Code utils/cronjobs/run-test.sh, last changed upstream at svn revision 41741.
-# Local change: HOME_DIR, TARGET_DIR, and UPDATE_DIR can be set from the environment; the defaults are the upstream values.
+# Local change: settings can be set from the environment; without them the script behaves as upstream.
+#   PENCIL_TEST_HOME_DIR, PENCIL_TEST_TARGET_DIR, PENCIL_TEST_UPDATE_DIR: the three directories.
+#   PENCIL_AUTO_TEST_OPT: comma-separated pc_auto-test options after --level, e.g. the --config-files.
+#   PENCIL_TEST_EXTRA_OPT: space-separated pencil-test options added at the end, e.g. --mail or --time-limit.
 
 # Sample /etc/crontab entries:
 ### default extended test:
@@ -76,7 +79,8 @@ fi
 # prepare test command
 #
 TEST_CMD="bin/pencil-test"
-TEST_OPT="--use-pc_auto-test --auto-test-options='--level=${LEVEL},--config-files=GNU-GCC_MPI+GNU-GCC_debug,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html"
+AUTO_TEST_OPT="${PENCIL_AUTO_TEST_OPT:---config-files=GNU-GCC_MPI+GNU-GCC_debug,--auto-clean,--bisect,--local-lock}"
+TEST_OPT="--use-pc_auto-test --auto-test-options='--level=${LEVEL},${AUTO_TEST_OPT}' --nice=15 --short --local --html ${PENCIL_TEST_EXTRA_OPT}"
 # --mail=me@myself.org
 
 # actual code
