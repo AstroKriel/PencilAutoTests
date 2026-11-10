@@ -52,16 +52,16 @@ class TestWriteSummaryFiles:
         self,
         tmp_path: Path,
     ) -> None:
-        runs_dir = tmp_path / "runs"
+        test_history_dir = tmp_path / "test_history"
         run_summary.write_summary_files(
             run_result=_RUN_RESULT,
-            runs_dir=runs_dir,
+            test_history_dir=test_history_dir,
         )
         summary_path = run_summary.get_summary_path(
             run_result=_RUN_RESULT,
-            runs_dir=runs_dir,
+            test_history_dir=test_history_dir,
         )
-        latest_path = runs_dir / run_summary.LATEST_FILE_NAME
+        latest_path = test_history_dir / run_summary.LATEST_FILE_NAME
         assert summary_path.name == "2026-11-10_r46255.txt"
         assert latest_path.read_text() == summary_path.read_text()
         assert not latest_path.is_symlink()

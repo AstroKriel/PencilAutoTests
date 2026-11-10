@@ -9,8 +9,8 @@ from huginn import manage_log, manage_shell
 
 ## local
 from pencil_auto_tests import (
-    repo_paths,
-    system_settings,
+    system_configs,
+    system_layouts,
 )
 
 ##
@@ -26,7 +26,7 @@ def _run_git(
 ) -> None:
     manage_shell.run_cmd_and_show_output(
         cmd_parts=["git", *git_args],
-        working_directory=repo_paths.REPO_DIR,
+        working_directory=system_layouts.PENCIL_AUTO_TESTS_DIR,
     )
 
 
@@ -36,53 +36,57 @@ def _query_git(
 ) -> str:
     return manage_shell.query_cmd_and_capture_output(
         cmd_parts=["git", *git_args],
-        working_directory=repo_paths.REPO_DIR,
+        working_directory=system_layouts.PENCIL_AUTO_TESTS_DIR,
     )
 
 
 def publish_summary(
     *,
-    test_name: str,
+    system_layout: system_layouts.SystemLayout,
     summary_name: str,
 ) -> None:
-    """Commit runs/<test-name>/ and push it; refuse if the branch already holds commits that are not pushed."""
-    runs_dir_text = f"runs/{test_name}"
+    """Commit the test summaries of the system and push them; refuse if the branch holds commits that are not pushed."""
+    test_history_dir_text = str(system_layout.test_history_dir)
+    commit_message = f"add-file({summary_name}.txt): test summary of {system_layout.system_name}."
     _run_git(git_args=["fetch", "--quiet"])
     unpushed_commits = _query_git(git_args=["rev-list", "@{upstream}..HEAD"])
     if unpushed_commits != "":
-        manage_log.exit_with_error("the branch has commits that are not pushed; push or drop them before publishing")
-    changed_files = _query_git(git_args=["status", "--porcelain", "--", runs_dir_text])
+        manage_log.exit_with_error(
+            "the branch has commits that are not pushed; push or drop them before publishing",
+        )
+    changed_files = _query_git(git_args=["status", "--porcelain", "--", test_history_dir_text])
     if changed_files == "":
-        manage_log.log_note(f"{runs_dir_text} has no changes to commit")
+        manage_log.log_note(f"{test_history_dir_text} has no changes to commit")
         return
-    _run_git(git_args=["add", "--", runs_dir_text])
-    _run_git(git_args=["commit", "--quiet", "-m", f"add-run({test_name}): {summary_name}.", "--", runs_dir_text])
+    _run_git(git_args=["add", "--", test_history_dir_text])
+    _run_git(git_args=["commit", "--quiet", "-m", commit_message, "--", test_history_dir_text])
     _run_git(git_args=["pull", "--rebase", "--autostash", "--quiet"])
     _run_git(git_args=["push", "--quiet"])
     manage_log.log_outcome(
-        f"pushed {runs_dir_text}/{summary_name}",
+        f"pushed {summary_name}.txt",
         status=manage_log.OutcomeStatus.SUCCESS,
     )
 
 
 ##
 ## === RESULTS PAGE ON GH-PAGES
-## the branch holds one folder per test name and no history: each push is a new parentless commit that keeps the
-## other folders and replaces this one. `--force-with-lease` refuses the push if another host pushed in between.
+## the branch holds one folder per system and no history: each push is a new parentless commit that keeps the
+## other folders and replaces this one. `--force-with-lease` refuses the push if another machine pushed in between.
 ##
 
 
 def publish_page(
     *,
-    settings: system_settings.SystemSettings,
+    system_config: system_configs.SystemConfig,
 ) -> None:
-    test_name = settings.test_name
+    system_name = system_config.system_name
+    test_logs_dir = system_config.test_logs_dir
     remote_branch_line = _query_git(git_args=["ls-remote", "origin", _PAGES_BRANCH_REF])
     old_commit = ""
     if remote_branch_line != "":
         old_commit = remote_branch_line.split()[0]
     git_dir = _query_git(git_args=["rev-parse", "--absolute-git-dir"])
-    ## a separate index and the results directory as work tree, so the checkout of main is never touched.
+    ## a separate index and the test logs directory as work tree, so the checkout of main is never touched.
     git_with_pages_index = [
         "env",
         f"GIT_INDEX_FILE={git_dir}/pages-index",
@@ -90,7 +94,7 @@ def publish_page(
         "--git-dir",
         git_dir,
         "--work-tree",
-        str(settings.results_dir),
+        str(test_logs_dir),
     ]
     if old_commit == "":
         pages_base_args = ["read-tree", "--empty"]
@@ -99,23 +103,38 @@ def publish_page(
         pages_base_args = ["read-tree", old_commit]
     manage_shell.run_cmd_and_show_output(
         cmd_parts=[*git_with_pages_index, *pages_base_args],
-        working_directory=settings.results_dir,
+        working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
-        cmd_parts=[*git_with_pages_index, "rm", "-r", "--cached", "--quiet", "--ignore-unmatch", "--", test_name],
-        working_directory=settings.results_dir,
+        cmd_parts=[
+            *git_with_pages_index,
+            "rm",
+            "-r",
+            "--cached",
+            "--quiet",
+            "--ignore-unmatch",
+            "--",
+            system_name,
+        ],
+        working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
-        cmd_parts=[*git_with_pages_index, "add", "--force", "--", test_name],
-        working_directory=settings.results_dir,
+        cmd_parts=[*git_with_pages_index, "add", "--force", "--", system_name],
+        working_directory=test_logs_dir,
     )
     tree = manage_shell.run_cmd_and_capture_output(
         cmd_parts=[*git_with_pages_index, "write-tree"],
-        working_directory=settings.results_dir,
+        working_directory=test_logs_dir,
     )
     new_commit = manage_shell.run_cmd_and_capture_output(
-        cmd_parts=["git", "commit-tree", tree, "-m", f"update-folder({test_name}/): replace the results page."],
-        working_directory=repo_paths.REPO_DIR,
+        cmd_parts=[
+            "git",
+            "commit-tree",
+            tree,
+            "-m",
+            f"update-folder({system_name}/): replace the latest test logs and test report.",
+        ],
+        working_directory=system_layouts.PENCIL_AUTO_TESTS_DIR,
     )
     _run_git(
         git_args=[
@@ -127,7 +146,7 @@ def publish_page(
         ],
     )
     manage_log.log_outcome(
-        f"replaced {test_name}/ on gh-pages",
+        f"replaced {system_name}/ on gh-pages",
         status=manage_log.OutcomeStatus.SUCCESS,
     )
 

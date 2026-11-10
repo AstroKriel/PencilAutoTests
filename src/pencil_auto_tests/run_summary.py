@@ -34,25 +34,28 @@ def format_summary(
 def get_summary_path(
     *,
     run_result: pencil_test_page.RunResult,
-    runs_dir: Path,
+    test_history_dir: Path,
 ) -> Path:
-    return runs_dir / f"{run_result.start_date.isoformat()}_r{run_result.svn_revision}.txt"
+    return test_history_dir / f"{run_result.start_date.isoformat()}_r{run_result.svn_revision}.txt"
 
 
 def write_summary_files(
     *,
     run_result: pencil_test_page.RunResult,
-    runs_dir: Path,
+    test_history_dir: Path,
 ) -> None:
-    """Write the dated summary into `runs_dir`, then copy it to `latest.txt`."""
-    runs_dir.mkdir(parents=True, exist_ok=True)
+    """Write the dated summary into `test_history_dir`, then copy it to `latest.txt`."""
+    test_history_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
     summary_text = format_summary(run_result=run_result)
     summary_path = get_summary_path(
         run_result=run_result,
-        runs_dir=runs_dir,
+        test_history_dir=test_history_dir,
     )
     summary_path.write_text(summary_text)
-    latest_path = runs_dir / LATEST_FILE_NAME
+    latest_path = test_history_dir / LATEST_FILE_NAME
     shutil.copyfile(summary_path, latest_path)
 
 

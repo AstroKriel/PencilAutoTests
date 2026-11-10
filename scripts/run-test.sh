@@ -3,8 +3,11 @@
 # Copied from Pencil Code utils/cronjobs/run-test.sh, last changed upstream at svn revision 41741.
 # Local change: settings can be set from the environment; without them the script behaves as upstream.
 #   PENCIL_TEST_HOME_DIR, PENCIL_TEST_TARGET_DIR, PENCIL_TEST_UPDATE_DIR: the three directories.
+#   PENCIL_TEST_DIR: the Pencil checkout itself, instead of $HOME_DIR/$TEST; a missing checkout is checked out there.
 #   PENCIL_AUTO_TEST_OPT: comma-separated pc_auto-test options after --level, e.g. the --config-files.
 #   PENCIL_TEST_EXTRA_OPT: space-separated pencil-test options added at the end, e.g. --mail or --time-limit.
+#   PENCIL_TEST_NO_TRIGGER: if set, no trigger file is checked or emptied; `svn up` alone decides whether to test,
+#     for a machine that calls this script on a schedule instead of from a webhook.
 
 # Sample /etc/crontab entries:
 ### default extended test:
@@ -39,7 +42,7 @@ if [ -n "$3" ] ; then
 fi
 
 # set test directory
-TEST_DIR="${HOME_DIR}/${TEST}"
+TEST_DIR="${PENCIL_TEST_DIR:-${HOME_DIR}/${TEST}}"
 
 # check for other processes
 if [[ -n `ps aux | grep -vE '[0-9]:[0-9][0-9] grep ' | grep -E "pencil-test .*--pencil-home=${TEST_DIR}"` ]] ; then
@@ -54,6 +57,7 @@ if [[ "$icon_hash" == "980c856192f62bb123aa580d9f2a8a97" ]] ; then
 fi
 
 # check for new commits
+if [[ -z "${PENCIL_TEST_NO_TRIGGER}" ]] ; then
 if [[ ! -e "${UPDATE_DIR}/${TEST}" ]] ; then
 	echo "No update infrastructure: ${TEST}"
 	exit 1
@@ -62,11 +66,11 @@ if [[ ! -s "${UPDATE_DIR}/${TEST}" && -z "$sheduled" ]] ; then
 	# no new commits
 	exit 0
 fi
+fi
 
 # prepare test directory
 if [[ ! -e "${TEST_DIR}" ]] ; then
-	cd "${HOME_DIR}"
-	svn checkout -q ${SVN_CHECKOUT} "${TEST}"
+	svn checkout -q ${SVN_CHECKOUT} "${TEST_DIR}"
 else
 	if [[ ! -d "${TEST_DIR}" ]] ; then
 		echo "There is something in the way: ${TEST_DIR}"
@@ -88,7 +92,7 @@ if [[ -n "$updated" || -n "$scheduled" ]] ; then
 	cd "${TEST_DIR}"
 	rm -f .run_directories.log
 
-	: > "${UPDATE_DIR}/${TEST}"
+	[[ -z "${PENCIL_TEST_NO_TRIGGER}" ]] && : > "${UPDATE_DIR}/${TEST}"
 	${TEST_CMD} ${TEST_OPT} --log-dir="${TARGET_DIR}/${TEST}" --previous-dir="${TARGET_DIR}/${TEST}-${LAST}" --pencil-home="${TEST_DIR}" > "${TARGET_DIR}/${TEST}/${LOGFILE}"
 
 #else
