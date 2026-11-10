@@ -19,6 +19,7 @@ from huginn import (
 ## local
 from pencil_auto_tests import (
     pencil_test_page,
+    publish,
     repo_paths,
     run_summary,
     system_settings,
@@ -73,7 +74,7 @@ def _fill_trigger_file(
 def _summarise_results_page(
     *,
     settings: system_settings.SystemSettings,
-) -> None:
+) -> str:
     """Turn the results page of the test into a dated summary in runs/<test-name>/, and copy it to `latest.txt`."""
     results_page = settings.layout.results_page_path
     runs_dir = repo_paths.get_test_runs_dir(test_name=settings.test_name)
@@ -107,6 +108,19 @@ def _summarise_results_page(
             "not ok": num_not_ok_tests,
         },
     )
+    return summary_path.stem
+
+
+def _summarise_and_publish(
+    *,
+    settings: system_settings.SystemSettings,
+) -> None:
+    summary_name = _summarise_results_page(settings=settings)
+    publish.publish_summary(
+        test_name=settings.test_name,
+        summary_name=summary_name,
+    )
+    publish.publish_page(settings=settings)
 
 
 ##
@@ -156,7 +170,15 @@ def run_tests(
             status=manage_log.OutcomeStatus.SUCCESS,
         )
         return
-    _summarise_results_page(settings=settings)
+    _summarise_and_publish(settings=settings)
+
+
+def publish_results(
+    *,
+    test: str,
+) -> None:
+    settings = _read_settings_or_exit(test_name=test)
+    _summarise_and_publish(settings=settings)
 
 
 def write_summary(
@@ -187,7 +209,7 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
             cmds=[
                 manage_cli.Command(
                     name="run",
-                    description="run the tests if trunk has new commits, then summarise the run into runs/<test-name>/",
+                    description="run the tests if trunk has new commits, then summarise and publish the run",
                     fn=run_tests,
                     args=[_TEST_ARG],
                 ),
@@ -196,6 +218,12 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
         manage_cli.CommandGroup(
             title="Publishing results",
             cmds=[
+                manage_cli.Command(
+                    name="publish",
+                    description="summarise the latest results page, push it to main, and replace the folder on gh-pages",
+                    fn=publish_results,
+                    args=[_TEST_ARG],
+                ),
                 manage_cli.Command(
                     name="write-summary",
                     description="summarise the latest results page into runs/<test-name>/ without running tests",
