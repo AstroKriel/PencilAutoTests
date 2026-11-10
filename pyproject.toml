@@ -1,0 +1,48 @@
+[project]
+name = "pencil_auto_tests"
+version = "0.1.0"
+description = "pencil_auto_tests: run and publish the intel-bonn Pencil Code auto-tests"
+readme = "README.md"
+authors = [{ name = "Neco Kriel", email = "necokriel@gmail.com" }]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "huginn",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+sources = ["src"]
+
+[project.scripts]
+pencil_auto_tests = "pencil_auto_tests.user_interface:main"
+
+[tool.uv.sources]
+huginn = { git = "https://github.com/AstroKriel/TerminalInterface.git", rev = "e9b10d5617022056075562dc76e07b3fb2d1ac30" }
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["utests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.basedpyright]
+include = ["src", "utests"]
+extraPaths = ["src", "."]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.13"
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportUnusedParameter = "none"
+reportImplicitStringConcatenation = "none"
+reportUnusedCallResult = "none"
+reportImplicitOverride = "none"
+reportExplicitAny = "none"
+reportAny = "none"
+reportPrivateUsage = "none"

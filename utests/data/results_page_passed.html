@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+        <meta name="language" content="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+        <title>intel-bonn - Pencil Code auto-test</title>
+        <style>
+            #flex {
+                display: flex;
+                flex-direction: column;
+            }
+            #div_summary {
+                order: 1;
+            }
+
+            #div_details {
+                order: 2;
+            }
+
+            #div_footer {
+                order: 3;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+<p>Tue Nov 10 14:24:08 2026</p>
+<pre>bin/pencil-test --use-pc_auto-test --auto-test-options='--level=0,--config-files=GNU-GCC_MPI+GNU-GCC_debug,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html --log-dir=/home/nkriel/tmp/pencil-code/auto-tests/results/intel-bonn --previous-dir=/home/nkriel/tmp/pencil-code/auto-tests/results/intel-bonn-previous --pencil-home=/home/nkriel/tmp/pencil-code/auto-tests/intel-bonn</pre>
+<div id="flex">
+<div id="div_details">
+<h1>Details</h1><h2>Nkriel:</h2>
+
+<pre>
+
+</pre>
+<a id="no-modules"></a>
+<pre>auto-tests/intel-bonn/samples/no-modules: (1/2)
+    Compiling..            [double]           ok        00:01   [<a href="no-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="no-modules/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="no-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:01 = 00:01 + 00:00
+
+</pre>
+<a id="most-modules"></a>
+<pre>auto-tests/intel-bonn/samples/most-modules: (2/2)
+    Compiling..                               ok        00:02   [<a href="most-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="most-modules/start.log">log</a>]
+    Running..                                 ok        01:13   [<a href="most-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:16 = 00:02 + 01:14
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_details" -->
+<div id="div_summary">
+<h1>Summary</h1>
+<pre>
+All 2 tests succeeded.
+
+CPU time (including compilation):   01:15u 00:02s
+Total wall-clock time:              01:35 = 00:03 + 01:14
+
+----------------------------------------------------------------------
+
+SVN: 46255
+GIT: No network connection to pencil-code.org!
+
+</pre>
+</div> <!-- id="div_summary" -->
+<div id="div_footer">
+Tue Nov 10 14:25:44 2026
+</div> <!-- id="div_footer" -->
+</div> <!-- id="flex" -->
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+        <meta name="language" content="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+        <title>intel-bonn - Pencil Code auto-test</title>
+        <style>
+            #flex {
+                display: flex;
+                flex-direction: column;
+            }
+            #div_summary {
+                order: 1;
+            }
+
+            #div_details {
+                order: 2;
+            }
+
+            #div_footer {
+                order: 3;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+<p>Tue Nov 10 14:34:25 2026</p>
+<pre>bin/pencil-test --use-pc_auto-test --auto-test-options='--level=0,--config-files=GNU-GCC_MPI+GNU-GCC_debug,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html --log-dir=/home/nkriel/tmp/pencil-code/auto-tests/results/intel-bonn --previous-dir=/home/nkriel/tmp/pencil-code/auto-tests/results/intel-bonn-previous --pencil-home=/home/nkriel/tmp/pencil-code/auto-tests/intel-bonn</pre>
+<div id="flex">
+<div id="div_details">
+<h1>Details</h1><h2>Nkriel:</h2>
+
+<pre>
+
+</pre>
+<a id="no-modules"></a>
+<pre>auto-tests/intel-bonn/samples/no-modules: (1/2)
+    Compiling..            [double]           ok        00:01   [<a href="no-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="no-modules/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="no-modules/run.log">log</a>]
+    Validating results..                      not ok: 
+Files reference.out.double, data/time_series.dat differ:
+  t: Row 5: 4.5 > 4 according to absolute accuracy 1.5e-17
+Expected:  
+ --it-------------t---------------------dt-----------  
+     0   0.00000000000000000 1.00000000000000000E+00  
+     1   1.00000000000000000 1.00000000000000000E+00  
+     2   2.00000000000000000 1.00000000000000000E+00  
+     3   3.00000000000000000 1.00000000000000000E+00  
+     4   4.50000000000000000 1.00000000000000000E+00
+Got:  
+ --it-------------t---------------------dt-----------  
+     0   0.00000000000000000 1.00000000000000000E+00  
+     1   1.00000000000000000 1.00000000000000000E+00  
+     2   2.00000000000000000 1.00000000000000000E+00  
+     3   3.00000000000000000 1.00000000000000000E+00  
+     4   4.00000000000000000 1.00000000000000000E+00
+===> Test still succeeded with revision:
+SVN: 46255
+GIT: No network connection to pencil-code.org!
+Tue Nov 10 14:24:28 2026
+===> Test failed at latest with revision:
+SVN: 46255
+GIT: No network connection to pencil-code.org!
+Tue Nov 10 14:34:46 2026
+===> Please also see the  [<a href="no-modules/README">README</a>]
+    Time used:                                        00:02 = 00:01 + 00:00
+
+</pre>
+<a id="most-modules"></a>
+<pre>auto-tests/intel-bonn/samples/most-modules: (2/2)
+    Compiling..                               ok        00:01   [<a href="most-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="most-modules/start.log">log</a>]
+    Running..                                 ok        00:47   [<a href="most-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:49 = 00:01 + 00:48
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_details" -->
+<div id="div_summary">
+<h1>Summary</h1>
+<pre>
+### auto-test failed ###
+Failed 1 test(s) out of 2:
+</pre>
+<ul>
+<li><a href="#no-modules"><code>no-modules</code></a> <code>(results)</code>
+</ul>
+<pre>
+CPU time (including compilation):   00:49u 00:02s
+Total wall-clock time:              01:09 = 00:03 + 00:48
+
+----------------------------------------------------------------------
+The following configuration has been used:
+$config = {
+            'environment' => {
+                               'MODULE_INFIX' => '_MOD_',
+                               'MODULE_PREFIX' => '__',
+                               'MODULE_SUFFIX' => ''
+                             },
+            'runtime' => {
+                           'mpiexec_opts2' => '',
+                           'mpiexec' => 'mpiexec',
+                           'mpiexec_opts' => ''
+                         },
+            'makefile' => {
+                            'FFLAG_HEAP_ALLOC' => '-fmax-stack-var-size=512000 -fno-stack-arrays',
+                            'FFLAGS_DOUBLE' => '-fdefault-real-8 -fdefault-double-8',
+                            'MAKE_VAR1' => '-j',
+                            'FSTD_2008' => '-std=f2008',
+                            'LD_FFTW2' => '',
+                            'OMPFFLAGS' => '-fopenmp',
+                            'FSTD_95' => '-std=f95',
+                            'FFLAGS_FFTW2' => '',
+                            'FSTD_2003' => '-std=f2003',
+                            'PPFLAGS' => '-cpp',
+                            'FFLAGS_FFTW3' => '',
+                            'LDFLAGS_HELPER' => '-Bdynamic',
+                            'FFLAGS' => '-O -Og -Wall -Wno-zerotrip -finit-real=sNaN -finit-integer=-2147483648 -g -fbacktrace -fimplicit-none -fcheck=all -ffpe-trap=invalid,zero,overflow',
+                            'FC' => 'mpif90',
+                            'OMPLFLAGS' => '-lgomp',
+                            'LD_MPI' => '',
+                            'F77' => 'mpif77',
+                            'FSTD_2018' => '-std=f2018',
+                            'MODULE_SUFFIX' => '',
+                            'MODULE_PREFIX' => '__',
+                            'CFLAGS_DOUBLE' => '-DDOUBLE_PRECISION',
+                            'LD_FFTW3' => '',
+                            'MODULE_INFIX' => '_MOD_',
+                            'CFLAGS_FFTW2' => '',
+                            'CFLAGS' => '-DFUNDERSC=1',
+                            'CC' => 'mpicc',
+                            'CFLAGS_FFTW3' => '',
+                            'CMAKE_BUILD_TYPE' => 'Debug',
+                            'CSTD' => '-std=c99'
+                          }
+          };
+Perl version v5.44.0
+SVN: 46255
+GIT: No network connection to pencil-code.org!
+----------------------------------------------------------------------
+
+Last fully successful auto-test was:
+SVN: 46255
+GIT: No network connection to pencil-code.org!
+Tue Nov 10 14:25:44 2026
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_summary" -->
+<div id="div_footer">
+Tue Nov 10 14:35:35 2026
+</div> <!-- id="div_footer" -->
+</div> <!-- id="flex" -->
+</body>
+</html>
