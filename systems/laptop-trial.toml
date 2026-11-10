@@ -1,4 +1,4 @@
-# Development trial on the laptop of <username>; removed once the office PC runs intel-bonn.
+# Development trial on a laptop, with the GNU configs.
 
 test_root = "~/tmp/pencil-code/auto-tests"
 results_dir = "~/tmp/pencil-code/auto-tests/results"

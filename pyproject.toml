@@ -1,7 +1,7 @@
 [project]
 name = "pencil_auto_tests"
 version = "0.1.0"
-description = "pencil_auto_tests: run and publish the intel-bonn Pencil Code auto-tests"
+description = "pencil_auto_tests: set up, run, and publish Pencil Code auto-tests"
 readme = "README.md"
 authors = [{ name = "Neco Kriel", email = "necokriel@gmail.com" }]
 requires-python = ">=3.12,<3.14"
