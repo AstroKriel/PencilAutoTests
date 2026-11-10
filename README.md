@@ -48,7 +48,7 @@ cd <test-root>
 svn checkout -q https://pencil-code.org/svn/trunk/ intel-bonn
 ```
 
-If `<results-dir>/intel-bonn/` is missing, `run-test.sh` empties the trigger file and runs nothing; the only trace is an error in its output.
+If `<results-dir>/intel-bonn/` is missing, upstream `run-test.sh` empties the trigger file and runs nothing; the only trace is an error in its output. `pencil_auto_tests run` checks for all three first.
 
 ### This repository
 
@@ -58,7 +58,17 @@ cd PencilAutoTests
 uv sync
 ```
 
-Turn a results page into a dated summary:
+Run the tests once by hand:
+
+```bash
+.venv/bin/pencil_auto_tests run --test-root <test-root> --results-dir <results-dir> --runs-dir runs --levels 0
+```
+
+`run` fills the trigger file and calls `run-test.sh`, which updates the checkout with `svn up` and runs the tests only if trunk has new commits. If a new results page appears, `run` writes the dated summary into `runs/`. To run without new commits, delete `<test-root>/intel-bonn/README.md` first; `svn up` restores it, and `run-test.sh` counts that as an update.
+
+`run-test.sh` is kept in `src/pencil_auto_tests/upstream/`, copied from `utils/cronjobs/` in the Pencil Code. The only change is that its three directory settings can be set from the environment, which `run` uses to pass `<test-root>` and `<results-dir>`.
+
+To summarise an existing results page without running anything:
 
 ```bash
 .venv/bin/pencil_auto_tests write-summary --results-page <results-dir>/intel-bonn/index.html --runs-dir runs
