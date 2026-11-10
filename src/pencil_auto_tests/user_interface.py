@@ -18,6 +18,7 @@ from huginn import (
 
 ## local
 from pencil_auto_tests import (
+    host_setup,
     pencil_test_page,
     publish,
     repo_paths,
@@ -62,6 +63,18 @@ def _get_modified_time_or_none(
     if not file_path.is_file():
         return None
     return file_path.stat().st_mtime_ns
+
+
+def _create_dir_if_missing(
+    *,
+    dir_path: Path,
+) -> None:
+    if dir_path.is_dir():
+        return
+    manage_shell.run_fn(
+        description=f"create {dir_path}",
+        fn=lambda: dir_path.mkdir(parents=True),
+    )
 
 
 def _fill_trigger_file(
@@ -126,6 +139,39 @@ def _summarise_and_publish(
 ##
 ## === COMMANDS
 ##
+
+
+def set_up_test(
+    *,
+    test: str,
+) -> None:
+    """Check the required tools, create the test directories, and check out trunk; safe to repeat."""
+    settings = _read_settings_or_exit(test_name=test)
+    layout = settings.layout
+    missing_tools = host_setup.find_missing_tools()
+    if len(missing_tools) > 0:
+        manage_log.exit_with_error(f"install these first: {', '.join(missing_tools)}")
+    _create_dir_if_missing(dir_path=layout.update_dir)
+    _create_dir_if_missing(dir_path=layout.test_results_dir)
+    if layout.checkout_dir.exists():
+        manage_log.log_note(f"{layout.checkout_dir} exists, so trunk is not checked out again")
+    else:
+        cmd_check_out_trunk = [
+            "svn",
+            "checkout",
+            "--quiet",
+            host_setup.PENCIL_SVN_TRUNK_URL,
+            str(layout.checkout_dir),
+        ]
+        manage_shell.run_cmd_and_show_output(cmd_parts=cmd_check_out_trunk)
+    manage_log.log_outcome(
+        f"`{settings.test_name}` is set up",
+        status=manage_log.OutcomeStatus.SUCCESS,
+        items={
+            "checkout": layout.checkout_dir,
+            "results": layout.test_results_dir,
+        },
+    )
 
 
 def run_tests(
@@ -202,11 +248,17 @@ _TEST_ARG = cmd_args.NamedArgument(
 
 COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
     name="pencil_auto_tests",
-    description="run and publish Pencil Code auto-tests at AIfA",
+    description="set up, run, and publish Pencil Code auto-tests",
     cmd_groups=[
         manage_cli.CommandGroup(
             title="Running tests",
             cmds=[
+                manage_cli.Command(
+                    name="setup",
+                    description="check the required tools, create the test directories, and check out trunk",
+                    fn=set_up_test,
+                    args=[_TEST_ARG],
+                ),
                 manage_cli.Command(
                     name="run",
                     description="run the tests if trunk has new commits, then summarise and publish the run",
