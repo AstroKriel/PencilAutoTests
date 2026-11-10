@@ -6,7 +6,7 @@ This README is also the setup guide. It is built up stage by stage as each step 
 
 ## Results
 
-Each test name has its own folder in `runs/`. Each run adds one file there, named by the date the run started and the svn revision it tested, and copies it to `latest.txt`:
+The full results page of each test is at `https://astrokriel.github.io/PencilAutoTests/<test-name>/`. Each test name also has its own folder in `runs/`. Each run adds one file there, named by the date the run started and the svn revision it tested, and copies it to `latest.txt`:
 
 ```text
 runs/
@@ -79,4 +79,17 @@ To summarise the latest results page again without running anything:
 
 ```bash
 .venv/bin/pencil_auto_tests write-summary --test <test-name>
+```
+
+### Publishing
+
+After a run, `run` publishes in two places:
+
+- `main`: it commits `runs/<test-name>/`, pulls with rebase, and pushes. It refuses to start if the branch already holds commits that are not pushed, so it only ever pushes its own commit.
+- `gh-pages`: it replaces the folder `<test-name>/` with the full results from `<results-dir>/<test-name>/` and keeps the folders of other tests. The branch is rebuilt as a single commit each time, so bulk logs never pile up in history, and the push is refused if another host pushed in between.
+
+GitHub Pages serves `gh-pages` at `https://astrokriel.github.io/PencilAutoTests/<test-name>/`. To publish the latest results page again, for example after a failed push:
+
+```bash
+.venv/bin/pencil_auto_tests publish --test <test-name>
 ```
