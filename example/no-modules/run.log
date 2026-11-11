@@ -1,0 +1,70 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 0-D run
+ nxgrid, nygrid, nzgrid=           1           1           1
+ Lx, Ly, Lz=   6.2831853071795862        6.2831853071795862        6.2831853071795862     
+       Vbox=   1.0000000000000000     
+ rsnap: read snapshot var.dat in    0.0000000000000000       seconds
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ unit temperature   1.0000000000000000     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: diagnostics ...
+
+ --it-------------t---------------------dt-----------
+     0   0.00000000000000000 1.00000000000000000E+00
+     1   1.00000000000000000 1.00000000000000000E+00
+     2   2.00000000000000000 1.00000000000000000E+00
+     3   3.00000000000000000 1.00000000000000000E+00
+     4   4.00000000000000000 1.00000000000000000E+00
+
+ Simulation finished after            5  time-steps
+
+ Writing final snapshot at time t =   5.0000000000000000     
+
+ Wall clock time [hours] =  3.889E-06 (+/-  2.7778E-07)
+ Wall clock time/timestep/meshpoint [microsec] =  2800.000    
+ Wall clock time/timestep/local meshpoint [microsec] =  2800.000    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Maximum used memory per cpu [MBytes] =    10.629
+ Maximum used memory [MBytes] =       10.629
+

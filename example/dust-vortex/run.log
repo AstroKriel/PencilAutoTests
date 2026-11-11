@@ -1,0 +1,137 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          16  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          16          64          16
+ Lx, Ly, Lz=   4.0000000000000000        8.0000000000000000        4.0000000000000000     
+       Vbox=   128.00000000000000     
+ rsnap: read snapshot var.dat in    0.0000000000000000       seconds
+ setup_slices: slice_position = m
+ setup_slices: ix_loc,iy_loc,iz_loc,iz2_loc, (video files) = 11 35 11 8                                                                      
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   4.8108883747190188E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000       0.40546510810816422        1.0000000000000000        1.7785116881537806       0.40000000000000008     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: linear z-grav, nu=   1.0000000000000000     
+ diffusion: nothing (i.e. no mass diffusion)
+ Note: rho_const or lnrho_const are not used
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and ss
+ initialize_dustvelocity: dust_chemistry = nothing                                 
+ recalculated: md0=   1.0000000000000000     
+ initialize_dustvelocity: minmax(ad)=  0.62035049089940009       0.62035049089940009     
+ initialize_dustvelocity: no betad calculation for draglaw=epstein_cst_b.
+ initialize_dustvelocity: dust geometry = sphere
+ initialize_dustvelocity: doing nothing for draglaw=epstein_cst_b
+ Viscous force (dust): nud*del2ud
+ initialize_dustdensity: ldustcoagulation,ldustcondensation = F F
+ initialize_dustdensity: ldustcoagulation_simplified,ldustcondensation_simplified = F F
+ advec_ddensity: plain vanilla scheme
+ dust diffusion: nothing
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.0000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=   0.0000000000000000     
+ initialize_particles: mass per superparticle mp_swarm =   8.0212104788192004E-004
+ initialize_particles: number density per superparticle np_swarm=   0.0000000000000000     
+ initialize_particles: mass density per superparticle rhop_swarm=  0.10267149412888577     
+ initialize_particles_map: particle_mesh = cic
+ pencil_consistency_check: checking pencil case
+ dxxp_dt: No gravity in z-direction.
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   6.2111995489299072E-011
+ calc_pencils_energy: max(advec_cs2) =  0.62708333333333344     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       a>
+ coriolis_cartesian: add Coriolis force; Omega=   1.0000000000000000     
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <     she>, y: <       p>,  z: <       s>
+ dlnrho_dt: max(diffus_diffrho ) =   0.0000000000000000     
+ dlnrho_dt: max(diffus_diffrho3) =   0.0000000000000000     
+ duud_dt: SOLVE duud_dt
+Bcs for        udx,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for        udy,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for        udz,  x: <     she>, y: <       p>,  z: <       a>
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ duud_dt: add Coriolis force; Omega=   1.0000000000000000     
+ dndmd_dt: SOLVE dnd_dt, dmd_dt, dmi_dt
+Bcs for         nd,  x: <     she>, y: <       p>,  z: <       s>
+ shearing: Sshear,Sshear1=  -1.5000000000000000       -1.5000000000000000     
+ shearing: qshear,qshear0=   1.5000000000000000        0.0000000000000000     
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=p      
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to gas velocity.
+
+ --it------t--------dt-------urms-------umax-------rumax------udrms------udmax-----rdudmax-----rhom-------rhodm---
+     0    0.000  1.19E-02  9.540E-02  4.200E-01  1.940E+00  0.000E+00  0.000E+00  0.000E+00  2.551E+00  1.000E-03
+     5    0.059  1.19E-02  1.373E-01  4.695E-01  1.985E+00  5.701E-02  9.674E-02  9.628E-05  2.560E+00  9.992E-04
+    10    0.119  1.18E-02  2.356E-01  6.483E-01  1.982E+00  1.084E-01  1.798E-01  1.823E-04  2.600E+00  9.971E-04
+    15    0.177  1.11E-02  3.929E-01  1.150E+00  2.989E+00  1.537E-01  2.693E-01  2.762E-04  2.738E+00  9.944E-04
+
+ Simulation finished after           16  time-steps
+
+ Writing final snapshot at time t =  0.18835611030632016     
+
+ Wall clock time [hours] =  1.353E-04 (+/-  2.7778E-07)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  1.75    
+ Maximum used memory per cpu [MBytes] =    28.617
+ Maximum used memory [MBytes] =       28.617
+

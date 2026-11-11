@@ -1,0 +1,84 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          32          32          32
+ Lx, Ly, Lz=   6.2831853071795862        6.2831853071795862        6.2831853071795862     
+       Vbox=   248.05021344239853     
+ rsnap: read snapshot var.dat in    1.7378599999995359E-004  seconds
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   4.8108883747190188E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000       0.40546510810816422        1.0000000000000000       0.59999999999999998       0.40000000000000008     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ select_eos_variable: Using lnrho and ss
+ initialize_magnetic: constant resistivity, eta =   0.10000000000000001     
+ viscous force: nu*del2v
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil b2 (  14) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil bunit (  19) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   3.0410605159571887E-002
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+
+ --it-----t------dt-----dtv-----uxmax--------uymax--------uzmax-------dbxmax-------dbymax-------dbzmax-----divbmax-
+    0   0.000 5.22E-02 1.00 9.951847E-04 9.951847E-04 3.980739E-03 9.951847E-04 9.951847E-04 3.980739E-03 0.000000
+   10   0.522 5.22E-02 1.00 6.210541E-04 6.210541E-04 2.486972E-03 6.218658E-04 6.218658E-04 2.487361E-03 0.000000
+   20   1.044 5.23E-02 1.00 3.879110E-04 3.879110E-04 1.552713E-03 3.882261E-04 3.882261E-04 1.552862E-03 0.000000
+   30   1.567 5.23E-02 1.00 2.421340E-04 2.421340E-04 9.688888E-04 2.422354E-04 2.422354E-04 9.689363E-04 0.000000
+   40   2.091 5.23E-02 1.00 1.510578E-04 1.510578E-04 6.043688E-04 1.511038E-04 1.511038E-04 6.043851E-04 0.000000
+   50   2.614 5.23E-02 1.00 9.421411E-05 9.421411E-05 3.769114E-04 9.423083E-05 9.423083E-05 3.769199E-04 0.000000
+
+ Simulation finished after           51  time-steps
+
+ Writing final snapshot at time t =   2.6662288491229114     
+
+ Wall clock time [hours] =  5.013E-04 (+/-  2.7778E-13)
+ Wall clock time/timestep/meshpoint [microsec] =  1.079815    
+ Wall clock time/timestep/local meshpoint [microsec] =  8.638517    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  2.701107    
+ Maximum used memory per cpu [MBytes] =    29.566
+ Maximum used memory [MBytes] =      233.320
+
