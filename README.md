@@ -12,9 +12,8 @@ Nightly [Pencil Code](https://pencil-code.org) auto-tests on any machine, set up
 ```bash
 git clone https://github.com/AstroKriel/PencilAutoTests.git
 cd PencilAutoTests
-uv sync
-.venv/bin/pencil_auto_tests setup --system-name example
-.venv/bin/pencil_auto_tests run --system-name example --no-publish
+uv run pencil_auto_tests setup --system-name example
+uv run pencil_auto_tests run --system-name example --no-publish
 cat test_history/example/latest.txt
 ```
 
@@ -48,12 +47,11 @@ The reason is in the full test report, with the build, start, and run logs of ea
 ## Setting up a machine
 
 1. Install `svn`, `perl`, `make`, `wget`, `git`, [`uv`](https://docs.astral.sh/uv/), and the compilers and MPI that your build configs need.
-2. Clone this repository and install it:
+2. Clone this repository:
 
    ```bash
    git clone <repository-url>
    cd PencilAutoTests
-   uv sync
    ```
 
 3. Describe the system in `system_configs/<system-name>.toml`:
@@ -66,13 +64,13 @@ The reason is in the full test report, with the build, start, and run logs of ea
    environment_script = "~/intel/oneapi/setvars.sh"  # optional: sourced first, e.g. for oneAPI
    ```
 
-4. Check the tools, create the directories, and check out trunk:
+4. Check the tools, create the directories, and check out trunk; `uv run` also installs the tool into `.venv/`:
 
    ```bash
-   .venv/bin/pencil_auto_tests setup --system-name <system-name>
+   uv run pencil_auto_tests setup --system-name <system-name>
    ```
 
-5. Run it nightly from `cron`:
+5. Run it nightly from `cron`, calling the installed command directly so that a nightly run never resolves or downloads anything:
 
    ```text
    30 2 * * *  <repository>/.venv/bin/pencil_auto_tests run --system-name <system-name>
