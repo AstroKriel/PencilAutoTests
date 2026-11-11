@@ -182,6 +182,7 @@ def set_up_system(
 def run_pencil_tests(
     *,
     system_name: str,
+    no_publish: bool,
 ) -> None:
     """Call `run-test.sh`, which tests only if `svn up` finds new commits, and summarise and publish a new test report."""
     system_config = _load_system_config_or_exit(system_name=system_name)
@@ -206,6 +207,9 @@ def run_pencil_tests(
     if system_config.environment_script is not None:
         environment_script_setting = f"PENCIL_TEST_ENV_SCRIPT={system_config.environment_script}"
         cronjob_script_settings.append(environment_script_setting)
+    system_is_untested = report_time_before_run is None
+    if system_is_untested:
+        cronjob_script_settings.append("PENCIL_TEST_FORCE=yes")
     cmd_run_cronjob_script = [
         "env",
         *cronjob_script_settings,
@@ -227,6 +231,10 @@ def run_pencil_tests(
             "trunk has no new commits, so no tests ran",
             status=manage_log.OutcomeStatus.SUCCESS,
         )
+        return
+    if no_publish:
+        test_summary_path = _summarise_test_report(system_config=system_config)
+        manage_log.log_note(f"publishing skipped; the test summary is {test_summary_path}")
         return
     _summarise_and_publish(system_config=system_config)
 
@@ -257,6 +265,10 @@ _SYSTEM_NAME_ARG = cmd_args.NamedArgument(
     input_value_type=InputValueTypes.SYSTEM_NAME,
     is_required=True,
 )
+_NO_PUBLISH_FLAG = cmd_args.FlagArgument(
+    long_arg_name="no-publish",
+    description="write the test summary but push nothing to GitHub, e.g. to try out a system",
+)
 
 COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
     name="pencil_auto_tests",
@@ -276,7 +288,7 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
                     description=
                     "run the tests if trunk has new commits, then summarise and publish the test report",
                     fn=run_pencil_tests,
-                    args=[_SYSTEM_NAME_ARG],
+                    args=[_SYSTEM_NAME_ARG, _NO_PUBLISH_FLAG],
                 ),
             ],
         ),

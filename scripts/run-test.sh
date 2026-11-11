@@ -9,6 +9,7 @@
 #   PENCIL_TEST_NO_TRIGGER: if set, no trigger file is checked or emptied; `svn up` alone decides whether to test,
 #     for a machine that calls this script on a schedule instead of from a webhook.
 #   PENCIL_TEST_ENV_SCRIPT: a script sourced before anything else runs, e.g. to load a compiler suite.
+#   PENCIL_TEST_FORCE: if set, test even when `svn up` finds no new commits, e.g. on the first run of a new checkout.
 
 # Sample /etc/crontab entries:
 ### default extended test:
@@ -60,6 +61,9 @@ fi
 # check for a scheduled test
 icon_hash=`md5sum "${TARGET_DIR}/${TEST}/result.svg" | head -c 32`
 if [[ "$icon_hash" == "980c856192f62bb123aa580d9f2a8a97" ]] ; then
+	scheduled="yes"
+fi
+if [ -n "${PENCIL_TEST_FORCE}" ] ; then
 	scheduled="yes"
 fi
 
