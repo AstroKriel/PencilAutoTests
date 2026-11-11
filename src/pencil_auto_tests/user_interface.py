@@ -197,12 +197,18 @@ def run_pencil_tests(
         *_BASE_PENCIL_AUTO_TEST_OPTIONS,
     ]
     pencil_auto_test_options_text = ",".join(pencil_auto_test_options)
-    cmd_run_cronjob_script = [
-        "env",
+    cronjob_script_settings = [
         f"PENCIL_TEST_DIR={system_layout.pencil_code_dir}",
         f"PENCIL_TEST_TARGET_DIR={system_layout.test_logs_dir}",
         "PENCIL_TEST_NO_TRIGGER=yes",
         f"PENCIL_AUTO_TEST_OPT={pencil_auto_test_options_text}",
+    ]
+    if system_config.environment_script is not None:
+        environment_script_setting = f"PENCIL_TEST_ENV_SCRIPT={system_config.environment_script}"
+        cronjob_script_settings.append(environment_script_setting)
+    cmd_run_cronjob_script = [
+        "env",
+        *cronjob_script_settings,
         "bash",
         str(system_layout.cronjob_script_path),
         system_config.test_levels,

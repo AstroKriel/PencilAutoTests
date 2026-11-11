@@ -8,6 +8,7 @@
 #   PENCIL_TEST_EXTRA_OPT: space-separated pencil-test options added at the end, e.g. --mail or --time-limit.
 #   PENCIL_TEST_NO_TRIGGER: if set, no trigger file is checked or emptied; `svn up` alone decides whether to test,
 #     for a machine that calls this script on a schedule instead of from a webhook.
+#   PENCIL_TEST_ENV_SCRIPT: a script sourced before anything else runs, e.g. to load a compiler suite.
 
 # Sample /etc/crontab entries:
 ### default extended test:
@@ -39,6 +40,12 @@ fi
 # set backup filename, if given explicitly
 if [ -n "$3" ] ; then
 	LAST="$3"
+fi
+
+# load the environment, with the arguments of this script cleared so the sourced script does not see them
+if [ -n "${PENCIL_TEST_ENV_SCRIPT}" ] ; then
+	set --
+	source "${PENCIL_TEST_ENV_SCRIPT}" > /dev/null
 fi
 
 # set test directory

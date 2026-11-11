@@ -35,7 +35,7 @@ The system name is the unique id of a system, and its system config is the file 
 
 ## System configs
 
-Everything about how a system runs is in its system config, so nothing has to be remembered at run time and every change is versioned. A system belongs to one machine. A system config answers four questions; paths may start with `~`.
+Everything about how a system runs is in its system config, so nothing has to be remembered at run time and every change is versioned. A system belongs to one machine. A system config answers four questions, and a fifth when the compilers need an environment loaded first; paths may start with `~`.
 
 | Key | Question |
 |---|---|
@@ -43,6 +43,7 @@ Everything about how a system runs is in its system config, so nothing has to be
 | `test_logs_dir` | Where should the test logs go? `pencil-test` writes the latest logs of this system, and the report summarising them, to `<test-logs-dir>/<system-name>/`, and keeps the run before in `<system-name>-previous/` |
 | `test_levels` | Which test levels should run? Such as `"0"`, `"0,1"`, or `"2-3"`; the levels are described above `%tests` in `bin/pc_auto-test` |
 | `pencil_build_configs` | Which Pencil build configs should the samples be built with? Names of the files `pc_build` reads from `config/` in the Pencil code, such as `GNU-GCC_MPI` |
+| `environment_script` | Optional. Which script loads the environment the compilers need? It is sourced before anything else runs, for example `~/intel/oneapi/setvars.sh` for Intel oneAPI. `cron` starts with a bare environment, so a compiler suite that is not on the system path needs this |
 
 For example:
 

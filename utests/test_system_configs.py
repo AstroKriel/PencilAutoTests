@@ -74,6 +74,21 @@ class TestLoadSystemConfig_Valid:
         assert system_config.system_layout.latest_test_logs_dir == Path("/data/test-logs/some-system")
         assert system_config.test_levels == "0,1"
         assert system_config.pencil_build_configs == ["GNU-GCC_MPI", "GNU-GCC_debug"]
+        assert system_config.environment_script is None
+
+    def test_environment_script_is_loaded_when_given(
+        self,
+        monkeypatch: pytest.MonkeyPatch,
+        tmp_path: Path,
+    ) -> None:
+        config_text = _VALID_CONFIG_TEXT + 'environment_script = "~/intel/oneapi/setvars.sh"\n'
+        _write_some_system_config(
+            monkeypatch=monkeypatch,
+            tmp_path=tmp_path,
+            config_text=config_text,
+        )
+        system_config = system_configs.load_system_config(system_name="some-system")
+        assert system_config.environment_script == Path.home() / "intel" / "oneapi" / "setvars.sh"
 
     def test_home_is_expanded(
         self,

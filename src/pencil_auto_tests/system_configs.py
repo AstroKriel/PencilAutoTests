@@ -19,11 +19,14 @@ from pencil_auto_tests import system_layouts
 ##
 
 SYSTEM_CONFIGS_DIR = system_layouts.PENCIL_AUTO_TESTS_DIR / "system_configs"
-_EXPECTED_KEYS = {
+_REQUIRED_KEYS = {
     "pencil_code_dir",
     "test_logs_dir",
     "test_levels",
     "pencil_build_configs",
+}
+_OPTIONAL_KEYS = {
+    "environment_script",
 }
 
 
@@ -34,6 +37,7 @@ class SystemConfig:
     test_logs_dir: Path
     test_levels: str
     pencil_build_configs: list[str]
+    environment_script: Path | None
 
     @property
     def system_layout(
@@ -56,8 +60,9 @@ def _ensure_expected_keys(
     config_values: dict[str, Any],
     config_path: Path,
 ) -> None:
-    missing_keys = _EXPECTED_KEYS - config_values.keys()
-    unknown_keys = config_values.keys() - _EXPECTED_KEYS
+    known_keys = _REQUIRED_KEYS | _OPTIONAL_KEYS
+    missing_keys = _REQUIRED_KEYS - config_values.keys()
+    unknown_keys = config_values.keys() - known_keys
     if len(missing_keys) > 0:
         raise ValueError(f"`{config_path.name}` is missing keys: {', '.join(sorted(missing_keys))}")
     if len(unknown_keys) > 0:
@@ -81,12 +86,17 @@ def load_system_config(
     test_logs_dir = Path(test_logs_dir_text).expanduser()
     test_levels = config_values["test_levels"]
     pencil_build_configs = config_values["pencil_build_configs"]
+    environment_script = None
+    if "environment_script" in config_values:
+        environment_script_text = config_values["environment_script"]
+        environment_script = Path(environment_script_text).expanduser()
     return SystemConfig(
         system_name=system_name,
         pencil_code_dir=pencil_code_dir,
         test_logs_dir=test_logs_dir,
         test_levels=test_levels,
         pencil_build_configs=pencil_build_configs,
+        environment_script=environment_script,
     )
 
 
