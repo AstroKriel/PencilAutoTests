@@ -43,7 +43,7 @@ Otherwise, a line names the first step that failed, in the words of `pc_auto-tes
 | `failed validating results` | everything ran, but the output differs from the reference files of the sample |
 | `unfinished` | stopped before validation without a failed step, for example at the time limit |
 
-The reason is in the full test report, with the build, start, and run logs of each sample: `~/pencil-auto-tests/example/test-logs/example/index.html` for the example.
+The reason is in the full test report, with the build, start, and run logs of each sample: `~/pencil-auto-tests/example/test-logs/example/index.html` for the example. A [dated test report of the example](https://astrokriel.github.io/PencilAutoTests/example/) is published to show what one looks like.
 
 ## Setting up a machine
 
