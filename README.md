@@ -18,7 +18,7 @@ uv sync
 cat test_history/example/latest.txt
 ```
 
-The run takes about eight minutes, most of it compiling, and writes one line per sample:
+The run takes about eight minutes, most of it compiling, and writes one line per sample. In the best case, every sample passes:
 
 ```text
 no-modules                    ok
@@ -30,10 +30,20 @@ backwards-compatible          ok
 dust-vortex                   ok
 damped_alfven_waves           ok
 corona                        ok
-helical-MHDturb               failed validating results
+helical-MHDturb               ok
 ```
 
-The full test report, with the build, start, and run logs of each sample, is in `~/pencil-auto-tests/example/test-logs/example/index.html`.
+Otherwise, a line names the first step that failed, in the words of `pc_auto-test`:
+
+| Line | Meaning |
+|---|---|
+| `failed compiling` | the sample did not build |
+| `failed starting` | `start.x` stopped while setting up the initial conditions |
+| `failed running` | `run.x` stopped during the simulation |
+| `failed validating results` | everything ran, but the output differs from the reference files of the sample |
+| `unfinished` | stopped before validation without a failed step, for example at the time limit |
+
+The reason is in the full test report, with the build, start, and run logs of each sample: `~/pencil-auto-tests/example/test-logs/example/index.html` for the example.
 
 ## Setting up a machine
 
