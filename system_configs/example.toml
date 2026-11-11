@@ -1,9 +1,8 @@
-# Development trial on a laptop, with the GNU configs.
+# A small system that runs on most Linux machines with gfortran and OpenMPI; try it with `run --no-publish`.
 
-pencil_code_dir = "~/tmp/pencil-code/auto-tests/laptop-trial"
-test_logs_dir = "~/tmp/pencil-code/auto-tests/results"
-test_levels = "0"
+pencil_code_dir = "~/pencil-auto-tests/example/pencil-code"
+test_logs_dir = "~/pencil-auto-tests/example/test-logs"
+test_levels = "0-1"
 pencil_build_configs = [
     "GNU-GCC_MPI",
-    "GNU-GCC_debug",
 ]

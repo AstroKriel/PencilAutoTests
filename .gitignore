@@ -12,6 +12,9 @@ env/
 .env
 .envrc
 
+# test history of the example system, which runs on any machine
+test_history/example/
+
 # tools
 .ruff_cache/
 .mypy_cache/

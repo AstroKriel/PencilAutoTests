@@ -5,10 +5,35 @@ Nightly [Pencil Code](https://pencil-code.org) auto-tests on any machine, set up
 - Latest test report of each system: `https://astrokriel.github.io/PencilAutoTests/<system-name>/`
 - Every run, one line per sample: `test_history/<system-name>/`
 
-```text
-no-modules    failed validating results
-most-modules  ok
+## Example
+
+`system_configs/example.toml` runs levels 0 and 1 with gfortran and OpenMPI, so it works on most Linux machines (see the requirements below). It checks out Pencil under `~/pencil-auto-tests/example/`, and `--no-publish` keeps the results local:
+
+```bash
+git clone https://github.com/AstroKriel/PencilAutoTests.git
+cd PencilAutoTests
+uv sync
+.venv/bin/pencil_auto_tests setup --system-name example
+.venv/bin/pencil_auto_tests run --system-name example --no-publish
+cat test_history/example/latest.txt
 ```
+
+The run takes about eight minutes, most of it compiling, and writes one line per sample:
+
+```text
+no-modules                    ok
+most-modules                  ok
+backwards-compatible          ok
+1d-tests/implicit_diffusion   ok
+2d-tests/chemistry_GrayScott  ok
+2d-tests/shearwave-dust-par   ok
+dust-vortex                   ok
+damped_alfven_waves           ok
+corona                        ok
+helical-MHDturb               failed validating results
+```
+
+The full test report, with the build, start, and run logs of each sample, is in `~/pencil-auto-tests/example/test-logs/example/index.html`.
 
 ## Setting up a machine
 
@@ -26,7 +51,7 @@ most-modules  ok
    ```toml
    pencil_code_dir = "/data/pencil/intel-bonn"    # where Pencil is checked out, built, and run
    test_logs_dir = "/data/pencil/test-logs"       # where pencil-test writes the test report and logs
-   test_levels = "0-3"                            # levels from the %tests table in bin/pc_auto-test
+   test_levels = "0-3"                            # a level or range from the %tests table in bin/pc_auto-test
    pencil_build_configs = ["Intel_MPI-mpiifx"]    # config files read by pc_build
    environment_script = "~/intel/oneapi/setvars.sh"  # optional: sourced first, e.g. for oneAPI
    ```
@@ -43,7 +68,7 @@ most-modules  ok
    30 2 * * *  <repository>/.venv/bin/pencil_auto_tests run --system-name <system-name>
    ```
 
-To summarise or publish the latest test report again, for example after a failed push, use `write-test-summary` or `publish` with the same `--system-name`.
+`run` tests only when `svn up` finds new commits, except on the first run of a system, and then pushes the test summary to `main` and the latest test report and logs to `gh-pages` of the repository it was cloned from. Add `--no-publish` to try a system without pushing. To summarise or publish the latest test report again, for example after a failed push, use `write-test-summary` or `publish` with the same `--system-name`.
 
 ## File structure
 
@@ -60,7 +85,7 @@ PencilAutoTests/
 │       └── publish_to_github.py  # pushes test summaries to main and test reports to gh-pages
 ├── scripts/
 │   └── run-test.sh  # copy of utils/cronjobs/run-test.sh; reads its settings from the environment, runs without a trigger file
-├── system_configs/  # one file per system
+├── system_configs/  # one file per system; example.toml runs on most machines
 ├── test_history/  # dated test summaries of each system, plus latest.txt
 ├── utests/  # unit tests; data/ holds two real test reports
 ├── pyproject.toml  # package metadata; registers the pencil_auto_tests command
