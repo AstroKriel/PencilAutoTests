@@ -1,6 +1,6 @@
 # Intel compilers and Intel MPI on the office PC aibn238 at AIfA Bonn, run as the account pencil.
 
-pencil_code_dir = "/export/data1/pencil/intel-bonn"
+pencil_code_dir = "/export/data1/pencil/bonn-intel"
 test_logs_dir = "/export/data1/pencil/test-logs"
 test_levels = "0"
 pencil_build_configs = [

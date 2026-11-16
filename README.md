@@ -54,10 +54,10 @@ The reason is in the full test report, with the build, start, and run logs of ea
    cd PencilAutoTests
    ```
 
-3. Describe the system in `system_configs/<system-name>.toml`:
+3. Describe the system in `system_configs/<system-name>.toml`. Name systems `<site>-<toolchain>`, e.g. `bonn-intel`, so systems at one site sort together:
 
    ```toml
-   pencil_code_dir = "/data/pencil/intel-bonn"    # where Pencil is checked out, built, and run
+   pencil_code_dir = "/data/pencil/bonn-intel"    # where Pencil is checked out, built, and run
    test_logs_dir = "/data/pencil/test-logs"       # where pencil-test writes the test report and logs
    test_levels = "0-3"                            # a level or range from the %tests table in bin/pc_auto-test
    pencil_build_configs = ["Intel_MPI-mpiifx"]    # config files read by pc_build
