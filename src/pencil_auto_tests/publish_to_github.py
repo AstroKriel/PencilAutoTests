@@ -116,7 +116,7 @@ def publish_test_report(
         working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
-        cmd_parts=[*pages_git_cmd, "rm", "-r", "--cached", "--quiet", "--ignore-unmatch", "--", system_name],
+        cmd_parts=[*pages_git_cmd, "rm", "-r", "--cached", "--force", "--quiet", "--ignore-unmatch", "--", system_name],
         working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
