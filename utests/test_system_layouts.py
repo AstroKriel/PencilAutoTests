@@ -46,6 +46,21 @@ class TestSystemLayout_MissingDirs:
         assert some_system_layout.get_missing_dirs() == [tmp_path / "test-logs" / "some-system"]
 
 
+class TestSystemLayout_TestLogsDirs:
+
+    def test_previous_logs_dir_sits_next_to_the_latest(
+        self,
+        tmp_path: Path,
+    ) -> None:
+        some_system_layout = system_layouts.SystemLayout(
+            system_name="some-system",
+            pencil_code_dir=tmp_path / "pencil-code",
+            test_logs_dir=tmp_path / "test-logs",
+        )
+        assert some_system_layout.latest_test_logs_dir == tmp_path / "test-logs" / "some-system"
+        assert some_system_layout.previous_test_logs_dir == tmp_path / "test-logs" / "some-system-previous"
+
+
 class TestSystemLayout_RepoPaths:
 
     def test_repo_paths_sit_in_this_repository(

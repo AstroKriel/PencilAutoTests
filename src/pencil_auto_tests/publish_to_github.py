@@ -77,9 +77,9 @@ def publish_test_summary(
 
 ##
 ## === TEST REPORT ON GH-PAGES
-## the branch holds the latest test report and test logs of each system, one folder per system, and no history: each
-## push is a new parentless commit that keeps the other folders and replaces this one. `--force-with-lease` refuses
-## the push if another machine pushed in between.
+## the branch holds the latest and previous test report and test logs of each system, two folders per system, and no
+## history: each push is a new parentless commit that keeps the other folders and replaces these two.
+## `--force-with-lease` refuses the push if another machine pushed in between.
 ##
 
 _GITHUB_PAGES_BRANCH_REF = "refs/heads/gh-pages"
@@ -91,6 +91,12 @@ def publish_test_report(
 ) -> None:
     system_name = system_layout.system_name
     test_logs_dir = system_layout.test_logs_dir
+    published_dirs = [
+        system_layout.latest_test_logs_dir,
+        system_layout.previous_test_logs_dir,
+    ]
+    published_folder_names = [_published_dir.name for _published_dir in published_dirs]
+    existing_folder_names = [_published_dir.name for _published_dir in published_dirs if _published_dir.is_dir()]
     ls_remote_output = _query_git(git_args=["ls-remote", "origin", _GITHUB_PAGES_BRANCH_REF])
     remote_pages_commit = ""
     if ls_remote_output != "":
@@ -116,18 +122,28 @@ def publish_test_report(
         working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
-        cmd_parts=[*pages_git_cmd, "rm", "-r", "--cached", "--force", "--quiet", "--ignore-unmatch", "--", system_name],
+        cmd_parts=[
+            *pages_git_cmd,
+            "rm",
+            "-r",
+            "--cached",
+            "--force",
+            "--quiet",
+            "--ignore-unmatch",
+            "--",
+            *published_folder_names,
+        ],
         working_directory=test_logs_dir,
     )
     manage_shell.run_cmd_and_show_output(
-        cmd_parts=[*pages_git_cmd, "add", "--force", "--", system_name],
+        cmd_parts=[*pages_git_cmd, "add", "--force", "--", *existing_folder_names],
         working_directory=test_logs_dir,
     )
     pages_tree = manage_shell.run_cmd_and_capture_output(
         cmd_parts=[*pages_git_cmd, "write-tree"],
         working_directory=test_logs_dir,
     )
-    pages_commit_message = f"update-folder({system_name}/): replace the latest test logs and test report."
+    pages_commit_message = f"update-folder({system_name}/): replace the latest and previous test logs and test reports."
     new_pages_commit = manage_shell.run_cmd_and_capture_output(
         cmd_parts=["git", "commit-tree", pages_tree, "-m", pages_commit_message],
         working_directory=system_layouts.PENCIL_AUTO_TESTS_DIR,
@@ -142,7 +158,7 @@ def publish_test_report(
         ],
     )
     manage_log.log_outcome(
-        f"replaced {system_name}/ on gh-pages",
+        f"replaced {', '.join(existing_folder_names)} on gh-pages",
         status=manage_log.OutcomeStatus.SUCCESS,
     )
 

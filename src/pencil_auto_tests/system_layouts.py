@@ -19,8 +19,9 @@ PENCIL_AUTO_TESTS_DIR = _PACKAGE_DIR.parent.parent
 ##
 ## === SYSTEM LAYOUT
 ## `run-test.sh` takes the Pencil checkout as `TEST_DIR`, the test logs directory as `TARGET_DIR`, and the system
-## name as its `TEST`; it writes the latest test logs to <test-logs-dir>/<system-name>/. The dated test summaries of
-## the system sit in this repository, in test_history/<system-name>/.
+## name as its `TEST`; it writes the latest test logs to <test-logs-dir>/<system-name>/, and `pencil-test` copies the
+## run before it to <test-logs-dir>/<system-name>-previous/. The dated test summaries of the system sit in this
+## repository, in test_history/<system-name>/.
 ##
 
 
@@ -35,6 +36,12 @@ class SystemLayout:
         self,
     ) -> Path:
         return self.test_logs_dir / self.system_name
+
+    @property
+    def previous_test_logs_dir(
+        self,
+    ) -> Path:
+        return self.test_logs_dir / f"{self.system_name}-previous"
 
     @property
     def latest_test_report_path(
