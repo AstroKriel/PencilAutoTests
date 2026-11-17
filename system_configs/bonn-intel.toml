@@ -2,7 +2,7 @@
 
 pencil_code_dir = "/export/data1/pencil/bonn-intel"
 test_logs_dir = "/export/data1/pencil/test-logs"
-test_levels = "0"
+test_levels = "0-1"
 pencil_build_configs = [
     "Intel_MPI-mpiifx",
 ]
