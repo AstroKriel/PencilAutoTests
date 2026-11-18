@@ -1,2 +1,10 @@
-no-modules    failed compiling
-most-modules  failed compiling
+no-modules                    ok
+most-modules                  ok
+backwards-compatible          ok
+1d-tests/implicit_diffusion   ok
+2d-tests/chemistry_GrayScott  ok
+2d-tests/shearwave-dust-par   ok
+dust-vortex                   ok
+damped_alfven_waves           failed compiling
+corona                        failed compiling
+helical-MHDturb               ok
