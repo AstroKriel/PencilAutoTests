@@ -1,0 +1,59 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          64          64           1
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ unit temperature   1.0000000000000000     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ Number of reactions=           4
+ Number of compounds=           2
+ kreactions_m=   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ kreactions_p=   2.9999999999999999E-002   1.0000000000000000        2.9999999999999999E-002   9.2499999999999999E-002
+ Sijm:
+   0.0000000000000000        0.0000000000000000     
+   1.0000000000000000        2.0000000000000000     
+   1.0000000000000000        0.0000000000000000     
+   0.0000000000000000        1.0000000000000000     
+ Sijp:
+   1.0000000000000000        0.0000000000000000     
+   0.0000000000000000        3.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+ stoichio=
+   1.0000000000000000        0.0000000000000000     
+  -1.0000000000000000        1.0000000000000000     
+  -1.0000000000000000        0.0000000000000000     
+   0.0000000000000000       -1.0000000000000000     
+WARNING:  initialize_chemistry: mu1_full not provided by eos!
+ innerbox: ampl,ampl2,width= 0.10E+01    0.50    0.50
+ innerbox: ll1,ll2,mm1,mm2,nn1,nn2=          23          48          23          48           4           4
+ innerbox: ampl,ampl2,width= 0.00E+00    0.25    0.50
+ innerbox: ll1,ll2,mm1,mm2,nn1,nn2=          23          48          23          48           4           4
+ initchem: nothing 
+ Maximum used memory per cpu [MBytes] =    15.492
+ Maximum used memory [MBytes] =       15.492
+
+
+ start.x has completed successfully
+

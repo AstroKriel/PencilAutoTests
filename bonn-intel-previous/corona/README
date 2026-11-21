@@ -1,0 +1,24 @@
+Directory:
+    ${PENCIL_HOME}/samples/corona
+SVN Id:
+    $Id$
+Maintainer:
+    Philippe Bourdin <pc/bourdin[dot]ch>
+    Matthias Rheinhardt <mreinhardt/nordita[dot]org>
+    Jörn Warnecke <joern[dot]warnecke/gmail[dot]com>
+    Sven Bingert <sven[dot]bingert/gwdg[dot]de>
+    Vartika Pandey <vartika[dot]pandey/uni-graz[dot]at>
+Added:
+    12-Oct-2006
+Status:
+    succeeds # One of [succeeds|failing since <date>|obsolete| ...]
+Recommended resolution:
+    128x128x128 (nu=eta=10 Mm km/s)
+Comments:
+    The initial magnetic field distribution is derived from a magnetogram.
+    On the lower boundary there is time-dependent forcing.
+    Heat conduction is here uniform (iheatcond='K-const').
+    This example uses SI units, a non-uniform mesh in the z direction,
+References:
+    Gudiksen, B. V., and Nordlund, Å.: 2005, ``An Ab Initio Approach
+    to the Solar Coronal Heating Problem,'' Astrophys. J. 618, 1020-1030

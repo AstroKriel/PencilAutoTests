@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+        <meta name="language" content="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+        <title>bonn-intel - Pencil Code auto-test</title>
+        <style>
+            #flex {
+                display: flex;
+                flex-direction: column;
+            }
+            #div_summary {
+                order: 1;
+            }
+
+            #div_details {
+                order: 2;
+            }
+
+            #div_footer {
+                order: 3;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+<p>Sat Nov 21 02:30:04 2026</p>
+<pre>bin/pencil-test --use-pc_auto-test --auto-test-options='--level=0-1,--config-files=Intel_MPI-mpiifx,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html --log-dir=/export/data1/pencil/test-logs/bonn-intel --previous-dir=/export/data1/pencil/test-logs/bonn-intel-previous --pencil-home=/export/data1/pencil/bonn-intel</pre>
+<div id="flex">
+<div id="div_details">
+<h1>Details</h1><h2>Aibn238:</h2>
+
+<pre>
+
+</pre>
+<a id="no-modules"></a>
+<pre>bonn-intel/samples/no-modules: (1/10)
+    Compiling..            [double]           not ok:   01:52   [<a href="no-modules/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 02:35:45 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 02:34:57 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="no-modules/README">README</a>]
+
+</pre>
+<a id="most-modules"></a>
+<pre>bonn-intel/samples/most-modules: (2/10)
+    Compiling..                               not ok:   04:13   [<a href="most-modules/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 02:48:20 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 02:46:23 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="most-modules/README">README</a>]
+
+</pre>
+<a id="backwards-compatible"></a>
+<pre>bonn-intel/samples/backwards-compatible: (3/10)
+    Compiling..                               not ok:   04:25   [<a href="backwards-compatible/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:01:39 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 02:59:36 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="backwards-compatible/README">README</a>]
+
+</pre>
+<a id="1d-tests/implicit_diffusion"></a>
+<pre>bonn-intel/samples/1d-tests/implicit_diffusion: (4/10)
+    Compiling..                               not ok:   02:03   [<a href="1d-tests/implicit_diffusion/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:07:48 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 03:06:53 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="1d-tests/implicit_diffusion/README">README</a>]
+
+</pre>
+<a id="2d-tests/chemistry_GrayScott"></a>
+<pre>bonn-intel/samples/2d-tests/chemistry_GrayScott: (5/10)
+    Compiling..                               not ok:   01:53   [<a href="2d-tests/chemistry_GrayScott/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:13:29 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 03:12:37 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="2d-tests/chemistry_GrayScott/README">README</a>]
+
+</pre>
+<a id="2d-tests/shearwave-dust-par"></a>
+<pre>bonn-intel/samples/2d-tests/shearwave-dust-par: (6/10)
+    Compiling..                               not ok:   04:45   [<a href="2d-tests/shearwave-dust-par/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:27:27 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 03:25:20 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="2d-tests/shearwave-dust-par/README">README</a>]
+
+</pre>
+<a id="dust-vortex"></a>
+<pre>bonn-intel/samples/dust-vortex: (7/10)
+    Compiling..                               not ok:   02:33   [<a href="dust-vortex/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:35:11 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 03:34:00 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="dust-vortex/README">README</a>]
+
+</pre>
+<a id="damped_alfven_waves"></a>
+<pre>bonn-intel/samples/damped_alfven_waves: (8/10)
+    Compiling..                               not ok:   05:56   [<a href="damped_alfven_waves/build.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46374
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/8529bfd245328e3befe80257647d50a03d8e810d">8529bfd245328e3befe80257647d50a03d8e810d</a>
+Wed Nov 18 02:47:55 2026
+===> Please also see the  [<a href="damped_alfven_waves/README">README</a>]
+
+</pre>
+<a id="corona"></a>
+<pre>bonn-intel/samples/corona: (9/10)
+    Compiling..                               not ok:   01:13   [<a href="corona/build.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46374
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/8529bfd245328e3befe80257647d50a03d8e810d">8529bfd245328e3befe80257647d50a03d8e810d</a>
+Wed Nov 18 02:49:17 2026
+===> Please also see the  [<a href="corona/README">README</a>]
+
+</pre>
+<a id="helical-MHDturb"></a>
+<pre>bonn-intel/samples/helical-MHDturb: (10/10)
+    Compiling..                               not ok:   03:59   [<a href="helical-MHDturb/build.log">log</a>]
+
+===> Test still succeeded with revision:
+SVN: 46402
+GIT: 05f138b1ffd9d7d7ca30b06010bb4adf2597ffbc
+Fri Nov 20 03:52:44 2026
+===> Test failed at latest with revision:
+SVN: 46403
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/9fa9b553467b675fd3a6d842afc191f2b0f2bba1">9fa9b553467b675fd3a6d842afc191f2b0f2bba1</a>
+Fri Nov 20 03:50:53 2026
+===> This is the offending commit from: mrheinhardt
+===> Please also see the  [<a href="helical-MHDturb/README">README</a>]
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_details" -->
+<div id="div_summary">
+<h1>Summary</h1>
+<pre>
+### auto-test failed ###
+Failed 10 test(s) out of 10:
+</pre>
+<ul>
+<li><a href="#1d-tests/implicit_diffusion"><code>1d-tests/implicit_diffusion</code></a> <code>(compilation)</code>
+<li><a href="#2d-tests/chemistry_GrayScott"><code>2d-tests/chemistry_GrayScott</code></a> <code>(compilation)</code>
+<li><a href="#2d-tests/shearwave-dust-par"><code>2d-tests/shearwave-dust-par</code></a> <code>(compilation)</code>
+<li><a href="#backwards-compatible"><code>backwards-compatible</code></a> <code>(compilation)</code>
+<li><a href="#corona"><code>corona</code></a> <code>(compilation)</code>
+<li><a href="#damped_alfven_waves"><code>damped_alfven_waves</code></a> <code>(compilation)</code>
+<li><a href="#dust-vortex"><code>dust-vortex</code></a> <code>(compilation)</code>
+<li><a href="#helical-MHDturb"><code>helical-MHDturb</code></a> <code>(compilation)</code>
+<li><a href="#most-modules"><code>most-modules</code></a> <code>(compilation)</code>
+<li><a href="#no-modules"><code>no-modules</code></a> <code>(compilation)</code>
+</ul>
+<pre>
+CPU time (including compilation):   39:44u 04:47s
+Total wall-clock time:              32:59 = 00:00 + 00:00
+
+----------------------------------------------------------------------
+The following configuration has been used:
+$config = {
+            'makefile' => {
+                            'FSTD_2008' => '-std08',
+                            'FSTD_2018' => '-std08',
+                            'FFLAGS_DOUBLE' => '-r8',
+                            'LD_FFTW3' => '',
+                            'FFLAGS' => '-implicitnone',
+                            'OMPFFLAGS' => '-qopenmp',
+                            'LD_FFTW2' => '',
+                            'CFLAGS_DOUBLE' => '-DDOUBLE_PRECISION',
+                            'F77' => '$(FC)',
+                            'MAKE_VAR1' => '-j',
+                            'FSTD_95' => '-std95',
+                            'LDFLAGS' => '-Bdynamic',
+                            'CFLAGS' => '-DFUNDERSC=1',
+                            'PPFLAGS' => '-fpp',
+                            'CC' => 'mpiicx',
+                            'LD_MPI' => '',
+                            'FFLAGS_FFTW2' => '',
+                            'FFLAGS_FFTW3' => '',
+                            'FC' => 'mpiifx',
+                            'CFLAGS_FFTW2' => '',
+                            'CFLAGS_FFTW3' => '',
+                            'FSTD_2003' => '-std03'
+                          },
+            'environment' => {
+                               'MODULE_SUFFIX' => '_',
+                               'MODULE_INFIX' => '_mp_',
+                               'MODULE_PREFIX' => ''
+                             },
+            'runtime' => {
+                           'mpiexec_opts2' => '',
+                           'mpiexec' => 'mpiexec',
+                           'mpiexec_opts' => ''
+                         }
+          };
+Perl version v5.40.1
+SVN: 46429
+GIT: 5c9dfa9632c09f531782060572774a6a0f613c06
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_summary" -->
+<div id="div_footer">
+Sat Nov 21 03:03:04 2026
+</div> <!-- id="div_footer" -->
+</div> <!-- id="flex" -->
+</body>
+</html>

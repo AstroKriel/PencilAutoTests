@@ -1,0 +1,230 @@
+Running make '-j' 'FFLAGS_DOUBLE=-r8' 'CFLAGS_DOUBLE=-DDOUBLE_PRECISION' 'LD_MPI=' 'CFLAGS_FFTW3=' 'FFLAGS_FFTW3=' 'LD_FFTW3=' 'CFLAGS_FFTW2=' 'FFLAGS_FFTW2=' 'LD_FFTW2=' 'FC=mpiifx' 'F77=$(FC)' 'FFLAGS=-implicitnone' 'OMPFFLAGS=-qopenmp' 'PPFLAGS=-fpp' 'LDFLAGS=-Bdynamic' 'FSTD_95=-std95' 'FSTD_2003=-std03' 'FSTD_2008=-std08' 'FSTD_2018=-std08' 'CC=mpiicx' 'CFLAGS=-DFUNDERSC=1' 'default_to_be'
+MAKING src/Makefile.inc
+precision-check: No such file src/.current-precision -- creating new one at ./src/scripts/precision-check line 36.
+=====  make FROM_PARENT=src/ -f Makefile.src code =====
+make[1]: Entering directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+HDF5_PATH not set
+Compiler: mpiifx
+scripts/mkcparam --dynamic-aux=64 --num-special=1 noascalar.f90 noborder_profiles.f90 nochemistry.f90 nochiral.f90 nocoala.f90 nocosmicray.f90 nocosmicrayflux.f90 density.f90 deriv.f90 nodetonate.f90 nodriver.f90 nodustdensity.f90 nodustvelocity.f90 temperature_idealgas.f90 eos_idealgas.f90 nofixed_point.f90 noforcing.f90 gravity_simple.f90 nogpu.f90 grid.f90 noheatflux.f90 hydro.f90 nohyperresi_strict.f90 nohypervisc_strict.f90 noimplicit_diffusion.f90 noimplicit_physics.f90 noinitial_condition.f90 nointerstellar.f90 nolorenz_gauge.f90 magnetic.f90 magnetic/nomeanfield.f90 magnetic/nomeanfield_demfdt.f90 mpicomm.f90 noneutraldensity.f90 noneutralvelocity.f90 noNSCBC.f90 noopacity.f90 noparticles.f90 noparticles_adaptation.f90 noparticles_coagulation.f90 noparticles_breakup.f90 noparticles_condensation.f90  noparticles_collisions.f90 noparticles_map.f90 noparticles_density.f90  noparticles_mass.f90 noparticles_number.f90 noparticles_radius.f90 noparticles_potential.f90 noparticles_grad.f90 noparticles_selfgravity.f90 noparticles_sink.f90 noparticles_drag.f90 noparticles_spin.f90 noparticles_stalker.f90 noparticles_lyapunov.f90 noparticles_caustics.f90 noparticles_tetrad.f90 noparticles_stirring.f90 noparticles_diagnos_dv.f90 noparticles_diagnos_state.f90 noparticles_persistence.f90 noparticles_temperature.f90 noparticles_adsorbed.f90 noparticles_surfspec.f90 noparticles_chemistry.f90 nopointmasses.f90 nopoisson.f90 nopolymer.f90 nopower_spectrum.f90 nopython.f90 nopscalar.f90 noradiation.f90 noselfgravity.f90 noSGS_hydro.f90 noshear.f90 shock.f90 nosignal_handling.f90 nosolid_cells.f90 nostreamlines.f90  notestfield.f90 notestflow.f90 notestscalar.f90 notimeavg.f90 timestep.f90 notraining.f90 viscosity.f90 cparam.local special/solar_corona.f90
+HDF5 compiler and linker in /usr/bin/h5pfc.
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+HDF5_PATH not set
+Compiler: mpiifx
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+make -f Makefile.src  start.o run.o start.x run.x
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+HDF5_PATH not set
+Compiler: mpiifx
+mpiifx -implicitnone -r8   -std08 -o cparam.o -c cparam.f90
+mpiicx -DFUNDERSC=1 -DDOUBLE_PRECISION    -o syscalls_ansi.o -c syscalls_ansi.c
+mpiicx -DFUNDERSC=1 -DDOUBLE_PRECISION    -o morton_helper.o -c morton_helper.c
+scripts/mkdummyinc -d noeos.f90 -s eos_idealgas.f90 -o eos_dummies.inc
+scripts/mkdummyinc -d file_io_common.f90 -s file_io_f95.f90 -o file_io_common.inc
+mpiifx -implicitnone -r8     -o fftpack.o -c fftpack.f90
+cp special/solar_corona.f90 special/solar_corona._autogen_.f90
+mpiicx -DFUNDERSC=1 -DDOUBLE_PRECISION    -o shared_mem.o -c shared_mem.c
+mpiicx -DFUNDERSC=1 -DDOUBLE_PRECISION    -o nogsl.o -c nogsl.c
+scripts/mkdummyinc -d noentropy.f90 -s temperature_idealgas.f90 -o energy_dummies.inc
+mpiicx -DFUNDERSC=1 -DDOUBLE_PRECISION    -o nogpu_astaroth_ansi.o -c nogpu_astaroth_ansi.c
+scripts/mkdummyinc -d nospecial.f90 -s special/solar_corona._autogen_.f90 -o special_dummies.inc
+morton_helper.c:1:9: warning: #pragma once in main file [-Wpragma-once-outside-header]
+    1 | #pragma once
+      |         ^
+1 warning generated.
+mpiifx -implicitnone -r8   -std08 -o cdata.o -c cdata.f90
+mpiifx -implicitnone -r8 -c geometrical_types.f90 -o geometrical_types.o
+mpiifx -implicitnone -r8   -std08 -o quiet.o -c quiet.f90
+mpiifx -implicitnone -r8   -std08  -o syscalls.o -c syscalls.f90
+mpiifx -implicitnone -r8   -std08 -o particles_cdata.o -c particles_cdata.f90
+mpiifx -implicitnone -r8   -std08 -o noyinyang.o -c noyinyang.f90
+mpiifx -implicitnone -r8   -std08 -o nogpu.o -c nogpu.f90
+mpiifx -implicitnone -r8   -std08 -o nodebug.o -c nodebug.f90
+mpiifx -implicitnone -r8   -std08 -o nodriver.o -c nodriver.f90
+mpiifx -implicitnone -r8   -std08 -o nofixed_point.o -c nofixed_point.f90
+mpiifx -implicitnone -r8   -std08 -o noghostfold.o -c noghostfold.f90
+mpiifx -implicitnone -r8   -std08 -o noimplicit_diffusion.o -c noimplicit_diffusion.f90
+mpiifx -implicitnone -r8   -std08 -o nolsode_for_chemistry.o -c nolsode_for_chemistry.f90
+mpiifx -implicitnone -r8   -std08 -o noNSCBC.o -c noNSCBC.f90
+mpiifx -implicitnone -r8   -std08 -o nochiral.o -c nochiral.f90
+mpiifx -implicitnone -r8   -std08 -o nocosmicrayflux.o -c nocosmicrayflux.f90
+mpiifx -implicitnone -r8   -std08 -o nokt_transport.o -c nokt_transport.f90
+mpiifx -implicitnone -r8   -std08 -o noweno_transport.o -c noweno_transport.f90
+mpiifx -implicitnone -r8   -std08 -o nodetonate.o -c nodetonate.f90
+mpiifx -implicitnone -r8   -std08 -o nodustdensity.o -c nodustdensity.f90
+mpiifx -implicitnone -r8   -std08 -o nointerstellar.o -c nointerstellar.f90
+mpiifx -implicitnone -r8   -std08 -o noforcing.o -c noforcing.f90
+mpiifx -implicitnone -r8   -std08 -o noheatflux.o -c noheatflux.f90
+mpiifx -implicitnone -r8   -std08 -o noSGS_hydro.o -c noSGS_hydro.f90
+mpiifx -implicitnone -r8   -std08 -o notraining.o -c notraining.f90
+mpiifx -implicitnone -r8   -std08 -o nohyperresi_strict.o -c nohyperresi_strict.f90
+mpiifx -implicitnone -r8   -std08 -o nohypervisc_strict.o -c nohypervisc_strict.f90
+mpiifx -implicitnone -r8   -std08 -o noimplicit_physics.o -c noimplicit_physics.f90
+mpiifx -implicitnone -r8   -std08 -o nolorenz_gauge.o -c nolorenz_gauge.f90
+mpiifx -implicitnone -r8   -std08 -o noneutraldensity.o -c noneutraldensity.f90
+mpiifx -implicitnone -r8   -std08 -o noopacity.o -c noopacity.f90
+mpiifx -implicitnone -r8   -std08 -o noparticles_main.o -c noparticles_main.f90
+mpiifx -implicitnone -r8   -std08 -o nopolymer.o -c nopolymer.f90
+mpiifx -implicitnone -r8   -std08 -o noradiation.o -c noradiation.f90
+mpiifx -implicitnone -r8   -std08 -o noascalar.o -c noascalar.f90
+mpiifx -implicitnone -r8   -std08 -o notestfield.o -c notestfield.f90
+mpiifx -implicitnone -r8   -std08 -o notestflow.o -c notestflow.f90
+mpiifx -implicitnone -r8   -std08 -o notestscalar.o -c notestscalar.f90
+mpiifx -implicitnone -r8   -std08 -o nopython.o -c nopython.f90
+mpiifx -implicitnone -r8   -std08 -o notestperturb.o -c notestperturb.f90
+mpiifx -implicitnone -r8   -std08 -o nosignal_handling.o -c nosignal_handling.f90
+mpiifx -implicitnone -r8   -std08 -o nostreamlines.o -c nostreamlines.f90
+mpiifx -implicitnone -r8   -std08 -o nopower_spectrum.o -c nopower_spectrum.f90
+mpiifx -implicitnone -r8   -std08 -o nostruct_func.o -c nostruct_func.f90
+mpiifx -implicitnone -r8   -std08 -o nosolid_cells_mpicomm.o -c nosolid_cells_mpicomm.f90
+mpiifx -implicitnone -r8   -std08 -o nocoala.o -c nocoala.f90
+mpiifx -implicitnone -r8   -std08 -o magnetic/nomeanfield_demfdt.o -c magnetic/nomeanfield_demfdt.f90
+ar: creating noparticles_main.a
+mpiifx -implicitnone -r8   -std08 -o general.o -c general.f90
+mpiifx -implicitnone -r8   -std08 -o magnetic/nomeanfield.o -c magnetic/nomeanfield.f90
+general_f2003.h(133): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (ind3==1.and.iproc==120) print*, 'layer,niter,maxval,time,assoc=', layer,niter,maxval(abs(ptr%data4(:,:,ind3,layer-(niter-1)*dim4))),ptr%time,associated(ptr%next)
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5128): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (any(abs(sum(dest(:,itd,ipd,:)**2,2)-sum(f(:,i,j,:)**2,2)) > 2.e-14 )) print*, 'i,j=', i,j,maxval(abs(sum(dest(:,itd,ipd,:)**2,2)-sum(f(:,i,j,:)**2,2)))
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5304): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (notanumber(source(:,my-len_cut+1:my,1:nghost,j))) print*, 'source(:,my-len_cut+1:my,1:nghost,j): iproc,j=', iproc, iproc_world, j
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5356): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (notanumber(source(:,1:nghost,mz-len_cut+1:mz,j))) print*, 'source(:,1:nghost,mz-len_cut+1:mz,j): iproc,j=', iproc, iproc_world, j
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone -r8     -o mpicomm.o -c mpicomm.f90
+mpiifx -implicitnone -r8   -std08 -o nosolid_cells.o -c nosolid_cells.f90
+mpiifx -implicitnone -r8   -std08 -o messages.o -c messages.f90
+mpiifx -implicitnone -r8   -std08 -o noyinyang_mpi.o -c noyinyang_mpi.f90
+mpiifx -implicitnone -r8   -std08 -o ghost_check.o -c ghost_check.f90
+mpiifx -implicitnone -r8   -std08 -o noborder_profiles.o -c noborder_profiles.f90
+mpiifx -implicitnone -r8   -std08 -o deriv.o -c deriv.f90
+mpiifx -implicitnone -r8   -std08 -o file_io_f95.o -c file_io_f95.f90
+mpiifx -implicitnone -r8   -std08 -o slices_methods.o -c slices_methods.f90
+mpiifx -implicitnone -r8   -std08 -o shared_variables.o -c shared_variables.f90
+mpiifx -implicitnone -r8   -std08 -o noshear.o -c noshear.f90
+mpiifx -implicitnone -r8   -std08 -o debug_io_dist.o -c debug_io_dist.f90
+mpiifx -implicitnone -r8   -std08 -o farray_alloc.o -c farray_alloc.f90
+mpiifx -implicitnone -r8 -std08  -c noinitial_condition.f90 -o noinitial_condition.o
+mpiifx -implicitnone -r8   -std08 -o nochemistry.o -c nochemistry.f90
+mpiifx -implicitnone -r8   -std08 -o nocosmicray.o -c nocosmicray.f90
+mpiifx -implicitnone -r8   -std08 -o nopoisson.o -c nopoisson.f90
+mpiifx -implicitnone -r8   -std08 -o noneutralvelocity.o -c noneutralvelocity.f90
+slices_methods.f90(12): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!   2026-Oct-09/Kishore: DEPRECATED interface, as it does not distinguish between whether it should be called before or after the timestep
+------------------------------------------------------------------------------------------------------------------------------------^
+slices_methods.f90(18): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!   2026-Oct-09/Kishore: DEPRECATED interface, as it does not distinguish between whether it should be called before or after the timestep
+------------------------------------------------------------------------------------------------------------------------------------^
+deriv.f90(2521): warning #5199: Too many continuation lines
+             ( -14580.0 * f( l1+2:l2+2 , m - 1 , n - 3 , k ))+&
+------------^
+mpiifx -implicitnone -r8   -std08 -o nodustvelocity.o -c nodustvelocity.f90
+mpiifx -implicitnone -r8   -std08 -o noselfgravity.o -c noselfgravity.f90
+h5pfc -implicitnone -r8  -std08 -c hdf5_io_parallel.f90 -o hdf5_io_parallel.o
+hdf5_io_parallel.f90(11): error #7013: This module file was not generated by any release of this compiler.   [HDF5]
+  use HDF5
+------^
+hdf5_io_parallel.f90(23): error #6683: A kind type parameter must be a compile-time constant.   [HID_T]
+  integer(HID_T) :: h5_file, h5_dset, h5_plist, h5_fspace, h5_mspace, h5_dspace, h5_ntype, h5_dptype, h5_group
+----------^
+hdf5_io_parallel.f90(346): error #6683: A kind type parameter must be a compile-time constant.   [HSIZE_T]
+      integer(HSIZE_T), dimension(1) :: size
+--------------^
+hdf5_io_parallel.f90(473): error #6683: A kind type parameter must be a compile-time constant.   [HSIZE_T]
+      integer(HSIZE_T), dimension(1) :: size
+--------------^
+hdf5_io_parallel.f90(870): error #6683: A kind type parameter must be a compile-time constant.   [HID_T]
+      integer(HID_T) :: h5_strtype
+--------------^
+hdf5_io_parallel.f90(871): error #6683: A kind type parameter must be a compile-time constant.   [HSIZE_T]
+      integer(HSIZE_T), dimension(2) :: size
+--------------^
+hdf5_io_parallel.f90(873): error #6683: A kind type parameter must be a compile-time constant.   [SIZE_T]
+      integer(SIZE_T), dimension(1) :: str_len
+--------------^
+hdf5_io_parallel.f90(2872): error #6683: A kind type parameter must be a compile-time constant.   [HID_T]
+      integer(HID_T) :: h5_plist
+--------------^
+hdf5_io_parallel.f90(9): error #6580: Name in only-list does not exist or is not accessible.   [LOPTEST]
+  use General, only: loptest, ioptest, itoa, numeric_precision
+---------------------^
+hdf5_io_parallel.f90(9): error #6580: Name in only-list does not exist or is not accessible.   [IOPTEST]
+  use General, only: loptest, ioptest, itoa, numeric_precision
+------------------------------^
+hdf5_io_parallel.f90(9): error #6580: Name in only-list does not exist or is not accessible.   [ITOA]
+  use General, only: loptest, ioptest, itoa, numeric_precision
+---------------------------------------^
+hdf5_io_parallel.f90(9): error #6580: Name in only-list does not exist or is not accessible.   [NUMERIC_PRECISION]
+  use General, only: loptest, ioptest, itoa, numeric_precision
+---------------------------------------------^
+hdf5_io_parallel.f90(12): error #6580: Name in only-list does not exist or is not accessible.   [FATAL_ERROR]
+  use Messages, only: fatal_error, warning, not_implemented
+----------------------^
+hdf5_io_parallel.f90(12): error #6580: Name in only-list does not exist or is not accessible.   [WARNING]
+  use Messages, only: fatal_error, warning, not_implemented
+-----------------------------------^
+hdf5_io_parallel.f90(12): error #6580: Name in only-list does not exist or is not accessible.   [NOT_IMPLEMENTED]
+  use Messages, only: fatal_error, warning, not_implemented
+--------------------------------------------^
+hdf5_io_parallel.f90(13): error #6580: Name in only-list does not exist or is not accessible.   [MPISCAN_INT]
+  use Mpicomm, only: mpiscan_int, mpibcast_int
+---------------------^
+hdf5_io_parallel.f90(13): error #6580: Name in only-list does not exist or is not accessible.   [MPIBCAST_INT]
+  use Mpicomm, only: mpiscan_int, mpibcast_int
+----------------------------------^
+hdf5_io_parallel.f90(14): error #6580: Name in only-list does not exist or is not accessible.   [SLEEP]
+  use Syscalls, only: sleep
+----------------------^
+hdf5_io_parallel.f90(107): error #6404: This name does not have a type, and must have an explicit type.   [IOPTEST]
+      mvar_out = ioptest(mvar_,mvar)
+-----------------^
+hdf5_io_parallel.f90(128): error #6404: This name does not have a type, and must have an explicit type.   [H5T_NATIVE_DOUBLE]
+      h5_dptype = H5T_NATIVE_DOUBLE
+------------------^
+hdf5_io_parallel.f90(130): error #6404: This name does not have a type, and must have an explicit type.   [H5T_NATIVE_REAL]
+        h5_ntype = H5T_NATIVE_REAL
+-------------------^
+hdf5_io_parallel.f90(163): error #6404: This name does not have a type, and must have an explicit type.   [LOPTEST]
+        if (loptest(lerrcont)) then
+------------^
+hdf5_io_parallel.f90(163): warning #6188: Fortran 2008 requires a LOGICAL data type in this context.   [LOPTEST]
+        if (loptest(lerrcont)) then
+------------^
+hdf5_io_parallel.f90(163): error #6341: A logical data type is required in this context.   [LOPTEST]
+        if (loptest(lerrcont)) then
+------------^
+hdf5_io_parallel.f90(177): warning #6188: Fortran 2008 requires a LOGICAL data type in this context.   [LOPTEST]
+        if (loptest(lerrcont)) lerrcont = .false.
+------------^
+hdf5_io_parallel.f90(177): error #6341: A logical data type is required in this context.   [LOPTEST]
+        if (loptest(lerrcont)) lerrcont = .false.
+------------^
+hdf5_io_parallel.f90(201): error #6406: Conflicting attributes or multiple declaration of name.   [LOPTEST]
+      lread_only = loptest (read_only)
+-------------------^
+hdf5_io_parallel.f90(202): error #6404: This name does not have a type, and must have an explicit type.   [H5F_ACC_RDWR_F]
+      h5_read_mode = H5F_ACC_RDWR_F
+---------------------^
+hdf5_io_parallel.f90(203): error #6404: This name does not have a type, and must have an explicit type.   [H5F_ACC_RDONLY_F]
+      if (lread_only) h5_read_mode = H5F_ACC_RDONLY_F
+-------------------------------------^
+hdf5_io_parallel.f90(205): error #6406: Conflicting attributes or multiple declaration of name.   [LOPTEST]
+      ltrunc = loptest (truncate, .true.)
+---------------^
+hdf5_io_parallel.f90(208): error #6406: Conflicting attributes or multiple declaration of name.   [LOPTEST]
+      lcollective = loptest (global, .true.)
+--------------------^
+hdf5_io_parallel.f90(209): error #6406: Conflicting attributes or multiple declaration of name.   [LOPTEST]
+      lwrite = loptest (write, lroot)
+---------------^
+hdf5_io_parallel.f90(2946): catastrophic error: Too many errors, exiting
+compilation aborted for hdf5_io_parallel.f90 (code 1)
+make[2]: *** [Makefile.src:3534: hdf5_io_parallel.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+make[1]: *** [Makefile.src:3741: code] Error 2
+make[1]: Leaving directory '/export/data1/pencil/bonn-intel/samples/corona/src'
+make: *** [Makefile:25: default_to_be] Error 2
+'make -j FFLAGS_DOUBLE=-r8 CFLAGS_DOUBLE=-DDOUBLE_PRECISION LD_MPI= CFLAGS_FFTW3= FFLAGS_FFTW3= LD_FFTW3= CFLAGS_FFTW2= FFLAGS_FFTW2= LD_FFTW2= FC=mpiifx F77=$(FC) FFLAGS=-implicitnone OMPFFLAGS=-qopenmp PPFLAGS=-fpp LDFLAGS=-Bdynamic FSTD_95=-std95 FSTD_2003=-std03 FSTD_2008=-std08 FSTD_2018=-std08 CC=mpiicx CFLAGS=-DFUNDERSC=1 default_to_be' failed: <Inappropriate ioctl for device> ['\nice -n 15 pc_build --config-files=Intel_MPI-mpiifx ' reported: ]

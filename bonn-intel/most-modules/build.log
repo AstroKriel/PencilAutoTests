@@ -1,0 +1,345 @@
+Running make '-j' 'FFLAGS_DOUBLE=-r8' 'CFLAGS_DOUBLE=-DDOUBLE_PRECISION' 'LD_MPI=' 'CFLAGS_FFTW3=' 'FFLAGS_FFTW3=' 'LD_FFTW3=' 'CFLAGS_FFTW2=' 'FFLAGS_FFTW2=' 'LD_FFTW2=' 'FC=mpiifx' 'F77=$(FC)' 'FFLAGS=-implicitnone' 'OMPFFLAGS=-qopenmp' 'PPFLAGS=-fpp' 'LDFLAGS=-Bdynamic' 'FSTD_95=-std95' 'FSTD_2003=-std03' 'FSTD_2008=-std08' 'FSTD_2018=-std08' 'CC=mpiicx' 'CFLAGS=-DFUNDERSC=1' 'default_to_be'
+MAKING src/Makefile.inc
+precision-check: No such file src/.current-precision -- creating new one at ./src/scripts/precision-check line 36.
+=====  make FROM_PARENT=src/ -f Makefile.src code =====
+make[1]: Entering directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+Compiler: mpiifx
+Makefile.src:3818: warning: overriding recipe for target 'nompicomm.o'
+Makefile.src:3531: warning: ignoring old recipe for target 'nompicomm.o'
+scripts/mkcparam --dynamic-aux=64 --num-special=1 noascalar.f90 border_profiles.f90 nochemistry.f90 chiral.f90 nocoala.f90 cosmicray.f90 cosmicrayflux.f90 density.f90 deriv.f90 nodetonate.f90 driver.f90 dustdensity.f90 dustvelocity.f90 entropy.f90 eos_ionization.f90 nofixed_point.f90 forcing.f90 gravity_simple.f90 nogpu.f90 grid.f90 noheatflux.f90 hydro.f90 nohyperresi_strict.f90 nohypervisc_strict.f90 noimplicit_diffusion.f90 noimplicit_physics.f90 noinitial_condition.f90 interstellar.f90 nolorenz_gauge.f90 magnetic.f90 magnetic/meanfield.f90 magnetic/nomeanfield_demfdt.f90 nompicomm.f90 noneutraldensity.f90 noneutralvelocity.f90 noNSCBC.f90 noopacity.f90 particles_dust.f90 noparticles_adaptation.f90 noparticles_coagulation.f90 noparticles_breakup.f90 noparticles_condensation.f90  noparticles_collisions.f90 particles_map.f90 noparticles_density.f90  noparticles_mass.f90 particles_number.f90 particles_radius.f90 noparticles_potential.f90 noparticles_grad.f90 particles_selfgravity.f90 noparticles_sink.f90 noparticles_drag.f90 noparticles_spin.f90 noparticles_stalker.f90 noparticles_lyapunov.f90 noparticles_caustics.f90 noparticles_tetrad.f90 noparticles_stirring.f90 noparticles_diagnos_dv.f90 noparticles_diagnos_state.f90 noparticles_persistence.f90 noparticles_temperature.f90 noparticles_adsorbed.f90 noparticles_surfspec.f90 noparticles_chemistry.f90 pointmasses.f90 poisson.f90 nopolymer.f90 power_spectrum.f90 nopython.f90 pscalar.f90 radiation_ray.f90 selfgravity.f90 noSGS_hydro.f90 shear.f90 shock.f90 nosignal_handling.f90 nosolid_cells.f90 nostreamlines.f90 test_methods/testfield_general.f90 inactive/testfield.f90 notestflow.f90 notestscalar.f90 timeavg.f90 timestep.f90 notraining.f90 viscosity.f90 cparam.local nospecial.f90
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+Compiler: mpiifx
+Makefile:3823: warning: overriding recipe for target 'nompicomm.o'
+Makefile:3536: warning: ignoring old recipe for target 'nompicomm.o'
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+make -f Makefile.src  start.o run.o start.x run.x
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+Compiler: mpiifx
+Makefile.src:3818: warning: overriding recipe for target 'nompicomm.o'
+Makefile.src:3531: warning: ignoring old recipe for target 'nompicomm.o'
+mpiifx -implicitnone    -std08 -o cparam.o -c cparam.f90
+mpiicx -DFUNDERSC=1     -o syscalls_ansi.o -c syscalls_ansi.c
+mpiicx -DFUNDERSC=1     -o morton_helper.o -c morton_helper.c
+scripts/mkdummyinc -d file_io_common.f90 -s file_io_f95.f90 -o file_io_common.inc
+scripts/mkdummyinc -d noeos.f90 -s eos_ionization.f90 -o eos_dummies.inc
+mpiifx -implicitnone      -o fftpack.o -c fftpack.f90
+mpiicx -DFUNDERSC=1     -o nogsl.o -c nogsl.c
+mpiicx -DFUNDERSC=1     -o shared_mem.o -c shared_mem.c
+scripts/mkdummyinc -d noentropy.f90 -s entropy.f90 -o energy_dummies.inc
+mpiicx -DFUNDERSC=1     -o nogpu_astaroth_ansi.o -c nogpu_astaroth_ansi.c
+morton_helper.c:1:9: warning: #pragma once in main file [-Wpragma-once-outside-header]
+    1 | #pragma once
+      |         ^
+mpiifx -implicitnone    -std08 -o cdata.o -c cdata.f90
+mpiifx -implicitnone  -c geometrical_types.f90 -o geometrical_types.o
+mpiifx -implicitnone    -std08 -o quiet.o -c quiet.f90
+1 warning generated.
+mpiifx -implicitnone    -std08  -o syscalls.o -c syscalls.f90
+mpiifx -implicitnone    -std08 -o particles_cdata.o -c particles_cdata.f90
+mpiifx -implicitnone    -std08 -o noyinyang.o -c noyinyang.f90
+mpiifx -implicitnone    -std08 -o nogpu.o -c nogpu.f90
+mpiifx -implicitnone    -std08 -o magnetic/nomeanfield_demfdt.o -c magnetic/nomeanfield_demfdt.f90
+mpiifx -implicitnone    -std08 -o nodebug.o -c nodebug.f90
+mpiifx -implicitnone    -std08 -o noweno_transport.o -c noweno_transport.f90
+mpiifx -implicitnone    -std08 -o noimplicit_diffusion.o -c noimplicit_diffusion.f90
+mpiifx -implicitnone    -std08 -o noSGS_hydro.o -c noSGS_hydro.f90
+mpiifx -implicitnone    -std08 -o notraining.o -c notraining.f90
+mpiifx -implicitnone    -std08 -o nofixed_point.o -c nofixed_point.f90
+mpiifx -implicitnone    -std08 -o nolsode_for_chemistry.o -c nolsode_for_chemistry.f90
+mpiifx -implicitnone    -std08 -o noNSCBC.o -c noNSCBC.f90
+mpiifx -implicitnone    -std08 -o nodetonate.o -c nodetonate.f90
+mpiifx -implicitnone    -std08 -o nocoala.o -c nocoala.f90
+mpiifx -implicitnone    -std08 -o noheatflux.o -c noheatflux.f90
+mpiifx -implicitnone    -std08 -o nohyperresi_strict.o -c nohyperresi_strict.f90
+mpiifx -implicitnone    -std08 -o nohypervisc_strict.o -c nohypervisc_strict.f90
+mpiifx -implicitnone    -std08 -o noimplicit_physics.o -c noimplicit_physics.f90
+mpiifx -implicitnone    -std08 -o nolorenz_gauge.o -c nolorenz_gauge.f90
+mpiifx -implicitnone    -std08 -o noneutraldensity.o -c noneutraldensity.f90
+mpiifx -implicitnone    -std08 -o noopacity.o -c noopacity.f90
+mpiifx -implicitnone    -std08 -o noparticles_caustics.o -c noparticles_caustics.f90
+mpiifx -implicitnone    -std08 -o noparticles_tetrad.o -c noparticles_tetrad.f90
+mpiifx -implicitnone    -std08 -o noparticles_drag.o -c noparticles_drag.f90
+mpiifx -implicitnone    -std08 -o noparticles_spin.o -c noparticles_spin.f90
+mpiifx -implicitnone    -std08 -o noparticles_temperature.o -c noparticles_temperature.f90
+mpiifx -implicitnone    -std08 -o noparticles_mass.o -c noparticles_mass.f90
+mpiifx -implicitnone    -std08 -o noparticles_adsorbed.o -c noparticles_adsorbed.f90
+mpiifx -implicitnone    -std08 -o noparticles_surfspec.o -c noparticles_surfspec.f90
+mpiifx -implicitnone    -std08 -o noparticles_chemistry.o -c noparticles_chemistry.f90
+mpiifx -implicitnone    -std08 -o noparticles_potential.o -c noparticles_potential.f90
+mpiifx -implicitnone    -std08 -o noascalar.o -c noascalar.f90
+mpiifx -implicitnone    -std08 -o noparticles_grad.o -c noparticles_grad.f90
+mpiifx -implicitnone    -std08 -o noparticles_density.o -c noparticles_density.f90
+mpiifx -implicitnone    -std08 -o noparticles_collisions.o -c noparticles_collisions.f90
+mpiifx -implicitnone    -std08 -o noparticles_breakup.o -c noparticles_breakup.f90
+mpiifx -implicitnone    -std08 -o noparticles_diagnos_dv.o -c noparticles_diagnos_dv.f90
+mpiifx -implicitnone    -std08 -o noparticles_diagnos_state.o -c noparticles_diagnos_state.f90
+mpiifx -implicitnone    -std08 -o noparticles_stirring.o -c noparticles_stirring.f90
+mpiifx -implicitnone    -std08 -o noparticles_persistence.o -c noparticles_persistence.f90
+mpiifx -implicitnone    -std08 -o noparticles_adaptation.o -c noparticles_adaptation.f90
+mpiifx -implicitnone    -std08 -o noparticles_coagulation.o -c noparticles_coagulation.f90
+mpiifx -implicitnone    -std08 -o noparticles_kmeans.o -c noparticles_kmeans.f90
+mpiifx -implicitnone    -std08 -o noparticles_sink.o -c noparticles_sink.f90
+mpiifx -implicitnone    -std08 -o noparticles_stalker.o -c noparticles_stalker.f90
+mpiifx -implicitnone    -std08 -o noparticles_lyapunov.o -c noparticles_lyapunov.f90
+mpiifx -implicitnone    -std08 -o nopolymer.o -c nopolymer.f90
+mpiifx -implicitnone    -std08 -o notestflow.o -c notestflow.f90
+mpiifx -implicitnone    -std08 -o notestscalar.o -c notestscalar.f90
+mpiifx -implicitnone    -std08 -o nopython.o -c nopython.f90
+mpiifx -implicitnone    -std08 -o notestperturb.o -c notestperturb.f90
+mpiifx -implicitnone    -std08 -o nosignal_handling.o -c nosignal_handling.f90
+mpiifx -implicitnone    -std08 -o nostreamlines.o -c nostreamlines.f90
+mpiifx -implicitnone    -std08 -o nosolid_cells_mpicomm.o -c nosolid_cells_mpicomm.f90
+mpiifx -implicitnone    -std08 -o general.o -c general.f90
+general_f2003.h(133): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (ind3==1.and.iproc==120) print*, 'layer,niter,maxval,time,assoc=', layer,niter,maxval(abs(ptr%data4(:,:,ind3,layer-(niter-1)*dim4))),ptr%time,associated(ptr%next)
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5141): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (any(abs(sum(dest(:,itd,ipd,:)**2,2)-sum(f(:,i,j,:)**2,2)) > 2.e-14 )) print*, 'i,j=', i,j,maxval(abs(sum(dest(:,itd,ipd,:)**2,2)-sum(f(:,i,j,:)**2,2)))
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5317): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (notanumber(source(:,my-len_cut+1:my,1:nghost,j))) print*, 'source(:,my-len_cut+1:my,1:nghost,j): iproc,j=', iproc, iproc_world, j
+------------------------------------------------------------------------------------------------------------------------------------^
+general.f90(5369): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!if (notanumber(source(:,1:nghost,mz-len_cut+1:mz,j))) print*, 'source(:,1:nghost,mz-len_cut+1:mz,j): iproc,j=', iproc, iproc_world, j
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone      -o nompicomm.o -c nompicomm.f90
+mpiifx -implicitnone    -std08 -o kt_transport.o -c kt_transport.f90
+mpiifx -implicitnone    -std08 -o nosolid_cells.o -c nosolid_cells.f90
+mpiifx -implicitnone    -std08 -o messages.o -c messages.f90
+mpiifx -implicitnone    -std08 -o noyinyang_mpi.o -c noyinyang_mpi.f90
+mpiifx -implicitnone    -std08 -o ghost_check.o -c ghost_check.f90
+mpiifx -implicitnone    -std08 -o shared_variables.o -c shared_variables.f90
+mpiifx -implicitnone    -std08 -o deriv.o -c deriv.f90
+mpiifx -implicitnone    -std08 -o file_io_f95.o -c file_io_f95.f90
+mpiifx -implicitnone    -std08 -o slices_methods.o -c slices_methods.f90
+mpiifx -implicitnone    -std08 -o debug_io_dist.o -c debug_io_dist.f90
+mpiifx -implicitnone  -std08  -c noinitial_condition.f90 -o noinitial_condition.o
+mpiifx -implicitnone    -std08 -o farray_alloc.o -c farray_alloc.f90
+mpiifx -implicitnone    -std08 -o nochemistry.o -c nochemistry.f90
+mpiifx -implicitnone    -std08 -o noneutralvelocity.o -c noneutralvelocity.f90
+slices_methods.f90(12): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!   2026-Oct-09/Kishore: DEPRECATED interface, as it does not distinguish between whether it should be called before or after the timestep
+------------------------------------------------------------------------------------------------------------------------------------^
+slices_methods.f90(18): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!   2026-Oct-09/Kishore: DEPRECATED interface, as it does not distinguish between whether it should be called before or after the timestep
+------------------------------------------------------------------------------------------------------------------------------------^
+deriv.f90(2521): warning #5199: Too many continuation lines
+             ( -14580.0 * f( l1+2:l2+2 , m - 1 , n - 3 , k ))+&
+------------^
+mpiifx -implicitnone    -std08 -o driver.o -c driver.f90
+mpiifx -implicitnone    -std08 -o nohdf5_io.o -c nohdf5_io.f90
+mpiifx -implicitnone    -std08 -o farray.o -c farray.f90
+mpiifx -implicitnone    -std08 -o global_pushpars.o -c global_pushpars.f90
+mpiifx -implicitnone    -std08 -o sub.o -c sub.f90
+sub.f90(9750): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+1000  format(1p,e19.12,3(1x,e18.12))
+-----------------------------^
+mpiifx -implicitnone    -std08 -o fourier_fftpack.o -c fourier_fftpack.f90
+mpiifx -implicitnone    -std08 -o io_dist.o -c io_dist.f90
+fourier_fftpack.f90(3172): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!     KG: (27-sep-2023) it seems to me that fft_y_parallel_2D does the FFT along the second axis; here, we want FFT along the first axis, and moreover have to handle the case where nx!=ny!=nz. This seems the simplest way to accomplish that.
+------------------------------------------------------------------------------------------------------------------------------------^
+fourier_fftpack.f90(3380): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!     KG: (27-sep-2023) it seems to me that fft_y_parallel_3D does the FFT along the second axis; here, we want FFT along the first axis, and moreover have to handle the case where nx!=ny!=nz. This seems the simplest way to accomplish that.
+------------------------------------------------------------------------------------------------------------------------------------^
+io_common.inc(27): warning #5112: Extension to FORTRAN-90: tab formatting
+		             ' nor backup file '//trim(filename)//'.bck[.1] exists')
+^
+mpiifx -implicitnone    -std08 -o poisson.o -c poisson.f90
+mpiifx -implicitnone    -std08 -o ghostfold_nompicomm.o -c ghostfold_nompicomm.f90
+mpiifx -implicitnone    -std08 -o border_profiles.o -c border_profiles.f90
+mpiifx -implicitnone    -std08 -o diagnostics.o -c diagnostics.f90
+mpiifx -implicitnone    -std08 -o grid.o -c grid.f90
+border_profiles.f90(582): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+    if(allocated(fsave_init_xy)) call copy_addr(fsave_init_xy,p_par(5))     ! (nx) (ny) (iborder_var_max_current__mod__borderprofiles)
+------------------------------------------------------------------------------------------------------------------------------------^
+diagnostics.f90(643): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+            nlength = flength - 2 - mlength                     ! now biggest possible number of pre-comma digits (-2: comma & sign!)
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o density_methods.o -c density_methods.f90
+mpiifx -implicitnone    -std08 -o gravity_simple.o -c gravity_simple.f90
+mpiifx -implicitnone    -std08 -o shear.o -c shear.f90
+mpiifx -implicitnone    -std08 -o nospecial.o -c nospecial.f90
+mpiifx -implicitnone     -o noparticles_mpicomm.o -c noparticles_mpicomm.f90
+mpiifx -implicitnone    -std08 -o timeavg.o -c timeavg.f90
+mpiifx -implicitnone    -std08 -o struct_func.o -c struct_func.f90
+mpiifx -implicitnone    -std08 -o eos_ionization.o -c eos_ionization.f90
+mpiifx -implicitnone    -std08 -o magnetic/meanfield.o -c magnetic/meanfield.f90
+eos_dummies.inc(91): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [CS2]
+    elemental subroutine get_soundspeed(TT,cs2)
+-------------------------------------------^
+mpiifx -implicitnone    -std08 -o boundcond.o -c boundcond.f90
+mpiifx -implicitnone  -std08  -c initcond.f90 -o initcond.o
+mpiifx -implicitnone    -std08 -o interstellar.o -c interstellar.f90
+mpiifx -implicitnone    -std08 -o particles_sub.o -c particles_sub.f90
+boundcond.f90(1547): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+              ! BCZ_DOC: special for perfect conductor with const alpha and etaT when A considered as B; one-sided for 1st and 2nd derivative in two first inner points
+------------------------------------------------------------------------------------------------------------------------------------^
+boundcond.f90(2160): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+            ! BCZ: special for perfect conductor with const alpha and etaT when A considered as B; one-sided for 1st and 2nd derivative in two first inner points
+------------------------------------------------------------------------------------------------------------------------------------^
+interstellar.f90(3919): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+     !!$omp target if(loffload) !map(tofrom: SNR) has_device_addr(f)  ! needs: irho,ilnrho,iss,ilnTT,iyH,iecr,ifcr, frac_eth, switches;  gives: m,n
+------------------------------------------------------------------------------------------------------------------------------------^
+interstellar.f90(4162): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+     !!$omp target if(loffload) !map(from: rhomin,rhomax,tmp) map(to: remnant) has_device_addr(f)  ! needs: irho,ilnrho,iuu,dr2_SN, switches;  gives: m,n
+------------------------------------------------------------------------------------------------------------------------------------^
+interstellar.f90(4268): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+     !!$omp target if(loffload) !map(from: tmp) map(to: remnant) has_device_addr(f)  ! needs: irho,ilnrho,iuu,dr2_SN, switches;  gives: m,n
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o particles_map.o -c particles_map.f90
+mpiifx -implicitnone    -std08 -o particles_number.o -c particles_number.f90
+mpiifx -implicitnone    -std08 -o particles_radius.o -c particles_radius.f90
+mpiifx -implicitnone    -std08 -o noparticles_condensation.o -c noparticles_condensation.f90
+mpiifx -implicitnone    -std08 -o particles_selfgravity.o -c particles_selfgravity.f90
+mpiifx -implicitnone    -std08 -o viscosity.o -c viscosity.f90
+mpiifx -implicitnone    -std08 -o filter.o -c filter.f90
+mpiifx -implicitnone    -std08 -o density.o -c density.f90
+mpiifx -implicitnone    -std08 -o cosmicray.o -c cosmicray.f90
+mpiifx -implicitnone    -std08 -o chiral.o -c chiral.f90
+mpiifx -implicitnone    -std08 -o pscalar.o -c pscalar.f90
+mpiifx -implicitnone    -std08 -o radiation_ray.o -c radiation_ray.f90
+radiation_ray.f90(1542): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  folded into the X rows r<=w-2: Q0eff=X(r)+exp(-tauX(r))*Y(w-2-r), taueff=tauX(r)+tauY(w-2-r) (the single-core twist inside one processor).
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o cosmicrayflux.o -c cosmicrayflux.f90
+mpiifx -implicitnone    -std08 -o forcing.o -c forcing.f90
+mpiifx -implicitnone    -std08 -o dustvelocity.o -c dustvelocity.f90
+mpiifx -implicitnone    -std08 -o entropy.o -c entropy.f90
+forcing.f90(1470): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  22-Sep-2025/kishore: moved initialization of random2d_kmodes to initialize_forcing (to ensure it is done properly while reloading)
+------------------------------------------------------------------------------------------------------------------------------------^
+entropy.f90(3765): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+            !Fred reverted Axel's change above, reapplying FORCE to ensure all processes terminate, otherwise job hangs costing billing units
+------------------------------------------------------------------------------------------------------------------------------------^
+entropy.f90(4477): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+        !!$omp target if (loffload) data map(to: ilnrho,iss,isld_char,w_sldchar_ene,w_sldchar_ene2,lnrho0,ldensity_nolog,gamma_m1,cv1,cs20,rhotop,lsld_char_rholimit,cs2top,lnrhotop,w_sldrat2,fact_wsld) is_device_ptr(cf)
+------------------------------------------------------------------------------------------------------------------------------------^
+forcing.f90(5741): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  lfcont_as_comaux is tested for here (and not in, say, initialize_forcing or pencil_interdep_forcing) to prevent out-of-bounds access during the pencil check.
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o magnetic.o -c magnetic.f90
+magnetic.f90(1005): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+  integer :: idiag_bcurlfmz=0    ! XYAVG_DOC: $\left< \Bv \cdot \nabla\times \vec{F}/\mu_0\right>_{xy}$, where $\vec{F}$ is the additional EMF imposed through continuous forcing (lforcing_cont_aa=T)
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o hydro.o -c hydro.f90
+mpiifx -implicitnone    -std08 -o shock.o -c shock.f90
+mpiifx -implicitnone    -std08 -o power_spectrum.o -c power_spectrum.f90
+ar: creating magnetic.a
+hydro.f90(541): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+  integer :: idiag_Reph1rms=0   ! DIAG_DOC: $\langle\frac{|\Uv\dot\nabla\Uv|}{|\nabla\cdot(\ln\varrho\nu\Strain)|}\rangle_\text{ph1}$
+------------------------------------------------------------------------------------------------------------------------------------^
+hydro.f90(2169): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+       !case ('robertsflow'); call robertsflow(ampluu(j),f,iuu,relhel_uu) !(AB: the following changes result by factor 2, but is now consistent with magnetic)
+------------------------------------------------------------------------------------------------------------------------------------^
+hydro.f90(4982): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+        ! !Kishore: the below was f(l1:l2,m,n,iuy)**2 (so I changed it to p%uu(:,2)), but from the name it seems that it should be using uz. Axel, please check.
+------------------------------------------------------------------------------------------------------------------------------------^
+power_spectrum.f90(7562): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!       NOTE: Increment output_version if you make any changes to the output format that would require changes to the reading routines. Format is (major, minor, patch).
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o dustdensity.o -c dustdensity.f90
+mpiifx -implicitnone    -std08 -o particles_dust.o -c particles_dust.f90
+particles_dust.f90(322): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+  integer :: idiag_vpcoalx2m=0, idiag_vpcoaly2m=0, idiag_vpcoalz2m=0 ! DIAG_DOC: $v^2_{coal,part}$ (thermal/coalescence velocity entering the Brownian coagulation kernel)
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o particles_main.o -c particles_main.f90
+particles_main.f90(455): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_INIT_PARS]
+      call read_namelist(read_particles_init_pars      , 'particles'         ,lparticles,loptional)
+-------------------------^
+particles_main.f90(456): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_RAD_INIT_PARS]
+      call read_namelist(read_particles_rad_init_pars  , 'particles_radius'  ,lparticles_radius,loptional)
+-------------------------^
+particles_main.f90(457): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_COND_INIT_PARS]
+      call read_namelist(read_particles_cond_init_pars , 'particles_cond'    ,lparticles_condensation,loptional)
+-------------------------^
+particles_main.f90(458): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SPIN_INIT_PARS]
+      call read_namelist(read_particles_spin_init_pars , 'particles_spin'    ,lparticles_spin,loptional)
+-------------------------^
+particles_main.f90(459): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SINK_INIT_PARS]
+      call read_namelist(read_particles_sink_init_pars , 'particles_sink'    ,lparticles_sink,loptional)
+-------------------------^
+particles_main.f90(460): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_NUM_INIT_PARS]
+      call read_namelist(read_particles_num_init_pars  , 'particles_number'  ,lparticles_number,loptional)
+-------------------------^
+particles_main.f90(461): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_DENS_INIT_PARS]
+      call read_namelist(read_particles_dens_init_pars , 'particles_dens'    ,lparticles_density,loptional)
+-------------------------^
+particles_main.f90(462): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SELFG_INIT_PARS]
+      call read_namelist(read_particles_selfg_init_pars, 'particles_selfgrav',lparticles_selfgravity,loptional)
+-------------------------^
+particles_main.f90(463): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_MASS_INIT_PARS]
+      call read_namelist(read_particles_mass_init_pars , 'particles_mass'    ,lparticles_mass,loptional)
+-------------------------^
+particles_main.f90(464): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_DRAG_INIT_PARS]
+      call read_namelist(read_particles_drag_init_pars , 'particles_drag'    ,lparticles_drag,loptional)
+-------------------------^
+particles_main.f90(465): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_BREAKUP_INIT_PARS]
+      call read_namelist(read_particles_breakup_init_pars,'particles_breakup',lparticles_breakup,loptional)
+-------------------------^
+particles_main.f90(466): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_TT_INIT_PARS]
+      call read_namelist(read_particles_TT_init_pars   , 'particles_TT'      ,lparticles_temperature,loptional)
+-------------------------^
+particles_main.f90(467): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_ADS_INIT_PARS]
+      call read_namelist(read_particles_ads_init_pars  , 'particles_ads'     ,lparticles_adsorbed,loptional)
+-------------------------^
+particles_main.f90(468): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SURF_INIT_PARS]
+      call read_namelist(read_particles_surf_init_pars , 'particles_surf'    ,lparticles_surfspec,loptional)
+-------------------------^
+particles_main.f90(469): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_CHEM_INIT_PARS]
+      call read_namelist(read_particles_chem_init_pars , 'particles_chem'    ,lparticles_chemistry,loptional)
+-------------------------^
+particles_main.f90(470): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PSTALKER_INIT_PARS]
+      call read_namelist(read_pstalker_init_pars       , 'particles_stalker' ,lparticles_stalker,loptional)
+-------------------------^
+particles_main.f90(471): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PLYAPUNOV_INIT_PARS]
+      call read_namelist(read_plyapunov_init_pars      , 'particles_lyapunov',lparticles_lyapunov,loptional)
+-------------------------^
+particles_main.f90(481): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_RUN_PARS]
+      call read_namelist(read_particles_run_pars      ,'particles'              ,lparticles,loptional)
+-------------------------^
+particles_main.f90(482): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_ADAPT_RUN_PARS]
+      call read_namelist(read_particles_adapt_run_pars,'particles_adapt'        ,lparticles_adaptation,loptional)
+-------------------------^
+particles_main.f90(483): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_RAD_RUN_PARS]
+      call read_namelist(read_particles_rad_run_pars  ,'particles_radius'       ,lparticles_radius,loptional)
+-------------------------^
+particles_main.f90(484): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SPIN_RUN_PARS]
+      call read_namelist(read_particles_spin_run_pars ,'particles_spin'         ,lparticles_spin,loptional)
+-------------------------^
+particles_main.f90(485): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SINK_RUN_PARS]
+      call read_namelist(read_particles_sink_run_pars ,'particles_sink'         ,lparticles_sink,loptional)
+-------------------------^
+particles_main.f90(486): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_NUM_RUN_PARS]
+      call read_namelist(read_particles_num_run_pars  ,'particles_number'       ,lparticles_number,loptional)
+-------------------------^
+particles_main.f90(487): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_SELFG_RUN_PARS]
+      call read_namelist(read_particles_selfg_run_pars,'particles_selfgrav'     ,lparticles_selfgravity,loptional)
+-------------------------^
+particles_main.f90(488): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_COAG_RUN_PARS]
+      call read_namelist(read_particles_coag_run_pars ,'particles_coag'         ,lparticles_coagulation,loptional)
+-------------------------^
+particles_main.f90(489): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_COND_RUN_PARS]
+      call read_namelist(read_particles_cond_run_pars ,'particles_cond'         ,lparticles_condensation,loptional)
+-------------------------^
+particles_main.f90(490): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_COLL_RUN_PARS]
+      call read_namelist(read_particles_coll_run_pars ,'particles_coll'         ,lparticles_collisions,loptional)
+-------------------------^
+particles_main.f90(491): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_BREAKUP_RUN_PARS]
+      call read_namelist(read_particles_breakup_run_pars,'particles_breakup'    ,lparticles_breakup,loptional)
+-------------------------^
+particles_main.f90(492): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PARTICLES_STIR_RUN_PARS]
+      call read_namelist(read_particles_stir_run_pars ,'particles_stirring'     ,lparticles_stirring,loptional)
+-------------------------^
+particles_main.f90(493): error #7061: The characteristics of dummy argument 1 of the associated actual procedure differ from the characteristics of dummy argument 1 of the dummy procedure.   [READ_PSTALKER_RUN_PARS]
+      call read_namelist(read_pstalker_run_pars       ,'particles_stalker'      ,lparticles_stalker,loptional)
+-------------------------^
+particles_main.f90(1617): catastrophic error: Too many errors, exiting
+compilation aborted for particles_main.f90 (code 1)
+make[2]: *** [Makefile.src:3539: particles_main.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+make[1]: *** [Makefile.src:3740: code] Error 2
+make[1]: Leaving directory '/export/data1/pencil/bonn-intel/samples/most-modules/src'
+make: *** [Makefile:25: default_to_be] Error 2
+'make -j FFLAGS_DOUBLE=-r8 CFLAGS_DOUBLE=-DDOUBLE_PRECISION LD_MPI= CFLAGS_FFTW3= FFLAGS_FFTW3= LD_FFTW3= CFLAGS_FFTW2= FFLAGS_FFTW2= LD_FFTW2= FC=mpiifx F77=$(FC) FFLAGS=-implicitnone OMPFFLAGS=-qopenmp PPFLAGS=-fpp LDFLAGS=-Bdynamic FSTD_95=-std95 FSTD_2003=-std03 FSTD_2008=-std08 FSTD_2018=-std08 CC=mpiicx CFLAGS=-DFUNDERSC=1 default_to_be' failed: <Inappropriate ioctl for device> ['\nice -n 15 pc_build --config-files=Intel_MPI-mpiifx ' reported: ]
