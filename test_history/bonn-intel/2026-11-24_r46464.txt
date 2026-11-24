@@ -1,0 +1,10 @@
+no-modules                    failed compiling
+most-modules                  failed compiling
+backwards-compatible          failed compiling
+1d-tests/implicit_diffusion   failed compiling
+2d-tests/chemistry_GrayScott  failed compiling
+2d-tests/shearwave-dust-par   failed compiling
+dust-vortex                   failed compiling
+damped_alfven_waves           failed compiling
+corona                        failed compiling
+helical-MHDturb               failed compiling
