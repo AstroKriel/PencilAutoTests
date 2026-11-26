@@ -1,5 +1,5 @@
 no-modules                    ok
-most-modules                  failed compiling
+most-modules                  ok
 backwards-compatible          ok
 1d-tests/implicit_diffusion   ok
 2d-tests/chemistry_GrayScott  ok
