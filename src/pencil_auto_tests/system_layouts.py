@@ -50,6 +50,12 @@ class SystemLayout:
         return self.latest_test_logs_dir / "index.html"
 
     @property
+    def latest_versions_path(
+        self,
+    ) -> Path:
+        return self.latest_test_logs_dir / "versions.txt"
+
+    @property
     def test_history_dir(
         self,
     ) -> Path:

@@ -3,6 +3,7 @@
 Nightly [Pencil Code](https://pencil-code.org) auto-tests on any machine, set up from one config file, with results published to GitHub.
 
 - Latest test report of each system: `https://astrokriel.github.io/PencilAutoTests/<system-name>/`
+- The commit of this tool, the Pencil revision, and the compiler and library versions of that run: `https://astrokriel.github.io/PencilAutoTests/<system-name>/versions.txt`
 - Every run, one line per sample: `test_history/<system-name>/`
 
 ## Example
@@ -57,11 +58,12 @@ The reason is in the full test report, with the build, start, and run logs of ea
 3. Describe the system in `system_configs/<system-name>.toml`. Name systems `<site>-<toolchain>`, e.g. `bonn-intel`, so systems at one site sort together:
 
    ```toml
-   pencil_code_dir = "/data/pencil/bonn-intel"    # where Pencil is checked out, built, and run
-   test_logs_dir = "/data/pencil/test-logs"       # where pencil-test writes the test report and logs
-   test_levels = "0-3"                            # a level or range from the %tests table in bin/pc_auto-test
-   pencil_build_configs = ["Intel_MPI-mpiifx"]    # config files read by pc_build
+   pencil_code_dir = "/data/pencil/bonn-intel"  # where Pencil is checked out, built, and run
+   test_logs_dir = "/data/pencil/test-logs"  # where pencil-test writes the test report and logs
+   test_levels = "0-3"  # a level or range from the %tests table in bin/pc_auto-test
+   pencil_build_configs = ["Intel_MPI-mpiifx"]  # config files read by pc_build
    environment_script = "~/intel/oneapi/setvars.sh"  # optional: sourced first, e.g. for oneAPI
+   version_cmds = ["ifx --version"]  # optional: their output goes into versions.txt
    ```
 
    When the environment needs more than one script, write a small one next to the system config that sources the others, as `system_configs/bonn-intel.sh` does for oneAPI and HDF5.
@@ -100,6 +102,7 @@ PencilAutoTests/
 │       ├── required_tools.py  # tools every machine needs, and why
 │       ├── test_reports.py  # reads the test report that pencil-test writes
 │       ├── test_summaries.py  # writes the one-line-per-sample test summaries
+│       ├── versions.py  # writes versions.txt next to the test report
 │       ├── publish_to_github.py  # pushes test summaries to main and test reports to gh-pages
 │       ├── github_access.py  # deploy key, GitHub host key, git identity, and SSH remote of this clone
 │       └── cron_schedules.py  # the cron lines of each system

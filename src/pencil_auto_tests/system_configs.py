@@ -27,6 +27,7 @@ _REQUIRED_KEYS = {
 }
 _OPTIONAL_KEYS = {
     "environment_script",
+    "version_cmds",
 }
 
 
@@ -38,6 +39,7 @@ class SystemConfig:
     test_levels: str
     pencil_build_configs: list[str]
     environment_script: Path | None
+    version_cmds: list[str]
 
     @property
     def system_layout(
@@ -90,6 +92,10 @@ def load_system_config(
     if "environment_script" in config_values:
         environment_script_text = config_values["environment_script"]
         environment_script = Path(environment_script_text).expanduser()
+    if "version_cmds" in config_values:
+        version_cmds = config_values["version_cmds"]
+    else:
+        version_cmds = []
     return SystemConfig(
         system_name=system_name,
         pencil_code_dir=pencil_code_dir,
@@ -97,6 +103,7 @@ def load_system_config(
         test_levels=test_levels,
         pencil_build_configs=pencil_build_configs,
         environment_script=environment_script,
+        version_cmds=version_cmds,
     )
 
 

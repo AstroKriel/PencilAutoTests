@@ -6,3 +6,7 @@ test_levels = "0-1"
 pencil_build_configs = [
     "GNU-GCC_MPI",
 ]
+version_cmds = [
+    "gfortran --version",
+    "mpirun --version",
+]

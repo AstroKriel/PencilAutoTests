@@ -24,8 +24,10 @@ from pencil_auto_tests import (
     publish_to_github,
     required_tools,
     system_configs,
+    system_layouts,
     test_reports,
     test_summaries,
+    versions,
 )
 
 ##
@@ -87,6 +89,38 @@ def _create_dir_if_missing(
     )
 
 
+def _load_latest_test_report_or_exit(
+    *,
+    system_layout: system_layouts.SystemLayout,
+) -> test_reports.TestReport:
+    latest_test_report_path = system_layout.latest_test_report_path
+    try:
+        return test_reports.load_test_report(test_report_path=latest_test_report_path)
+    except FileNotFoundError:
+        manage_log.exit_with_error(f"no test report at {latest_test_report_path}")
+    except ValueError as error:
+        manage_log.exit_with_error(f"could not read {latest_test_report_path}: {error}")
+
+
+def _write_versions_file(
+    *,
+    system_config: system_configs.SystemConfig,
+) -> None:
+    """Write the versions file of the latest test report; only right after a run, while the environment matches it."""
+    system_layout = system_config.system_layout
+    test_report = _load_latest_test_report_or_exit(system_layout=system_layout)
+    versions_text = versions.format_versions_text(
+        svn_revision=test_report.svn_revision,
+        version_cmds=system_config.version_cmds,
+        environment_script=system_config.environment_script,
+    )
+    versions_path = system_layout.latest_versions_path
+    manage_shell.run_fn(
+        description=f"write {versions_path}",
+        fn=lambda: versions_path.write_text(versions_text),
+    )
+
+
 def _summarise_test_report(
     *,
     system_config: system_configs.SystemConfig,
@@ -94,14 +128,8 @@ def _summarise_test_report(
     """Turn the latest test report of the system into a dated test summary, copy it to the latest test summary, and
     return the dated test summary path."""
     system_layout = system_config.system_layout
-    latest_test_report_path = system_layout.latest_test_report_path
     latest_test_summary_path = system_layout.latest_test_summary_path
-    try:
-        test_report = test_reports.load_test_report(test_report_path=latest_test_report_path)
-    except FileNotFoundError:
-        manage_log.exit_with_error(f"no test report at {latest_test_report_path}")
-    except ValueError as error:
-        manage_log.exit_with_error(f"could not read {latest_test_report_path}: {error}")
+    test_report = _load_latest_test_report_or_exit(system_layout=system_layout)
     test_summary_path = test_summaries.get_test_summary_path(
         test_report=test_report,
         test_history_dir=system_layout.test_history_dir,
@@ -235,6 +263,7 @@ def run_pencil_tests(
             status=manage_log.OutcomeStatus.SUCCESS,
         )
         return
+    _write_versions_file(system_config=system_config)
     if no_publish:
         test_summary_path = _summarise_test_report(system_config=system_config)
         manage_log.log_note(f"publishing skipped; the test summary is {test_summary_path}")

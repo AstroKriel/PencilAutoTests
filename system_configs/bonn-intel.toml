@@ -7,3 +7,8 @@ pencil_build_configs = [
     "Intel_MPI-mpiifx",
 ]
 environment_script = "~/PencilAutoTests/system_configs/bonn-intel.sh"
+version_cmds = [
+    "ifx --version",
+    "mpirun --version",
+    "h5pfc -showconfig",
+]
