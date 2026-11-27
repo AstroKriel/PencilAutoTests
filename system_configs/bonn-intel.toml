@@ -6,4 +6,4 @@ test_levels = "0-1"
 pencil_build_configs = [
     "Intel_MPI-mpiifx",
 ]
-environment_script = "/export/data1/pencil/intel/oneapi/setvars.sh"
+environment_script = "~/PencilAutoTests/system_configs/bonn-intel.sh"
