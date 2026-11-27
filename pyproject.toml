@@ -7,6 +7,7 @@ authors = [{ name = "Neco Kriel", email = "necokriel@gmail.com" }]
 requires-python = ">=3.12,<3.14"
 dependencies = [
     "huginn",
+    "ssh_helper",
 ]
 
 [build-system]
@@ -21,6 +22,7 @@ pencil_auto_tests = "pencil_auto_tests.user_interface:main"
 
 [tool.uv.sources]
 huginn = { git = "https://github.com/AstroKriel/TerminalInterface.git", rev = "e9b10d5617022056075562dc76e07b3fb2d1ac30" }
+ssh_helper = { git = "https://github.com/AstroKriel/SSHHelper.git", rev = "d21fff69a422613bc7aa4c1a4d50dd7a7ea1918f" }
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "."]

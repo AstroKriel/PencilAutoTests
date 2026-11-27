@@ -46,7 +46,7 @@ The reason is in the full test report, with the build, start, and run logs of ea
 
 ## Setting up a machine
 
-1. Install `svn`, `perl`, `make`, `wget`, `git`, [`uv`](https://docs.astral.sh/uv/), and the compilers and MPI that your build configs need.
+1. Install `svn`, `perl`, `make`, `wget`, `git`, `cron`, [`uv`](https://docs.astral.sh/uv/), and the compilers and MPI that your build configs need. For the Intel build configs, `scripts/install-intel-oneapi.sh <install-dir> <download-dir>` installs the Intel compilers and MPI without root, and `scripts/install-hdf5-intel.sh <install-dir> <download-dir>` builds HDF5 with them, for the samples that use HDF5; an HDF5 built with gfortran, as packaged by Linux distributions, does not work with the Intel compilers.
 2. Clone this repository:
 
    ```bash
@@ -64,19 +64,29 @@ The reason is in the full test report, with the build, start, and run logs of ea
    environment_script = "~/intel/oneapi/setvars.sh"  # optional: sourced first, e.g. for oneAPI
    ```
 
+   When the environment needs more than one script, write a small one next to the system config that sources the others, as `system_configs/bonn-intel.sh` does for oneAPI and HDF5.
+
 4. Check the tools, create the directories, and check out trunk; `uv run` also installs the tool into `.venv/`:
 
    ```bash
    uv run pencil_auto_tests setup --system-name <system-name>
    ```
 
-5. Run it nightly from `cron`, calling the installed command directly so that a nightly run never resolves or downloads anything:
+5. Give this clone push access to GitHub. The first call creates the deploy key `~/.ssh/id_ed25519_pencil_auto_tests` and prints its public key; add it under Settings → Deploy keys of the repository, with write access, then call it again:
 
-   ```text
-   30 2 * * *  <repository>/.venv/bin/pencil_auto_tests run --system-name <system-name>
+   ```bash
+   uv run pencil_auto_tests setup-publishing
    ```
 
-`run` tests only when `svn up` finds new commits, except on the first run of a system, and then pushes the test summary to `main` and the latest test report and logs to `gh-pages` of the repository it was cloned from. Add `--no-publish` to try a system without pushing. To summarise or publish the latest test report again, for example after a failed push, use `write-test-summary` or `publish` with the same `--system-name`.
+   It checks the host key of GitHub against the published fingerprint, then sets a git identity naming the account and machine, and makes this clone push over SSH with only the deploy key.
+
+6. Schedule it. This adds two lines to the `crontab` of the account: one runs the tests nightly at 02:30 with the installed command, so a nightly run never resolves or downloads anything; the other kills test processes older than three hours. Each line ends in `# pencil_auto_tests:<system-name>`, so scheduling again replaces them and leaves other lines alone:
+
+   ```bash
+   uv run pencil_auto_tests schedule --system-name <system-name>
+   ```
+
+`run` tests only when `svn up` finds new commits, except on the first run of a system, and then pushes the test summary to `main` and the latest and previous test reports and logs to `gh-pages` of the repository it was cloned from. Add `--no-publish` to try a system without pushing. To summarise or publish the latest test report again, for example after a failed push, use `write-test-summary` or `publish` with the same `--system-name`.
 
 ## File structure
 
@@ -90,10 +100,14 @@ PencilAutoTests/
 │       ├── required_tools.py  # tools every machine needs, and why
 │       ├── test_reports.py  # reads the test report that pencil-test writes
 │       ├── test_summaries.py  # writes the one-line-per-sample test summaries
-│       └── publish_to_github.py  # pushes test summaries to main and test reports to gh-pages
+│       ├── publish_to_github.py  # pushes test summaries to main and test reports to gh-pages
+│       ├── github_access.py  # deploy key, GitHub host key, git identity, and SSH remote of this clone
+│       └── cron_schedules.py  # the cron lines of each system
 ├── scripts/
-│   └── run-test.sh  # copy of utils/cronjobs/run-test.sh; reads its settings from the environment, runs without a trigger file
-├── system_configs/  # one file per system; example.toml runs on most machines
+│   ├── run-test.sh  # copy of utils/cronjobs/run-test.sh; reads its settings from the environment, runs without a trigger file
+│   ├── install-intel-oneapi.sh  # installs the Intel compilers and MPI without root
+│   └── install-hdf5-intel.sh  # builds HDF5 with the Intel compilers and MPI without root
+├── system_configs/  # one config per system, plus its environment script if it needs one; example.toml runs on most machines
 ├── test_history/  # dated test summaries of each system, plus latest.txt
 ├── utests/  # unit tests; data/ holds two real test reports
 ├── pyproject.toml  # package metadata; registers the pencil_auto_tests command

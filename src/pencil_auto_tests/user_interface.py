@@ -5,6 +5,7 @@
 ##
 
 ## stdlib
+import shutil
 from pathlib import Path
 from typing import ClassVar
 
@@ -18,6 +19,8 @@ from huginn import (
 
 ## local
 from pencil_auto_tests import (
+    cron_schedules,
+    github_access,
     publish_to_github,
     required_tools,
     system_configs,
@@ -239,6 +242,62 @@ def run_pencil_tests(
     _summarise_and_publish(system_config=system_config)
 
 
+def schedule_pencil_tests(
+    *,
+    system_name: str,
+) -> None:
+    """Add the cron lines of the system, replacing any it had before; safe to repeat."""
+    system_config = _load_system_config_or_exit(system_name=system_name)
+    system_layout = system_config.system_layout
+    missing_dirs = system_layout.get_missing_dirs()
+    if len(missing_dirs) > 0:
+        manage_log.exit_with_error("run `setup` first")
+    if not cron_schedules.INSTALLED_TOOL_PATH.is_file():
+        manage_log.exit_with_error(f"no {cron_schedules.INSTALLED_TOOL_PATH}; run `uv sync` first")
+    if shutil.which("crontab") is None:
+        manage_log.exit_with_error("`crontab` is missing; install cron first")
+    cron_schedules.ensure_cron_lines(system_layout=system_layout)
+    manage_log.log_outcome(
+        f"`{system_name}` is scheduled",
+        status=manage_log.OutcomeStatus.SUCCESS,
+        items={
+            "cron log": cron_schedules.get_cron_log_path(system_layout=system_layout),
+        },
+    )
+
+
+def set_up_publishing() -> None:
+    """Create the deploy key and trust GitHub; once GitHub accepts the key, make this clone push over SSH with it.
+    Safe to repeat."""
+    try:
+        repo_path = github_access.get_github_repo_path(remote_url=github_access.get_origin_url())
+    except ValueError as error:
+        manage_log.exit_with_error(f"cannot publish from this clone: {error}")
+    github_access.ensure_deploy_key_exists()
+    try:
+        github_access.ensure_github_trusted()
+    except ValueError as error:
+        manage_log.exit_with_error(str(error))
+    if not github_access.has_github_access(repo_path=repo_path):
+        deploy_key_path = github_access.DEPLOY_SSH_KEY.public_key_path
+        if deploy_key_path.is_file():
+            manage_log.log_note(
+                "GitHub does not accept the deploy key yet",
+                items={
+                    "add it at": f"https://github.com/{repo_path}/settings/keys/new",
+                    "allow write access": "yes",
+                    "public key": deploy_key_path.read_text().strip(),
+                },
+            )
+        manage_log.exit_with_error("add the deploy key on GitHub, then run `setup-publishing` again")
+    github_access.ensure_git_identity()
+    github_access.ensure_ssh_remote(repo_path=repo_path)
+    manage_log.log_outcome(
+        f"this clone can publish to {repo_path}",
+        status=manage_log.OutcomeStatus.SUCCESS,
+    )
+
+
 def publish_latest_test_report(
     *,
     system_name: str,
@@ -290,11 +349,25 @@ COMMAND_LINE_TOOL = manage_cli.CommandLineTool(
                     fn=run_pencil_tests,
                     args=[_SYSTEM_NAME_ARG, _NO_PUBLISH_FLAG],
                 ),
+                manage_cli.Command(
+                    name="schedule",
+                    description=
+                    "add cron lines that run the tests nightly and kill test processes left hanging",
+                    fn=schedule_pencil_tests,
+                    args=[_SYSTEM_NAME_ARG],
+                ),
             ],
         ),
         manage_cli.CommandGroup(
             title="Publishing test reports",
             cmds=[
+                manage_cli.Command(
+                    name="setup-publishing",
+                    description=
+                    "create a deploy key, trust GitHub, and make this clone push over SSH with that key",
+                    fn=set_up_publishing,
+                    args=[],
+                ),
                 manage_cli.Command(
                     name="publish",
                     description=
