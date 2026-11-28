@@ -1,10 +1,87 @@
-no-modules                    ok
-most-modules                  ok
-backwards-compatible          ok
-1d-tests/implicit_diffusion   ok
-2d-tests/chemistry_GrayScott  ok
-2d-tests/shearwave-dust-par   ok
-dust-vortex                   ok
-damped_alfven_waves           ok
-corona                        failed compiling
-helical-MHDturb               ok
+no-modules                                         ok
+most-modules                                       ok
+backwards-compatible                               ok
+1d-tests/implicit_diffusion                        ok
+2d-tests/chemistry_GrayScott                       ok
+2d-tests/shearwave-dust-par                        ok
+dust-vortex                                        ok
+damped_alfven_waves                                ok
+corona                                             failed running
+helical-MHDturb                                    ok
+0d-tests/particles-breakup                         ok
+0d-tests/reheating                                 ok
+0d-tests/heating_ionize                            ok
+0d-tests/heating_noionize                          ok
+0d-tests/reionization-saha                         ok
+0d-tests/schur_triple_decomp                       ok
+1d-tests/Schwinger-MHD                             ok
+1d-tests/H2_flamespeed                             ok
+1d-tests/horndeski_choiceIII                       ok
+1d-tests/rel-shock                                 ok
+1d-tests/KT                                        ok
+1d-tests/inflationary-B-genesis                    ok
+1d-tests/axionU1back                               ok
+1d-tests/sine-Gordon                               ok
+1d-tests/sine-Gordon_doublet                       failed running
+chiral-diffusion                                   ok
+cosmicray                                          ok
+1d-tests/sod_10                                    ok
+1d-tests/ambipolar_diffusion                       ok
+GravitationalWaves                                 failed validating results
+polymer/forced_3dturbulence                        ok
+testfield_z                                        ok
+random_uu_particles                                ok
+1d-tests/solar-atmosphere-temperature              ok
+kin-dynamo                                         failed running
+meissner                                           ok
+conv-slab-noequi                                   ok
+2d-tests/selfgravitating-shearwave                 ok
+2d-tests/streaming_instability/single-species      ok
+2d-tests/streaming_instability/multi-species       ok
+2d-tests/globaldisc                                ok
+2d-tests/cylindrical_gdisk                         ok
+2d-tests/planet-disk-fargo                         ok
+2d-tests/dark-matter                               ok
+2d-tests/meanfield_disp_current                    ok
+disp_current_dynamo                                ok
+spherical-globaldisk                               ok
+spherical-globaldisk-mhd                           ok
+spherical-gdisk-planet-thermo                      ok
+0d-tests/solar_system                              ok
+mdwarf                                             ok
+sedimentation                                      ok
+MRI-turbulence_hyper                               ok
+dust_turb_globaldisk                               ok
+geodynamo                                          ok
+2d-tests/cylinder_deposition                       ok
+2d-tests/selfgravdisk-deadzone-dust                ok
+2d-tests/spherical_viscous_ring                    ok
+2d-tests/field-loop-fargo                          ok
+baroclinic                                         ok
+1d-tests/sedimentation-noneq-blocks                ok
+1d-tests/alphadisk                                 ok
+implicit_resistivity                               ok
+debris-photoelectric-fluid                         ok
+2d-tests/debris-photoeletric-streaming             ok
+2d-tests/Kelvin-Helmholtz                          ok
+2d-tests/selfgravdisk-planet-dust                  ok
+cylindrical-globaldisk-dzone                       ok
+2d-tests/selfgravdisk-logspirals                   ok
+2d-tests/turbulent_potential                       ok
+2d-tests/WhiteDwarfDisk                            ok
+2d-tests/cylinder_ogrid_thermo_chem                ok
+2d-tests/shallow-water                             ok
+2d-tests/torque_migration_noniso                   ok
+sink-particles                                     ok
+2d-tests/jupiter-atmosphere-cyclogenesis           ok
+convective-overstability-particles                 ok
+streaming-instability-sink                         ok
+1d-tests/hyperdiffusion                            ok
+2d-tests/eccentricity-decay                        failed validating results
+interstellar                                       failed validating results
+supernova-driven-turbulence/1Dhd_init_equidistant  ok
+backreact_infl                                     failed validating results
+backreact_infl2                                    failed validating results
+Schwinger                                          ok
+Schwinger2                                         ok
+electroweak_SU2_Higgs                              ok
