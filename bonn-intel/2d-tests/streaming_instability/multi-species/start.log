@@ -1,0 +1,107 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) no cvsid is given i
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                    1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000       1.000000000000000E-002
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: particles_density. v. 20849   (2013-08-06 18:45:43) anders
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          64           1          64
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  4.810888374719019E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+   4.08121924092686        6.28318530717959        23.6870505626145     
+  0.400000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_initial_condition: override tausp_species =   6.764085081405553E-003
+  1.591549430918953E-002
+ initialize_initial_condition: taus =   4.250000000000000E-002
+  0.100000000000000     
+ initialize_initial_condition: override eps_dtog =    1.50000000000000     
+ initialize_initial_condition: eps =    1.00000000000000     
+  0.500000000000000     
+ initialize_initial_condition: rhopj =   0.250000000000000     
+  0.125000000000000     
+ initialize_initial_condition: eta * v_K =   0.314159265358979     
+ initialize_initial_condition: ux0, uy0 =   9.279162058204699E-003
+ -0.125833027337526     
+ initialize_initial_condition: vpx0 =  -1.414091063501524E-003
+ -1.573014198940635E-002
+ initialize_initial_condition: vpy0 =  -0.125802977902426     
+ -0.125046520238055     
+ initialize_initial_condition: exact wave mode, scaled amplitude = 
+  1.211113726497206E-006
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ initialize_density: Global density gradient with beta_glnrho_global=
+ -0.100000000000000       0.000000000000000E+000  0.000000000000000E+000
+ select_eos_variable: Using rho and ss
+ dist_particles_evenly_procs: npar_loc_array     =        8192        8192
+        8192        8192
+ dist_particles_evenly_procs: npar_per_species   =       16384
+ dist_particles_evenly_procs: ipar_fence_species =       16384       32768
+ initialize_particles: Number of particle species =            2
+ initialize_particles: tausp_species =   6.764085081405553E-003
+  1.591549430918953E-002
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.50000000000000     
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  1.807178540238530E-009
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  0.187500000000000     
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ init_uu: nothing
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=   39.4784176043574        39.4784176043574     
+ init_particles_density: nothing
+ init_particles: nothing
+ initial_condition_xxp: npx, npz =           64          64
+ initial_condition_xxp: dxp, dzp =   4.908738521234051E-005
+  4.908738521234051E-005
+ init_particles: No particle velocity set
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                    1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.50000000000000     
+ Maximum used memory per cpu [MBytes] =    63.074
+ Maximum used memory [MBytes] =      238.227
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.32
+user 0.13
+sys 0.08

@@ -1,0 +1,53 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+WARNING:  register_io: HDF5 files are possibly locked; writing may fail!
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ nxgrid, nygrid, nzgrid=          64          64          64
+ units_general: unit_velocity=   10000.000000000000     
+ units_general: unit_density=   1.0000000000000000E-008
+ units_general: unit_length=   10000000.000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   3208.8625459375853     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000       0.63212247872217087        1.1200000000000001        15060.326400000005       0.26680000000000004     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+WARNING:  initialize_diagnostics: volume averages are calculated wrongly for nonequidistant grids unless lproper_averages=T.!
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: constant gravz=  -27.399999999999999     
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and lnTT
+ heat conduction: nothing
+ resistivity: constant eta
+ initialize_shock: prenormalised shock_factor sum=   1.0000000000000000     
+ init_uu: nothing
+ ghost cells are needed in stratification.dat
+WARNING:  stratification: cs2bot and cs2top are not set according to stratification.dat!
+ init_lnrho: initlnrho(1) = stratification
+ init_lnrho: cs2bot,cs2top=   1.2544000000000002        1.2544000000000002     
+ init_energy: nothing
+ Total vertical flux: sum(|Bz|)*(dx*dy) [T*m^2] =   16422079606098.098     
+ Maximum used memory per cpu [MBytes] =    51.969
+ Maximum used memory [MBytes] =      188.617
+
+
+ start.x has completed successfully
+

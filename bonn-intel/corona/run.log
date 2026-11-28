@@ -1,0 +1,79 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+WARNING:  register_io: HDF5 files are possibly locked; writing may fail!
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          64          64          64
+ Lx, Ly, Lz=   5.00000000000000        5.00000000000000     
+   4.00000000000000     
+       Vbox=   100.000000000000     
+WARNING:  input_persist_general_by_label: no persistent value of dt found!
+WARNING:  input_persist_general_by_label: no persistent value of eps_rkf found!
+WARNING:  input_persist_general_by_label: no persistent value of it found!
+ rsnap: read snapshot var.dat in   1.620704354718328E-002  seconds
+ setup_slices: slice_position = m
+ setup_slices: iy_loc,iz2_loc, (video files) =  35 7                            
+                                                
+ units_general: unit_velocity=   10000.0000000000     
+ units_general: unit_density=  1.000000000000000E-008
+ units_general: unit_length=   10000000.0000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=   3208.86254593759     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.632122478722166        1.12000000000000        15060.3263999999     
+  0.266800000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: constant gravz=  -27.4000000000000     
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and lnTT
+ heat conduction: nothing
+ resistivity: shock
+ resistivity: constant eta
+ initialize_shock: prenormalised shock_factor sum=   1.00000000000000     
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ | solar_corona: settings for granules
+ -----------------------------------
+ | radius [Mm]:   2.34375000000000     
+ | lifetime [min]   5.00000000000000     
+ | update interval [s]  0.000000000000000E+000
+ -----------------------------------
+WARNING:  interpolate_profile: extrapolated 3 grid points below bottom!
+WARNING:  interpolate_profile: extrapolated 3 grid points below bottom!
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: NaNs in reference "df_ref" at variable           5
+ pencil_consistency_check: numbers of variables are given in "data/index.pro"
+ pencil_consistency_check: the presence of NaNs in "df_ref" makes this test impo
+ ssible
+STOPPED: pencil_consistency_check: generation of reference failed, quitting pencil check
+1
+real 0.52
+user 0.88
+sys 0.14

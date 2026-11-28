@@ -1,0 +1,100 @@
+pencil_auto_tests  b3931b6
+pencil code        r46517
+
+$ ifx --version
+ifx (IFX) 2026.2.0 20261001
+Copyright (C) 1985-2026 Intel Corporation. All rights reserved.
+
+$ mpirun --version
+Intel(R) MPI Library for Linux* OS, Version 2021.19.0 Build 20260929 (id: 1821d9b)
+Copyright 2003-2026, Intel Corporation.
+
+$ h5pfc -showconfig
+SUMMARY OF THE HDF5 CONFIGURATION
+        =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.14.6
+                  Configured on: Fri Nov 27 14:55:17 CET 2026
+                  Configured by: pencil@aibn238
+                    Host system: x86_64-pc-linux-gnu
+              Uname information: Linux aibn238 7.0.0-43-generic #43-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:25:25 UTC 2026 x86_64 GNU/Linux
+                       Byte sex: little-endian
+             Installation point: /export/data1/pencil/hdf5-intel
+
+Compiling Options:
+------------------
+                     Build Mode: production
+              Debugging Symbols: no
+                        Asserts: no
+                      Profiling: no
+             Optimization Level: high
+
+Linking Options:
+----------------
+                      Libraries: static, shared
+  Statically Linked Executables: 
+                        LDFLAGS: 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS: 
+                Extra libraries: -lsz -lz -ldl -lm 
+                       Archiver: ar
+                       AR_FLAGS: cr
+                         Ranlib: ranlib
+
+Languages:
+----------
+                              C: yes
+                     C Compiler: /export/data1/pencil/intel/oneapi/mpi/2021.19/bin/mpiicx ( Intel(R) oneAPI DPC++/C++ Compiler Version 2026.2.0 Build 20261001)
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: -D_GNU_SOURCE -D_POSIX_C_SOURCE=200809L   -DNDEBUG -UH5_DEBUG_API -I/export/data1/pencil/downloads/hdf5-1.14.6/src/H5FDsubfiling
+                    AM_CPPFLAGS: 
+                        C Flags: 
+                     H5 C Flags:   -std=c99 -Wall   -Wl,-s   -O3
+                     AM C Flags: 
+               Shared C Library: yes
+               Static C Library: yes
+
+
+                        Fortran: yes
+               Fortran Compiler: /export/data1/pencil/intel/oneapi/mpi/2021.19/bin/mpiifx ( Intel(R) Fortran Compiler Version 2026.2.0 Build 20261001)
+                  Fortran Flags: 
+               H5 Fortran Flags:  -free -warn all     -O3
+               AM Fortran Flags: 
+         Shared Fortran Library: yes
+         Static Fortran Library: yes
+               Module Directory: ${includedir}
+
+                            C++: no
+
+                           Java: no
+
+
+Features:
+---------
+                     Parallel HDF5: yes
+  Parallel Filtered Dataset Writes: yes
+                Large Parallel I/O: yes
+                High-level library: yes
+Dimension scales w/ new references: no
+                  Build HDF5 Tests: yes
+                  Build HDF5 Tools: yes
+                   Build GIF Tools: no
+                      Threadsafety: no
+               Default API mapping: v114
+    With deprecated public symbols: yes
+            I/O filters (external): deflate(zlib),szip(encoder)
+                  _Float16 support: no
+                     Map (H5M) API: no
+                        Direct VFD: no
+                        Mirror VFD: no
+                     Subfiling VFD: no
+                (Read-Only) S3 VFD: no
+              (Read-Only) HDFS VFD: no
+    Packages w/ extra debug output: none
+                       API tracing: no
+              Using memory checker: no
+                  Use file locking: best-effort
+         Strict file format checks: no
+      Optimization instrumentation: no

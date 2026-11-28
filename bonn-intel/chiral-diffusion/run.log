@@ -1,0 +1,92 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=          64           1           1
+ Lx, Ly, Lz=   6.283185       6.283185       6.283185    
+       Vbox=   6.283185    
+ rsnap: read snapshot var.dat in   0.000000000000000E+000  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490780830383     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ chiral_diffXX, chiral_diff, chiral_diffZZ =  4.9999999E-03  4.9999999E-03
+  4.9999999E-03
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil uu ( 175) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: diagnostics ...
+ SOLVE dXY_dt
+Bcs for  XX_chiral,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for  YY_chiral,  x: <       p>, y: <       p>,  z: <       p>
+ dXY_chiral_dt: max(diffus_chiral) =  0.5187644    
+ 
+ --it-----t--------dt------XXm-----YYm----XXmax---YYmax--
+    0    0.000  4.82E-01  0.1410 0.00141 0.99620 0.00999
+    2    0.964  4.82E-01  0.4978 0.29240 0.99304 0.75141
+    4    1.928  4.82E-01  0.5932 0.37601 0.99833 0.96317
+    6    2.891  4.82E-01  0.6074 0.38873 0.99969 0.99532
+    8    3.855  4.82E-01  0.6092 0.39036 0.99995 0.99942
+   10    4.819  4.82E-01  0.6094 0.39057 0.99999 0.99993
+   12    5.783  4.82E-01  0.6094 0.39060 1.00000 0.99999
+   14    6.747  4.82E-01  0.6094 0.39060 1.00000 1.00000
+   16    7.711  4.82E-01  0.6094 0.39061 1.00000 1.00000
+   18    8.674  4.82E-01  0.6094 0.39061 1.00000 1.00000
+ 
+ Simulation finished after           19  time-steps
+ 
+ Writing final snapshot at time t =   9.15637305378914     
+ 
+ Wall clock time [hours] =  4.340E-06 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  12.7    
+ Wall clock time/timestep/meshpoint [microsec] =  12.84951    
+ Wall clock time/timestep/local meshpoint [microsec] =  12.84951    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Maximum used memory per cpu [MBytes] =     8.434
+ Maximum used memory [MBytes] =        8.434
+ 
+real 0.02
+user 0.01
+sys 0.00

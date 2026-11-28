@@ -1,0 +1,61 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.4     (2009/02/02 10:44:01) dintrans
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ register_implicit_physics: iTTold=           6
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=           1           1         128
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   4.8108883747190188E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000        8.3749649296106604E-006  0.81650000000000000        1.0000083749999997E-003  0.40000000000000002     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: constant gravz=  -7.0000000000000000     
+ diffusion: nothing (i.e. no mass diffusion)
+ Note: rho_const or lnrho_const are not used
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and TT
+ heat conduction: nothing
+ ***********************************
+ initialize_implicit_physics: hcond0, hcond1, hcond2, widthlnTT, lmultilayer=
+   3.9084999999999999E+037   1.0000000000000000        1.0000000000000000        2.2204460492503131E-015 F
+ ***********************************
+ init_uu: gaussian noise, ampluu=   2.9999999999999997E-004
+ gaunoise_vect: variable i=           1
+ gaunoise_vect: variable i=           2
+ gaunoise_vect: variable i=           3
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=  0.66667224999999997       0.66667224999999997     
+ init_energy: rad_equil for kappa-mechanism pb
+ cs2top, cs2bot=  0.66667224999999997        2.4819599645217738     
+ init_energy: initlnTT(1) = rad_equil
+ init_lnTT: hydrostatic blob with   0.10000000000000001       0.10000000000000001        0.0000000000000000        0.0000000000000000       0.80000000000000004     
+ init_energy: initlnTT(2) = blob_hs
+ bc_ADI_flux_z: Fbot, hcondADI, dz=   2.0000000000000000E-002   9.8326523152620967E-003   9.8326523152620967E-003   9.8326523152620967E-003   9.8326523152620967E-003   9.8326523152620967E-003   9.8326523152620967E-003   9.8326523152620967E-003   7.8740157480314960E-003
+ Maximum used memory per cpu [MBytes] =    11.930
+ Maximum used memory [MBytes] =       11.930
+
+
+ start.x has completed successfully
+

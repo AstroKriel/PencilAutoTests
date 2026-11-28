@@ -1,0 +1,27 @@
+Running make '-j' 'FFLAGS_DOUBLE=-fdefault-real-8 -fdefault-double-8' 'CFLAGS_DOUBLE=-DDOUBLE_PRECISION' 'LD_MPI=' 'CFLAGS_FFTW3=' 'FFLAGS_FFTW3=' 'LD_FFTW3=' 'CFLAGS_FFTW2=' 'FFLAGS_FFTW2=' 'LD_FFTW2=' 'FC=mpif90' 'F77=mpif77' 'FFLAGS=-O' 'LDFLAGS_HELPER=-Bdynamic' 'FFLAG_HEAP_ALLOC=-fmax-stack-var-size=512000 -fno-stack-arrays' 'OMPFFLAGS=-fopenmp' 'OMPLFLAGS=-lgomp' 'PPFLAGS=-cpp' 'FSTD_95=-std=f95' 'FSTD_2003=-std=f2003' 'FSTD_2008=-std=f2008' 'FSTD_2018=-std=f2018' 'MODULE_PREFIX=__' 'MODULE_INFIX=_MOD_' 'MODULE_SUFFIX=' 'CC=mpicc' 'CSTD=-std=c99' 'CFLAGS=-DFUNDERSC=1' 'default_to_be'
+MAKING src/Makefile.inc
+=====  make FROM_PARENT=src/ -f Makefile.src code =====
+make[1]: Entering directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src'
+HDF5_PATH not set
+Compiler: gfortran
+GCC version: 16
+Makefile.src:3053: GCC version > 9 ==> allowing argument mismatch in mpicomm.f90, noparticles_mpicomm.f90, syscalls.f90 and fftpack.f90.
+HDF5 compiler and linker in /usr/bin/h5pfc.
+make[2]: Entering directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src'
+HDF5_PATH not set
+Compiler: gfortran
+GCC version: 16
+Makefile:3058: GCC version > 9 ==> allowing argument mismatch in mpicomm.f90, noparticles_mpicomm.f90, syscalls.f90 and fftpack.f90.
+make[2]: Leaving directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src'
+make -f Makefile.src  start.o run.o start.x run.x
+make[2]: Entering directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src'
+HDF5_PATH not set
+Compiler: gfortran
+GCC version: 16
+Makefile.src:3053: GCC version > 9 ==> allowing argument mismatch in mpicomm.f90, noparticles_mpicomm.f90, syscalls.f90 and fftpack.f90.
+make[2]: 'start.o' is up to date.
+make[2]: 'run.o' is up to date.
+make[2]: 'start.x' is up to date.
+make[2]: 'run.x' is up to date.
+make[2]: Leaving directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src'
+make[1]: Leaving directory '/home/nkriel/pencil-auto-tests/example/pencil-code/samples/corona/src' 

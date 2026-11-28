@@ -1,0 +1,128 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_density. v. 20849   (2013-08-06 18:45:43) anders
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 19206   (2012-06-30 21:40:24) sven.bingert
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          16          16          16
+ Lx, Ly, Lz=  0.200000000000000       0.200000000000000     
+  0.200000000000000     
+       Vbox=  8.000000000000002E-003
+ rsnap: read snapshot var.dat in   4.070280119776726E-004  seconds
+ setup_slices: slice_position = m
+ setup_slices:  (video files) =                                                 
+                                 
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.000000000000000E+000   1.00000000000000        1.00000000000000     
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: linear z-grav, nu=   1.00000000000000     
+ initialize_selfgravity: epicycle frequency kappa =    1.00000000000000     
+ diffusion: mesh hyperdiffusion
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ initialize_density: Global density gradient with beta_glnrho_global=
+ -0.100000000000000       0.000000000000000E+000  0.000000000000000E+000
+ select_eos_variable: Using rho and cs2
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ initialize_particles: Number of particle species =            2
+ initialize_particles: tausp_species =   0.500000000000000     
+  5.000000000000000E-003
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.00000000000000     
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  1.002651309852400E-004
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+   51.3357470644429     
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ initialize_particles_sink: sink_radius=  1.250000000000000E-002
+ particles_initialize_modules: reblocking particles
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   4.00000000000000     
+ calc_pencils_energy: max(advec_cs2) =   18425.0000000000     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       a>
+ coriolis_cartesian: add Coriolis force; Omega=   1.00000000000000     
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <     she>, y: <       p>,  z: <       s>
+ dlnrho_dt: diffrho_hyper3_mesh=   20.0000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ denergy_dt: adding global pressure gradient force
+ shearing: Sshear,Sshear1=  -1.50000000000000       -1.50000000000000     
+ shearing: qshear,qshear0=   1.50000000000000       0.000000000000000E+000
+ drhopswarm_dt_pencil: Calculate drhopswarm_dt
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=p      
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ dvvp_dt: Add Coriolis force; Omega=   1.00000000000000     
+ dvvp_dt: No gravity in x-direction.
+ dvvp_dt: Linear gravity field in z-direction.
+ dvvp_dt: No radial gravity
+ 
+ ------it---------------t-----------------dt-------------nparmax-------------ux2m--------------uy2m--------------uz2m-------------uxuym--------------rhom-------------rhomin------------rhomax-------------vpxm--------------xpm---------------xp2m--------------zpm---------------zp2m-------------npmax-------------rhopm------------rhopmax-----------nparsink---------rhopinterp----
+             0   0.0000000000E+00  9.7017887701E-06  1.2500000000E+02  0.0000000000E+00  1.6971676641E-03  0.0000000000E+00  0.0000000000E+00  9.9811430117E-01  9.9501247919E-01  9.9997777802E-01  0.0000000000E+00 -4.7901681516E-04  3.3669032108E-03 -2.6921769025E-05  1.0454051865E-04  7.0000000000E+00  1.2533141373E+01  1.7115899214E+02  1.4000000000E+01  1.0975032884E+02
+             1   9.7017887701E-06  1.2025728300E-05  1.2400000000E+02  2.4008037555E-13  1.6971447140E-03  6.5229707863E-15 -1.3423950427E-09  9.9811430197E-01  9.9501249194E-01  9.9997922364E-01 -1.4931522431E-08  1.7508625222E-03  3.2261225036E-03 -1.1636308946E-05  1.0977078615E-04  7.0000000000E+00  1.1229694670E+01  1.3079069866E+02  9.0000000000E+00  8.4607797207E+01
+             2   2.1727517070E-05  1.2025730905E-05  1.2400000000E+02  1.1496034353E-12  1.6971178173E-03  3.2784716266E-14 -2.9797363344E-09  9.9811430298E-01  9.9501250808E-01  9.9998102413E-01 -3.2235816584E-08  1.7508625219E-03  3.2261225036E-03 -1.1636308944E-05  1.0977078611E-04  7.0000000000E+00  1.1229694670E+01  1.3078603622E+02  9.0000000000E+00  8.4605935719E+01
+             3   3.3753247976E-05  1.2025733134E-05  1.2400000000E+02  2.6549758416E-12  1.6970923259E-03  7.9410223500E-14 -4.5909015473E-09  9.9811430401E-01  9.9501252462E-01  9.9998283258E-01 -4.8312959293E-08  1.7508625214E-03  3.2261225036E-03 -1.1636308940E-05  1.0977078604E-04  7.0000000000E+00  1.1229694670E+01  1.3078137384E+02  9.0000000000E+00  8.4604073966E+01
+             4   4.5778981110E-05  1.2025734985E-05  1.2400000000E+02  4.6845986028E-12  1.6970681114E-03  1.4683445287E-13 -6.1789264989E-09  9.9811430507E-01  9.9501254153E-01  9.9998464753E-01 -6.3264733111E-08  1.7508625208E-03  3.2261225036E-03 -1.1636308934E-05  1.0977078593E-04  7.0000000000E+00  1.1229694670E+01  1.3077671152E+02  9.0000000000E+00  8.4602211949E+01
+             5   5.7804716095E-05  1.2025736458E-05  1.2400000000E+02  7.1803007889E-12  1.6970450610E-03  2.3566785208E-13 -7.7464102367E-09  9.9811430615E-01  9.9501255882E-01  9.9998646766E-01 -7.7183628343E-08  1.7508625199E-03  3.2261225036E-03 -1.1636308926E-05  1.0977078580E-04  7.0000000000E+00  1.1229694670E+01  1.3077204927E+02  9.0000000000E+00  8.4600349669E+01
+             6   6.9830452553E-05  1.2025737552E-05  1.2400000000E+02  1.0094864061E-11  1.6970230745E-03  3.4668899789E-13 -9.2955869595E-09  9.9811430726E-01  9.9501257650E-01  9.9998829176E-01 -9.0153738460E-08  1.7508625189E-03  3.2261225035E-03 -1.1636308916E-05  1.0977078563E-04  7.0000000000E+00  1.1229694670E+01  1.3076738709E+02  9.0000000000E+00  8.4598487125E+01
+             7   8.1856190105E-05  1.2025738272E-05  1.2400000000E+02  1.3390013133E-11  1.6970020631E-03  4.8083829259E-13 -1.0828385118E-08  9.9811430839E-01  9.9501259455E-01  9.9999011873E-01 -1.0225156579E-07  1.7508625177E-03  3.2261225035E-03 -1.1636308905E-05  1.0977078543E-04  7.0000000000E+00  1.1229694670E+01  1.3076272498E+02  9.0000000000E+00  8.4596624320E+01
+             8   9.3881928377E-05  1.2025738619E-05  1.2400000000E+02  1.7034782935E-11  1.6969819474E-03  6.3921256386E-13 -1.2346476098E-08  9.9811430954E-01  9.9501261298E-01  9.9999194758E-01 -1.1354674679E-07  1.7508625164E-03  3.2261225035E-03 -1.1636308892E-05  1.0977078520E-04  7.0000000000E+00  1.1229694670E+01  1.3075806294E+02  9.0000000000E+00  8.4594761254E+01
+             9   1.0590766700E-04  1.2025738598E-05  1.2400000000E+02  2.1004190688E-11  1.6969626564E-03  8.2306043869E-13 -1.3851314433E-08  9.9811431072E-01  9.9501263178E-01  9.9999377740E-01 -1.2410270512E-07  1.7508625150E-03  3.2261225035E-03 -1.1636308877E-05  1.0977078493E-04  7.0000000000E+00  1.1229694670E+01  1.3075340097E+02  9.0000000000E+00  8.4592897927E+01
+ 
+ Simulation finished after           10  time-steps
+ 
+ Writing final snapshot at time t =  1.179334055939826E-004
+ 
+ Wall clock time [hours] =  4.399E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  10.5    
+ Wall clock time/timestep/meshpoint [microsec] =  3.866683    
+ Wall clock time/timestep/local meshpoint [microsec] =  30.93346    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  1.541001    
+ Maximum used memory per cpu [MBytes] =    52.953
+ Maximum used memory [MBytes] =      411.457
+ 
+real 0.48
+user 0.88
+sys 0.41

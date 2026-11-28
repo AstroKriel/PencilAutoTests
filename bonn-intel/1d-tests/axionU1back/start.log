@@ -1,0 +1,48 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) 96f8e86d7          
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=           1           1           1
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ 
+ ------------------------------------------------------
+ W A R N I N G
+ warning_lperi: inconsistency, j=           1 , lperi(j)= T
+ bc=no     no     no     no     no     no     no     no     
+ any(bc=='p'.or. bc=='she'), .not.lperi(j) =  F F
+ any(bcx/='p'.and.bcx/='she'), lperi(j) =  F F
+ check_consistency_of_lperi(run.in): you better stop and check!
+ ------------------------------------------------------
+ 
+ Maximum used memory per cpu [MBytes] =     7.586
+ Maximum used memory [MBytes] =        7.586
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.01
+user 0.00
+sys 0.00

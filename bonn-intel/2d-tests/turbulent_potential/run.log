@@ -1,0 +1,206 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2014/02/13 02:24:37) wlyra
+SVN: run.in,v           v. 1.2     (2014/04/15 10:45:53) wlyra
+ initialize_mpicomm: enabled MPI
+ get_snapdir: dir=data
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Registering: uu
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+ Registering: global_gg
+SVN: -------            v.         (                   ) $Id
+ Registering: rho
+SVN: -------            v.         (                   ) $Id$
+ Registering: ss
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: baroclinic_run.f90 v. 19193   (2012-06-30 12:55:46) wdobler
+ Registering: potturb
+ bcx1,bcx2= a  s  s  a2 a2  : a  s  s  a2 a2 
+ bcy1,bcy2= p  p  p  p  p   : p  p  p  p  p  
+ bcz1,bcz2= p  p  p  p  p   : p  p  p  p  p  
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=           9  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=          64          64           1
+ Lx, Ly, Lz=   9.60000000000000        6.28318400000000     
+  0.520000000000000     
+       Vbox=   313.656545280000     
+ read persistent ID INITIAL_BLOCK_ID
+ rsnap: read snapshot var.dat in   2.002244582399726E-004  seconds
+ rprint_list: nname=          18
+ rprint_list: ix,iy,iz,iz2=          -1          -1          -1          -1
+ rprint_list: nnamev=           0
+ rprint_list: nnamez=          -1
+ rprint_list: nnamez=          -1
+ rprint_list: nnamey=          -1
+ rprint_list: nnamex=          -1
+ rprint_list: nnamer=           0
+ rprint_list: nnamexz=          -1
+ rprint_list: nnamexy=          -1
+ rprint_list: nnamerz=          -1
+ rprint_general: run through parse list
+ rprint_hydro: run through parse list
+ rprint_hydro: run through parse list
+ rprint_density: run through parse list
+ rprint_viscosity: run through parse list
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  3.436348839085013E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.07517381523383       5.000000000000000E-002  1.785714285714287E-003
+  0.285714285714286     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_grid, r_int,r_ext=  0.400000000000000        10.0000000000000     
+ timestep based on CFL cond; cdt=  0.400000000000000     
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+ dVol_rel1=  4.769536019536019E-005
+ dA_xy_rel1=  4.769536019536019E-005
+ dA_xz_rel1=  1.562500000000000E-002
+ dA_yz_rel1=  1.562500000000000E-002
+ dL_y_rel1=  1.562500000000000E-002
+ initialize_gravity: non-smoothed newtonian gravity
+ xmask_den=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ zmask_den=   1.00000000000000     
+ diffusion: mesh hyperdiffusion
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ xmask_hyd=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ zmask_hyd=   1.00000000000000     
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ select_eos_variable: Using rho and ss
+ initialize_energy: nheatc_max,iheatcond=           4 
+ hyper3-mesh                             
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ heat conduction: hyperdiffusivity of ss
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ xmask_vis=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ choose_pencils: finding out which pencils are needed for the pencil case.
+ write_pencil_info: pencil information written to the file pencils.list.
+ Lz=  0.520000000000000     
+ z=  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ 
+ it=           1  t=  0.000000000000000E+000
+ This is a simulation that is 
+ restarting from a snapshot. The
+ list of modes will be read from file, 
+ to regenerate the mode structure.
+ 
+ calc_pencils_hydro: max(advec_uu) =   40.2094177347268     
+ calc_pencils_energy: max(advec_cs2) =   18.9682307461037     
+WARNING: 
+ calc_pencils_viscosity: viscous heating not implemented for lvisc_hyper3_mesh!
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       a>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       s>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       s>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <      a2>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3_mesh=   5.00000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ denergy_dt: SOLVE denergy_dt
+Bcs for         ss,  x: <      a2>, y: <       p>,  z: <       p>
+ denergy_dt: lnTT,cs2,cp1=  -4.15888308335967       6.250000000000001E-003
+  0.000000000000000E+000
+ calc_heatcond_hyper3_mesh: chi_hyper3=  0.000000000000000E+000
+ calc_heatcond_hyper3_mesh: added thdiff
+ calc_heat_cool: lgravz, lgravr, lgravx, lspherical_coords= F T F F
+ 
+ ---it-------t----------dt----------umax--------rhomin--------rhom--------rhomax--------rho2m--------oz2m----------ozm---------uxuym--------urms---------orms-------potturb2m---potturbmax---potturbmin---gpotturbx2m--gpotturby2m-
+      0     0.0000    8.672E-03    1.579E+00    3.162E-01    3.024E-01    1.581E+00    1.923E-01    5.207E-02    7.631E-02    0.000E+00    4.379E-01    2.282E-01    2.396E-08    2.284E-03   -2.284E-03    5.881E-06    1.652E-07
+     10     0.0853    8.399E-03    1.579E+00    3.162E-01    3.024E-01    1.579E+00    1.923E-01    5.209E-02    7.632E-02    1.455E-05    4.379E-01    2.282E-01    2.395E-08    2.287E-03   -2.287E-03    5.895E-06    1.652E-07
+     20     0.1686    8.270E-03    1.578E+00    3.162E-01    3.024E-01    1.564E+00    1.923E-01    5.210E-02    7.633E-02    4.851E-05    4.379E-01    2.283E-01    2.394E-08    2.288E-03   -2.288E-03    5.908E-06    1.652E-07
+     30     0.2510    8.202E-03    1.578E+00    3.162E-01    3.024E-01    1.537E+00    1.923E-01    5.211E-02    7.634E-02    9.135E-05    4.379E-01    2.283E-01    2.394E-08    2.288E-03   -2.288E-03    5.921E-06    1.652E-07
+     40     0.3328    8.165E-03    1.578E+00    3.162E-01    3.024E-01    1.542E+00    1.922E-01    5.212E-02    7.634E-02    1.362E-04    4.379E-01    2.283E-01    2.393E-08    2.288E-03   -2.288E-03    5.932E-06    1.652E-07
+     50     0.4144    8.145E-03    1.577E+00    3.162E-01    3.024E-01    1.555E+00    1.922E-01    5.211E-02    7.634E-02    1.790E-04    4.379E-01    2.283E-01    2.393E-08    2.287E-03   -2.287E-03    5.943E-06    1.653E-07
+     60     0.4958    8.132E-03    1.577E+00    3.162E-01    3.024E-01    1.562E+00    1.921E-01    5.206E-02    7.634E-02    2.177E-04    4.378E-01    2.282E-01    2.392E-08    2.286E-03   -2.286E-03    5.953E-06    1.653E-07
+     70     0.5771    8.124E-03    1.577E+00    3.162E-01    3.024E-01    1.563E+00    1.921E-01    5.200E-02    7.633E-02    2.514E-04    4.378E-01    2.280E-01    2.392E-08    2.284E-03   -2.284E-03    5.962E-06    1.653E-07
+     80     0.6583    8.118E-03    1.577E+00    3.162E-01    3.023E-01    1.563E+00    1.920E-01    5.191E-02    7.631E-02    2.802E-04    4.378E-01    2.278E-01    2.391E-08    2.282E-03   -2.282E-03    5.969E-06    1.654E-07
+     90     0.7394    8.113E-03    1.577E+00    3.162E-01    3.023E-01    1.559E+00    1.920E-01    5.180E-02    7.629E-02    3.043E-04    4.377E-01    2.276E-01    2.391E-08    2.280E-03   -2.280E-03    5.976E-06    1.654E-07
+ 
+ Simulation finished after           91  time-steps
+ 
+ Writing final snapshot at time t =  0.747534007192290     
+ begin persistent block
+ begin persistent block
+ 
+ Wall clock time [hours] =  6.784E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  2.62    
+ Wall clock time/timestep/meshpoint [microsec] = 0.6551853    
+ Wall clock time/timestep/local meshpoint [microsec] =  2.620741    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.5763926    
+ After substep wall clock time/timestep/local meshpoint [microsec] = 3.1449777E-04
+ Before+After boundary wall clock time/timestep/local meshpoint [microsec] =  1.413341    
+ Diagnostics wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Timestep wall clock time/timestep/local meshpoint [microsec] =  2.090460    
+ Timestep (without waiting) wall clock time/timestep/local meshpoint [microsec] =  2.090460    
+ Timestep wall clock time/timestep/meshpoint [microsec] = 0.5226150    
+ Timestep (without waiting) wall clock time/timestep/meshpoint [microsec] = 0.5226150    
+ Diagnostics wall clock time/timestep/meshpoint [microsec] =  0.000000    
+ Rhs wall clock time/timestep/meshpoint [microsec] = 0.1440982    
+ After substep wall clock time/timestep/meshpoint [microsec] = 7.8624443E-05
+ Before+After boundary wall clock time/timestep/meshpoint [microsec] = 0.3533352    
+ Maximum used memory per cpu [MBytes] =    53.961
+ Maximum used memory [MBytes] =      201.523
+ 
+real 0.53
+user 0.98
+sys 0.08

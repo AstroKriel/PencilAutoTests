@@ -1,0 +1,94 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.4     (2009/02/02 10:44:01) dintrans
+SVN: run.in,v           v. 1.5     (2009/04/26 16:08:32) dintrans
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ register_implicit_physics: iTTold=           6
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=           1           1         128
+ Lx, Ly, Lz=   0.0000000000000000        0.0000000000000000        1.0000000000000000     
+       Vbox=   1.0000000000000000     
+ rsnap: read snapshot var.dat in    0.0000000000000000       seconds
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=   1.0000000000000000     
+ units_general: unit_length=   1.0000000000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   4.8108883747190188E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000        8.3749649296106604E-006  0.81650000000000000        1.0000083749999999E-003  0.40000000000000008     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: constant gravz=  -7.0000000000000000     
+ diffusion: nothing (i.e. no mass diffusion)
+ Note: rho_const or lnrho_const are not used
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and TT
+ heat conduction: nothing
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ ***********************************
+ initialize_implicit_physics: hcond0, hcond1, hcond2, widthlnTT, lmultilayer=
+   3.9084999999999999E+037   1.0000000000000000        1.0000000000000000        2.2204460492503131E-015 F
+ ***********************************
+ bc_ADI_flux_z: Fbot, hcondADI, dz=   2.0000000000000000E-002   9.9025150812002884E-003   9.9025150812002884E-003   9.9025150812002884E-003   9.8326523152620967E-003   9.9025150812002884E-003   9.9025150812002884E-003   9.9025150812002884E-003   7.8740157480314960E-003
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ bc_ADI_flux_z: Fbot, hcondADI, dz=   2.0000000000000000E-002   9.9025150812002884E-003   9.9025150812002884E-003   9.9025150812002884E-003   9.8326523152620967E-003   9.9025150812002884E-003   9.9025150812002884E-003   9.9025150812002884E-003   7.8740157480314960E-003
+ calc_pencils_hydro: max(advec_uu) =   0.0000000000000000     
+ calc_pencils_energy: max(advec_cs2) =   40031.532267771690     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       s>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       s>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       a>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <      a2>
+ dlnrho_dt: max(diffus_diffrho ) =   0.0000000000000000     
+ dlnrho_dt: max(diffus_diffrho3) =   0.0000000000000000     
+ SOLVE dlnTT_dt
+ denergy_dt: TT,cs2=   3.7229399467826605        2.4819599645217738     
+Bcs for         TT,  x: <       p>, y: <       p>,  z: <   c3:cT>
+ denergy_dt: cs20=   2.4819599645217738     
+ denergy_dt: max(diffus_chi ) =   0.0000000000000000     
+ denergy_dt: max(diffus_chi3) =   0.0000000000000000     
+
+ ----it-------t-------dt---------ruzm-------rhom----fradbot-----fradtop----dtc---dtnu-dtchi-
+        0    0.00 1.995E-03  -1.10301E-05  0.6404 2.00000E-02 2.35050E-02 0.998 0.064 0.000
+       10    0.02 1.995E-03   6.02267E-05  0.6404 2.00000E-02 2.33884E-02 0.998 0.064 0.000
+       20    0.04 1.995E-03   1.53954E-04  0.6404 2.00000E-02 2.23383E-02 0.998 0.064 0.000
+       30    0.06 1.995E-03   2.47595E-04  0.6404 2.00000E-02 2.18770E-02 0.998 0.064 0.000
+       40    0.08 1.995E-03   3.37786E-04  0.6404 2.00000E-02 2.16163E-02 0.998 0.064 0.000
+       50    0.10 1.995E-03   4.34780E-04  0.6404 2.00000E-02 2.14407E-02 0.998 0.064 0.000
+       60    0.12 1.995E-03   5.34183E-04  0.6404 2.00000E-02 2.13048E-02 0.998 0.064 0.000
+       70    0.14 1.995E-03   6.28465E-04  0.6404 2.00000E-02 2.11880E-02 0.998 0.064 0.000
+       80    0.16 1.995E-03   7.20672E-04  0.6404 2.00000E-02 2.10801E-02 0.998 0.064 0.000
+       90    0.18 1.995E-03   8.16173E-04  0.6404 2.00000E-02 2.09762E-02 0.998 0.064 0.000
+
+ Simulation finished after           91  time-steps
+
+ Writing final snapshot at time t =  0.18155119498412906     
+
+ Wall clock time [hours] =  1.667E-05 (+/-  2.7778E-07)
+ Wall clock time/timestep/meshpoint [microsec] =  5.151099    
+ Wall clock time/timestep/local meshpoint [microsec] =  5.151099    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  3.090659    
+ Maximum used memory per cpu [MBytes] =    12.531
+ Maximum used memory [MBytes] =       12.531
+

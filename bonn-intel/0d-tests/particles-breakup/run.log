@@ -1,0 +1,131 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in           v. 43857   (2026-04-30 07:06:45) nilshau
+SVN: run.in             v. 43857   (2026-04-30 07:06:45) nilshau
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 0-D run
+ nxgrid, nygrid, nzgrid=           1           1           1
+ Lx, Ly, Lz=   100.000000000000        100.000000000000     
+   100.000000000000     
+       Vbox=   1.00000000000000     
+ rsnap: read snapshot var.dat in   1.000000047497451E-004  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.000000000000000E+000   1.00000000000000        1.00000000000000     
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_density: 0-D run, turned off continuity equation
+ diffusion: nothing (i.e. no mass diffusion)
+WARNING:  initialize_density: are rho_const or lnrho_const ok?!
+ inconsistency between the density constants from eos  
+ (rho0 or lnrho0) and the ones from the density module 
+ (rho_const or lnrho_const). It may damage your        
+ simulation if you are using them in different places. 
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ initialize_hydro: 0-D run, turned off advection of velocity.
+ select_eos_variable: Using rho and cs2
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.00000000000000     
+ initialize_particles: mass per constituent particle mpmat=
+   4188.79020478639     
+ initialize_particles: mass per superparticle mp_swarm =  1.000000000000000E-004
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  1.000000000000000E-004
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected cloud-in-cell for particle-mesh method. 
+ initialize_particles_radius: mass per dust grain mpmat=   4188.79020478639     
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt: Add drag force; tausp=  0.000000000000000E+000
+ dap_dt_pencil: Calculate dap/dt
+ dnpswarm_dt_pencil: Calculate dnpswarm_dt
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=p      
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: Constant gravity field in z-direction.
+ particle_gravity: No radial gravity
+ 
+ ---it--------t---------dt-------vpzmin-----vpzmax------vpzm--------npm-------np2m-------npmax-------apm-------ap2m-------apmin------apmax-----imskhm----npswarmm------zpm-------wegm------wegmin-----wegmax------d32m-----npar_found-
+      0   0.000E+00  5.000E-04  0.000E+00  0.000E+00  0.000E+00  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  2.000E+01          1
+    500   2.500E-01  5.000E-04 -2.451E+02 -2.451E+02 -2.451E+02  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  2.045E+01  2.045E+01  2.045E+01  2.000E+01          1
+   1000   5.000E-01  5.000E-04 -4.897E+02 -4.897E+02 -4.897E+02  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  8.160E+01  8.160E+01  8.160E+01  2.000E+01          1
+   1500   7.500E-01  5.000E-04 -7.330E+02 -7.330E+02 -7.330E+02  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  1.828E+02  1.828E+02  1.828E+02  2.000E+01          1
+   2000   1.000E+00  5.000E-04 -9.746E+02 -9.746E+02 -9.746E+02  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  3.232E+02  3.232E+02  3.232E+02  2.000E+01          1
+   2500   1.250E+00  5.000E-04 -1.214E+03 -1.214E+03 -1.214E+03  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  5.013E+02  5.013E+02  5.013E+02  2.000E+01          1
+   3000   1.500E+00  5.000E-04 -1.450E+03 -1.450E+03 -1.450E+03  1.000E+00  1.000E+00  1.000E+00  1.000E+01  1.000E+02  1.000E+01  1.000E+01  0.000E+00  1.000E+00  0.000E+00  7.154E+02  7.154E+02  7.154E+02  2.000E+01          1
+particles_breakup: ipar=1 t=  1.7174E+00 RT catastrophic  d_p:  2.000E+01 ->  1.244E+00 cm  urmag= 1.653E+03 cm/s  rho_g= 1.225E-03  We_g= 9.295E+02
+   3500   1.750E+00  5.000E-04 -1.656E+03 -1.656E+03 -1.656E+03  1.000E+00  1.000E+00  1.000E+00  6.218E-01  3.866E-01  6.218E-01  6.218E-01  0.000E+00  4.160E+03  0.000E+00  5.800E+01  5.800E+01  5.800E+01  1.244E+00          1
+particles_breakup: ipar=1 t=  1.8329E+00 PE bag-stamen  d_p:  1.244E+00 ->  2.625E-01 cm  urmag= 1.663E+03 cm/s  rho_g= 1.225E-03  We_g= 5.850E+01
+   4000   2.000E+00  5.000E-04 -1.283E+03 -1.283E+03 -1.283E+03  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  7.352E+00  7.352E+00  7.352E+00  2.625E-01          1
+   4500   2.250E+00  5.000E-04 -1.028E+03 -1.028E+03 -1.028E+03  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  4.722E+00  4.722E+00  4.722E+00  2.625E-01          1
+   5000   2.500E+00  5.000E-04 -9.149E+02 -9.149E+02 -9.149E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  3.737E+00  3.737E+00  3.737E+00  2.625E-01          1
+   5500   2.750E+00  5.000E-04 -8.592E+02 -8.592E+02 -8.592E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  3.296E+00  3.296E+00  3.296E+00  2.625E-01          1
+   6000   3.000E+00  5.000E-04 -8.305E+02 -8.305E+02 -8.305E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  3.080E+00  3.080E+00  3.080E+00  2.625E-01          1
+   6500   3.250E+00  5.000E-04 -8.155E+02 -8.155E+02 -8.155E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.969E+00  2.969E+00  2.969E+00  2.625E-01          1
+   7000   3.500E+00  5.000E-04 -8.074E+02 -8.074E+02 -8.074E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.911E+00  2.911E+00  2.911E+00  2.625E-01          1
+   7500   3.750E+00  5.000E-04 -8.031E+02 -8.031E+02 -8.031E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.880E+00  2.880E+00  2.880E+00  2.625E-01          1
+   8000   4.000E+00  5.000E-04 -8.008E+02 -8.008E+02 -8.008E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.864E+00  2.864E+00  2.864E+00  2.625E-01          1
+   8500   4.250E+00  5.000E-04 -7.995E+02 -7.995E+02 -7.995E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.855E+00  2.855E+00  2.855E+00  2.625E-01          1
+   9000   4.500E+00  5.000E-04 -7.989E+02 -7.989E+02 -7.989E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.850E+00  2.850E+00  2.850E+00  2.625E-01          1
+   9500   4.750E+00  5.000E-04 -7.985E+02 -7.985E+02 -7.985E+02  1.000E+00  1.000E+00  1.000E+00  1.312E-01  1.722E-02  1.312E-01  1.312E-01  0.000E+00  4.425E+05  0.000E+00  2.847E+00  2.847E+00  2.847E+00  2.625E-01          1
+ 
+ Simulation finished after        10000  time-steps
+ 
+ Writing final snapshot at time t =   5.00000000000003     
+ 
+ Wall clock time [hours] =  4.200E-05 (+/-  2.7778E-08)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] = 1.512E-03
+ Wall clock time/timestep/meshpoint [microsec] =  15.12000    
+ Wall clock time/timestep/local meshpoint [microsec] =  15.12000    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  3.790000    
+ Maximum used memory per cpu [MBytes] =    10.086
+ Maximum used memory [MBytes] =       10.086
+ 
+real 0.15
+user 0.14
+sys 0.00

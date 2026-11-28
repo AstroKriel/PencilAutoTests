@@ -1,0 +1,96 @@
+Running make '-j' 'FFLAGS_DOUBLE=-r8' 'CFLAGS_DOUBLE=-DDOUBLE_PRECISION' 'LD_MPI=' 'CFLAGS_FFTW3=' 'FFLAGS_FFTW3=' 'LD_FFTW3=' 'CFLAGS_FFTW2=' 'FFLAGS_FFTW2=' 'LD_FFTW2=' 'FC=mpiifx' 'F77=$(FC)' 'FFLAGS=-implicitnone' 'OMPFFLAGS=-qopenmp' 'PPFLAGS=-fpp' 'LDFLAGS=-Bdynamic' 'FSTD_95=-std95' 'FSTD_2003=-std03' 'FSTD_2008=-std08' 'FSTD_2018=-std08' 'CC=mpiicx' 'CFLAGS=-DFUNDERSC=1' 'default_to_be'
+MAKING src/Makefile.inc
+=====  make FROM_PARENT=src/ -f Makefile.src code =====
+make[1]: Entering directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src'
+Compiler: mpiifx
+Makefile.src:3818: warning: overriding recipe for target 'nompicomm.o'
+Makefile.src:3531: warning: ignoring old recipe for target 'nompicomm.o'
+scripts/mkcparam --dynamic-aux=64 --num-special=1 noascalar.f90 noborder_profiles.f90 nochemistry.f90 nochiral.f90 nocoala.f90 nocosmicray.f90 nocosmicrayflux.f90 density.f90 deriv.f90 nodetonate.f90 nodriver.f90 nodustdensity.f90 nodustvelocity.f90 noentropy.f90 eos_idealgas.f90 nofixed_point.f90 forcing.f90 nogravity.f90 nogpu.f90 grid.f90 noheatflux.f90 hydro.f90 nohyperresi_strict.f90 nohypervisc_strict.f90 noimplicit_diffusion.f90 noimplicit_physics.f90 noinitial_condition.f90 nointerstellar.f90 nolorenz_gauge.f90 magnetic.f90 magnetic/nomeanfield.f90 magnetic/nomeanfield_demfdt.f90 nompicomm.f90 noneutraldensity.f90 noneutralvelocity.f90 noNSCBC.f90 noopacity.f90 noparticles.f90 noparticles_adaptation.f90 noparticles_coagulation.f90 noparticles_breakup.f90 noparticles_condensation.f90  noparticles_collisions.f90 noparticles_map.f90 noparticles_density.f90  noparticles_mass.f90 noparticles_number.f90 noparticles_radius.f90 noparticles_potential.f90 noparticles_grad.f90 noparticles_selfgravity.f90 noparticles_sink.f90 noparticles_drag.f90 noparticles_spin.f90 noparticles_stalker.f90 noparticles_lyapunov.f90 noparticles_caustics.f90 noparticles_tetrad.f90 noparticles_stirring.f90 noparticles_diagnos_dv.f90 noparticles_diagnos_state.f90 noparticles_persistence.f90 noparticles_temperature.f90 noparticles_adsorbed.f90 noparticles_surfspec.f90 noparticles_chemistry.f90 nopointmasses.f90 nopoisson.f90 nopolymer.f90 nopower_spectrum.f90 nopython.f90 nopscalar.f90 noradiation.f90 noselfgravity.f90 noSGS_hydro.f90 noshear.f90 noshock.f90 nosignal_handling.f90 nosolid_cells.f90 nostreamlines.f90  notestfield.f90 notestflow.f90 notestscalar.f90 notimeavg.f90 timestep.f90 notraining.f90 viscosity.f90 cparam.local nospecial.f90
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src'
+Compiler: mpiifx
+Makefile:3823: warning: overriding recipe for target 'nompicomm.o'
+Makefile:3536: warning: ignoring old recipe for target 'nompicomm.o'
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src'
+make -f Makefile.src  start.o run.o start.x run.x
+make[2]: Entering directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src'
+Compiler: mpiifx
+Makefile.src:3818: warning: overriding recipe for target 'nompicomm.o'
+Makefile.src:3531: warning: ignoring old recipe for target 'nompicomm.o'
+scripts/mkcparam --dynamic-aux=64 --num-special=1 noascalar.f90 noborder_profiles.f90 nochemistry.f90 nochiral.f90 nocoala.f90 nocosmicray.f90 nocosmicrayflux.f90 density.f90 deriv.f90 nodetonate.f90 nodriver.f90 nodustdensity.f90 nodustvelocity.f90 noentropy.f90 eos_idealgas.f90 nofixed_point.f90 forcing.f90 nogravity.f90 nogpu.f90 grid.f90 noheatflux.f90 hydro.f90 nohyperresi_strict.f90 nohypervisc_strict.f90 noimplicit_diffusion.f90 noimplicit_physics.f90 noinitial_condition.f90 nointerstellar.f90 nolorenz_gauge.f90 magnetic.f90 magnetic/nomeanfield.f90 magnetic/nomeanfield_demfdt.f90 nompicomm.f90 noneutraldensity.f90 noneutralvelocity.f90 noNSCBC.f90 noopacity.f90 noparticles.f90 noparticles_adaptation.f90 noparticles_coagulation.f90 noparticles_breakup.f90 noparticles_condensation.f90  noparticles_collisions.f90 noparticles_map.f90 noparticles_density.f90  noparticles_mass.f90 noparticles_number.f90 noparticles_radius.f90 noparticles_potential.f90 noparticles_grad.f90 noparticles_selfgravity.f90 noparticles_sink.f90 noparticles_drag.f90 noparticles_spin.f90 noparticles_stalker.f90 noparticles_lyapunov.f90 noparticles_caustics.f90 noparticles_tetrad.f90 noparticles_stirring.f90 noparticles_diagnos_dv.f90 noparticles_diagnos_state.f90 noparticles_persistence.f90 noparticles_temperature.f90 noparticles_adsorbed.f90 noparticles_surfspec.f90 noparticles_chemistry.f90 nopointmasses.f90 nopoisson.f90 nopolymer.f90 nopower_spectrum.f90 nopython.f90 nopscalar.f90 noradiation.f90 noselfgravity.f90 noSGS_hydro.f90 noshear.f90 noshock.f90 nosignal_handling.f90 nosolid_cells.f90 nostreamlines.f90  notestfield.f90 notestflow.f90 notestscalar.f90 notimeavg.f90 timestep.f90 notraining.f90 viscosity.f90 cparam.local nospecial.f90
+scripts/mkcparam --dynamic-aux=64 --num-special=1 noascalar.f90 noborder_profiles.f90 nochemistry.f90 nochiral.f90 nocoala.f90 nocosmicray.f90 nocosmicrayflux.f90 density.f90 deriv.f90 nodetonate.f90 nodriver.f90 nodustdensity.f90 nodustvelocity.f90 noentropy.f90 eos_idealgas.f90 nofixed_point.f90 forcing.f90 nogravity.f90 nogpu.f90 grid.f90 noheatflux.f90 hydro.f90 nohyperresi_strict.f90 nohypervisc_strict.f90 noimplicit_diffusion.f90 noimplicit_physics.f90 noinitial_condition.f90 nointerstellar.f90 nolorenz_gauge.f90 magnetic.f90 magnetic/nomeanfield.f90 magnetic/nomeanfield_demfdt.f90 nompicomm.f90 noneutraldensity.f90 noneutralvelocity.f90 noNSCBC.f90 noopacity.f90 noparticles.f90 noparticles_adaptation.f90 noparticles_coagulation.f90 noparticles_breakup.f90 noparticles_condensation.f90  noparticles_collisions.f90 noparticles_map.f90 noparticles_density.f90  noparticles_mass.f90 noparticles_number.f90 noparticles_radius.f90 noparticles_potential.f90 noparticles_grad.f90 noparticles_selfgravity.f90 noparticles_sink.f90 noparticles_drag.f90 noparticles_spin.f90 noparticles_stalker.f90 noparticles_lyapunov.f90 noparticles_caustics.f90 noparticles_tetrad.f90 noparticles_stirring.f90 noparticles_diagnos_dv.f90 noparticles_diagnos_state.f90 noparticles_persistence.f90 noparticles_temperature.f90 noparticles_adsorbed.f90 noparticles_surfspec.f90 noparticles_chemistry.f90 nopointmasses.f90 nopoisson.f90 nopolymer.f90 nopower_spectrum.f90 nopython.f90 nopscalar.f90 noradiation.f90 noselfgravity.f90 noSGS_hydro.f90 noshear.f90 noshock.f90 nosignal_handling.f90 nosolid_cells.f90 nostreamlines.f90  notestfield.f90 notestflow.f90 notestscalar.f90 notimeavg.f90 timestep.f90 notraining.f90 viscosity.f90 cparam.local nospecial.f90
+mpiifx -implicitnone    -std08 -o sub.o -c sub.f90
+sub.f90(9752): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+1000  format(1p,e19.12,3(1x,e18.12))
+-----------------------------^
+mpiifx -implicitnone    -std08 -o io_dist.o -c io_dist.f90
+io_common.inc(27): warning #5112: Extension to FORTRAN-90: tab formatting
+		             ' nor backup file '//trim(filename)//'.bck[.1] exists')
+^
+mpiifx -implicitnone    -std08 -o diagnostics.o -c diagnostics.f90
+mpiifx -implicitnone    -std08 -o grid.o -c grid.f90
+diagnostics.f90(643): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+            nlength = flength - 2 - mlength                     ! now biggest possible number of pre-comma digits (-2: comma & sign!)
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o density_methods.o -c density_methods.f90
+mpiifx -implicitnone    -std08 -o nospecial.o -c nospecial.f90
+mpiifx -implicitnone    -std08 -o nopointmasses.o -c nopointmasses.f90
+mpiifx -implicitnone    -std08 -o notimeavg.o -c notimeavg.f90
+mpiifx -implicitnone    -std08 -o eos_idealgas.o -c eos_idealgas.f90
+eos_idealgas.f90(9): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+! CPARAM logical, parameter :: leos = .true., leos_ionization=.false., leos_fixed_ionization=.false., leos_temperature_ionization=.false.
+------------------------------------------------------------------------------------------------------------------------------------^
+eos_dummies.inc(95): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  07-dec-2024/Kishore: copied from eos_idealgas to eos_idealgas_vapor and modified to be EOS-agnostic. Also reduced duplicated code.
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o boundcond.o -c boundcond.f90
+mpiifx -implicitnone  -std08  -c initcond.f90 -o initcond.o
+mpiifx -implicitnone    -std08 -o noentropy.o -c noentropy.f90
+boundcond.f90(1547): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+              ! BCZ_DOC: special for perfect conductor with const alpha and etaT when A considered as B; one-sided for 1st and 2nd derivative in two first inner points
+------------------------------------------------------------------------------------------------------------------------------------^
+boundcond.f90(2160): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+            ! BCZ: special for perfect conductor with const alpha and etaT when A considered as B; one-sided for 1st and 2nd derivative in two first inner points
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o viscosity.o -c viscosity.f90
+mpiifx -implicitnone    -std08 -o filter.o -c filter.f90
+mpiifx -implicitnone    -std08 -o density.o -c density.f90
+mpiifx -implicitnone    -std08 -o nopscalar.o -c nopscalar.f90
+mpiifx -implicitnone    -std08 -o forcing.o -c forcing.f90
+forcing.f90(1470): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  22-Sep-2025/kishore: moved initialization of random2d_kmodes to initialize_forcing (to ensure it is done properly while reloading)
+------------------------------------------------------------------------------------------------------------------------------------^
+forcing.f90(5741): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+!  lfcont_as_comaux is tested for here (and not in, say, initialize_forcing or pencil_interdep_forcing) to prevent out-of-bounds access during the pencil check.
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o magnetic.o -c magnetic.f90
+magnetic.f90(1005): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+  integer :: idiag_bcurlfmz=0    ! XYAVG_DOC: $\left< \Bv \cdot \nabla\times \vec{F}/\mu_0\right>_{xy}$, where $\vec{F}$ is the additional EMF imposed through continuous forcing (lforcing_cont_aa=T)
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o hydro.o -c hydro.f90
+hydro.f90(541): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+  integer :: idiag_Reph1rms=0   ! DIAG_DOC: $\langle\frac{|\Uv\dot\nabla\Uv|}{|\nabla\cdot(\ln\varrho\nu\Strain)|}\rangle_\text{ph1}$
+------------------------------------------------------------------------------------------------------------------------------------^
+hydro.f90(2169): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+       !case ('robertsflow'); call robertsflow(ampluu(j),f,iuu,relhel_uu) !(AB: the following changes result by factor 2, but is now consistent with magnetic)
+------------------------------------------------------------------------------------------------------------------------------------^
+hydro.f90(4982): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+        ! !Kishore: the below was f(l1:l2,m,n,iuy)**2 (so I changed it to p%uu(:,2)), but from the name it seems that it should be using uz. Axel, please check.
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o diagnostics_methods.o -c diagnostics_methods.f90
+mpiifx -implicitnone    -std08 -o slices.o -c slices.f90
+mpiifx -implicitnone    -std08 -o persist.o -c persist.f90
+mpiifx -implicitnone    -std08 -o snapshot.o -c snapshot.f90
+mpiifx -implicitnone    -std08 -o equ.o -c equ.f90
+snapshot.f90(926): warning #5268: Extension to standard: The text exceeds right hand column allowed on the line.
+          !2026-Nov-12/Kishore: commented out below and restored above to fix power spectra output in the helical-MHDturb sample. Axel, please check.
+------------------------------------------------------------------------------------------------------------------------------------^
+mpiifx -implicitnone    -std08 -o timestep.o -c timestep.f90
+mpiifx -implicitnone    -std08 -o pencil_check.o -c pencil_check.f90
+mpiifx -implicitnone    -std08 -o param_io.o -c param_io.f90
+mpiifx -implicitnone    -std08 -o register.o -c register.f90
+mpiifx -implicitnone    -std08 -o start.o -c start.f90
+mpiifx -implicitnone    -std08 -o run.o -c run.f90
+mpiifx cparam.o cdata.o nompicomm.o noborder_profiles.o boundcond.o nodebug.o debug_io_dist.o deriv.o diagnostics_methods.o diagnostics.o nodriver.o farray_alloc.o farray.o filter.o nofixed_point.o nofourier.o general.o geometrical_types.o ghost_check.o noghostfold.o grid.o nogsl.o noimplicit_diffusion.o initcond.o noinitial_condition.o nohdf5_io.o   io_dist.o file_io_f95.o nolsode_for_chemistry.o messages.o noNSCBC.o param_io.o persist.o nopower_spectrum.o nopython.o quiet.o register.o shared_variables.o nosignal_handling.o slices.o slices_methods.o snapshot.o nosolid_cells_mpicomm.o nosolid_cells.o nostreamlines.o nostruct_func.o sub.o syscalls.o shared_mem.o syscalls_ansi.o notestperturb.o notimeavg.o noweno_transport.o nokt_transport.o nocoala.o noyinyang.o noyinyang_mpi.o magnetic.a noparticles_main.a morton_helper.o  nochemistry.o nochiral.o nocosmicray.o nocosmicrayflux.o density.o density_methods.o nodetonate.o nodustdensity.o nodustvelocity.o noentropy.o eos_idealgas.o forcing.o nogravity.o noheatflux.o hydro.o nohyperresi_strict.o nohypervisc_strict.o noimplicit_physics.o nointerstellar.o nolorenz_gauge.o noneutraldensity.o noneutralvelocity.o noopacity.o nopointmasses.o nopoisson.o nopolymer.o nopscalar.o noradiation.o noselfgravity.o noSGS_hydro.o noshear.o noshock.o nospecial.o noascalar.o  notestfield.o notestflow.o notestscalar.o viscosity.o nogpu.o nogpu_astaroth_ansi.o notraining.o start.o  -Bdynamic -lrt     -o start.x
+mpiifx cparam.o cdata.o nompicomm.o noborder_profiles.o boundcond.o nodebug.o debug_io_dist.o deriv.o diagnostics_methods.o diagnostics.o nodriver.o farray_alloc.o farray.o filter.o nofixed_point.o nofourier.o general.o geometrical_types.o ghost_check.o noghostfold.o grid.o nogsl.o noimplicit_diffusion.o initcond.o noinitial_condition.o nohdf5_io.o   io_dist.o file_io_f95.o nolsode_for_chemistry.o messages.o noNSCBC.o param_io.o persist.o nopower_spectrum.o nopython.o quiet.o register.o shared_variables.o nosignal_handling.o slices.o slices_methods.o snapshot.o nosolid_cells_mpicomm.o nosolid_cells.o nostreamlines.o nostruct_func.o sub.o syscalls.o shared_mem.o syscalls_ansi.o notestperturb.o notimeavg.o noweno_transport.o nokt_transport.o nocoala.o noyinyang.o noyinyang_mpi.o magnetic.a noparticles_main.a morton_helper.o  nochemistry.o nochiral.o nocosmicray.o nocosmicrayflux.o density.o density_methods.o nodetonate.o nodustdensity.o nodustvelocity.o noentropy.o eos_idealgas.o forcing.o nogravity.o noheatflux.o hydro.o nohyperresi_strict.o nohypervisc_strict.o noimplicit_physics.o nointerstellar.o nolorenz_gauge.o noneutraldensity.o noneutralvelocity.o noopacity.o nopointmasses.o nopoisson.o nopolymer.o nopscalar.o noradiation.o noselfgravity.o noSGS_hydro.o noshear.o noshock.o nospecial.o noascalar.o  notestfield.o notestflow.o notestscalar.o viscosity.o nogpu.o nogpu_astaroth_ansi.o timestep.o notraining.o equ.o pencil_check.o global_pushpars.o run.o  -Bdynamic -lrt      -o run.x
+make[2]: Leaving directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src'
+make[1]: Leaving directory '/export/data1/pencil/bonn-intel/samples/backwards-compatible/src' 

@@ -1,0 +1,157 @@
+SVN: -------            v.         (                   ) $Id$
+ lperi=  F T T
+SVN: start.in,v         v. 1.1     (2017/04/26 17:31:11) wlyra
+SVN: run.in,v           v. 1.1     (2017/04/26 17:31:11) wlyra
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Registering: shock
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Registering: uu
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+ Registering: global_gg
+SVN: -------            v.         (                   ) $Id
+ Registering: rho
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ bcx1,bcx2= a  a2 s  a2 s   : a  a2 s  a2 s  
+ bcy1,bcy2= p  p  p  p  p   : p  p  p  p  p  
+ bcz1,bcz2= p  p  p  p  p   : p  p  p  p  p  
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          10  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=          16          48           1
+ Lx, Ly, Lz=   2.10000000000000        6.28318530717959     
+   2.00000000000000     
+       Vbox=   19.1322992603619     
+ rsnap: read snapshot var.dat in   2.053322969004512E-004  seconds
+ rprint_list: nname=           7
+ rprint_list: ix,iy,iz,iz2=          -1          -1          -1          -1
+ rprint_list: nnamev=           0
+ rprint_list: nnamez=          -1
+ rprint_list: nnamez=          -1
+ rprint_list: nnamey=          -1
+ rprint_list: nnamex=          -1
+ rprint_list: nnamer=           0
+ rprint_list: nnamexz=          -1
+ rprint_list: nnamexy=          -1
+ rprint_list: nnamerz=          -1
+ rprint_general: run through parse list
+ rprint_hydro: run through parse list
+ rprint_hydro: run through parse list
+ rprint_density: run through parse list
+ rprint_shock: run through parse list
+ rprint_viscosity: run through parse list
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.99146454710798       5.000000000000000E-002  2.499999999999999E-003
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_grid, r_int,r_ext=  0.400000000000000        2.50000000000000     
+ timestep based on CFL cond; cdt=  0.400000000000000     
+ dVol_rel1=  9.578544061302692E-004
+ dA_xy_rel1=  9.578544061302692E-004
+ dA_xz_rel1=  6.250000000000000E-002
+ dA_yz_rel1=  2.083333333333335E-002
+ dL_y_rel1=  2.083333333333333E-002
+ initialize_gravity: non-smoothed newtonian gravity
+ xmask_den=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ zmask_den=   1.00000000000000     
+ diffusion: mesh hyperdiffusion
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ xmask_hyd=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ zmask_hyd=   1.00000000000000     
+ lT0mu_total is True so setting T00_total and T0i_total to True
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ Registering: cs2
+ Registering: glnTT
+ select_eos_variable: Using rho and cs2
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ xmask_vis=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+ choose_pencils: finding out which pencils are needed for the pencil case.
+ write_pencil_info: pencil information written to the file pencils.list.
+ Lz=   2.00000000000000     
+ z=  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: call gij_etc
+ calc_pencils_hydro: max(advec_uu) =  4.711932861427432E-015
+ calc_pencils_energy: max(advec_cs2) =   2.59860418297301     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       a>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <      a2>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       s>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <      a2>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3_mesh=   20.0000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ 
+ ---it-------t----------dt----------umax-----rhomax-rhomin--nshift--
+      0      0.000    1.340E-01    1.868E+00   1.0   1.0    3.017
+      5      0.670    1.340E-01    1.868E+00   1.0   1.0    3.017
+     10      1.340    1.339E-01    1.868E+00   1.1   1.0    3.016
+     15      2.009    1.339E-01    1.868E+00   1.2   0.9    3.014
+     20      2.678    1.338E-01    1.868E+00   1.2   0.9    3.013
+     25      3.347    1.338E-01    1.869E+00   1.2   0.9    3.013
+     30      4.016    1.337E-01    1.868E+00   1.2   0.9    3.012
+     35      4.685    1.337E-01    1.868E+00   1.3   0.8    3.010
+     40      5.353    1.337E-01    1.868E+00   1.3   0.8    3.010
+     45      6.021    1.337E-01    1.868E+00   1.2   0.8    3.010
+ 
+ Simulation finished after           50  time-steps
+ 
+ Writing final snapshot at time t =   6.68971943568603     
+ 
+ Wall clock time [hours] =  1.949E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  7.31    
+ Wall clock time/timestep/meshpoint [microsec] =  1.827210    
+ Wall clock time/timestep/local meshpoint [microsec] =  7.308839    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.8848490    
+ After substep wall clock time/timestep/local meshpoint [microsec] =  1.824092    
+ Before+After boundary wall clock time/timestep/local meshpoint [microsec] = 0.3252894    
+ Diagnostics wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Timestep wall clock time/timestep/local meshpoint [microsec] =  3.248123    
+ Timestep (without waiting) wall clock time/timestep/local meshpoint [microsec] =  3.248123    
+ Timestep wall clock time/timestep/meshpoint [microsec] = 0.8120308    
+ Timestep (without waiting) wall clock time/timestep/meshpoint [microsec] = 0.8120308    
+ Diagnostics wall clock time/timestep/meshpoint [microsec] =  0.000000    
+ Rhs wall clock time/timestep/meshpoint [microsec] = 0.2212123    
+ After substep wall clock time/timestep/meshpoint [microsec] = 0.4560230    
+ Before+After boundary wall clock time/timestep/meshpoint [microsec] = 8.1322338E-02
+ Maximum used memory per cpu [MBytes] =    50.426
+ Maximum used memory [MBytes] =      192.719
+ 
+real 0.36
+user 0.30
+sys 0.07

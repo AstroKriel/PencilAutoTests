@@ -1,0 +1,61 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          32          32          32
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  4.810888374719019E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.405465108108164        1.00000000000000       0.600000000000000     
+  0.400000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ select_eos_variable: Using lnrho and ss
+ init_uu: nothing
+ sinwave_phase: i, fact, kx, ky, kz, phase=           1  1.000000000000000E-003
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ sinwave_phase: i, fact, kx, ky, kz, phase=           2  1.000000000000000E-003
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ sinwave_phase: i, fact, kx, ky, kz, phase=           3 -4.000000000000000E-003
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ sinwave_phase: i, fact, kx, ky, kz, phase=           4  9.999999999999998E-004
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ sinwave_phase: i, fact, kx, ky, kz, phase=           5  9.999999999999998E-004
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ sinwave_phase: i, fact, kx, ky, kz, phase=           6 -3.999999999999999E-003
+   2.00000000000000        2.00000000000000        1.00000000000000     
+  0.000000000000000E+000
+ Maximum used memory per cpu [MBytes] =    48.852
+ Maximum used memory [MBytes] =      378.047
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.38
+user 0.28
+sys 0.20

@@ -1,0 +1,126 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) no cvsid is given i
+SVN: -------            v.         (                   ) no cvsid is given i
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_density. v. 20849   (2013-08-06 18:45:43) anders
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 19206   (2012-06-30 21:40:24) sven.bingert
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=           8           8           8
+ Lx, Ly, Lz=  0.200000000000000       0.200000000000000     
+  0.200000000000000     
+       Vbox=  8.000000000000002E-003
+ rsnap: read snapshot var.dat in   1.893660519272089E-004  seconds
+ setup_slices: slice_position = m
+ setup_slices: ix_loc, (video files) = 7                                        
+                                        
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+   3.67575413281869        6.28318530717959        39.4784176043575     
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ Set z stratification: g_z = -gz_coeff^2 * z
+ initialize_selfgravity: epicycle frequency kappa =    6.28318530717959     
+WARNING: 
+ initialize_density_methods: density methods not yet implemented for density_str
+ atified!
+ initialize_density: mesh hyper-diffusion; diffrho_hyper3_mesh = 
+   1.00000000000000     
+ initialize_density: Global density gradient with beta_glnrho_global=
+ -0.100000000000000       0.000000000000000E+000  0.000000000000000E+000
+ select_eos_variable: Using rho and cs2
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ initialize_particles: dust-to-gas ratio eps_dtog=  2.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  3.916606679110939E-006
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  0.250662827463100     
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ initialize_particles_sink: sink_radius=  2.500000000000000E-002
+ particles_initialize_modules: reblocking particles
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   12.2227800510672     
+ calc_pencils_energy: max(advec_cs2) =   189496.404500916     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       p>
+ coriolis_cartesian: add Coriolis force; Omega=   6.28318530717959     
+ dlnrho_dt: SOLVE the continuity equation. 
+Bcs for        rho,  x: <     she>, y: <       p>,  z: <       p>
+ denergy_dt: adding global pressure gradient force
+ shearing: Sshear,Sshear1=  -9.42477796076938       -9.42477796076938     
+ shearing: qshear,qshear0=   1.50000000000000       0.000000000000000E+000
+ drhopswarm_dt_pencil: Calculate drhopswarm_dt
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=p      
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ dvvp_dt: Add Coriolis force; Omega=   6.28318530717959     
+ dvvp_dt: No gravity in x-direction.
+ dvvp_dt: Linear gravity field in z-direction.
+ dvvp_dt: No radial gravity
+ 
+ ---it------t-------dt-----dtv-dtdragp----mass------urms------umax-----rhomin----rhomax---drhorms---drhomax--nblockmin-nblockmax--nparmin---nparmax------xpm-------xp2m-------ypm-------yp2m-------zpm-------zp2m------vpxm-------vpym-------vpzm------vpx2m-----vpy2m-----vpz2m-----npmax-----rhopm----rhopmax--
+      0    0.000 1.66E-03 1.00  0.2498 7.987E-03 2.583E-01 2.974E-01 9.962E-01 9.999E-01 0.000E+00 0.000E+00 5.300E+01 6.200E+01 1.230E+02 1.300E+02 -1.828E-03 3.411E-03 -7.093E-04 3.284E-03  3.302E-03 3.394E-03 -1.097E-01 -2.272E-01  0.000E+00 1.220E-02 5.178E-02 0.000E+00 4.000E+00 2.507E-01 5.446E-01
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+      1    0.002 1.66E-03 1.00  0.2498 7.987E-03 2.582E-01 2.947E-01 9.931E-01 1.003E+00 1.152E-03 3.321E-03 5.400E+01 6.200E+01 1.230E+02 1.310E+02 -1.620E-03 3.412E-03 -1.064E-03 3.279E-03  3.302E-03 3.394E-03 -1.097E-01 -2.274E-01 -2.128E-04 1.222E-02 5.185E-02 1.413E-05 4.000E+00 2.507E-01 5.370E-01
+      2    0.003 1.66E-03 1.00  0.2496 7.987E-03 2.580E-01 2.920E-01 9.914E-01 1.004E+00 1.608E-03 4.837E-03 5.400E+01 6.300E+01 1.230E+02 1.330E+02 -1.802E-03 3.412E-03 -2.196E-03 3.274E-03  3.302E-03 3.392E-03 -1.098E-01 -2.276E-01 -4.169E-04 1.223E-02 5.194E-02 5.474E-05 4.000E+00 2.507E-01 5.355E-01
+      3    0.005 1.66E-03 1.00  0.2495 7.987E-03 2.580E-01 2.933E-01 9.917E-01 1.003E+00 1.352E-03 4.541E-03 5.400E+01 6.400E+01 1.210E+02 1.320E+02 -1.985E-03 3.412E-03 -2.154E-03 3.269E-03  3.301E-03 3.391E-03 -1.099E-01 -2.278E-01 -6.110E-04 1.225E-02 5.204E-02 1.193E-04 4.000E+00 2.507E-01 5.338E-01
+      4    0.007 1.66E-03 1.00  0.2494 7.987E-03 2.580E-01 2.959E-01 9.926E-01 1.002E+00 1.016E-03 3.559E-03 5.500E+01 6.500E+01 1.210E+02 1.340E+02 -1.776E-03 3.413E-03 -2.526E-03 3.264E-03  3.300E-03 3.388E-03 -1.100E-01 -2.281E-01 -7.949E-04 1.227E-02 5.215E-02 2.054E-04 4.000E+00 2.507E-01 5.376E-01
+      5    0.008 1.66E-03 1.00  0.2493 7.987E-03 2.579E-01 2.978E-01 9.927E-01 1.002E+00 1.068E-03 3.488E-03 5.600E+01 6.500E+01 1.190E+02 1.360E+02 -1.959E-03 3.413E-03 -2.485E-03 3.262E-03  3.298E-03 3.385E-03 -1.102E-01 -2.283E-01 -9.695E-04 1.230E-02 5.226E-02 3.108E-04 4.000E+00 2.507E-01 5.443E-01
+      6    0.010 1.66E-03 1.00  0.2494 7.987E-03 2.578E-01 2.965E-01 9.931E-01 1.003E+00 1.132E-03 3.652E-03 5.600E+01 6.700E+01 1.180E+02 1.370E+02 -1.751E-03 3.414E-03 -2.478E-03 3.254E-03  3.296E-03 3.381E-03 -1.103E-01 -2.285E-01 -1.137E-03 1.232E-02 5.235E-02 4.335E-04 4.000E+00 2.507E-01 5.502E-01
+      7    0.012 1.66E-03 1.00  0.2496 7.987E-03 2.578E-01 2.930E-01 9.920E-01 1.002E+00 1.089E-03 4.226E-03 5.600E+01 6.700E+01 1.190E+02 1.350E+02 -1.934E-03 3.414E-03 -1.266E-03 3.249E-03  3.294E-03 3.377E-03 -1.104E-01 -2.287E-01 -1.300E-03 1.234E-02 5.244E-02 5.715E-04 4.000E+00 2.507E-01 5.554E-01
+      8    0.013 1.66E-03 1.00  0.2496 7.987E-03 2.578E-01 2.937E-01 9.924E-01 1.002E+00 1.060E-03 3.777E-03 5.700E+01 6.700E+01 1.220E+02 1.370E+02 -2.118E-03 3.415E-03 -1.614E-03 3.244E-03  3.292E-03 3.372E-03 -1.105E-01 -2.289E-01 -1.460E-03 1.236E-02 5.251E-02 7.230E-04 4.000E+00 2.507E-01 5.599E-01
+      9    0.015 1.66E-03 1.00  0.2495 7.987E-03 2.577E-01 2.908E-01 9.936E-01 1.002E+00 1.084E-03 2.779E-03 5.700E+01 6.700E+01 1.230E+02 1.350E+02 -2.301E-03 3.415E-03 -1.178E-03 3.240E-03  3.289E-03 3.367E-03 -1.106E-01 -2.291E-01 -1.619E-03 1.238E-02 5.258E-02 8.865E-04 4.000E+00 2.507E-01 5.638E-01
+ 
+ Simulation finished after           10  time-steps
+ 
+ Writing final snapshot at time t =  1.659877403801385E-002
+ 
+ Wall clock time [hours] =  2.990E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  16.8    
+ Wall clock time/timestep/meshpoint [microsec] =  21.02144    
+ Wall clock time/timestep/local meshpoint [microsec] =  84.08574    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  1.485948    
+ Maximum used memory per cpu [MBytes] =    51.832
+ Maximum used memory [MBytes] =      196.578
+ 
+real 0.40
+user 0.47
+sys 0.08

@@ -1,0 +1,309 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in           v. 12078   (2009-11-14 16:52:27) ajohan
+SVN: run.in             v. 12078   (2009-11-14 16:52:27) ajohan
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Registering: shock
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Registering: uu
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+ Registering: global_gg
+ Registering: potself
+SVN: -------            v.         (                   ) $Id$
+ Registering: rho
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+ Registering: np
+ Registering: rhop
+SVN: -------            v.         (                   ) $Id$
+ Registering: gpotselfx
+ Registering: gpotselfy
+ Registering: gpotselfz
+ bcx1,bcx2= p  p  p  p  p  p  p  p  p   : p  p  p  p  p  p  p  p  p  
+ bcy1,bcy2= p  p  p  p  p  p  p  p  p   : p  p  p  p  p  p  p  p  p  
+ bcz1,bcz2= p  p  p  p  p  p  p  p  p   : p  p  p  p  p  p  p  p  p  
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          10  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=          64          64           1
+ Lx, Ly, Lz=   4.20000000000000        4.20000000000000     
+  0.520000000000000     
+       Vbox=   17.6400000000000     
+ rsnap: read snapshot var.dat in   8.434901246801019E-004  seconds
+ rprint_list: nname=          13
+ rprint_list: ix,iy,iz,iz2=          -1          -1          -1          -1
+ rprint_list: nnamev=           0
+ rprint_list: nnamez=          -1
+ rprint_list: nnamez=          -1
+ rprint_list: nnamey=          -1
+ rprint_list: nnamex=          -1
+ rprint_list: nnamer=           0
+ rprint_list: nnamexz=          -1
+ rprint_list: nnamexy=          -1
+ rprint_list: nnamerz=          -1
+ rprint_general: run through parse list
+ rprint_hydro: run through parse list
+ rprint_hydro: run through parse list
+ rprint_density: run through parse list
+ rprint_shock: run through parse list
+ rprint_viscosity: run through parse list
+ rprint_particles: run through parse list
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.99146454710798       5.000000000000000E-002  2.499999999999999E-003
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ timestep based on CFL cond; cdt=  0.400000000000000     
+ dVol_rel1=  2.441406250000000E-004
+ dA_xy_rel1=  2.441406250000000E-004
+ dA_xz_rel1=  1.562500000000000E-002
+ dA_yz_rel1=  1.562500000000000E-002
+ dL_y_rel1=  1.562500000000000E-002
+ initialize_gravity: non-smoothed newtonian gravity
+ xmask_den=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000     
+ zmask_den=   1.00000000000000     
+ diffusion: (d^6/dx^6+d^6/dy^6+d^6/dz^6)rho
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ xmask_hyd=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000     
+ zmask_hyd=   1.00000000000000     
+ lT0mu_total is True so setting T00_total and T0i_total to True
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ Registering: cs2
+ Registering: glnTT
+ select_eos_variable: Using rho and cs2
+ viscous force: nu*(del6u+S.glnrho)
+ viscous force with a radial profile for nu
+ xmask_vis=   1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000        1.00000000000000     
+   1.00000000000000        1.00000000000000     
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ lT0mu_total is True so setting T00_total and T0i_total to True
+ choose_pencils: finding out which pencils are needed for the pencil case.
+ write_pencil_info: pencil information written to the file pencils.list.
+ initialize_particles: Number of particle species =            4
+ initialize_particles: tausp_species =   1.000000000000000E-002
+  0.100000000000000       0.300000000000000        1.00000000000000     
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  1.722656250000000E-004
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  4.000000000000000E-002
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ Lz=  0.520000000000000     
+ z=  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000
+ pencil_consistency_check: checking pencil case
+ life_support_on: needed for pencil consistency check.
+ Entered inverse_laplacian_expandgrid
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=rmv    
+ dxxp_dt: Particles boundary condition bcpy=rmv    
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: No gravity in z-direction.
+ particle_gravity: Newtonian gravity from a fixed central object
+ dvvp_dt_selfgrav: add self-gravity
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil epsp (  71) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil grho (  98) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil np ( 119) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil phix ( 138) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil phiy ( 139) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rho ( 149) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rhop ( 155) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ life_support_off: end of pencil consistency check.
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   13.5132017821327     
+ calc_pencils_energy: max(advec_cs2) =  0.561560817216807     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3=  5.000000000000000E-009
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.125194168918984     
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt_pencil: adding feedback from dust to gas
+ dvvp_dt: Add drag force; tausp=  0.000000000000000E+000
+ pde: freezing variables for r <   0.400000000000000       :  T T T T F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F
+ pde: freezing variables for r >    2.00000000000000       :  T T T T F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F
+ 
+ ----it--------t---------dt--------rhom---------ux2m--------rhopm--------npmax-------rhopmax------nparmax-------vpy2m--------dvpm--------dvpmax-------gpotenp---
+        0      0.000  7.48E-04    8.622E-01  4.1771E-01    1.000E-02    1.600E+01    3.257E-01    2.400E+02    5.081E-01    4.913E-04    3.144E-02   -4.237E-05
+        1      0.001  7.49E-04    8.622E-01  4.1771E-01    1.000E-02    1.600E+01    3.263E-01    2.400E+02    5.080E-01    4.905E-04    3.139E-02   -4.237E-05
+        2      0.001  7.49E-04    8.622E-01  4.1771E-01    1.000E-02    1.600E+01    3.268E-01    2.400E+02    5.079E-01    4.896E-04    3.134E-02   -4.237E-05
+        3      0.002  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.271E-01    2.480E+02    5.078E-01    4.888E-04    3.128E-02   -4.237E-05
+        4      0.003  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.271E-01    2.480E+02    5.078E-01    4.879E-04    3.123E-02   -4.237E-05
+        5      0.004  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.270E-01    2.480E+02    5.077E-01    4.871E-04    3.117E-02   -4.237E-05
+        6      0.004  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.267E-01    2.480E+02    5.076E-01    4.863E-04    3.112E-02   -4.237E-05
+        7      0.005  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.263E-01    2.480E+02    5.075E-01    4.854E-04    3.107E-02   -4.237E-05
+        8      0.006  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.256E-01    2.480E+02    5.074E-01    4.846E-04    3.101E-02   -4.237E-05
+        9      0.007  7.49E-04    8.622E-01  4.1770E-01    1.000E-02    1.600E+01    3.248E-01    2.480E+02    5.074E-01    4.837E-04    3.096E-02   -4.237E-05
+ 
+ Simulation finished after           10  time-steps
+ 
+ Writing final snapshot at time t =  7.487182585590983E-003
+ wsnap_particles: written snapshot 
+ pvar.dat                                                                       
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                       
+ wsnap_particles: written snapshot 
+ dpvar.dat                                                                      
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                       
+ 
+ Wall clock time [hours] =  3.059E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  71.7    
+ Wall clock time/timestep/meshpoint [microsec] =  26.88494    
+ Wall clock time/timestep/local meshpoint [microsec] =  215.0796    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  21.16522    
+ After substep wall clock time/timestep/local meshpoint [microsec] = 8.3629993E-02
+ Before+After boundary wall clock time/timestep/local meshpoint [microsec] =  54.57410    
+ Diagnostics wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Timestep wall clock time/timestep/local meshpoint [microsec] =  6.708745    
+ Timestep (without waiting) wall clock time/timestep/local meshpoint [microsec] =  6.708745    
+ Timestep wall clock time/timestep/meshpoint [microsec] = 0.8385931    
+ Timestep (without waiting) wall clock time/timestep/meshpoint [microsec] = 0.8385931    
+ Diagnostics wall clock time/timestep/meshpoint [microsec] =  0.000000    
+ Rhs wall clock time/timestep/meshpoint [microsec] =  2.645653    
+ After substep wall clock time/timestep/meshpoint [microsec] = 1.0453749E-02
+ Before+After boundary wall clock time/timestep/meshpoint [microsec] =  6.821762    
+ Maximum used memory per cpu [MBytes] =    53.910
+ Maximum used memory [MBytes] =      417.684
+ 
+real 1.43
+user 5.48
+sys 1.45

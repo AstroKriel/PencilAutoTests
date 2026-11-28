@@ -1,0 +1,175 @@
+SVN: -------            v.         (                   ) $Id$
+WARNING:  find_namelist: namelist "special_init_pars" is missing!
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          32          32           8
+ Lx, Ly, Lz=   5.20000000000000        5.20000000000000     
+  0.520000000000000     
+       Vbox=   14.0608000000000     
+ rsnap: read snapshot var.dat in   2.194769913330674E-004  seconds
+ setup_slices: slice_position = m
+ setup_slices: ix_loc, (video files) = 19                                       
+                                        
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -4.60517018598809       0.100000000000000       9.999999999999997E-003
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: non-smoothed newtonian gravity
+ diffusion: (Dx*d^6/dx^6 + Dy*d^6/dy^6 + Dz*d^6/dz^6)rho
+ diffusion: shock diffusion
+WARNING: 
+ initialize_density: For diffusion energy/momentum correction should use lmassdi
+ ff_fix=T!
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ select_eos_variable: Using rho and cs2
+ resistivity: hyper3_aniso
+ resistivity: shock
+ initialize_shock: prenormalised shock_factor sum=   1.00000000000000     
+ viscous force(i): (nu.del6)ui  + ((nu.uij5).glnrho)
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ rt_int,rt_ext  0.400000000000000        2.50000000000000     
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  2.812160000000000E-004
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  0.163840000000000     
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ pencil_consistency_check: checking pencil case
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=flk    
+ dxxp_dt: Particles boundary condition bcpy=rmv    
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: No gravity in z-direction.
+ particle_gravity: Newtonian gravity from a fixed central object
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil aa (  17) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil diffus_eta (  87) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil diffus_eta3 (  89) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil grho ( 144) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil pomx ( 207) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil pomy ( 208) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rho ( 215) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   5.69826209827012     
+ calc_pencils_energy: max(advec_cs2) =  0.892944792773890     
+ calc_pencils_magnetic_fres: iresistivity=
+ hyper3-aniso                            
+ shock                                   
+                                         
+                                         
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_shock=   5.00000000000000     
+ dlnrho_dt: diffrho_hyper3=(Dx,Dy,Dz)=  5.000000000000000E-012
+  5.000000000000000E-012  3.000000000000000E-013
+ dlnrho_dt: max(diffus_diffrho ) =  0.415213115155925     
+ dlnrho_dt: max(diffus_diffrho3) =  4.520883258484018E-006
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <       p>
+ daa_dt: max(diffus_eta)  =  0.415213115155925     
+ daa_dt: max(diffus_eta2) =  0.000000000000000E+000
+ daa_dt: max(diffus_eta3) =  4.520883258484018E-006
+ dspecial_dt: SOLVE dSPECIAL_dt
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt: Add drag force; tausp=   1.00000000000000     
+ pde: freezing variables for r <   0.400000000000000       :  T T T T T T T F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F
+ pde: freezing variables for r >    2.50000000000000       :  T T T T T T T F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F
+ 
+ ----it----------t-----------dt---------dtu---------dtnu--------dtb--------dtd--------rhomax------rhomin---------bzm-----------urupm--------npmax------rhopmax----nparmax--
+        0   0.00000E+00 1.83659E-02 1.07163E+00 9.05205E-01 2.2540E-01 9.05205E-01 1.00000E+00 1.00000E+00  -0.0000000000   0.0000000000 3.00000E+00  1.804E-01 1.3000E+02
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+        1   1.83659E-02 1.83202E-02 1.06897E+00 9.10437E-01 2.2489E-01 9.10437E-01 1.00800E+00 9.91218E-01  -0.0000000000   0.0000000000 3.00000E+00  1.842E-01 1.3000E+02
+        2   3.66862E-02 1.82814E-02 1.06671E+00 9.15041E-01 2.2447E-01 9.15041E-01 1.01354E+00 9.83617E-01  -0.0000000000   0.0000000000 3.00000E+00  1.841E-01 1.2900E+02
+        3   5.49676E-02 1.82494E-02 1.06484E+00 9.18981E-01 2.2412E-01 9.18981E-01 1.01704E+00 9.77203E-01  -0.0000000000   0.0000000000 3.00000E+00  1.800E-01 1.2900E+02
+        4   7.32170E-02 1.82235E-02 1.06332E+00 9.22240E-01 2.2384E-01 9.22240E-01 1.01887E+00 9.71922E-01  -0.0000000000   0.0000000000 3.00000E+00  1.723E-01 1.2900E+02
+ 
+ Simulation finished after            5  time-steps
+ 
+ Writing final snapshot at time t =  9.144051700689589E-002
+ 
+ Wall clock time [hours] =  4.377E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  124.    
+ Wall clock time/timestep/meshpoint [microsec] =  38.46815    
+ Wall clock time/timestep/local meshpoint [microsec] =  153.8726    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  80.65915    
+ Maximum used memory per cpu [MBytes] =    58.145
+ Maximum used memory [MBytes] =      227.715
+ 
+real 1.86
+user 6.30
+sys 0.09

@@ -1,0 +1,185 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) 20a96485a          
+SVN: -------            v.         (                   ) 5d67d8a3f          
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+WARNING:  register_io: HDF5 files are possibly locked; writing may fail!
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ The verbose level is ip=        1963  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          16          16         200
+ Lx, Ly, Lz=  6.400000000000000E-002  6.400000000000000E-002
+  0.796000000000000     
+       Vbox=  3.260416000000000E-003
+WARNING:  input_persist_general_by_label: no persistent value of it found!
+WARNING: 
+ input_persist_interstellar: lSNI from run.in overwritten. Set l_persist_overwri
+ te_lSNI=T to update!
+ input_persist_interstellar: lSNI =  T
+WARNING: 
+ input_persist_interstellar: lSNII from run.in overwritten. Set l_persist_overwr
+ ite_lSNII=T to update!
+ input_persist_interstellar: lSNII =  T
+WARNING: 
+ input_persist_interstellar: t_next_SNI from run.in overwritten. Set l_persist_o
+ verwrite_tSNI=T to update!
+ input_persist_interstellar: t_next_SNI =   3.513724274107282E-002
+WARNING: 
+ input_persist_interstellar: x_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_xcluster=T to update!
+WARNING: 
+ input_persist_interstellar: y_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_ycluster=T to update!
+WARNING: 
+ input_persist_interstellar: z_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_zcluster=T to update!
+WARNING: 
+ input_persist_interstellar: t_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_tcluster=T to update!
+ rsnap: read snapshot var.dat in   4.579471074976027E-003  seconds
+ setup_slices: slice_position = m
+ setup_slices: ix_loc,iy_loc, (video files) = 11 11                             
+                                               
+ units_general: unit_velocity=   97781.2299489507     
+ units_general: unit_density=  1.673723599999989E-024
+ units_general: unit_length=  3.085677580000005E+021
+ units_general: unit_magnetic=  4.484378871687490E-007
+ units_eos: unit_temperature=   36.6371811569230     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.50000000000000     
+ -5.107025913275733E-015   1.00000000000000       0.318599999999998     
+  0.318600000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ diffusion: shock diffusion
+WARNING:  initialize_density: set lgamma_is_1=F if gamma/=1 with entropy!
+ select_eos_variable: Using rho and ss
+ initialize_energy: cs2top,cs2cool,cs2cool2=   1.00000000000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ initialize_energy: now set cs2cool=cs2top
+ initialize_energy: nheatc_max,iheatcond=           4 
+ shock                                   
+ hyper3                                  
+ nothing                                 
+ nothing                                 
+ heat conduction: shock
+ heat conduction: hyperdiffusivity of ss
+ resistivity: hyper3
+ resistivity: constant eta
+ initialize_interstellar: t_next_SNI = 0.35137243E-01
+ initialize_interstellar: solar_mass = 0.4045E-07
+ initialize_interstellar: eampl_SN, kampl_SN =  0.2127E+01 0.0000E+00
+ initialize_interstellar: Lxyzmin =  0.1149E-01
+ select_cooling: WSW cooling fct
+ initialize_interstellar: unit_Lambda 0.1810E+18
+ initialize_interstellar: unit_Gamma 0.3030E-06
+ initialize_interstellar: t_interval_SNI, SNI rate = 0.6105E-01 0.3999E+04
+ initialize_interstellar: average_SNI_heating = 0
+ initialize_interstellar: average_SNII_heating =0
+ initialize_interstellar: nseed,seed           1        1812
+ initialize_interstellar: finished
+ initialize_interstellar: t_next_SNI, t_next_SNII= 0.35137243E-01 0.13000000E-07
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ viscous force: nu*(del6u+S.glnrho)
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil diffus_eta (  90) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil ee ( 106) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil grho ( 147) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rho ( 215) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ farraymin  1.000000000000000E-005  1.000000000000000E-005
+  1.000000000000000E-005  2.501903757749850E-004  7.411948239273262E-003
+  1.000000000000000E-005  1.000000000000000E-005  1.000000000000000E-005
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ check_SN: ENTER
+ check_SNI: ENTER
+ check_SNIIb: ENTER
+WARNING: 
+ calc_pencils_viscosity: viscous heating not implemented for lvisc_hyper3_nu_con
+ st!
+ calc_pencils_magnetic_fres: iresistivity=
+ hyper3                                  
+ eta-const                               
+                                         
+                                         
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       s>
+ coriolis_cartesian: add Coriolis force; Omega=   25.0000000000000     
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <     she>, y: <       p>,  z: <       s>
+ dlnrho_dt: diffrho_shock=   1.00000000000000     
+ denergy_dt: SOLVE denergy_dt
+Bcs for         ss,  x: <     she>, y: <       p>,  z: <       s>
+ denergy_dt: lnTT,cs2,cp1=   5.67571823952999        291.697772195355     
+   1.17283900000000     
+ calc_heatcond_shock: use shock diffusion
+ calc_heatcond_shock: chi_shock=   1.00000000000000     
+ calc_heatcond_shock: added thdiff
+ calc_heatcond_hyper3: chi_hyper3=  7.500000000000000E-012
+ calc_heatcond_hyper3: added thdiff
+ calc_heat_cool_interstellar: ENTER
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         Ay,  x: <     she>, y: <       p>,  z: <       s>
+Bcs for         Az,  x: <     she>, y: <       p>,  z: <       s>
+ shearing: Sshear,Sshear1=  -25.0000000000000       -25.0000000000000     
+ shearing: qshear,qshear0=   1.00000000000000       0.000000000000000E+000
+ 
+ ---it--------t----------dt--------urms-------umax-------rhomin------rhomax------TTmin-------TTm-------TTmax------brms-------bmax----
+      0  0.000000000 1.0000E-08 0.0000E+00 0.0000E+00 2.33610E-02 8.22356E-01 1.8983E+02 1.1326E+03 1.8483E+06 5.6913E-04 2.1548E-03
+      1  0.000000010 7.9484E-09 6.7703E-02 3.0081E+00 2.33610E-02 8.22356E-01 1.8973E+02 1.1328E+03 1.8478E+06 5.6850E-04 2.1521E-03
+ explode_SN:    step, time =        3 0.17948E-07
+      2  0.000000018 1.6565E-08 1.2148E-01 5.3988E+00 2.33610E-02 8.22356E-01 1.8965E+02 2.0379E+03 1.8474E+06 5.6800E-04 2.1499E-03
+      3  0.000000035 4.9527E-09 2.5820E-01 1.0376E+01 2.33610E-02 8.22356E-01 1.8947E+02 2.0391E+03 1.8463E+06 5.6696E-04 2.1454E-03
+      4  0.000000039 1.7457E-08 3.0292E-01 1.1862E+01 2.33610E-02 8.22356E-01 1.8941E+02 2.0398E+03 1.8459E+06 5.6665E-04 2.1441E-03
+ 
+ Simulation finished after            5  time-steps
+ 
+ Writing final snapshot at time t =  5.692291546355941E-008
+ 
+ Wall clock time [hours] =  2.654E-03 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  149.    
+ Wall clock time/timestep/meshpoint [microsec] =  37.32708    
+ Wall clock time/timestep/local meshpoint [microsec] =  149.3083    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  110.5763    
+ Maximum used memory per cpu [MBytes] =    73.102
+ Maximum used memory [MBytes] =      287.477
+ 
+real 9.86
+user 38.21
+sys 0.16

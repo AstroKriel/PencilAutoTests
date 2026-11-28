@@ -1,0 +1,70 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2015/05/11 19:37:40) wlyra
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: newton_cooling.f90 v. 1.2     (2015/12/11 02:56:37) wlyra
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          32          16          78
+ Constructing power-law grid. It will 
+ generate a grid obeying the constrain 
+ 
+   d[x^c] = const ==> dx = const/x^(c-1)
+ 
+ where c is the value of coeff_grid.
+ units_general: unit_velocity=   1306000.00000000     
+ units_general: unit_density=  2.000000000000000E-011
+ units_general: unit_length=   77850000000000.0     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=   1.00000000000000     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=  7.291225735436743E-005
+   5.12402445180035       7.000000000000001E-002  8.190000000000001E-003
+  4.874705205977707E-005
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+ initialize_gravity: non-smoothed newtonian gravity
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and ss
+ initialize_energy: nheatc_max,iheatcond=           4 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ heat conduction: nothing
+ init_uu: nothing
+ initial_condition_lnrho: gamma=   1.40000000000000     
+ Radial density stratification with power law=  -1.50000000000000     
+ Radial temperature stratification with power law=  -1.00000000000000     
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=  4.900000000000001E-003  4.900000000000001E-003
+ init_energy: nothing
+ calling special before boundary
+ Maximum used memory per cpu [MBytes] =    50.188
+ Maximum used memory [MBytes] =      387.012
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.36
+user 0.35
+sys 0.16

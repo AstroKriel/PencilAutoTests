@@ -1,0 +1,74 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.4     (2009/02/02 10:44:01) dintrans
+SVN: run.in,v           v. 1.5     (2009/04/26 16:08:32) dintrans
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=         256           1           1
+ Lx, Ly, Lz=   380000000000000.        1.00000000000000     
+   2.00000000000000     
+       Vbox=   380000000000000.     
+ rsnap: read snapshot var.dat in   2.107700565829873E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ minmax sigma=    214.194924079857        467.503664310399     
+ minmax tmid =    50.2720626842597        604.189140079413     
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_special: max(diffus_special) =  1.405903424755657E-009
+ duu_dt: diagnostics ...
+ dspecial_dt: SOLVE dspecial_dt
+ dspecial_dt: adding wind
+ wind minmax:   0.000000000000000E+000  4.101440711031593E-012
+ 
+ ----it-----------t------------tmyr------------dt-----------dtyear--------sigmamin--------sigmam--------sigmamax-------dtdiffus----
+        0     0.00000E+00    0.00000E+00    3.96729E+07    1.04471E+08    1.70671E+02    2.35952E+02    4.67504E+02    1.00000E+00
+       50     1.98365E+09    6.28595E-05    3.96733E+07    1.04472E+08    1.70670E+02    2.35949E+02    4.67504E+02    1.00000E+00
+      100     3.96733E+09    1.25720E-04    3.96736E+07    1.04474E+08    1.70668E+02    2.35946E+02    4.67504E+02    1.00000E+00
+      150     5.95101E+09    1.88580E-04    3.96740E+07    1.04475E+08    1.70667E+02    2.35943E+02    4.67504E+02    1.00000E+00
+      200     7.93472E+09    2.51442E-04    3.96743E+07    1.04476E+08    1.70665E+02    2.35941E+02    4.67504E+02    1.00000E+00
+      250     9.91845E+09    3.14303E-04    3.96747E+07    1.04477E+08    1.70664E+02    2.35938E+02    4.67504E+02    1.00000E+00
+      300     1.19022E+10    3.77166E-04    3.96751E+07    1.04478E+08    1.70662E+02    2.35935E+02    4.67504E+02    1.00000E+00
+      350     1.38860E+10    4.40029E-04    3.96754E+07    1.04480E+08    1.70660E+02    2.35932E+02    4.67504E+02    1.00000E+00
+      400     1.58697E+10    5.02892E-04    3.96758E+07    1.04481E+08    1.70659E+02    2.35930E+02    4.67504E+02    1.00000E+00
+      450     1.78535E+10    5.65756E-04    3.96762E+07    1.04482E+08    1.70657E+02    2.35927E+02    4.67503E+02    1.00000E+00
+ 
+ Simulation finished after          451  time-steps
+ 
+ Writing final snapshot at time t =   17893211313.6640     
+ 
+ Wall clock time [hours] =  5.520E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  3.44    
+ Wall clock time/timestep/meshpoint [microsec] =  1.721301    
+ Wall clock time/timestep/local meshpoint [microsec] =  3.442601    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 3.4634270E-02
+ Maximum used memory per cpu [MBytes] =    46.441
+ Maximum used memory [MBytes] =       91.875
+ 
+real 0.48
+user 0.40
+sys 0.04

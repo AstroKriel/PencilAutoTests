@@ -1,0 +1,103 @@
+SVN: -------            v.         (                   ) $Id$
+WARNING:  find_namelist: namelist "initial_condition_pars" is missing!
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          32          32          32
+ Lx, Ly, Lz=   2.00000000000000        2.00000000000000     
+   2.00000000000000     
+       Vbox=   8.00000000000000     
+ rsnap: read snapshot var.dat in   4.132499452680349E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are undefined in noeos.
+The values provided ar
+ e for one-atomic ideal gas. Use at own risk!
+ resistivity: constant eta
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_magnetic_fres: iresistivity=
+ eta-const                               
+                                         
+                                         
+                                         
+ duu_dt: diagnostics ...
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <       p>
+ daa_dt: max(diffus_eta)  =  0.000000000000000E+000
+ daa_dt: max(diffus_eta2) =  0.000000000000000E+000
+ daa_dt: max(diffus_eta3) =  0.000000000000000E+000
+ 
+ ---it-----t------dt--------bxmax--------bymax--------bzmax--------arms---------amax-----
+      0   0.00 1.00E-02 2.064446E+08 2.064446E+08 2.064446E+08 3.438863E+04 2.200872E+06
+     10   0.10 1.00E-02 2.476849E+03 2.476849E+03 2.476849E+03 9.382323E+01 3.274766E+02
+     20   0.20 1.00E-02 2.693766E+02 2.693766E+02 2.693766E+02 4.244965E+01 1.085584E+02
+     30   0.30 1.00E-02 1.193949E+02 1.193949E+02 1.193949E+02 2.635227E+01 5.918526E+01
+     40   0.40 1.00E-02 6.772344E+01 6.772344E+01 6.772344E+01 1.869093E+01 3.850672E+01
+     50   0.50 1.00E-02 4.312303E+01 4.312303E+01 4.312303E+01 1.427989E+01 2.759061E+01
+     60   0.60 1.00E-02 3.020597E+01 3.020597E+01 3.020597E+01 1.144261E+01 2.101297E+01
+     70   0.70 1.00E-02 2.212909E+01 2.212909E+01 2.212909E+01 9.480273E+00 1.669192E+01
+     80   0.80 1.00E-02 1.687005E+01 1.687005E+01 1.687005E+01 8.052132E+00 1.367508E+01
+     90   0.90 1.00E-02 1.335795E+01 1.335795E+01 1.335795E+01 6.973106E+00 1.147151E+01
+    100   1.00 1.00E-02 1.084264E+01 1.084264E+01 1.084264E+01 6.134323E+00 9.805240E+00
+ 
+ Simulation finished after          101  time-steps
+ 
+ Writing final snapshot at time t =   1.01000000000000     
+ 
+ Wall clock time [hours] =  5.203E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] = 0.566    
+ Wall clock time/timestep/meshpoint [microsec] = 0.5659098    
+ Wall clock time/timestep/local meshpoint [microsec] = 0.5659098    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.1372816    
+ Maximum used memory per cpu [MBytes] =    64.797
+ Maximum used memory [MBytes] =       64.797
+ 
+real 2.16
+user 1.87
+sys 0.04

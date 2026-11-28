@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+        <meta name="language" content="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+        <title>bonn-intel - Pencil Code auto-test</title>
+        <style>
+            #flex {
+                display: flex;
+                flex-direction: column;
+            }
+            #div_summary {
+                order: 1;
+            }
+
+            #div_details {
+                order: 2;
+            }
+
+            #div_footer {
+                order: 3;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+<p>Fri Nov 27 02:30:04 2026</p>
+<pre>bin/pencil-test --use-pc_auto-test --auto-test-options='--level=0-1,--config-files=Intel_MPI-mpiifx,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html --log-dir=/export/data1/pencil/test-logs/bonn-intel --previous-dir=/export/data1/pencil/test-logs/bonn-intel-previous --pencil-home=/export/data1/pencil/bonn-intel</pre>
+<div id="flex">
+<div id="div_details">
+<h1>Details</h1><h2>Aibn238:</h2>
+
+<pre>
+
+</pre>
+<a id="no-modules"></a>
+<pre>bonn-intel/samples/no-modules: (1/10)
+    Compiling..            [double]           ok        00:45   [<a href="no-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="no-modules/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="no-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:45 = 00:45 + 00:00
+
+</pre>
+<a id="most-modules"></a>
+<pre>bonn-intel/samples/most-modules: (2/10)
+    Compiling..                               ok        01:54   [<a href="most-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="most-modules/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="most-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:55 = 01:54 + 00:01
+
+</pre>
+<a id="backwards-compatible"></a>
+<pre>bonn-intel/samples/backwards-compatible: (3/10)
+    Compiling..                               ok        01:59   [<a href="backwards-compatible/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="backwards-compatible/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="backwards-compatible/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:00 = 01:59 + 00:00
+
+</pre>
+<a id="1d-tests/implicit_diffusion"></a>
+<pre>bonn-intel/samples/1d-tests/implicit_diffusion: (4/10)
+    Compiling..                               ok        00:52   [<a href="1d-tests/implicit_diffusion/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/implicit_diffusion/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/implicit_diffusion/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:52 = 00:52 + 00:00
+
+</pre>
+<a id="2d-tests/chemistry_GrayScott"></a>
+<pre>bonn-intel/samples/2d-tests/chemistry_GrayScott: (5/10)
+    Compiling..                               ok        00:48   [<a href="2d-tests/chemistry_GrayScott/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/chemistry_GrayScott/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/chemistry_GrayScott/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:49 = 00:48 + 00:01
+
+</pre>
+<a id="2d-tests/shearwave-dust-par"></a>
+<pre>bonn-intel/samples/2d-tests/shearwave-dust-par: (6/10)
+    Compiling..                               ok        02:03   [<a href="2d-tests/shearwave-dust-par/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/shearwave-dust-par/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/shearwave-dust-par/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:04 = 02:03 + 00:01
+
+</pre>
+<a id="dust-vortex"></a>
+<pre>bonn-intel/samples/dust-vortex: (7/10)
+    Compiling..                               ok        01:06   [<a href="dust-vortex/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="dust-vortex/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="dust-vortex/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:07 = 01:06 + 00:00
+
+</pre>
+<a id="damped_alfven_waves"></a>
+<pre>bonn-intel/samples/damped_alfven_waves: (8/10)
+    Compiling..                               ok        02:37   [<a href="damped_alfven_waves/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="damped_alfven_waves/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="damped_alfven_waves/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:41 = 02:37 + 00:03
+
+</pre>
+<a id="corona"></a>
+<pre>bonn-intel/samples/corona: (9/10)
+    Compiling..                               not ok:   00:52   [<a href="corona/build.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46374
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/8529bfd245328e3befe80257647d50a03d8e810d">8529bfd245328e3befe80257647d50a03d8e810d</a>
+Wed Nov 18 02:49:17 2026
+===> Please also see the  [<a href="corona/README">README</a>]
+
+</pre>
+<a id="helical-MHDturb"></a>
+<pre>bonn-intel/samples/helical-MHDturb: (10/10)
+    Compiling..                               ok        01:46   [<a href="helical-MHDturb/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="helical-MHDturb/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="helical-MHDturb/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:47 = 01:46 + 00:01
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_details" -->
+<div id="div_summary">
+<h1>Summary</h1>
+<pre>
+### auto-test failed ###
+Failed 1 test(s) out of 10:
+</pre>
+<ul>
+<li><a href="#corona"><code>corona</code></a> <code>(compilation)</code>
+</ul>
+<pre>
+CPU time (including compilation):   18:17u 01:54s
+Total wall-clock time:              14:58 = 13:53 + 00:11
+
+----------------------------------------------------------------------
+The following configuration has been used:
+$config = {
+            'environment' => {
+                               'MODULE_INFIX' => '_mp_',
+                               'MODULE_PREFIX' => '',
+                               'MODULE_SUFFIX' => '_'
+                             },
+            'runtime' => {
+                           'mpiexec_opts2' => '',
+                           'mpiexec_opts' => '',
+                           'mpiexec' => 'mpiexec'
+                         },
+            'makefile' => {
+                            'CFLAGS_FFTW2' => '',
+                            'FSTD_2018' => '-std08',
+                            'FFLAGS_FFTW3' => '',
+                            'LDFLAGS' => '-Bdynamic',
+                            'CFLAGS' => '-DFUNDERSC=1',
+                            'LD_MPI' => '',
+                            'CC' => 'mpiicx',
+                            'CFLAGS_DOUBLE' => '-DDOUBLE_PRECISION',
+                            'PPFLAGS' => '-fpp',
+                            'FSTD_2008' => '-std08',
+                            'MAKE_VAR1' => '-j',
+                            'LD_FFTW2' => '',
+                            'FSTD_95' => '-std95',
+                            'FFLAGS' => '-implicitnone',
+                            'FC' => 'mpiifx',
+                            'FFLAGS_DOUBLE' => '-r8',
+                            'LD_FFTW3' => '',
+                            'CFLAGS_FFTW3' => '',
+                            'OMPFFLAGS' => '-qopenmp',
+                            'FSTD_2003' => '-std03',
+                            'F77' => '$(FC)',
+                            'FFLAGS_FFTW2' => ''
+                          }
+          };
+Perl version v5.40.1
+SVN: 46482
+GIT: 4e8d7a4c3476d5ee061612a3468dad829c36f4b1
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_summary" -->
+<div id="div_footer">
+Fri Nov 27 02:45:03 2026
+</div> <!-- id="div_footer" -->
+</div> <!-- id="flex" -->
+</body>
+</html>

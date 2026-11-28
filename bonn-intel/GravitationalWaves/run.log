@@ -1,0 +1,129 @@
+ 
+ =====================================================================
+ WARNING: using SINGLE PRECISION, you'd better know what you're doing!
+ =====================================================================
+ 
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.12    (2018/06/09 23:39:28) brandenb
+SVN: run.in,v           v. 1.14    (2018/06/09 23:39:28) brandenb
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          16          16          16
+ Lx, Ly, Lz=  6.2831856E-02  6.2831856E-02  6.2831856E-02
+       Vbox=  2.4805023E-04
+ input_persist_forcing:   0.0000000E+00  0.0000000E+00  0.0000000E+00
+ input_persist_forcing:   -10.00000    
+ rsnap: read snapshot var.dat in   7.146422285586596E-005  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490780830383     
+ units_eos: unit_temperature=  1.202722077580192E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.000000      -1.098612    
+  0.5773503      0.3333334       1.000000    
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and cs2
+ resistivity: constant eta
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ stress_prefactor=   6.000000    
+ EGWpref=  0.1666667    
+ c_light2=   1.000000    
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =  0.0000000E+00
+ calc_pencils_energy: max(advec_cs2) =   64845.55    
+ calc_pencils_magnetic_fres: iresistivity=
+ eta-const                               
+                                         
+                                         
+                                         
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: max(diffus_diffrho ) =  0.0000000E+00
+ dlnrho_dt: max(diffus_diffrho3) =  0.0000000E+00
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <       p>
+ daa_dt: max(diffus_eta)  =   194.5366    
+ daa_dt: max(diffus_eta2) =  0.0000000E+00
+ daa_dt: max(diffus_eta3) =  0.0000000E+00
+ dspecial_dt: SOLVE dspecial_dt
+ 
+ --it-----t--------dt------drho2m-----rhof2m-------EEK--------EEM-------EEGW-------gg2m------hrms---
+    0   1.0000 1.145E-03  0.0000000  0.0000000 0.0000E+00 2.5249E-01 0.0000E+00  0.00E+00  0.00E+00
+    1   1.0011 1.144E-03  0.0000204  0.0000200 4.1027E-04 2.4620E-01 2.5609E-07  1.54E-06  7.13E-07
+    2   1.0023 1.143E-03  0.0003016  0.0002970 1.4558E-03 2.3907E-01 9.3892E-07  5.63E-06  2.79E-06
+    3   1.0034 1.143E-03  0.0014053  0.0013858 2.8430E-03 2.3135E-01 1.8452E-06  1.11E-05  6.06E-06
+    4   1.0046 1.144E-03  0.0040634  0.0040144 4.2927E-03 2.2327E-01 2.7223E-06  1.63E-05  1.03E-05
+    5   1.0057 1.145E-03  0.0090250  0.0089368 5.5698E-03 2.1505E-01 3.3353E-06  2.00E-05  1.52E-05
+    6   1.0069 1.144E-03  0.0169245  0.0168081 6.5014E-03 2.0684E-01 3.5249E-06  2.11E-05  2.04E-05
+    7   1.0080 1.144E-03  0.0281591  0.0280626 6.9854E-03 1.9879E-01 3.2452E-06  1.95E-05  2.56E-05
+    8   1.0092 1.145E-03  0.0428197  0.0428407 6.9941E-03 1.9099E-01 2.5720E-06  1.54E-05  3.04E-05
+    9   1.0103 1.146E-03  0.0606158  0.0609024 6.5650E-03 1.8349E-01 1.6818E-06  1.01E-05  3.44E-05
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+ 
+ Simulation finished after           10  time-steps
+ 
+ Writing final snapshot at time t =   1.01144359537284     
+ 
+ Wall clock time [hours] =  1.736E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  6.10    
+ Wall clock time/timestep/meshpoint [microsec] =  1.525879    
+ Wall clock time/timestep/local meshpoint [microsec] =  6.103516    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  6.103516    
+ Maximum used memory per cpu [MBytes] =    53.254
+ Maximum used memory [MBytes] =      204.480
+ 
+real 0.36
+user 0.28
+sys 0.09

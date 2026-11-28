@@ -1,0 +1,92 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.3     (2016/07/01 06:29:30) wlyra
+SVN: run.in,v           v. 1.2     (2016/02/10 09:25:12) wlyra
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=          32          32           1
+ Lx, Ly, Lz=   1.10000000000000        1.10000000000000     
+   1.10000000000000     
+       Vbox=   1.21000000000000     
+ rsnap: read snapshot var.dat in   1.525121042504907E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: mesh hyperdiffusion
+ diffusion: shock diffusion
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ viscous force: div(nu_shock*grad(uu_i)))
+ 
+ it=           0  t=  0.000000000000000E+000
+ This is a simulation that is 
+ restarting from a snapshot. The
+ list of storms will be read from file, 
+ to regenerate the storm structure.
+ 
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   27.0000000000000     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_shock=   5.00000000000000     
+ dlnrho_dt: diffrho_hyper3_mesh=   5.00000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ dspecial_dt: SOLVE dSPECIAL_dt
+ pde: freezing variables for r >   0.500000000000000       :  T T T T F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F
+ 
+ ----it-----------t-------------dt-------------dtv---------dtdiffus---------dtgh----------rhomin---------rhomax----------rhom-----------uxrms----------uxmin----------uxmax----------uymin----------uymax----------urms---------oum------ruxuym-----orms---
+        0     0.00000E+00    6.44041E-03    1.00000E+00    0.00000E+00    6.62673E-01    1.00000E+00    1.00000E+00    1.00000E+00    3.17388E-01   -5.32813E-01    5.32813E-01   -5.32813E-01    5.32813E-01    4.48854E-01  0.00E+00 -3.47E-18  7.00E+00
+       10     6.34261E-02    6.20144E-03    9.81300E-01    2.06326E-01    6.55119E-01    9.86685E-01    1.02671E+00    9.96361E-01    3.17116E-01   -5.32813E-01    5.32813E-01   -5.32813E-01    5.32813E-01    4.48470E-01  0.00E+00 -2.29E-11  7.01E+00
+       20     1.24484E-01    6.00602E-03    9.63438E-01    2.95370E-01    6.46279E-01    9.54672E-01    1.04582E+00    9.87416E-01    3.15650E-01   -5.36593E-01    5.36593E-01   -5.36593E-01    5.36593E-01    4.46396E-01  0.00E+00  3.88E-12  7.02E+00
+       30     1.83993E-01    5.89840E-03    9.52630E-01    3.34943E-01    6.41377E-01    9.07830E-01    1.05682E+00    9.75265E-01    3.12575E-01   -5.41240E-01    5.41240E-01   -5.41240E-01    5.41240E-01    4.42047E-01  0.00E+00 -1.62E-12  7.02E+00
+       40     2.42770E-01    5.86433E-03    9.48947E-01    3.47067E-01    6.40058E-01    8.51312E-01    1.06078E+00    9.61523E-01    3.08104E-01   -5.42400E-01    5.42400E-01   -5.42400E-01    5.42400E-01    4.35725E-01  0.00E+00 -6.01E-11  7.03E+00
+ 
+ Simulation finished after           41  time-steps
+ 
+ Writing final snapshot at time t =  0.248633898002063     
+ 
+ Wall clock time [hours] =  1.327E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  4.55    
+ Wall clock time/timestep/meshpoint [microsec] =  1.137975    
+ Wall clock time/timestep/local meshpoint [microsec] =  4.551900    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.6213270    
+ Maximum used memory per cpu [MBytes] =    48.066
+ Maximum used memory [MBytes] =      187.527
+ 
+real 0.33
+user 0.21
+sys 0.06

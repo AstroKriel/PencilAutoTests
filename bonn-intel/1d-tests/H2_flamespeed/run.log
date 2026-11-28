@@ -1,0 +1,146 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.3     (2009-03-17 10:59:27) nbabkovs
+SVN: run.in,v           v. 1.3     (2009-03-17 10:59:27) nbabkovs
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ Write pc_constants.pro in chemistry.f90
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=         128           1           1
+ Lx, Ly, Lz=  0.500000000000000       0.100000000000000     
+  0.100000000000000     
+       Vbox=  0.500000000000000     
+ rsnap: read snapshot var.dat in   2.999999996973202E-004  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: chem.imp is found! Now cp, cv, gamma, mu are pencils ONLY!
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and lnTT
+ heat conduction: nothing
+ heat conduction: nothing
+ heat conduction: nothing
+ tran.in/dat file with transport data is found.
+ the following species are found in tran.in/dat:
+ AR         ind_glob=          14  ind_chem=           9
+ CO         ind_glob=          17  ind_chem=          12
+ CO2        ind_glob=          18  ind_chem=          13
+ H          ind_glob=           9  ind_chem=           4
+ H2         ind_glob=           6  ind_chem=           1
+ H2O        ind_glob=           8  ind_chem=           3
+ H2O2       ind_glob=          13  ind_chem=           8
+ HE         ind_glob=          16  ind_chem=          11
+ HO2        ind_glob=          12  ind_chem=           7
+ N2         ind_glob=          15  ind_chem=          10
+ O          ind_glob=          10  ind_chem=           5
+ O2         ind_glob=           7  ind_chem=           2
+ OH         ind_glob=          11  ind_chem=           6
+ Number of reactions=          25
+ Number of species=          13
+ viscous force: nu is calculated for a mixture
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry.
+The values 
+ provided are for one-atomic ideal gas. Use at own risk!
+ pencil_consistency_check: checking pencil case
+ calc_for_chem_mixture: writing mix_quant.out file
+ get_reaction_rate: writing react.out file
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil cp (  31) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil cp1 (  32) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil cs2 (  34) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil gradnu ( 109) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil lambda1 ( 126) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rho1 ( 160) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ timestep_LSODE: Second order symmetric splitting procedure (Strang splitting)
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: SOLVE
+Bcs for         ux,  x: <  set:a2>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <  set:a2>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <  set:a2>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <      a2>, y: <       p>,  z: <       p>
+ denergy_dt: SOLVE denergy_dt
+Bcs for       lnTT,  x: <  set:a2>, y: <       p>,  z: <       p>
+ denergy_dt: cs2 =   3854762023.02743     
+ dchemistry_dt: SOLVE dchemistry_dt
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry.
+The values 
+ provided are for one-atomic ideal gas. Use at own risk!
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry.
+The values 
+ provided are for one-atomic ideal gas. Use at own risk!
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry.
+The values 
+ provided are for one-atomic ideal gas. Use at own risk!
+ 
+ ---it-------t-------dt--------rhom---------TTm-------Y1m-------Y2m-------Y3m-------Y4m-------Y5m-------Y6m-------Y7m-------Y8m----------urms-----------divu2m----
+      0  0.00E+00 1.00E-08     0.000223  1625.0000 1.147E-02 1.365E-01 1.025E-01 0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00 1.0175000000E+03 0.0000000E+00
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+      5  5.00E-08 1.00E-08     0.000223  1624.8094 1.147E-02 1.366E-01 1.025E-01 1.505E-08 7.502E-09 5.328E-07 4.186E-07 8.483E-10 1.0174992593E+03 8.4907196E+04
+     10  1.00E-07 1.00E-08     0.000223  1624.6184 1.147E-02 1.366E-01 1.024E-01 2.703E-08 2.386E-08 1.142E-06 8.100E-07 1.757E-09 1.0175064902E+03 4.6354667E+05
+     15  1.50E-07 1.00E-08     0.000223  1624.4273 1.148E-02 1.366E-01 1.024E-01 3.671E-08 4.622E-08 1.815E-06 1.176E-06 2.614E-09 1.0175170928E+03 5.8707919E+05
+     20  2.00E-07 1.00E-08     0.000223  1624.2359 1.148E-02 1.366E-01 1.024E-01 4.466E-08 7.249E-08 2.542E-06 1.519E-06 3.420E-09 1.0175307631E+03 4.4123735E+05
+     25  2.50E-07 1.00E-08     0.000223  1624.0443 1.148E-02 1.366E-01 1.024E-01 5.132E-08 1.012E-07 3.315E-06 1.839E-06 4.176E-09 1.0175490899E+03 3.7377564E+05
+     30  3.00E-07 1.00E-08     0.000223  1623.8526 1.148E-02 1.367E-01 1.024E-01 5.699E-08 1.313E-07 4.127E-06 2.139E-06 4.887E-09 1.0175715699E+03 3.0056681E+05
+ 
+ Simulation finished after           31  time-steps
+ 
+ Writing final snapshot at time t =  3.099999999999998E-007
+ 
+ Wall clock time [hours] =  3.255E-04 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  293.    
+ Wall clock time/timestep/meshpoint [microsec] =  295.3125    
+ Wall clock time/timestep/local meshpoint [microsec] =  295.3125    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  22.75706    
+ Maximum used memory per cpu [MBytes] =    19.824
+ Maximum used memory [MBytes] =       19.824
+ 
+real 1.17
+user 1.16
+sys 0.00

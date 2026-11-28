@@ -1,0 +1,111 @@
+SVN: -------            v.         (                   ) $Id$
+ lperi=  T T T
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: pointmasses.f90,v  v. 1.1     (2019/02/02 03:54:41) wlyra
+ bcx1,bcx2=  : 
+ bcy1,bcy2=  : 
+ bcz1,bcz2=  : 
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=           4           6           4
+ rprint_list: nname=          39
+ rprint_list: ix,iy,iz,iz2=          -1          -1          -1          -1
+ rprint_list: nnamev=           0
+ rprint_list: nnamez=          -1
+ rprint_list: nnamez=          -1
+ rprint_list: nnamey=          -1
+ rprint_list: nnamex=          -1
+ rprint_list: nnamer=           0
+ rprint_list: nnamexz=          -1
+ rprint_list: nnamexy=          -1
+ rprint_list: nnamerz=          -1
+ rprint_general: run through parse list
+ rprint_hydro: run through parse list
+ rprint_pointmasses: run through parse list
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_grid, r_int,r_ext=   3.00000000000000        4.00000000000000     
+ dVol_rel1=  2.976190476190476E-003
+ dA_xy_rel1=  1.190476190476190E-002
+ dA_xz_rel1=  6.250000000000000E-002
+ dA_yz_rel1=  4.166666666666666E-002
+ dL_y_rel1=  0.166666666666667     
+ rprint_pointmasses: run through parse list
+WARNING:  initialize_pointmasses: the masses do not sum up to one!
+ init_pointmasses: fixed-cm - mass and position arranged
+                   so that the center of mass is at rest
+                   at the center of the grid.
+ init_pointmasses: particle positions
+ particle           1 position x,y,z:  1.046568600000000E-002
+  -3.14158734641021       0.000000000000000E+000
+ particle           2 position x,y,z:  0.369534314000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           3 position x,y,z:  0.709534314000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           4 position x,y,z:  0.989534314000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           5 position x,y,z:   1.48953431400000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           6 position x,y,z:   5.18953431400000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           7 position x,y,z:   9.98953431400000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           8 position x,y,z:   18.9895343140000     
+  0.000000000000000E+000  0.000000000000000E+000
+ particle           9 position x,y,z:   29.9895343140000     
+  0.000000000000000E+000  0.000000000000000E+000
+ init_pointmasses: particle velocities
+ particle           1 velocities x,y,z:  0.000000000000000E+000
+  5.588076038276138E-004  0.000000000000000E+000
+ particle           2 velocities x,y,z:  0.000000000000000E+000
+   1.62165540370380       0.000000000000000E+000
+ particle           3 velocities x,y,z:  0.000000000000000E+000
+   1.17795249437375       0.000000000000000E+000
+ particle           4 velocities x,y,z:  0.000000000000000E+000
+  0.999441192396172       0.000000000000000E+000
+ particle           5 velocities x,y,z:  0.000000000000000E+000
+  0.815937773323898       0.000000000000000E+000
+ particle           6 velocities x,y,z:  0.000000000000000E+000
+  0.437970202049687       0.000000000000000E+000
+ particle           7 velocities x,y,z:  0.000000000000000E+000
+  0.315668958413010       0.000000000000000E+000
+ particle           8 velocities x,y,z:  0.000000000000000E+000
+  0.228856926266734       0.000000000000000E+000
+ particle           9 velocities x,y,z:  0.000000000000000E+000
+  0.182015378231228       0.000000000000000E+000
+ written pointmass snapshot QVAR0
+ START: writing to ./data/proc0/var.dat
+ written pointmass snapshot qvar.dat
+ START: writing to ./data/proc1/var.dat
+ write_pencil_info: pencil information written to the file pencils.list.
+ Maximum used memory per cpu [MBytes] =    43.570
+ Maximum used memory [MBytes] =       85.871
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.34
+user 0.09
+sys 0.05

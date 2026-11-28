@@ -1,0 +1,58 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=           1           1           1
+ units_general: unit_velocity=   100000.000000000     
+ units_general: unit_density=  1.000000000000000E-006
+ units_general: unit_length=   100000000.000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_eos: ENTER
+ initialize_density: 0-D run, turned off continuity equation
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ initialize_hydro: 0-D run, turned off advection of velocity.
+ initialize_energy: 0-D run, turned off pressure gradient and advection of entro
+ py
+ initialize_energy: nheatc_max,iheatcond=           4 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ heat conduction: nothing
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_ionization.
+The values
+  provided are for one-atomic ideal gas. Use at own risk!
+ init_uu: nothing
+ init_lnrho: initlnrho(1) = const_lnrho
+ init_energy: initss(1) = const_ss
+ Maximum used memory per cpu [MBytes] =     9.328
+ Maximum used memory [MBytes] =        9.328
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.03
+user 0.01
+sys 0.00

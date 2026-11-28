@@ -1,0 +1,129 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+WARNING:  register_io: HDF5 files are possibly locked; writing may fail!
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          64          64          64
+ Lx, Ly, Lz=   5.0000000000000000        5.0000000000000000        4.0000000000000000     
+       Vbox=   100.00000000000000     
+WARNING:  input_persist_general_by_label: no persistent value of dt found!
+WARNING:  input_persist_general_by_label: no persistent value of eps_rkf found!
+WARNING:  input_persist_general_by_label: no persistent value of it found!
+ rsnap: read snapshot var.dat in    2.1023500999999944E-002  seconds
+ setup_slices: slice_position = m
+ setup_slices: iy_loc,iz2_loc, (video files) =  35 7                                                                           
+ units_general: unit_velocity=   10000.000000000000     
+ units_general: unit_density=   1.0000000000000000E-008
+ units_general: unit_length=   10000000.000000000     
+ units_general: unit_magnetic=   3.5449077018110318     
+ units_eos: unit_temperature=   3208.8625459375853     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.0000000000000000       0.63212247872217087        1.1200000000000001        15060.326400000005       0.26680000000000004     
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+WARNING:  initialize_diagnostics: volume averages are calculated wrongly for nonequidistant grids unless lproper_averages=T.!
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ initialize_gravity: constant gravz=  -27.399999999999999     
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and lnTT
+ heat conduction: nothing
+ resistivity: shock
+ resistivity: constant eta
+ initialize_shock: prenormalised shock_factor sum=   1.0000000000000000     
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ | solar_corona: settings for granules
+ -----------------------------------
+ | radius [Mm]:   2.3437500000000000     
+ | lifetime [min]   5.0000000000000000     
+ | update interval [s]   0.0000000000000000     
+ -----------------------------------
+WARNING:  interpolate_profile: extrapolated 3 grid points below bottom!
+WARNING:  interpolate_profile: extrapolated 3 grid points below bottom!
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+Reading file: driver/pts_1.dat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+=>    194 granules in level 1
+Reading file: driver/pts_2.dat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+=>     52 granules in level 2
+Reading file: driver/pts_3.dat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+=>     15 granules in level 3
+ calc_pencils_hydro: max(advec_uu) =   0.0000000000000000     
+ calc_pencils_energy: max(advec_cs2) =   1734.6577910016620     
+ calc_pencils_magnetic_fres: iresistivity=shock                                   eta-const                                                                                                               
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <     s:a>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <     s:a>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       a>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <  set:a2>
+ dlnrho_dt: max(diffus_diffrho ) =   0.0000000000000000     
+ dlnrho_dt: max(diffus_diffrho3) =   0.0000000000000000     
+ SOLVE dlnTT_dt
+ denergy_dt: lnTT,cs2=  0.98383860003284496        1.7831357860470716     
+Bcs for       lnTT,  x: <       p>, y: <       p>,  z: <  set:a2>
+ denergy_dt: cs20=   1.7831357860470716     
+ denergy_dt: max(diffus_chi ) =   0.0000000000000000     
+ denergy_dt: max(diffus_chi3) =   0.0000000000000000     
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <     pfe>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <     nil>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <     nil>
+ daa_dt: max(diffus_eta)  =  0.97281306593432371     
+ daa_dt: max(diffus_eta2) =   0.0000000000000000     
+ daa_dt: max(diffus_eta3) =   0.0000000000000000     
+
+ --it-------t-----------dt--------shockmax-------umax----------j2m---------beta1m---------TTm-----------eem-----------ethm------ekintot-----totmass------dtu-----dtv-----dtc----dtchi---dtchi2---dtnu----dtb----dteta----dtd---dtspitzer--dtnewt-dtradloss--dtvel--
+     0   0.00E+00  1.118514E-05  0.00000E+00  0.00000E+00  1.69720E+10  2.915863E+01  1.978892E+02  1.187335E+02  4.035065E+05  0.00E+00  2.200869E+07  0.0000  0.2450  0.0119  0.0000  0.0205  0.0002  0.2448  0.0002  0.0000    0.1283  0.2353    1.0000  0.0001
+WARNING:  assign_slices_f_scal: output may be at the wrong timestep; replace by assign_slices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be used in get_slices_*) to silence this warning!
+     5   9.49E-05  2.071137E-05  6.94862E-04  8.30096E-02  1.69669E+10  3.090344E+01  1.976963E+02  1.186178E+02  4.035065E+05  7.01E-03  2.200869E+07  0.0001  0.4536  0.0221  0.0000  0.0383  0.0004  0.4533  0.0004  0.0000    0.2523  0.4358    1.0000  0.0003
+    10   2.11E-04  3.713259E-05  1.53743E-03  1.83654E-01  1.69561E+10  3.292359E+01  1.974969E+02  1.184981E+02  4.035065E+05  3.45E-02  2.200869E+07  0.0004  0.8133  0.0396  0.0000  0.0693  0.0011  0.8127  0.0011  0.0000    0.4521  0.7813    1.0000  0.0005
+    15   4.28E-04  4.514468E-05  3.08656E-03  3.68758E-01  1.69224E+10  3.527388E+01  1.971845E+02  1.183107E+02  4.035065E+05  1.43E-01  2.200869E+07  0.0011  0.9888  0.0482  0.0000  0.0857  0.0021  0.9881  0.0021  0.0000    0.5492  0.9498    0.5543  0.0006
+    20   6.54E-04  4.514705E-05  4.61311E-03  5.51497E-01  1.68699E+10  3.713164E+01  1.968849E+02  1.181309E+02  4.035065E+05  3.32E-01  2.200869E+07  0.0016  0.9889  0.0481  0.0000  0.0870  0.0029  0.9881  0.0029  0.0000    0.5488  0.9499    0.6220  0.0006
+    25   8.80E-04  4.514939E-05  6.02160E-03  7.21007E-01  1.68005E+10  3.942655E+01  1.965929E+02  1.179557E+02  4.035065E+05  6.01E-01  2.200869E+07  0.0021  0.9889  0.0481  0.0000  0.0881  0.0036  0.9882  0.0036  0.0000    0.5484  0.9499    0.9521  0.0006
+
+ Simulation finished after           26  time-steps
+
+ Writing final snapshot at time t =   9.2508669491690547E-004
+
+ Wall clock time [hours] =  1.186E-03 (+/-  2.7778E-13)
+ Wall clock time/timestep/meshpoint [microsec] = 0.6264955    
+ Wall clock time/timestep/local meshpoint [microsec] =  2.505982    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  2.038401    
+ Maximum used memory per cpu [MBytes] =    74.844
+ Maximum used memory [MBytes] =      291.508
+

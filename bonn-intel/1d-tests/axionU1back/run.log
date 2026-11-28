@@ -1,0 +1,80 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) 96f8e86d7          
+SVN: -------            v.         (                   ) 96f8e86d7          
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 0-D run
+ nxgrid, nygrid, nzgrid=           1           1           1
+ Lx, Ly, Lz=   6.28318530717959        6.28318530717959     
+   6.28318530717959     
+       Vbox=   1.00000000000000     
+ input_persist_special:   -14.3725105222511     
+ rsnap: read snapshot var.dat in   9.999999019782990E-005  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ 
+ ------------------------------------------------------
+ W A R N I N G
+ warning_lperi: inconsistency, j=           1 , lperi(j)= T
+ bc=no     no     no     no     no     no     no     no     
+ any(bc=='p'.or. bc=='she'), .not.lperi(j) =  F F
+ any(bcx/='p'.and.bcx/='she'), lperi(j) =  F F
+ check_consistency_of_lperi(run.in): you better stop and check!
+ ------------------------------------------------------
+ 
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ horizon_factor=  0.000000000000000E+000
+ duu_dt: diagnostics ...
+ dspecial_dt: SOLVE dSPECIAL_dt
+ 
+ -----it-----------t-----------dt------------a------------H-----------phi--------phidot---------k0-----------dk-----------AL-----------AR------
+          0   0.00000E+00  1.60256E+03  1.00000E+00  1.55737E-06  7.00000E-01 -1.68700E-07  1.56000E-05  1.06000E-04  1.48553E+02  1.48553E+02
+         10   1.62081E+04  1.64345E+03  1.02552E+00  1.55158E-06  6.97266E-01 -1.68673E-07  1.56000E-05  1.06000E-04  1.66529E+02  1.70752E+02
+         20   3.28338E+04  1.68632E+03  1.05226E+00  1.54563E-06  6.94462E-01 -1.68645E-07  1.56000E-05  1.06000E-04  1.69628E+02  1.87047E+02
+         30   4.98976E+04  1.73129E+03  1.08033E+00  1.53954E-06  6.91584E-01 -1.68616E-07  1.56000E-05  1.06000E-04  1.57458E+02  1.97007E+02
+         40   6.74212E+04  1.77854E+03  1.10981E+00  1.53328E-06  6.88630E-01 -1.68586E-07  1.56000E-05  1.06000E-04  1.31001E+02  2.00442E+02
+         50   8.54280E+04  1.82822E+03  1.14081E+00  1.52685E-06  6.85594E-01 -1.68555E-07  1.56000E-05  1.06000E-04  9.25586E+01  1.97395E+02
+         60   1.03943E+05  1.88053E+03  1.17345E+00  1.52024E-06  6.82474E-01 -1.68522E-07  1.56000E-05  1.06000E-04  4.55769E+01  1.88128E+02
+         70   1.22994E+05  1.93566E+03  1.20785E+00  1.51344E-06  6.79264E-01 -1.68489E-07  1.56000E-05  1.06000E-04  5.64324E+00  1.73095E+02
+         80   1.42610E+05  1.99385E+03  1.24416E+00  1.50644E-06  6.75959E-01 -1.68454E-07  1.56000E-05  1.06000E-04  5.63225E+01  1.52916E+02
+         90   1.62823E+05  2.05535E+03  1.28254E+00  1.49924E-06  6.72555E-01 -1.68417E-07  1.56000E-05  1.06000E-04  1.01639E+02  1.28337E+02
+ 
+ Simulation finished after          100  time-steps
+ 
+ Writing final snapshot at time t =   183665.898016858     
+ 
+ Wall clock time [hours] =  4.444E-06 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  80.0    
+ Wall clock time/timestep/meshpoint [microsec] =  160.0000    
+ Wall clock time/timestep/local meshpoint [microsec] =  160.0000    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Maximum used memory per cpu [MBytes] =     7.781
+ Maximum used memory [MBytes] =        7.781
+ 
+real 0.01
+user 0.01
+sys 0.00

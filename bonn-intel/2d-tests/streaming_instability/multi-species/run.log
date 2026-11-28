@@ -1,0 +1,137 @@
+SVN: -------            v.         (                   ) $Id$
+WARNING:  find_namelist: namelist "special_init_pars" is missing!
+SVN: -------            v.         (                   ) no cvsid is given i
+SVN: -------            v.         (                   ) no cvsid is given i
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: particles_density. v. 20849   (2013-08-06 18:45:43) anders
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=          64           1          64
+ Lx, Ly, Lz=  6.283185307179587E-003   1.00000000000000     
+  6.283185307179587E-003
+       Vbox=  3.947841760435744E-005
+ rsnap: read snapshot var.dat in   1.927036442793906E-003  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  4.810888374719019E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+   4.08121924092685        6.28318530717959        23.6870505626144     
+  0.400000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: mesh hyperdiffusion
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ initialize_density: Global density gradient with beta_glnrho_global=
+ -0.100000000000000       0.000000000000000E+000  0.000000000000000E+000
+ select_eos_variable: Using rho and ss
+ viscous force: nu_hyper3_mesh/pi^5 *(Deltav)^6/Deltaq
+ initialize_special: ux0, uy0 =   9.279162058204699E-003 -0.125833027337526     
+ initialize_special: vpx0 =  -1.414091063501524E-003 -1.573014198940635E-002
+ initialize_special: vpy0 =  -0.125802977902426      -0.125046520238055     
+ initialize_particles: Number of particle species =            2
+ initialize_particles: tausp_species =   6.764085081405553E-003
+  1.591549430918953E-002
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.50000000000000     
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  1.807178540238530E-009
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  0.187500000000000     
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected triangular-shaped-cloud for particle-mesh me
+ thod. 
+ pencil_consistency_check: checking pencil case
+ drhopswarm_dt_pencil: Calculate drhopswarm_dt
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=p      
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ dvvp_dt: Add Coriolis force; Omega=   6.28318530717959     
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: No gravity in z-direction.
+ particle_gravity: No radial gravity
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   94.5173837597783     
+ calc_pencils_energy: max(advec_cs2) =   8192000000.03768     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       p>
+ coriolis_cartesian: add Coriolis force; Omega=   6.28318530717959     
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <     she>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3_mesh=  1.457733428968086E-003
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =   29.6967015591129     
+ denergy_dt: adding global pressure gradient force
+ dspecial_dt: special diagnostics
+ shearing: Sshear,Sshear1=  -9.42477796076938       -9.42477796076938     
+ shearing: qshear,qshear0=   1.50000000000000       0.000000000000000E+000
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt_pencil: adding feedback from dust to gas
+ dvvp_dt: Add drag force; tausp=  0.000000000000000E+000
+ 
+ ----it-------t-------dt----dtv----rhom-----drho2m-----urms------umax-------uxm--------uym------rdux2m----rduy2m----ruz2m----rduxduym---nparmax---nmigmmax----vpxm-------vpym----rhopdvpx2m-rhopdvpy2m-rhopvpz2m---npmax----drhop2m---rhopmax--
+        0  0.00000 9.9E-06 1.00 1.000E+00 3.757E-23 1.262E-01 1.262E-01  9.279E-03 -1.258E-01 9.283E-16 8.028E-16 9.283E-16 -7.108E-16 8.192E+03 0.000E+00 -8.572E-03 -1.254E-01 1.395E-16 1.487E-16 1.639E-16 8.000E+00 4.967E-13 1.500E+00
+      100  0.00099 9.9E-06 1.00 1.000E+00 3.727E-23 1.262E-01 1.262E-01  9.279E-03 -1.258E-01 9.325E-16 8.064E-16 9.325E-16 -7.141E-16 8.192E+03 0.000E+00 -8.572E-03 -1.254E-01 1.399E-16 1.492E-16 1.644E-16 8.000E+00 4.986E-13 1.500E+00
+      200  0.00199 9.9E-06 1.00 1.000E+00 3.766E-23 1.262E-01 1.262E-01  9.279E-03 -1.258E-01 9.365E-16 8.099E-16 9.365E-16 -7.171E-16 8.192E+03 6.400E+01 -8.572E-03 -1.254E-01 1.404E-16 1.497E-16 1.650E-16 8.000E+00 5.005E-13 1.500E+00
+      300  0.00298 9.9E-06 1.00 1.000E+00 3.778E-23 1.262E-01 1.262E-01  9.279E-03 -1.258E-01 9.404E-16 8.133E-16 9.404E-16 -7.201E-16 8.192E+03 0.000E+00 -8.572E-03 -1.254E-01 1.409E-16 1.502E-16 1.656E-16 8.000E+00 5.024E-13 1.500E+00
+ 
+ Simulation finished after          301  time-steps
+ 
+ Writing final snapshot at time t =  2.988628074655093E-003
+ 
+ Wall clock time [hours] =  7.679E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] = 0.272    
+ Wall clock time/timestep/meshpoint [microsec] =  2.242354    
+ Wall clock time/timestep/local meshpoint [microsec] =  8.969415    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  4.292343    
+ Maximum used memory per cpu [MBytes] =    70.367
+ Maximum used memory [MBytes] =      256.625
+ 
+real 3.06
+user 11.11
+sys 0.09

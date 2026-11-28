@@ -1,0 +1,118 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) no cvsid is given i
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=         240         480           1
+ T
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+WARNING:  initialize_density: are rho_const or lnrho_const ok?!
+ inconsistency between the density constants from eos  
+ (rho0 or lnrho0) and the ones from the density module 
+ (rho_const or lnrho_const). It may damage your        
+ simulation if you are using them in different places. 
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and TT
+ heat conduction: nothing
+ heat conduction: nothing
+ heat conduction: nothing
+ Number of reactions=           1
+ Number of species=           5
+ nxgrid_ogrid, nygrid_ogrid, nzgrid_ogrid=          48         240           1
+ Cylidner radius=  2.500000000000000E-003
+ Cylindrical grid radius=  7.500000000000000E-003
+ By using fbc[x,y,z] I found the flow direction to be in the            2 
+  direction.
+ (x,y,z)_ogrid(point)=  4.075237392879776E-003 -1.308996938995755E-002
+  0.000000000000000E+000
+ (x,y,z)_ogrid(point2)=  3.040977133203878E-003  -1.63624617374468     
+  0.000000000000000E+000
+ 
+ Non-linear grid in radial direction - dx_rcyl, dx_rogrid:
+  5.873479371066833E-005  2.207718736550110E-004
+ Theta grid spacing - r_cyl*dy_ogrid,r_int_outer*dy_ogrid,r_ogrid*dy_ogrid
+  6.544984694978773E-005  1.962917603474820E-004  1.963495408493632E-004
+ 
+ dtheta/dr_surf   1.11432837020248     
+ dtheta/dr_rogrid  0.889377517156867     
+ dx/dr_rogrid  0.943658854202077     
+ dx/dtheta_rogrid   1.06103295394596     
+ 
+ Cartesian grid spacing - dx, dy, dz:  2.083333333333333E-004
+  2.087682672233821E-004  1.000000000000000E-002
+ Timestep factor:           4
+ Cylinder boundary condition: Third order SBP boundary closures
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ initialize_mpicomm_ogrid: enabled MPI on overlapping grid
+ Interpolation zone: r_ogrid, r_int_outer, r_int_inner  7.500000000000000E-003
+  7.497792947402707E-003  6.871488145732561E-003
+ interpolation_method==1: Linear interpolation used
+ 
+ particle_interpolate==3: Quadratic particle interpolation
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  5.000000000000001E-007
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+   11.5200000000000     
+ initialize_particles_map: particle_mesh = cic
+ initialize_particles_radius: mass per dust grain mpmat=  2.831622178435601E-015
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ init_uu: nothing
+ init_lnrho: initlnrho(1) = const_rho
+ init_lnrho: cs2bot,cs2top=   1.00000000000000        1.00000000000000     
+ init_energy: initss(1) = const_TT
+ initchem: nothing 
+ gaunoise_vect: ampl=0 for i1,i2=           1           3
+ gaunoise_ogrid: ampl=0 for i1,i2=           1           3
+ set_particles_radius: constant radius
+ init_particles: Random particle positions within a box
+ init_particles: Constant particle velocity
+ init_particles: vpx0, vpy0, vpz0=  0.000000000000000E+000
+   3000.00000000000       0.000000000000000E+000
+ Maximum used memory per cpu [MBytes] =   191.973
+ Maximum used memory [MBytes] =      191.973
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.68
+user 0.26
+sys 0.16

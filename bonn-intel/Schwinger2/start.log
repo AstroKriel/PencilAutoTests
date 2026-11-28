@@ -1,0 +1,57 @@
+SVN: -------            v.         (                   ) $Id$
+ WARNING: parser -- too many substrings in "klein_gordon disp_current 
+" (>2)!!!
+SVN: start.in,v         v. 1.1     (2025/06/19 01:50:58) brandenb
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          32          32          32
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are undefined in noeos.
+The values provided ar
+ e for one-atomic ideal gas. Use at own risk!
+ resistivity: constant eta
+ init_aa: nothing
+ Hubble_ini=  1.518616834592589E-006
+ init_special: nothing
+ init_special: nothing
+ init_special: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ Maximum used memory per cpu [MBytes] =    55.852
+ Maximum used memory [MBytes] =      436.516
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.38
+user 0.41
+sys 0.26

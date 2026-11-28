@@ -1,0 +1,199 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) no cvsid is given i
+SVN: -------            v.         (                   ) no cvsid is given i
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=         240         480           1
+ Lx, Ly, Lz=  5.000000000000000E-002  0.100000000000000     
+  1.000000000000000E-002
+       Vbox=  5.000000000000001E-003
+ rsnap: read snapshot var.dat in   9.760709013789892E-003  seconds
+ T
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+WARNING:  initialize_density: are rho_const or lnrho_const ok?!
+ inconsistency between the density constants from eos  
+ (rho0 or lnrho0) and the ones from the density module 
+ (rho_const or lnrho_const). It may damage your        
+ simulation if you are using them in different places. 
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and TT
+ heat conduction: nothing
+ heat conduction: nothing
+ heat conduction: nothing
+ Number of reactions=           1
+ Number of species=           5
+ viscous force: nu is calculated for a mixture
+ nxgrid_ogrid, nygrid_ogrid, nzgrid_ogrid=          48         240           1
+ Cylidner radius=  2.500000000000000E-003
+ Cylindrical grid radius=  7.500000000000000E-003
+ By using fbc[x,y,z] I found the flow direction to be in the            2 
+  direction.
+ (x,y,z)_ogrid(point)=  4.075237392879776E-003 -1.308996938995755E-002
+  0.000000000000000E+000
+ (x,y,z)_ogrid(point2)=  3.040977133203878E-003  -1.63624617374468     
+  0.000000000000000E+000
+ 
+ Non-linear grid in radial direction - dx_rcyl, dx_rogrid:
+  5.873479371066833E-005  2.207718736550110E-004
+ Theta grid spacing - r_cyl*dy_ogrid,r_int_outer*dy_ogrid,r_ogrid*dy_ogrid
+  6.544984694978773E-005  1.962917603474820E-004  1.963495408493632E-004
+ 
+ dtheta/dr_surf   1.11432837020248     
+ dtheta/dr_rogrid  0.889377517156867     
+ dx/dr_rogrid  0.943658854202077     
+ dx/dtheta_rogrid   1.06103295394596     
+ 
+ Cartesian grid spacing - dx, dy, dz:  2.083333333333333E-004
+  2.087682672233821E-004  1.000000000000000E-002
+ Timestep factor:           4
+ Cylinder boundary condition: Third order SBP boundary closures
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ initialize_mpicomm_ogrid: enabled MPI on overlapping grid
+ Interpolation zone: r_ogrid, r_int_outer, r_int_inner  7.500000000000000E-003
+  7.497792947402707E-003  6.871488145732561E-003
+ interpolation_method==1: Linear interpolation used
+ 
+ particle_interpolate==3: Quadratic particle interpolation
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  2.831622178435601E-015
+ initialize_particles: mass per superparticle mp_swarm =  5.000000000000001E-007
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+   11.5200000000000     
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected cloud-in-cell for particle-mesh method. 
+ initialize_particles_radius: mass per dust grain mpmat=  2.831622178435601E-015
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ pencil_consistency_check: checking pencil case
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=rmv    
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: No gravity in z-direction.
+ particle_gravity: No radial gravity
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   14370000.0000000     
+ calc_pencils_energy: max(p%advec_cs2) =  5.072141163229877E+016
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <  set:e2>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <  set:e2>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <  set:e2>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <  set:e2>,  z: <       p>
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ denergy_dt: SOLVE denergy_dt
+Bcs for       lnTT,  x: <       p>, y: <  set:e2>,  z: <       p>
+ denergy_dt: cs2 =   1103020644.79459     
+ dchemistry_dt: SOLVE dchemistry_dt
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt: Add drag force; tausp=  0.000000000000000E+000
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ inlet_profile: uniform
+ inlet_YY_profile: uniform,
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are not constant in eos_chemistry_simple.
+The 
+ values provided are for one-atomic ideal gas. Use at own risk!
+ 
+ ---it-----------t-----------dt------urms------uxm------uym-----umax-------rhom-------c_dragx-------c_dragy-----nparmax--nparmin--nparsum-----Mamax-----
+       0     0.00000E+00 4.061E-09  3008.43    -0.00  2999.85  3977.06  0.00128313    2.1112E-09    1.8942E-04       0.       0.       0.    1.1975E-01
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+       1     4.06149E-09 4.100E-09  3000.06     0.00  2989.10  3589.92  0.00128313    2.1508E-08    8.5367E-04      24.      24.      24.    1.0809E-01
+       2     8.16100E-09 4.100E-09  3000.06    -0.00  2989.09  3589.92  0.00128313    6.9959E-08    1.7774E-03      48.      48.      48.    1.0809E-01
+       3     1.22605E-08 4.100E-09  3000.06    -0.00  2989.09  3589.92  0.00128313    1.5380E-07    2.8941E-03      73.      73.      73.    1.0809E-01
+       4     1.63600E-08 4.100E-09  3000.06    -0.00  2989.09  3589.92  0.00128313    2.7558E-07    4.1643E-03      98.      98.      98.    1.0809E-01
+       5     2.04595E-08 4.100E-09  3000.06    -0.00  2989.09  3589.92  0.00128313    4.3043E-07    5.4870E-03      98.      98.      98.    1.0809E-01
+       6     2.45590E-08 4.100E-09  3000.05    -0.00  2989.08  3589.92  0.00128313    6.1225E-07    6.8102E-03      98.      98.      98.    1.0809E-01
+       7     2.86585E-08 4.100E-09  3000.05    -0.00  2989.08  3589.92  0.00128313    8.1258E-07    8.0942E-03      98.      98.      98.    1.0809E-01
+       8     3.27580E-08 4.100E-09  3000.04    -0.00  2989.07  3589.92  0.00128313    1.0216E-06    9.2981E-03      98.      98.      98.    1.0809E-01
+       9     3.68575E-08 4.100E-09  3000.03    -0.00  2989.06  3589.92  0.00128313    1.2304E-06    1.0396E-02      98.      98.      98.    1.0809E-01
+ 
+ Simulation finished after           10  time-steps
+ 
+ Writing final snapshot at time t =  4.095705489507229E-008
+ 
+ Wall clock time [hours] =  7.638E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] =  2.38    
+ Wall clock time/timestep/meshpoint [microsec] =  2.387028    
+ Wall clock time/timestep/local meshpoint [microsec] =  2.387028    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.9607361    
+ Maximum used memory per cpu [MBytes] =   557.598
+ Maximum used memory [MBytes] =      557.598
+ 
+real 3.10
+user 2.58
+sys 0.27

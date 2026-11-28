@@ -1,0 +1,90 @@
+ 
+ =====================================================================
+ WARNING: using SINGLE PRECISION, you'd better know what you're doing!
+ =====================================================================
+ 
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2025/03/28 16:06:31) brandenb
+SVN: run.in,v           v. 1.1     (2025/03/28 16:06:31) brandenb
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ kt_init: KT flux-limited transport enabled; theta=   2.000000    
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=         300           1           1
+ Lx, Ly, Lz=   7.000000       1.000000       1.000000    
+       Vbox=   7.000000    
+ rsnap: read snapshot var.dat in  -1.688040397129953E-002  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490780830383     
+ units_eos: unit_temperature=  1.202722077580192E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.000000      -1.098612    
+  0.5773503      0.3333334       1.000000    
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: div(D*grad(rho))
+WARNING: 
+ initialize_density: For diffusion energy/momentum correction should use lmassdi
+ ff_fix=T!
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and cs2
+ viscous force: nu*del2v
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       a>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       s>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       s>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       s>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho=  9.9999997E-05
+ 
+ ---it--------t-----------dt---------urms--------ekin--------ethm--------ruxm--------rhom----
+      0   0.0000E+00  2.0000E-04  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  4.2174E-01
+     50   1.0000E-02  2.0000E-04  9.9787E-03  4.6388E-05  0.0000E+00  3.1556E-04  4.2169E-01
+    100   2.0000E-02  2.0000E-04  1.8574E-02  1.5071E-04  0.0000E+00  6.1663E-04  4.2159E-01
+    150   3.0000E-02  2.0000E-04  2.5551E-02  2.9024E-04  0.0000E+00  9.0214E-04  4.2145E-01
+    200   4.0000E-02  2.0000E-04  3.1128E-02  4.4777E-04  0.0000E+00  1.1763E-03  4.2129E-01
+    250   5.0000E-02  2.0000E-04  3.6085E-02  6.1784E-04  0.0000E+00  1.4437E-03  4.2112E-01
+    300   6.0000E-02  2.0000E-04  4.0310E-02  7.9296E-04  0.0000E+00  1.7069E-03  4.2095E-01
+    350   7.0000E-02  2.0000E-04  4.4083E-02  9.6839E-04  0.0000E+00  1.9691E-03  4.2077E-01
+    400   8.0000E-02  2.0000E-04  4.7681E-02  1.1465E-03  0.0000E+00  2.2304E-03  4.2059E-01
+ 
+ Simulation finished after          401  time-steps
+ 
+ Writing final snapshot at time t =  8.020000235046609E-002
+ 
+ Wall clock time [hours] =  3.472E-05 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  3.15    
+ Wall clock time/timestep/meshpoint [microsec] =  1.039069    
+ Wall clock time/timestep/local meshpoint [microsec] =  3.117207    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  1.558604    
+ Maximum used memory per cpu [MBytes] =    46.887
+ Maximum used memory [MBytes] =      139.094
+ 
+real 0.36
+user 0.23
+sys 0.06

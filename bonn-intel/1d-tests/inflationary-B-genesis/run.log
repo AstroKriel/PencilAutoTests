@@ -1,0 +1,93 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2023/07/31 20:56:01) brandenb
+SVN: run.in,v           v. 1.1     (2023/07/31 20:56:01) brandenb
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          15  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=         128           1           1
+ Lx, Ly, Lz=   6.28318530717959        6.28318530717959     
+   6.28318530717959     
+       Vbox=   6.28318530717959     
+ rsnap: read snapshot var.dat in   1.999999949475750E-004  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=   1.00000000000000     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.405465108108159        1.00000000000000       0.599999999999999     
+  0.400000000000001     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and ss
+ resistivity: time-dependent eta
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ initialize_special: nt_file,lgt0,dlgt,H0=        3001  -6.00000000000000     
+  5.000000000000000E-003   1.00000000000000     
+ initialize_special: reset tmax=maxval(t_file)/t_ini=   870965000.000000     
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <       p>
+ dspecial_dt: SOLVE dSPECIAL_dt
+Bcs for         ee,  x: <       p>, y: <       p>,  z: <       p>
+ 
+ ---it--------t-------EEK-------EEM-------EEEM------erms------jrms------brms-----b2divum-----epsK------epsM--------ujxbm---------jem--------aem------BcurlEm--eta_tdep----mfpf-------fppf-----afact---
+       0   0.00000 0.000E+00 2.500E-37 2.500E-37 0.000E+00 0.000E+00 7.071E-19  0.000E+00 0.000E+00 0.000E+00    0.00000E+00  0.000E+00  0.000E+00  0.000E+00 1.00E+09  2.000E+06 6.003E+12 1.000E-12
+     100   0.01000 1.347E-67 7.342E-25 1.854E-19 6.089E-10 6.089E-19 1.212E-12 -1.078E-57 7.183E-68 3.707E-28    2.70774E-64  3.707E-28 -7.378E-22 -7.378E-22 1.00E+09  2.000E+02 5.998E+04 1.000E-04
+     200   0.02000 1.483E-61 7.705E-22 4.839E-17 9.838E-09 9.838E-18 3.926E-11 -1.187E-51 7.908E-62 9.679E-26    1.48707E-58  9.679E-26 -3.862E-19 -3.862E-19 1.00E+09  9.999E+01 1.500E+04 4.001E-04
+     300   0.03000 5.008E-58 4.479E-20 1.248E-15 4.997E-08 4.997E-17 2.993E-10 -4.010E-48 2.671E-58 2.497E-24    3.34690E-55  2.497E-24 -1.496E-17 -1.496E-17 1.00E+09  6.666E+01 6.667E+03 9.003E-04
+     400   0.04000 1.591E-55 7.986E-19 1.251E-14 1.582E-07 1.582E-16 1.264E-09 -1.274E-45 8.486E-56 2.502E-23    7.97345E-53  2.502E-23 -1.999E-16 -1.999E-16 1.00E+09  5.000E+01 3.750E+03 1.601E-03
+     500   0.05000 1.386E-53 7.455E-18 7.469E-14 3.865E-07 3.865E-16 3.861E-09 -1.110E-43 7.391E-54 1.494E-22    5.55549E-51  1.494E-22 -1.492E-15 -1.492E-15 1.00E+09  4.000E+01 2.400E+03 2.501E-03
+     600   0.06000 5.326E-52 4.623E-17 3.215E-13 8.018E-07 8.018E-16 9.615E-09 -4.267E-42 2.840E-52 6.430E-22    1.77928E-49  6.430E-22 -7.710E-15 -7.710E-15 1.00E+09  3.333E+01 1.667E+03 3.601E-03
+     700   0.07000 1.164E-50 2.162E-16 1.104E-12 1.486E-06 1.486E-15 2.079E-08 -9.329E-41 6.208E-51 2.208E-21    3.33348E-48  2.208E-21 -3.090E-14 -3.090E-14 1.00E+09  2.857E+01 1.224E+03 4.901E-03
+     800   0.08000 1.683E-49 8.222E-16 3.215E-12 2.536E-06 2.536E-15 4.055E-08 -1.349E-39 8.976E-50 6.429E-21    4.21830E-47  6.429E-21 -1.028E-13 -1.028E-13 1.00E+09  2.500E+01 9.374E+02 6.402E-03
+     900   0.09000 1.775E-48 2.671E-15 8.252E-12 4.062E-06 4.062E-15 7.309E-08 -1.424E-38 9.468E-49 1.650E-20    3.95584E-46  1.650E-20 -2.969E-13 -2.969E-13 1.00E+09  2.222E+01 7.407E+02 8.102E-03
+ 
+ Simulation finished after         1000  time-steps
+ 
+ Writing final snapshot at time t =  0.100000999999997     
+ 
+ Wall clock time [hours] =  5.236E-05 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  1.46    
+ Wall clock time/timestep/meshpoint [microsec] =  1.472656    
+ Wall clock time/timestep/local meshpoint [microsec] =  1.472656    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.3320312    
+ Maximum used memory per cpu [MBytes] =    12.750
+ Maximum used memory [MBytes] =       12.750
+ 
+real 0.19
+user 0.14
+sys 0.02

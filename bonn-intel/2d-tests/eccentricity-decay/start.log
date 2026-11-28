@@ -1,0 +1,77 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.2     (2020/05/19 07:33:50) wlyra
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: pointmasses.f90,v  v. 1.1     (2019/02/02 03:54:41) wlyra
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          32          64           1
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.99146454710798       5.000000000000000E-002  5.000000000000001E-006
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+ diffusion: nothing (i.e. no mass diffusion)
+ Note: rho_const or lnrho_const are not used
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ select_eos_variable: Using rho and cs2
+WARNING:  initialize_pointmasses: the masses do not sum up to one!
+ init_uu: nothing
+ centrifugal_balance: initializing velocity field
+ initial_condition_lnrho: locally isothermal approximation
+ Radial stratification with power law=   1.50000000000000     
+ Correcting density gradient on the centrifugal force
+ Temperature gradient with power law=   1.00000000000000     
+ Max global cs2 =   6.250000000000001E-003
+ Sum global cs2 =    2.13110563552131     
+ Max global glnTT(1) =   -1.02999893220242     
+ Sum global glnTT(1) =   -852.442254208526     
+ thermodynamical quantities successfully set
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=  2.500000000000000E-003  2.500000000000000E-003
+ init_pointmasses: particle positions
+ particle           1 position x,y,z:  3.900000000000000E-005
+   3.14159265358979       0.000000000000000E+000
+ particle           2 position x,y,z:   1.29996100000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ init_pointmasses: particle velocities
+ particle           1 velocities x,y,z:  0.000000000000000E+000
+  2.201398157116028E-005  0.000000000000000E+000
+ particle           2 velocities x,y,z:  0.000000000000000E+000
+  0.733777371723772       0.000000000000000E+000
+ Maximum used memory per cpu [MBytes] =    46.324
+ Maximum used memory [MBytes] =      180.359
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.30
+user 0.08
+sys 0.05

@@ -1,0 +1,119 @@
+SVN: -------            v.         (                   ) $Id$
+WARNING:  find_namelist: namelist "special_init_pars" is missing!
+ lperi=  T T T
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: pointmasses.f90,v  v. 1.1     (2019/02/02 03:54:41) wlyra
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=         320         320           1
+ Lx, Ly, Lz=   5.20000000000000        5.20000000000000     
+  0.520000000000000     
+       Vbox=   27.0400000000000     
+ rsnap: read snapshot var.dat in   3.800000005867332E-003  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.99146454710798       5.000000000000000E-002  2.499999999999999E-003
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ select_eos_variable: Using rho and cs2
+ initialize_shock: prenormalised shock_factor sum=   1.00000000000000     
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ rt_int,rt_ext  0.400000000000000        2.50000000000000     
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   48.5370962551840     
+ calc_pencils_energy: max(advec_cs2) =   7.30545192461068     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ dspecial_dt: SOLVE dSPECIAL_dt
+ pde: freezing variables for r <   0.400000000000000       :  T T T T F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F
+ pde: freezing variables for r >    2.50000000000000       :  T T T T F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F F
+ F F F F
+ 
+ ----it--------t---------dt------totmass----totenergy---totangmom------TTp-------torqint_1----torqext_1-------xq2----------yq2----------xq1----------yq1---------vxq2---------vyq2---------vxq1---------vyq1----------urm----------upm-----
+        0      0.000  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03  0.000000000  0.000000000    1.000E-04    0.000E+00   -9.999E-01    0.000E+00    0.000E+00    1.000E-04    0.000E+00   -9.999E-01 -0.000000000    4.421E-05
+        5      0.014  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03 -0.000003360  0.000001803    9.999E-05    1.390E-06   -9.998E-01   -1.389E-02   -1.390E-06    9.999E-05    1.389E-02   -9.998E-01 -0.000000003    4.421E-05
+       10      0.028  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03 -0.000007881  0.000005840    9.996E-05    2.779E-06   -9.995E-01   -2.779E-02   -2.779E-06    9.996E-05    2.779E-02   -9.995E-01 -0.000000005    4.421E-05
+       15      0.042  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03 -0.000004136  0.000003298    9.991E-05    4.168E-06   -9.990E-01   -4.167E-02   -4.168E-06    9.991E-05    4.167E-02   -9.990E-01 -0.000000006    4.421E-05
+       20      0.056  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03 -0.000001121  0.000002133    9.985E-05    5.556E-06   -9.984E-01   -5.555E-02   -5.556E-06    9.985E-05    5.555E-02   -9.984E-01 -0.000000007    4.421E-05
+       25      0.069  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03  0.000000218  0.000001666    9.976E-05    6.942E-06   -9.975E-01   -6.942E-02   -6.942E-06    9.976E-05    6.942E-02   -9.975E-01 -0.000000007    4.421E-05
+       30      0.083  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03  0.000000973  0.000000124    9.965E-05    8.328E-06   -9.964E-01   -8.327E-02   -8.328E-06    9.965E-05    8.327E-02   -9.964E-01 -0.000000007    4.421E-05
+       35      0.097  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03  0.000001394 -0.000001840    9.953E-05    9.712E-06   -9.952E-01   -9.711E-02   -9.712E-06    9.953E-05    9.711E-02   -9.952E-01 -0.000000006    4.421E-05
+       40      0.111  2.78E-03   2.704E+01  -3.457E-01   1.283E+00   1.725E-03  0.000001571 -0.000003050    9.938E-05    1.109E-05   -9.937E-01   -1.109E-01   -1.109E-05    9.938E-05    1.109E-01   -9.937E-01 -0.000000005    4.421E-05
+ 
+ Simulation finished after           41  time-steps
+ 
+ Writing final snapshot at time t =  0.113946146067033     
+ 
+ Wall clock time [hours] =  9.488E-04 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] = 0.814    
+ Wall clock time/timestep/meshpoint [microsec] = 0.8135242    
+ Wall clock time/timestep/local meshpoint [microsec] = 0.8135242    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.5657870    
+ Maximum used memory per cpu [MBytes] =   218.078
+ Maximum used memory [MBytes] =      218.078
+ 
+real 3.43
+user 3.31
+sys 0.11

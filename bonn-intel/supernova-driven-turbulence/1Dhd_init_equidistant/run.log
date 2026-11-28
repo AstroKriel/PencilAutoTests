@@ -1,0 +1,176 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          20  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=           1           1        1000
+ Lx, Ly, Lz=  4.000000000000000E-003  4.000000000000000E-003
+   3.99600000000000     
+       Vbox=   3.99600000000000     
+WARNING: 
+ input_persist_interstellar: t_next_SNI from run.in overwritten. Set l_persist_o
+ verwrite_tSNI=T to update!
+WARNING: 
+ input_persist_interstellar: t_next_SNII from run.in overwritten. Set l_persist_
+ overwrite_tSNII=T to update!
+WARNING: 
+ input_persist_interstellar: x_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_xcluster=T to update!
+WARNING: 
+ input_persist_interstellar: y_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_ycluster=T to update!
+WARNING: 
+ input_persist_interstellar: z_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_zcluster=T to update!
+WARNING: 
+ input_persist_interstellar: t_cluster from run.in overwritten. Set l_persist_ov
+ erwrite_tcluster=T to update!
+WARNING: 
+ input_persist_interstellar: lSNI from run.in overwritten. Set l_persist_overwri
+ te_lSNI=T to update!
+ input_persist_interstellar: lSNI  =  F  t_next_SNI  =   0.000000000000000E+000
+WARNING: 
+ input_persist_interstellar: lSNII from run.in overwritten. Set l_persist_overwr
+ ite_lSNII=T to update!
+ input_persist_interstellar: lSNII =  F  t_next_SNII =   0.000000000000000E+000
+ rsnap: read snapshot var.dat in   4.000000044470653E-004  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc,iz2_loc, (video files) = 4 4 4 1003         
+                                                              
+ units_general: unit_velocity=   97781.2299489507     
+ units_general: unit_density=  1.673723599999989E-024
+ units_general: unit_length=  3.085677580000005E+021
+ units_general: unit_magnetic=  4.484378871687490E-007
+ units_eos: unit_temperature=   36.6371811569230     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.50000000000000     
+ -5.107025913275733E-015   1.00000000000000       0.318599999999998     
+  0.318600000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ diffusion: shock diffusion
+WARNING:  initialize_density: set lgamma_is_1=F if gamma/=1 with entropy!
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and ss
+ initialize_energy: cs2top,cs2cool,cs2cool2=   1.00000000000000     
+  0.000000000000000E+000  0.000000000000000E+000
+ initialize_energy: now set cs2cool=cs2top
+ initialize_energy: nheatc_max,iheatcond=           4 
+ shock                                   
+ hyper3                                  
+ chi-const                               
+ nothing                                 
+ heat conduction: shock
+ heat conduction: hyperdiffusivity of ss
+ heat conduction: constant chi
+ initialize_interstellar: t_next_SNI = 0.00000000E+00
+ initialize_interstellar: eampl_SN, kampl_SN =  0.2127E+01 0.0000E+00
+ select_cooling: WSW cooling fct
+ initialize_interstellar: unit_Lambda 0.1810E+18
+ initialize_interstellar: unit_Gamma 0.3030E-06
+WARNING: 
+ initialize_interstellar: default average_SN*_heating changed from impossible to
+  0, if laverage_SN*_heating automatically set unless non-zero run.in!
+ initialize_interstellar: t_next_SNI, t_next_SNII= 0.00000000E+00 0.00000000E+00
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ viscous force: nu*(del6u+S.glnrho)
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil cp1 (  28) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil cv1 (  35) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil ee (  70) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil grho (  99) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil rho ( 146) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ check_SN: ENTER
+ calc_pencils_hydro: max(advec_uu) =  0.000000000000000E+000
+ calc_pencils_energy: max(advec_cs2) =   1705917.26837012     
+WARNING: 
+ calc_pencils_viscosity: viscous heating not implemented for lvisc_hyper3_nu_con
+ st!
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       s>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       s>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       s>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <     ism>
+ dlnrho_dt: diffrho_shock=   1.00000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ denergy_dt: SOLVE denergy_dt
+Bcs for         ss,  x: <       p>, y: <       p>,  z: <     ism>
+ denergy_dt: lnTT,cs2,cp1=   3.30669167562582        27.2946762939219     
+  0.666666666666667     
+ calc_heatcond_constchi_arr: chi=  5.000000000000000E-002
+ calc_heatcond_constchi: added thdiff
+ calc_heatcond_shock: use shock diffusion
+ calc_heatcond_shock: chi_shock=   1.20000000000000     
+ calc_heatcond_shock: added thdiff
+ calc_heatcond_hyper3: chi_hyper3=  5.000000000000000E-012
+ calc_heatcond_hyper3: added thdiff
+ calc_heat_cool_interstellar: ENTER
+ 
+ ---it------------t------------------dt---------------urms---------------umax--------------ekintot--------------ethtot--------------rhomin----------------rhom----------------rhomax---------------TTmin-----------------TTm----------------TTmax---------------dtF--------------dtH--------------dtu-------------dtnu-------------dtchi------
+      0  0.0000000000000E+00 6.99447680698E-06 0.000000000000E+00 0.000000000000E+00  0.000000000000E+00  5.394488582928E+00  4.8130378129458E-04  5.4900163376467E-02  6.2217450851555E-01  2.729467629392E+01  2.7294676293922E+01  2.729467629392E+01  0.0000000000000  0.4273314694810  0.0000000000000  0.1457182668120  0.1214318890100
+     20  1.3980738588542E-04 6.98603791897E-06 2.580272715518E-01 3.444752319918E-01  1.353498842841E-03  1.366970644160E+01  4.8127499007140E-04  5.4900169146060E-02  6.2218965993007E-01  3.466203421066E+01  3.9183415299096E+01  9.552535614235E+01  0.0000021788888  0.1164985788746  0.0020054308607  0.1456361576213  0.1213214193746
+     40  2.7945656496335E-04 6.97862189695E-06 5.128404120050E-01 6.868959902196E-01  4.802440798331E-03  2.170111723974E+01  4.8118887817122E-04  5.4900186390204E-02  6.2217657548838E-01  4.199658700489E+01  5.0915997500449E+01  1.611556690515E+02  0.0000041312306  0.0667918466955  0.0039946561652  0.1456235686317  0.1212472503267
+     60  4.1896004408116E-04 6.97162643282E-06 7.651365856232E-01 1.027365013737E+00  1.013010317512E-02  2.930595171687E+01  4.8104576745073E-04  5.4900215012965E-02  6.2205666100832E-01  4.930097929108E+01  6.2412027640638E+01  2.203495073745E+02  0.0000062334292  0.0449781029192  0.0059686709049  0.1456665432258  0.1211983833851
+     80  5.5833951229058E-04 6.96636475917E-06 1.015509669251E+00 1.365961094804E+00  1.781271307522E-02  3.576769738794E+01  4.8084590859136E-04  5.4900254922949E-02  6.2177885770034E-01  5.657831164916E+01  7.3308442781932E+01  2.644409446105E+02  0.0000075996303  0.0337906870365  0.0079298193610  0.1457914441150  0.1211972345343
+    100  6.9763054516892E-04 6.96280765076E-06 1.264343612104E+00 1.702785138550E+00  2.848880022226E-02  4.084126478941E+01  4.8058947466200E-04  5.4900306038278E-02  6.2132822263169E-01  6.383182571450E+01  8.3451602771397E+01  2.929087579584E+02  0.0000081178053  0.0270757314856  0.0098801378252  0.1459960207943  0.1212426649894
+    120  8.3686240552893E-04 6.96038838751E-06 1.511788819510E+00 2.037915796956E+00  4.255518949988E-02  4.465301172572E+01  4.8027660068193E-04  5.4900368282086E-02  6.2071333867863E-01  7.106409406293E+01  9.2877582563395E+01  3.093597972200E+02  0.0000080261941  0.0225481602566  0.0118205712065  0.1462573216325  0.1213205493359
+    140  9.7604758592602E-04 6.95755152556E-06 1.757840270153E+00 2.371386930386E+00  6.009847029166E-02  4.748839248364E+01  4.7990744422704E-04  5.4900441573839E-02  6.1995076357617E-01  7.827755586864E+01  1.0171269866393E+02  3.183305813664E+02  0.0000092715498  0.0193254405772  0.0137492056293  0.1465155298461  0.1213933403774
+    160  1.1151634488185E-03 6.95386053290E-06 2.002388448390E+00 2.703146075663E+00  8.099788413830E-02  4.962906187594E+01  4.7948229679342E-04  5.4900525810719E-02  6.1905614644961E-01  8.547147530584E+01  1.1009139886415E+02  3.236575922987E+02  0.0000111998421  0.0169086507413  0.0156644173418  0.1467647316494  0.1214546827528
+    180  1.2542065615706E-03 6.95029789941E-06 2.245357498743E+00 3.033185914145E+00  1.050431019992E-01  5.129183587155E+01  4.7900147240300E-04  5.4900620893140E-02  6.1804133220237E-01  9.264660490541E+01  1.1812492124226E+02  3.275942405795E+02  0.0000129658160  0.0150169219587  0.0175679547397  0.1470186886744  0.1215190539985
+ 
+ Simulation finished after          200  time-steps
+ 
+ Writing final snapshot at time t =  1.393179687677708E-003
+ 
+ Wall clock time [hours] =  6.854E-04 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  12.3    
+ Wall clock time/timestep/meshpoint [microsec] =  12.33650    
+ Wall clock time/timestep/local meshpoint [microsec] =  12.33650    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  9.612000    
+ Maximum used memory per cpu [MBytes] =    23.727
+ Maximum used memory [MBytes] =       23.727
+ 
+real 2.47
+user 2.45
+sys 0.01

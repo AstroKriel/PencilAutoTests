@@ -1,0 +1,57 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2025/12/04 17:42:37) brandenb
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=         128          16           1
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are undefined in noeos.
+The values provided ar
+ e for one-atomic ideal gas. Use at own risk!
+ resistivity: constant eta
+ lalpha_aniso= F
+ lalpha_tensor= F
+ leta_tensor= F
+ gaunoise_vect: variable i=           1
+ gaunoise_vect: variable i=           2
+ gaunoise_vect: variable i=           3
+ init_aa: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ initee: nothing
+ Maximum used memory per cpu [MBytes] =    45.602
+ Maximum used memory [MBytes] =      177.301
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.30
+user 0.08
+sys 0.07

@@ -1,0 +1,105 @@
+SVN: -------            v.         (                   ) $Id$
+WARNING:  read_namelist: namelist "eos_init_pars" has an error: Cannot match namelist object name ptlaw!
+WARNING:  read_namelist: namelist "density_init_pars" has an error: Cannot match namelist object name radial_percent_smooth!
+WARNING:  read_namelist: namelist "magnetic_init_pars" has an error: Cannot match namelist object name fring1!
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=           4           4           4
+ Lx, Ly, Lz=   6.28318501       6.28318501       6.28318501    
+       Vbox=   248.050171    
+ input_persist_forcing:    0.00000000       0.00000000       0.00000000    
+ input_persist_forcing:   -10.0000000    
+ input_persist_magnetic: phase_beltrami =    0.00000000    
+ input_persist_magnetic: ampl_beltrami =    2.00000000    
+ rsnap: read snapshot var.dat in    0.0000000000000000       seconds
+ units_general: unit_velocity=   1.0000000000000000     
+ units_general: unit_density=  0.99997602752040715     
+ units_general: unit_length=   1.0000059932096936     
+ units_general: unit_magnetic=   3.5449078083038299     
+ units_eos: unit_temperature=   1.2027220775801920E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000       0.00000000       1.00000000       1.00000000       1.00000000    
+ alpha_fine =   7.2973525643000000E-003
+ sigma_Thomson_cgs =   6.6524587321600003E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffusion=F.
+ select_eos_variable: Using lnrho and cs2
+ resistivity: constant eta
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: possible overcalculation... pencil aa (  17) is requested, but does not appear to be required!
+ pencil_consistency_check: possible overcalculation... pencil diffus_eta (  87) is requested, but does not appear to be required!
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: performing full pencil check (takes a while)
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   8.43801200E-02
+ calc_pencils_energy: max(advec_cs2) =   1.21585441    
+ calc_pencils_magnetic_fres: iresistivity=eta-const                                                                                                                                                       
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: max(diffus_diffrho ) =   0.00000000    
+ dlnrho_dt: max(diffus_diffrho3) =   0.00000000    
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <       p>, y: <       p>,  z: <       p>
+ daa_dt: max(diffus_eta)  =  0.607927203    
+ daa_dt: max(diffus_eta2) =   0.00000000    
+ daa_dt: max(diffus_eta3) =   0.00000000    
+
+ --it-----t--------dt-------umax-------urms-------brms-------jrms-------jmax-------orms-------omax-------vAmax-------abm--------jbm--------oum-------rhom---
+    0    2.625  2.60E-01  8.476E-02  5.263E-02   9.75E-06   1.24E-05   2.55E-05   4.30E-02   7.12E-02   1.73E-05  -1.06E-11  -1.83E-11   3.46E-04  1.000003
+    2    3.146  2.59E-01  9.940E-02  5.813E-02   6.81E-06   8.12E-06   1.70E-05   3.87E-02   6.88E-02   1.26E-05  -4.02E-12  -6.56E-12  -7.61E-04  1.000002
+    4    3.665  2.61E-01  7.928E-02  5.236E-02   4.93E-06   5.62E-06   1.18E-05   5.87E-02   1.07E-01   9.37E-06  -1.64E-12  -2.50E-12  -9.80E-04  1.000003
+    6    4.185  2.60E-01  8.901E-02  5.316E-02   3.66E-06   4.06E-06   8.42E-06   4.06E-02   6.68E-02   7.02E-06  -7.23E-13  -1.01E-12   2.67E-04  1.000004
+    8    4.705  2.63E-01  7.227E-02  4.726E-02   2.76E-06   3.00E-06   6.13E-06   4.61E-02   7.25E-02   5.19E-06  -3.45E-13  -4.43E-13  -9.67E-04  1.000008
+
+ Simulation finished after           10  time-steps
+
+ Writing final snapshot at time t =   5.2283983156085014     
+
+ Wall clock time [hours] =  3.038E-05 (+/-  2.7778E-07)
+ Wall clock time/timestep/meshpoint [microsec] =  170.8984    
+ Wall clock time/timestep/local meshpoint [microsec] =  170.8984    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  85.44922    
+ Maximum used memory per cpu [MBytes] =    12.777
+ Maximum used memory [MBytes] =       12.777
+

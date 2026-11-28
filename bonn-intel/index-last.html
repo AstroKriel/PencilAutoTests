@@ -1,0 +1,1040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+        <meta name="language" content="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+        <title>bonn-intel - Pencil Code auto-test</title>
+        <style>
+            #flex {
+                display: flex;
+                flex-direction: column;
+            }
+            #div_summary {
+                order: 1;
+            }
+
+            #div_details {
+                order: 2;
+            }
+
+            #div_footer {
+                order: 3;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+<p>Sat Nov 28 02:30:04 2026</p>
+<pre>bin/pencil-test --use-pc_auto-test --auto-test-options='--level=0-2,--config-files=Intel_MPI-mpiifx,--auto-clean,--bisect,--local-lock' --nice=15 --short --local --html --log-dir=/export/data1/pencil/test-logs/bonn-intel --previous-dir=/export/data1/pencil/test-logs/bonn-intel-previous --pencil-home=/export/data1/pencil/bonn-intel</pre>
+<div id="flex">
+<div id="div_details">
+<h1>Details</h1><h2>Aibn238:</h2>
+
+<pre>
+
+</pre>
+<a id="no-modules"></a>
+<pre>bonn-intel/samples/no-modules: (1/87)
+    Compiling..            [double]           ok        00:15   [<a href="no-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="no-modules/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="no-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:16 = 00:15 + 00:00
+
+</pre>
+<a id="most-modules"></a>
+<pre>bonn-intel/samples/most-modules: (2/87)
+    Compiling..                               ok        01:10   [<a href="most-modules/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="most-modules/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="most-modules/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:11 = 01:10 + 00:01
+
+</pre>
+<a id="backwards-compatible"></a>
+<pre>bonn-intel/samples/backwards-compatible: (3/87)
+    Compiling..                               ok        00:47   [<a href="backwards-compatible/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="backwards-compatible/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="backwards-compatible/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:48 = 00:47 + 00:00
+
+</pre>
+<a id="1d-tests/implicit_diffusion"></a>
+<pre>bonn-intel/samples/1d-tests/implicit_diffusion: (4/87)
+    Compiling..                               ok        00:27   [<a href="1d-tests/implicit_diffusion/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/implicit_diffusion/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/implicit_diffusion/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:28 = 00:27 + 00:00
+
+</pre>
+<a id="2d-tests/chemistry_GrayScott"></a>
+<pre>bonn-intel/samples/2d-tests/chemistry_GrayScott: (5/87)
+    Compiling..                               ok        00:16   [<a href="2d-tests/chemistry_GrayScott/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/chemistry_GrayScott/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/chemistry_GrayScott/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:17 = 00:16 + 00:01
+
+</pre>
+<a id="2d-tests/shearwave-dust-par"></a>
+<pre>bonn-intel/samples/2d-tests/shearwave-dust-par: (6/87)
+    Compiling..                               ok        00:39   [<a href="2d-tests/shearwave-dust-par/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/shearwave-dust-par/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/shearwave-dust-par/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:41 = 00:39 + 00:01
+
+</pre>
+<a id="dust-vortex"></a>
+<pre>bonn-intel/samples/dust-vortex: (7/87)
+    Compiling..                               ok        00:35   [<a href="dust-vortex/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="dust-vortex/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="dust-vortex/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:36 = 00:35 + 00:00
+
+</pre>
+<a id="damped_alfven_waves"></a>
+<pre>bonn-intel/samples/damped_alfven_waves: (8/87)
+    Compiling..                               ok        00:32   [<a href="damped_alfven_waves/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="damped_alfven_waves/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="damped_alfven_waves/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:36 = 00:32 + 00:03
+
+</pre>
+<a id="corona"></a>
+<pre>bonn-intel/samples/corona: (9/87)
+    Compiling..                               ok        01:47   [<a href="corona/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="corona/start.log">log</a>]
+    Running..                                 not ok:   00:00   [<a href="corona/run.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46374
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/8529bfd245328e3befe80257647d50a03d8e810d">8529bfd245328e3befe80257647d50a03d8e810d</a>
+Wed Nov 18 02:49:17 2026
+===> Please also see the  [<a href="corona/README">README</a>]
+
+</pre>
+<a id="helical-MHDturb"></a>
+<pre>bonn-intel/samples/helical-MHDturb: (10/87)
+    Compiling..                               ok        01:07   [<a href="helical-MHDturb/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="helical-MHDturb/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="helical-MHDturb/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:08 = 01:07 + 00:01
+
+</pre>
+<a id="0d-tests/particles-breakup"></a>
+<pre>bonn-intel/samples/0d-tests/particles-breakup: (11/87)
+    Compiling..                               ok        01:20   [<a href="0d-tests/particles-breakup/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/particles-breakup/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="0d-tests/particles-breakup/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:20 = 01:20 + 00:00
+
+</pre>
+<a id="0d-tests/reheating"></a>
+<pre>bonn-intel/samples/0d-tests/reheating: (12/87)
+    Compiling..                               ok        01:20   [<a href="0d-tests/reheating/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/reheating/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="0d-tests/reheating/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:20 = 01:20 + 00:00
+
+</pre>
+<a id="0d-tests/heating_ionize"></a>
+<pre>bonn-intel/samples/0d-tests/heating_ionize: (13/87)
+    Compiling..            [double]           ok        01:17   [<a href="0d-tests/heating_ionize/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/heating_ionize/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="0d-tests/heating_ionize/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:18 = 01:17 + 00:01
+
+</pre>
+<a id="0d-tests/heating_noionize"></a>
+<pre>bonn-intel/samples/0d-tests/heating_noionize: (14/87)
+    Compiling..                               ok        01:19   [<a href="0d-tests/heating_noionize/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/heating_noionize/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="0d-tests/heating_noionize/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:19 = 01:19 + 00:00
+
+</pre>
+<a id="0d-tests/reionization-saha"></a>
+<pre>bonn-intel/samples/0d-tests/reionization-saha: (15/87)
+    Compiling..                               ok        01:38   [<a href="0d-tests/reionization-saha/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/reionization-saha/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="0d-tests/reionization-saha/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:40 = 01:38 + 00:01
+
+</pre>
+<a id="0d-tests/schur_triple_decomp"></a>
+<pre>bonn-intel/samples/0d-tests/schur_triple_decomp: (16/87)
+    Compiling..                               ok        01:41   [<a href="0d-tests/schur_triple_decomp/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/schur_triple_decomp/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="0d-tests/schur_triple_decomp/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:43 = 01:41 + 00:01
+
+</pre>
+<a id="1d-tests/Schwinger-MHD"></a>
+<pre>bonn-intel/samples/1d-tests/Schwinger-MHD: (17/87)
+    Compiling..                               ok        02:21   [<a href="1d-tests/Schwinger-MHD/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/Schwinger-MHD/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/Schwinger-MHD/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:22 = 02:21 + 00:01
+
+</pre>
+<a id="1d-tests/H2_flamespeed"></a>
+<pre>bonn-intel/samples/1d-tests/H2_flamespeed: (18/87)
+    Compiling..                               ok        01:24   [<a href="1d-tests/H2_flamespeed/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/H2_flamespeed/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/H2_flamespeed/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:25 = 01:24 + 00:01
+
+</pre>
+<a id="1d-tests/horndeski_choiceIII"></a>
+<pre>bonn-intel/samples/1d-tests/horndeski_choiceIII: (19/87)
+    Compiling..                               ok        01:26   [<a href="1d-tests/horndeski_choiceIII/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/horndeski_choiceIII/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/horndeski_choiceIII/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:27 = 01:26 + 00:00
+
+</pre>
+<a id="1d-tests/rel-shock"></a>
+<pre>bonn-intel/samples/1d-tests/rel-shock: (20/87)
+    Compiling..                               ok        01:37   [<a href="1d-tests/rel-shock/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/rel-shock/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/rel-shock/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:39 = 01:37 + 00:02
+
+</pre>
+<a id="1d-tests/KT"></a>
+<pre>bonn-intel/samples/1d-tests/KT: (21/87)
+    Compiling..                               ok        01:38   [<a href="1d-tests/KT/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/KT/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/KT/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:39 = 01:38 + 00:00
+
+</pre>
+<a id="1d-tests/inflationary-B-genesis"></a>
+<pre>bonn-intel/samples/1d-tests/inflationary-B-genesis: (22/87)
+    Compiling..                               ok        01:48   [<a href="1d-tests/inflationary-B-genesis/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/inflationary-B-genesis/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/inflationary-B-genesis/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:49 = 01:48 + 00:00
+
+</pre>
+<a id="1d-tests/axionU1back"></a>
+<pre>bonn-intel/samples/1d-tests/axionU1back: (23/87)
+    Compiling..                               ok        00:55   [<a href="1d-tests/axionU1back/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/axionU1back/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/axionU1back/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        00:55 = 00:55 + 00:00
+
+</pre>
+<a id="1d-tests/sine-Gordon"></a>
+<pre>bonn-intel/samples/1d-tests/sine-Gordon: (24/87)
+    Compiling..                               ok        01:20   [<a href="1d-tests/sine-Gordon/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/sine-Gordon/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/sine-Gordon/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:21 = 01:20 + 00:00
+
+</pre>
+<a id="1d-tests/sine-Gordon_doublet"></a>
+<pre>bonn-intel/samples/1d-tests/sine-Gordon_doublet: (25/87)
+    Compiling..                               ok        01:22   [<a href="1d-tests/sine-Gordon_doublet/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/sine-Gordon_doublet/start.log">log</a>]
+    Running..                                 not ok:   00:00   [<a href="1d-tests/sine-Gordon_doublet/run.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 03:00:47 2026
+
+</pre>
+<a id="chiral-diffusion"></a>
+<pre>bonn-intel/samples/chiral-diffusion: (26/87)
+    Compiling..                               ok        01:15   [<a href="chiral-diffusion/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="chiral-diffusion/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="chiral-diffusion/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:16 = 01:15 + 00:00
+
+</pre>
+<a id="cosmicray"></a>
+<pre>bonn-intel/samples/cosmicray: (27/87)
+    Compiling..                               ok        01:33   [<a href="cosmicray/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="cosmicray/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="cosmicray/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:33 = 01:33 + 00:00
+
+</pre>
+<a id="1d-tests/sod_10"></a>
+<pre>bonn-intel/samples/1d-tests/sod_10: (28/87)
+    Compiling..                               ok        01:34   [<a href="1d-tests/sod_10/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/sod_10/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/sod_10/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:34 = 01:34 + 00:00
+
+</pre>
+<a id="1d-tests/ambipolar_diffusion"></a>
+<pre>bonn-intel/samples/1d-tests/ambipolar_diffusion: (29/87)
+    Compiling..                               ok        01:15   [<a href="1d-tests/ambipolar_diffusion/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/ambipolar_diffusion/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/ambipolar_diffusion/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:16 = 01:15 + 00:01
+
+</pre>
+<a id="GravitationalWaves"></a>
+<pre>bonn-intel/samples/GravitationalWaves: (30/87)
+    Compiling..                               ok        03:18   [<a href="GravitationalWaves/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="GravitationalWaves/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="GravitationalWaves/run.log">log</a>]
+    Validating results..                      not ok: 
+Files reference.out, data/time_series.dat differ:
+  drho2m: Row 10: 0.060616 > 0.0606158 according to absolute accuracy 1.5e-07
+Expected:  
+ --it-----t--------dt------drho2m-----rhof2m-------EEK--------EEM-------EEGW-------gg2m------hrms---  
+    0   1.0000 1.145E-03  0.0000000  0.0000000 0.0000E+00 2.5249E-01 0.0000E+00  0.00E+00  0.00E+00  
+    1   1.0011 1.144E-03  0.0000204  0.0000200 4.1027E-04 2.4620E-01 2.5609E-07  1.54E-06  7.13E-07  
+    2   1.0023 1.143E-03  0.0003016  0.0002970 1.4558E-03 2.3907E-01 9.3892E-07  5.63E-06  2.79E-06  
+    3   1.0034 1.143E-03  0.0014053  0.0013858 2.8431E-03 2.3135E-01 1.8452E-06  1.11E-05  6.06E-06  
+    4   1.0046 1.144E-03  0.0040635  0.0040144 4.2927E-03 2.2327E-01 2.7223E-06  1.63E-05  1.03E-05  
+    5   1.0057 1.145E-03  0.0090250  0.0089369 5.5698E-03 2.1505E-01 3.3353E-06  2.00E-05  1.52E-05  
+    6   1.0069 1.144E-03  0.0169246  0.0168082 6.5014E-03 2.0684E-01 3.5249E-06  2.11E-05  2.04E-05  
+    7   1.0080 1.144E-03  0.0281591  0.0280626 6.9854E-03 1.9879E-01 3.2452E-06  1.95E-05  2.56E-05  
+    8   1.0092 1.145E-03  0.0428197  0.0428408 6.9941E-03 1.9099E-01 2.5720E-06  1.54E-05  3.04E-05  
+    9   1.0103 1.146E-03  0.0606160  0.0609025 6.5650E-03 1.8349E-01 1.6818E-06  1.01E-05  3.44E-05
+Got:  
+ --it-----t--------dt------drho2m-----rhof2m-------EEK--------EEM-------EEGW-------gg2m------hrms---  
+    0   1.0000 1.145E-03  0.0000000  0.0000000 0.0000E+00 2.5249E-01 0.0000E+00  0.00E+00  0.00E+00  
+    1   1.0011 1.144E-03  0.0000204  0.0000200 4.1027E-04 2.4620E-01 2.5609E-07  1.54E-06  7.13E-07  
+    2   1.0023 1.143E-03  0.0003016  0.0002970 1.4558E-03 2.3907E-01 9.3892E-07  5.63E-06  2.79E-06  
+    3   1.0034 1.143E-03  0.0014053  0.0013858 2.8430E-03 2.3135E-01 1.8452E-06  1.11E-05  6.06E-06  
+    4   1.0046 1.144E-03  0.0040634  0.0040144 4.2927E-03 2.2327E-01 2.7223E-06  1.63E-05  1.03E-05  
+    5   1.0057 1.145E-03  0.0090250  0.0089368 5.5698E-03 2.1505E-01 3.3353E-06  2.00E-05  1.52E-05  
+    6   1.0069 1.144E-03  0.0169245  0.0168081 6.5014E-03 2.0684E-01 3.5249E-06  2.11E-05  2.04E-05  
+    7   1.0080 1.144E-03  0.0281591  0.0280626 6.9854E-03 1.9879E-01 3.2452E-06  1.95E-05  2.56E-05  
+    8   1.0092 1.145E-03  0.0428197  0.0428407 6.9941E-03 1.9099E-01 2.5720E-06  1.54E-05  3.04E-05  
+    9   1.0103 1.146E-03  0.0606158  0.0609024 6.5650E-03 1.8349E-01 1.6818E-06  1.01E-05  3.44E-05
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 03:09:49 2026
+    Time used:                                        03:20 = 03:18 + 00:02
+
+</pre>
+<a id="polymer/forced_3dturbulence"></a>
+<pre>bonn-intel/samples/polymer/forced_3dturbulence: (31/87)
+    Compiling..                               ok        02:03   [<a href="polymer/forced_3dturbulence/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="polymer/forced_3dturbulence/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="polymer/forced_3dturbulence/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:04 = 02:03 + 00:01
+
+</pre>
+<a id="testfield_z"></a>
+<pre>bonn-intel/samples/testfield_z: (32/87)
+    Compiling..                               ok        04:15   [<a href="testfield_z/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="testfield_z/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="testfield_z/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        04:18 = 04:15 + 00:03
+
+</pre>
+<a id="random_uu_particles"></a>
+<pre>bonn-intel/samples/random_uu_particles: (33/87)
+    Compiling..                               ok        03:04   [<a href="random_uu_particles/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="random_uu_particles/start.log">log</a>]
+    Running..                                 ok        00:08   [<a href="random_uu_particles/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:13 = 03:04 + 00:09
+
+</pre>
+<a id="1d-tests/solar-atmosphere-temperature"></a>
+<pre>bonn-intel/samples/1d-tests/solar-atmosphere-temperature: (34/87)
+    Compiling..            [double]           ok        01:08   [<a href="1d-tests/solar-atmosphere-temperature/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/solar-atmosphere-temperature/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/solar-atmosphere-temperature/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:09 = 01:08 + 00:01
+
+</pre>
+<a id="kin-dynamo"></a>
+<pre>bonn-intel/samples/kin-dynamo: (35/87)
+    Compiling..                               ok        01:38   [<a href="kin-dynamo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="kin-dynamo/start.log">log</a>]
+    Running..                                 not ok:   00:00   [<a href="kin-dynamo/run.log">log</a>]
+
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 03:22:16 2026
+===> Please also see the  [<a href="kin-dynamo/README">README</a>]
+
+</pre>
+<a id="meissner"></a>
+<pre>bonn-intel/samples/meissner: (36/87)
+    Compiling..            [double]           ok        02:06   [<a href="meissner/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="meissner/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="meissner/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:09 = 02:06 + 00:03
+
+</pre>
+<a id="conv-slab-noequi"></a>
+<pre>bonn-intel/samples/conv-slab-noequi: (37/87)
+    Compiling..                               ok        01:50   [<a href="conv-slab-noequi/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="conv-slab-noequi/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="conv-slab-noequi/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:54 = 01:50 + 00:03
+
+</pre>
+<a id="2d-tests/selfgravitating-shearwave"></a>
+<pre>bonn-intel/samples/2d-tests/selfgravitating-shearwave: (38/87)
+    Compiling..                               ok        02:02   [<a href="2d-tests/selfgravitating-shearwave/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/selfgravitating-shearwave/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/selfgravitating-shearwave/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:03 = 02:02 + 00:01
+
+</pre>
+<a id="2d-tests/streaming_instability/single-species"></a>
+<pre>bonn-intel/samples/2d-tests/streaming_instability/single-species: (39/87)
+    Compiling..                               ok        02:20   [<a href="2d-tests/streaming_instability/single-species/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/streaming_instability/single-species/start.log">log</a>]
+    Running..                                 ok        00:45   [<a href="2d-tests/streaming_instability/single-species/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:06 = 02:20 + 00:46
+
+</pre>
+<a id="2d-tests/streaming_instability/multi-species"></a>
+<pre>bonn-intel/samples/2d-tests/streaming_instability/multi-species: (40/87)
+    Compiling..                               ok        02:36   [<a href="2d-tests/streaming_instability/multi-species/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/streaming_instability/multi-species/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="2d-tests/streaming_instability/multi-species/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:40 = 02:36 + 00:03
+
+</pre>
+<a id="2d-tests/globaldisc"></a>
+<pre>bonn-intel/samples/2d-tests/globaldisc: (41/87)
+    Compiling..                               ok        01:33   [<a href="2d-tests/globaldisc/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/globaldisc/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="2d-tests/globaldisc/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:37 = 01:33 + 00:03
+
+</pre>
+<a id="2d-tests/cylindrical_gdisk"></a>
+<pre>bonn-intel/samples/2d-tests/cylindrical_gdisk: (42/87)
+    Compiling..                               ok        02:31   [<a href="2d-tests/cylindrical_gdisk/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/cylindrical_gdisk/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/cylindrical_gdisk/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:32 = 02:31 + 00:00
+
+</pre>
+<a id="2d-tests/planet-disk-fargo"></a>
+<pre>bonn-intel/samples/2d-tests/planet-disk-fargo: (43/87)
+    Compiling..                               ok        02:29   [<a href="2d-tests/planet-disk-fargo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/planet-disk-fargo/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/planet-disk-fargo/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:30 = 02:29 + 00:00
+
+</pre>
+<a id="2d-tests/dark-matter"></a>
+<pre>bonn-intel/samples/2d-tests/dark-matter: (44/87)
+    Compiling..                               ok        01:20   [<a href="2d-tests/dark-matter/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/dark-matter/start.log">log</a>]
+    Running..                                 ok        00:10   [<a href="2d-tests/dark-matter/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:30 = 01:20 + 00:10
+
+</pre>
+<a id="2d-tests/meanfield_disp_current"></a>
+<pre>bonn-intel/samples/2d-tests/meanfield_disp_current: (45/87)
+    Compiling..                               ok        01:43   [<a href="2d-tests/meanfield_disp_current/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/meanfield_disp_current/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/meanfield_disp_current/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:45 = 01:43 + 00:01
+
+</pre>
+<a id="disp_current_dynamo"></a>
+<pre>bonn-intel/samples/disp_current_dynamo: (46/87)
+    Compiling..                               ok        02:55   [<a href="disp_current_dynamo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="disp_current_dynamo/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="disp_current_dynamo/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:56 = 02:55 + 00:01
+
+</pre>
+<a id="spherical-globaldisk"></a>
+<pre>bonn-intel/samples/spherical-globaldisk: (47/87)
+    Compiling..                               ok        02:02   [<a href="spherical-globaldisk/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="spherical-globaldisk/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="spherical-globaldisk/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:03 = 02:02 + 00:00
+
+</pre>
+<a id="spherical-globaldisk-mhd"></a>
+<pre>bonn-intel/samples/spherical-globaldisk-mhd: (48/87)
+    Compiling..                               ok        03:33   [<a href="spherical-globaldisk-mhd/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="spherical-globaldisk-mhd/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="spherical-globaldisk-mhd/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:33 = 03:33 + 00:00
+
+</pre>
+<a id="spherical-gdisk-planet-thermo"></a>
+<pre>bonn-intel/samples/spherical-gdisk-planet-thermo: (49/87)
+    Compiling..                               ok        02:01   [<a href="spherical-gdisk-planet-thermo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="spherical-gdisk-planet-thermo/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="spherical-gdisk-planet-thermo/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:03 = 02:01 + 00:01
+
+</pre>
+<a id="0d-tests/solar_system"></a>
+<pre>bonn-intel/samples/0d-tests/solar_system: (50/87)
+    Compiling..                               ok        01:37   [<a href="0d-tests/solar_system/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="0d-tests/solar_system/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="0d-tests/solar_system/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:38 = 01:37 + 00:00
+
+</pre>
+<a id="mdwarf"></a>
+<pre>bonn-intel/samples/mdwarf: (51/87)
+    Compiling..                               ok        02:08   [<a href="mdwarf/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="mdwarf/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="mdwarf/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:09 = 02:08 + 00:01
+
+</pre>
+<a id="sedimentation"></a>
+<pre>bonn-intel/samples/sedimentation: (52/87)
+    Compiling..                               ok        01:45   [<a href="sedimentation/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="sedimentation/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="sedimentation/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:46 = 01:45 + 00:01
+
+</pre>
+<a id="MRI-turbulence_hyper"></a>
+<pre>bonn-intel/samples/MRI-turbulence_hyper: (53/87)
+    Compiling..            [double]           ok        03:38   [<a href="MRI-turbulence_hyper/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="MRI-turbulence_hyper/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="MRI-turbulence_hyper/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:41 = 03:38 + 00:02
+
+</pre>
+<a id="dust_turb_globaldisk"></a>
+<pre>bonn-intel/samples/dust_turb_globaldisk: (54/87)
+    Compiling..                               ok        03:13   [<a href="dust_turb_globaldisk/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="dust_turb_globaldisk/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="dust_turb_globaldisk/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:16 = 03:13 + 00:02
+
+</pre>
+<a id="geodynamo"></a>
+<pre>bonn-intel/samples/geodynamo: (55/87)
+    Compiling..                               ok        01:50   [<a href="geodynamo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="geodynamo/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="geodynamo/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:53 = 01:50 + 00:03
+
+</pre>
+<a id="2d-tests/cylinder_deposition"></a>
+<pre>bonn-intel/samples/2d-tests/cylinder_deposition: (56/87)
+    Compiling..                               ok        01:20   [<a href="2d-tests/cylinder_deposition/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/cylinder_deposition/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/cylinder_deposition/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:22 = 01:20 + 00:01
+
+</pre>
+<a id="2d-tests/selfgravdisk-deadzone-dust"></a>
+<pre>bonn-intel/samples/2d-tests/selfgravdisk-deadzone-dust: (57/87)
+    Compiling..                               ok        01:42   [<a href="2d-tests/selfgravdisk-deadzone-dust/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/selfgravdisk-deadzone-dust/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/selfgravdisk-deadzone-dust/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:44 = 01:42 + 00:01
+
+</pre>
+<a id="2d-tests/spherical_viscous_ring"></a>
+<pre>bonn-intel/samples/2d-tests/spherical_viscous_ring: (58/87)
+    Compiling..                               ok        01:37   [<a href="2d-tests/spherical_viscous_ring/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/spherical_viscous_ring/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/spherical_viscous_ring/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:37 = 01:37 + 00:00
+
+</pre>
+<a id="2d-tests/field-loop-fargo"></a>
+<pre>bonn-intel/samples/2d-tests/field-loop-fargo: (59/87)
+    Compiling..                               ok        02:46   [<a href="2d-tests/field-loop-fargo/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/field-loop-fargo/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/field-loop-fargo/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:47 = 02:46 + 00:01
+
+</pre>
+<a id="baroclinic"></a>
+<pre>bonn-intel/samples/baroclinic: (60/87)
+    Compiling..                               ok        03:28   [<a href="baroclinic/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="baroclinic/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="baroclinic/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:30 = 03:28 + 00:02
+
+</pre>
+<a id="1d-tests/sedimentation-noneq-blocks"></a>
+<pre>bonn-intel/samples/1d-tests/sedimentation-noneq-blocks: (61/87)
+    Compiling..                               ok        01:38   [<a href="1d-tests/sedimentation-noneq-blocks/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/sedimentation-noneq-blocks/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="1d-tests/sedimentation-noneq-blocks/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:40 = 01:38 + 00:01
+
+</pre>
+<a id="1d-tests/alphadisk"></a>
+<pre>bonn-intel/samples/1d-tests/alphadisk: (62/87)
+    Compiling..                               ok        01:24   [<a href="1d-tests/alphadisk/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/alphadisk/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/alphadisk/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:25 = 01:24 + 00:01
+
+</pre>
+<a id="implicit_resistivity"></a>
+<pre>bonn-intel/samples/implicit_resistivity: (63/87)
+    Compiling..                               ok        01:45   [<a href="implicit_resistivity/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="implicit_resistivity/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="implicit_resistivity/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:47 = 01:45 + 00:02
+
+</pre>
+<a id="debris-photoelectric-fluid"></a>
+<pre>bonn-intel/samples/debris-photoelectric-fluid: (64/87)
+    Compiling..                               ok        02:38   [<a href="debris-photoelectric-fluid/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="debris-photoelectric-fluid/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="debris-photoelectric-fluid/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:39 = 02:38 + 00:01
+
+</pre>
+<a id="2d-tests/debris-photoeletric-streaming"></a>
+<pre>bonn-intel/samples/2d-tests/debris-photoeletric-streaming: (65/87)
+    Compiling..                               ok        02:19   [<a href="2d-tests/debris-photoeletric-streaming/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/debris-photoeletric-streaming/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/debris-photoeletric-streaming/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:20 = 02:19 + 00:00
+
+</pre>
+<a id="2d-tests/Kelvin-Helmholtz"></a>
+<pre>bonn-intel/samples/2d-tests/Kelvin-Helmholtz: (66/87)
+    Compiling..                               ok        02:04   [<a href="2d-tests/Kelvin-Helmholtz/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/Kelvin-Helmholtz/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/Kelvin-Helmholtz/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:05 = 02:04 + 00:00
+
+</pre>
+<a id="2d-tests/selfgravdisk-planet-dust"></a>
+<pre>bonn-intel/samples/2d-tests/selfgravdisk-planet-dust: (67/87)
+    Compiling..                               ok        01:41   [<a href="2d-tests/selfgravdisk-planet-dust/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/selfgravdisk-planet-dust/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="2d-tests/selfgravdisk-planet-dust/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:43 = 01:41 + 00:01
+
+</pre>
+<a id="cylindrical-globaldisk-dzone"></a>
+<pre>bonn-intel/samples/cylindrical-globaldisk-dzone: (68/87)
+    Compiling..                               ok        02:47   [<a href="cylindrical-globaldisk-dzone/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="cylindrical-globaldisk-dzone/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="cylindrical-globaldisk-dzone/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:48 = 02:47 + 00:00
+
+</pre>
+<a id="2d-tests/selfgravdisk-logspirals"></a>
+<pre>bonn-intel/samples/2d-tests/selfgravdisk-logspirals: (69/87)
+    Compiling..                               ok        02:31   [<a href="2d-tests/selfgravdisk-logspirals/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/selfgravdisk-logspirals/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/selfgravdisk-logspirals/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:32 = 02:31 + 00:00
+
+</pre>
+<a id="2d-tests/turbulent_potential"></a>
+<pre>bonn-intel/samples/2d-tests/turbulent_potential: (70/87)
+    Compiling..                               ok        02:55   [<a href="2d-tests/turbulent_potential/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/turbulent_potential/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/turbulent_potential/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:56 = 02:55 + 00:01
+
+</pre>
+<a id="2d-tests/WhiteDwarfDisk"></a>
+<pre>bonn-intel/samples/2d-tests/WhiteDwarfDisk: (71/87)
+    Compiling..                               ok        02:20   [<a href="2d-tests/WhiteDwarfDisk/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/WhiteDwarfDisk/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/WhiteDwarfDisk/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:21 = 02:20 + 00:01
+
+</pre>
+<a id="2d-tests/cylinder_ogrid_thermo_chem"></a>
+<pre>bonn-intel/samples/2d-tests/cylinder_ogrid_thermo_chem: (72/87)
+    Compiling..                               ok        01:29   [<a href="2d-tests/cylinder_ogrid_thermo_chem/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/cylinder_ogrid_thermo_chem/start.log">log</a>]
+    Running..                                 ok        00:03   [<a href="2d-tests/cylinder_ogrid_thermo_chem/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:33 = 01:29 + 00:04
+
+</pre>
+<a id="2d-tests/shallow-water"></a>
+<pre>bonn-intel/samples/2d-tests/shallow-water: (73/87)
+    Compiling..                               ok        01:29   [<a href="2d-tests/shallow-water/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/shallow-water/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/shallow-water/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:29 = 01:29 + 00:00
+
+</pre>
+<a id="2d-tests/torque_migration_noniso"></a>
+<pre>bonn-intel/samples/2d-tests/torque_migration_noniso: (74/87)
+    Compiling..                               ok        01:29   [<a href="2d-tests/torque_migration_noniso/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/torque_migration_noniso/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="2d-tests/torque_migration_noniso/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:32 = 01:29 + 00:03
+
+</pre>
+<a id="sink-particles"></a>
+<pre>bonn-intel/samples/sink-particles: (75/87)
+    Compiling..                               ok        02:10   [<a href="sink-particles/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="sink-particles/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="sink-particles/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:11 = 02:10 + 00:01
+
+</pre>
+<a id="2d-tests/jupiter-atmosphere-cyclogenesis"></a>
+<pre>bonn-intel/samples/2d-tests/jupiter-atmosphere-cyclogenesis: (76/87)
+    Compiling..                               ok        02:14   [<a href="2d-tests/jupiter-atmosphere-cyclogenesis/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/jupiter-atmosphere-cyclogenesis/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/jupiter-atmosphere-cyclogenesis/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:14 = 02:14 + 00:00
+
+</pre>
+<a id="convective-overstability-particles"></a>
+<pre>bonn-intel/samples/convective-overstability-particles: (77/87)
+    Compiling..                               ok        03:32   [<a href="convective-overstability-particles/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="convective-overstability-particles/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="convective-overstability-particles/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:34 = 03:32 + 00:01
+
+</pre>
+<a id="streaming-instability-sink"></a>
+<pre>bonn-intel/samples/streaming-instability-sink: (78/87)
+    Compiling..                               ok        02:26   [<a href="streaming-instability-sink/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="streaming-instability-sink/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="streaming-instability-sink/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:27 = 02:26 + 00:01
+
+</pre>
+<a id="1d-tests/hyperdiffusion"></a>
+<pre>bonn-intel/samples/1d-tests/hyperdiffusion: (79/87)
+    Compiling..                               ok        01:49   [<a href="1d-tests/hyperdiffusion/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="1d-tests/hyperdiffusion/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="1d-tests/hyperdiffusion/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:49 = 01:49 + 00:00
+
+</pre>
+<a id="2d-tests/eccentricity-decay"></a>
+<pre>bonn-intel/samples/2d-tests/eccentricity-decay: (80/87)
+    Compiling..                               ok        02:32   [<a href="2d-tests/eccentricity-decay/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="2d-tests/eccentricity-decay/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="2d-tests/eccentricity-decay/run.log">log</a>]
+    Validating results..                      not ok: 
+Files reference.out, data/time_series.dat differ:
+  vxq1: Row 2: -4.18323e-08 > -4.18366e-08 according to absolute accuracy 1.5e-12
+Expected:  
+ ----it--------t-----------dt-----------rhomax---------rhomin----------urms-----------uy2m------------xq1------------yq1------------xq2------------yq2-----------vxq1-----------vyq1-----------vxq2-----------vyq2---------torqint_2------torqext_2---  
+        0      0.000    7.86103E-03    7.90569E-03    5.05964E-04    8.27856E-01    6.85345E-01    3.90000E-05    3.14159E+00    1.29996E+00    0.00000E+00    0.00000E+00    2.20140E-05    0.00000E+00    7.33777E-01    1.52201E-22    1.58819E-22  
+        1      0.008    7.86100E-03    7.90570E-03    5.05964E-04    8.27856E-01    6.85345E-01    3.89998E-05    3.14603E+00    1.29996E+00    4.43711E-03   -4.18323E-08    2.20141E-05   -1.26082E-03    7.33710E-01   -4.13893E-09   -6.29650E-07  
+        2      0.016    7.86098E-03    7.90573E-03    5.05964E-04    8.27856E-01    6.85346E-01    3.89993E-05    3.15047E+00    1.29994E+00    8.87355E-03   -8.36590E-08    2.20144E-05   -2.55600E-03    7.33567E-01   -7.87999E-09   -7.93691E-07  
+        3      0.024    7.86096E-03    7.90577E-03    5.05964E-04    8.27856E-01    6.85346E-01    3.89984E-05    3.15491E+00    1.29992E+00    1.33092E-02   -1.25475E-07    2.20148E-05   -3.88624E-03    7.33429E-01   -1.08822E-08   -6.84094E-07  
+        4      0.031    7.86095E-03    7.90582E-03    5.05964E-04    8.27857E-01    6.85347E-01    3.89971E-05    3.15934E+00    1.29988E+00    1.77442E-02   -1.67281E-07    2.20155E-05   -5.23886E-03    7.33325E-01   -1.29027E-08   -5.26176E-07  
+        5      0.039    7.86093E-03    7.90588E-03    5.05964E-04    8.27857E-01    6.85347E-01    3.89955E-05    3.16378E+00    1.29983E+00    2.21788E-02   -2.09079E-07    2.20163E-05   -6.60403E-03    7.33257E-01   -1.38146E-08   -3.91620E-07  
+        6      0.047    7.86091E-03    7.90595E-03    5.05964E-04    8.27857E-01    6.85348E-01    3.89935E-05    3.16822E+00    1.29978E+00    2.66132E-02   -2.50872E-07    2.20173E-05   -7.97617E-03    7.33219E-01   -1.36030E-08   -2.87931E-07  
+        7      0.055    7.86090E-03    7.90602E-03    5.05964E-04    8.27857E-01    6.85348E-01    3.89912E-05    3.17267E+00    1.29971E+00    3.10477E-02   -2.92660E-07    2.20185E-05   -9.35227E-03    7.33205E-01   -1.23454E-08   -2.08252E-07  
+        8      0.063    7.86088E-03    7.90610E-03    5.05964E-04    8.27858E-01    6.85348E-01    3.89885E-05    3.17711E+00    1.29963E+00    3.54824E-02   -3.34444E-07    2.20199E-05   -1.07306E-02    7.33212E-01   -1.01857E-08   -1.45016E-07  
+        9      0.071    7.86087E-03    7.90619E-03    5.05964E-04    8.27858E-01    6.85349E-01    3.89855E-05    3.18155E+00    1.29954E+00    3.99175E-02   -3.76225E-07    2.20215E-05   -1.21103E-02    7.33237E-01   -7.30967E-09   -9.23766E-08
+Got:  
+ ----it--------t-----------dt-----------rhomax---------rhomin----------urms-----------uy2m------------xq1------------yq1------------xq2------------yq2-----------vxq1-----------vyq1-----------vxq2-----------vyq2---------torqint_2------torqext_2---  
+        0      0.000    7.86103E-03    7.90569E-03    5.05964E-04    8.27856E-01    6.85345E-01    3.90000E-05    3.14159E+00    1.29996E+00    0.00000E+00    0.00000E+00    2.20140E-05    0.00000E+00    7.33777E-01    2.24993E-22    3.97047E-22  
+        1      0.008    7.86100E-03    7.90570E-03    5.05964E-04    8.27856E-01    6.85345E-01    3.89998E-05    3.14603E+00    1.29996E+00    4.43711E-03   -4.18366E-08    2.20141E-05   -1.26082E-03    7.33710E-01   -4.13893E-09   -6.29650E-07  
+        2      0.016    7.86098E-03    7.90573E-03    5.05964E-04    8.27856E-01    6.85346E-01    3.89993E-05    3.15047E+00    1.29994E+00    8.87355E-03   -8.36615E-08    2.20144E-05   -2.55600E-03    7.33567E-01   -7.87999E-09   -7.93691E-07  
+        3      0.024    7.86096E-03    7.90577E-03    5.05964E-04    8.27856E-01    6.85346E-01    3.89984E-05    3.15491E+00    1.29992E+00    1.33092E-02   -1.25477E-07    2.20148E-05   -3.88624E-03    7.33429E-01   -1.08822E-08   -6.84094E-07  
+        4      0.031    7.86095E-03    7.90582E-03    5.05964E-04    8.27857E-01    6.85347E-01    3.89971E-05    3.15934E+00    1.29988E+00    1.77442E-02   -1.67282E-07    2.20155E-05   -5.23886E-03    7.33325E-01   -1.29027E-08   -5.26176E-07  
+        5      0.039    7.86093E-03    7.90588E-03    5.05964E-04    8.27857E-01    6.85347E-01    3.89955E-05    3.16378E+00    1.29983E+00    2.21788E-02   -2.09081E-07    2.20163E-05   -6.60403E-03    7.33257E-01   -1.38146E-08   -3.91620E-07  
+        6      0.047    7.86091E-03    7.90595E-03    5.05964E-04    8.27857E-01    6.85348E-01    3.89935E-05    3.16822E+00    1.29978E+00    2.66132E-02   -2.50873E-07    2.20173E-05   -7.97617E-03    7.33219E-01   -1.36030E-08   -2.87931E-07  
+        7      0.055    7.86090E-03    7.90602E-03    5.05964E-04    8.27857E-01    6.85348E-01    3.89912E-05    3.17267E+00    1.29971E+00    3.10477E-02   -2.92661E-07    2.20185E-05   -9.35227E-03    7.33205E-01   -1.23454E-08   -2.08252E-07  
+        8      0.063    7.86088E-03    7.90610E-03    5.05964E-04    8.27858E-01    6.85348E-01    3.89885E-05    3.17711E+00    1.29963E+00    3.54824E-02   -3.34445E-07    2.20199E-05   -1.07306E-02    7.33212E-01   -1.01857E-08   -1.45016E-07  
+        9      0.071    7.86087E-03    7.90619E-03    5.05964E-04    8.27858E-01    6.85349E-01    3.89855E-05    3.18155E+00    1.29954E+00    3.99175E-02   -3.76226E-07    2.20215E-05   -1.21103E-02    7.33237E-01   -7.30967E-09   -9.23766E-08
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 05:04:02 2026
+===> Please also see the  [<a href="2d-tests/eccentricity-decay/README">README</a>]
+    Time used:                                        02:33 = 02:32 + 00:00
+
+</pre>
+<a id="interstellar"></a>
+<pre>bonn-intel/samples/interstellar: (81/87)
+    Compiling..                               ok        01:58   [<a href="interstellar/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="interstellar/start.log">log</a>]
+    Running..                                 ok        00:09   [<a href="interstellar/run.log">log</a>]
+    Validating results..                      not ok: 
+value in column 1 at line 3 of "data/power_kin.dat" does not match the reference (1.79484034186358e-08 != 1.79484034186357e-08)
+< (1.7948403418635799E-008,1.7948403418635799E-008)
+> (1.7948403418635674E-008,1.7948403418635674E-008)
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 05:06:10 2026
+===> Please also see the  [<a href="interstellar/README">README</a>]
+    Time used:                                        02:08 = 01:58 + 00:10
+
+</pre>
+<a id="supernova-driven-turbulence/1Dhd_init_equidistant"></a>
+<pre>bonn-intel/samples/supernova-driven-turbulence/1Dhd_init_equidistant: (82/87)
+    Compiling..                               ok        01:13   [<a href="supernova-driven-turbulence/1Dhd_init_equidistant/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="supernova-driven-turbulence/1Dhd_init_equidistant/start.log">log</a>]
+    Running..                                 ok        00:02   [<a href="supernova-driven-turbulence/1Dhd_init_equidistant/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        01:15 = 01:13 + 00:02
+
+</pre>
+<a id="backreact_infl"></a>
+<pre>bonn-intel/samples/backreact_infl: (83/87)
+    Compiling..                               ok        03:30   [<a href="backreact_infl/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="backreact_infl/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="backreact_infl/run.log">log</a>]
+    Validating results..                      not ok: 
+Files reference.out, data/time_series.dat differ:
+  EEGW: Row 2: 1.381e-29 > 6.599e-33 according to absolute accuracy 1.5e-32
+  hrms: Row 2: 1.588e-11 > 2.786e-13 according to absolute accuracy 1.5e-13
+Expected:  
+ ---it--------t-----------dt---------erms--------emax--------phim-------phirms-----Hscriptm------lnam--------brms--------EEGW--------hrms------a2rhopm------a2rhom---constrainteqn--a2rhophim--  
+      0 -6.58494E+05    3.21E+02   1.976E-10   4.843E-10   7.000E-01   7.000E-01   1.559E-06   0.000E+00   1.305E-10   0.000E+00   0.000E+00   2.980E-14   2.902E-13  -1.990E-03   1.490E-14  
+      2 -6.57853E+05    3.20E+02   1.975E-10   4.849E-10   6.999E-01   6.999E-01   1.560E-06   1.000E-03   1.305E-10   1.381E-29   1.588E-11   2.986E-14   2.907E-13   3.848E-04   1.493E-14  
+      4 -6.57212E+05    3.20E+02   1.975E-10   4.854E-10   6.998E-01   6.998E-01   1.562E-06   2.000E-03   1.306E-10   1.412E-29   3.989E-11   2.991E-14   2.912E-13  -5.035E-04   1.496E-14  
+      6 -6.56572E+05    3.20E+02   1.974E-10   4.856E-10   6.997E-01   6.997E-01   1.563E-06   3.001E-03   1.306E-10   1.442E-29   6.412E-11   2.997E-14   2.917E-13   1.932E-03   1.498E-14  
+      8 -6.55932E+05    3.20E+02   1.973E-10   4.857E-10   6.996E-01   6.996E-01   1.564E-06   4.001E-03   1.307E-10   1.472E-29   8.858E-11   3.003E-14   2.922E-13   3.611E-03   1.501E-14  
+     10 -6.55293E+05    3.19E+02   1.973E-10   4.856E-10   6.994E-01   6.994E-01   1.566E-06   5.001E-03   1.307E-10   1.501E-29   1.133E-10   3.008E-14   2.926E-13   4.617E-03   1.504E-14  
+     12 -6.54655E+05    3.19E+02   1.972E-10   4.853E-10   6.993E-01   6.993E-01   1.567E-06   6.001E-03   1.307E-10   1.529E-29   1.381E-10   3.014E-14   2.931E-13   7.762E-03   1.507E-14  
+     14 -6.54017E+05    3.19E+02   1.971E-10   4.849E-10   6.992E-01   6.992E-01   1.568E-06   7.001E-03   1.308E-10   1.557E-29   1.632E-10   3.019E-14   2.936E-13   4.643E-03   1.510E-14  
+     16 -6.53379E+05    3.19E+02   1.970E-10   4.842E-10   6.991E-01   6.991E-01   1.570E-06   8.002E-03   1.308E-10   1.583E-29   1.884E-10   3.025E-14   2.941E-13   7.045E-03   1.512E-14  
+     18 -6.52742E+05    3.18E+02   1.969E-10   4.834E-10   6.990E-01   6.990E-01   1.571E-06   9.002E-03   1.309E-10   1.608E-29   2.137E-10   3.030E-14   2.946E-13   7.913E-03   1.515E-14
+Got:  
+ ---it--------t-----------dt---------erms--------emax--------phim-------phirms-----Hscriptm------lnam--------brms--------EEGW--------hrms------a2rhopm------a2rhom---constrainteqn--a2rhophim--  
+      0 -6.58494E+05    3.21E+02   1.976E-10   4.843E-10   7.000E-01   7.000E-01   1.559E-06   0.000E+00   1.305E-10   0.000E+00   0.000E+00   2.980E-14   2.902E-13  -1.990E-03   1.490E-14  
+      2 -6.57853E+05    3.20E+02   1.975E-10   4.849E-10   6.999E-01   6.999E-01   1.560E-06   1.000E-03   1.305E-10   6.599E-33   2.786E-13   2.986E-14   2.907E-13   3.848E-04   1.493E-14  
+      4 -6.57212E+05    3.20E+02   1.975E-10   4.854E-10   6.998E-01   6.998E-01   1.562E-06   2.000E-03   1.306E-10   2.132E-32   1.009E-12   2.991E-14   2.912E-13  -5.035E-04   1.496E-14  
+      6 -6.56572E+05    3.20E+02   1.974E-10   4.856E-10   6.997E-01   6.997E-01   1.563E-06   3.001E-03   1.306E-10   4.435E-32   2.153E-12   2.997E-14   2.917E-13   1.932E-03   1.498E-14  
+      8 -6.55932E+05    3.20E+02   1.973E-10   4.857E-10   6.996E-01   6.996E-01   1.564E-06   4.001E-03   1.307E-10   7.558E-32   3.710E-12   3.003E-14   2.922E-13   3.611E-03   1.501E-14  
+     10 -6.55293E+05    3.19E+02   1.973E-10   4.856E-10   6.994E-01   6.994E-01   1.566E-06   5.001E-03   1.307E-10   1.149E-31   5.676E-12   3.008E-14   2.926E-13   4.617E-03   1.504E-14  
+     12 -6.54655E+05    3.19E+02   1.972E-10   4.853E-10   6.993E-01   6.993E-01   1.567E-06   6.001E-03   1.307E-10   1.621E-31   8.049E-12   3.014E-14   2.931E-13   7.762E-03   1.507E-14  
+     14 -6.54017E+05    3.19E+02   1.971E-10   4.849E-10   6.992E-01   6.992E-01   1.568E-06   7.001E-03   1.308E-10   2.171E-31   1.083E-11   3.019E-14   2.936E-13   4.643E-03   1.510E-14  
+     16 -6.53379E+05    3.19E+02   1.970E-10   4.842E-10   6.991E-01   6.991E-01   1.570E-06   8.002E-03   1.308E-10   2.797E-31   1.400E-11   3.025E-14   2.941E-13   7.045E-03   1.512E-14  
+     18 -6.52742E+05    3.18E+02   1.969E-10   4.834E-10   6.990E-01   6.990E-01   1.571E-06   9.002E-03   1.309E-10   3.496E-31   1.758E-11   3.030E-14   2.946E-13   7.913E-03   1.515E-14
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 05:10:58 2026
+    Time used:                                        03:31 = 03:30 + 00:00
+
+</pre>
+<a id="backreact_infl2"></a>
+<pre>bonn-intel/samples/backreact_infl2: (84/87)
+    Compiling..                               ok        03:19   [<a href="backreact_infl2/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="backreact_infl2/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="backreact_infl2/run.log">log</a>]
+    Validating results..                      not ok: 
+Files reference.out, data/time_series.dat differ:
+  EEGW: Row 2: 1.381e-29 > 6.599e-33 according to absolute accuracy 1.5e-32
+  hrms: Row 2: 1.588e-11 > 2.786e-13 according to absolute accuracy 1.5e-13
+Expected:  
+ ---it--------t-----------dt---------erms--------emax--------phim-------phirms-----Hscriptm------lnam--------brms--------EEGW--------hrms------a2rhopm------a2rhom---constrainteqn--a2rhophim--  
+      0 -6.58494E+05    3.21E+02   1.976E-10   4.843E-10   7.000E-01   7.000E-01   1.559E-06   0.000E+00   1.305E-10   0.000E+00   0.000E+00   2.980E-14   2.902E-13  -1.990E-03   1.490E-14  
+      2 -6.57853E+05    3.20E+02   1.975E-10   4.849E-10   6.999E-01   6.999E-01   1.560E-06   1.000E-03   1.305E-10   1.381E-29   1.588E-11   2.986E-14   2.907E-13   3.848E-04   1.493E-14  
+      4 -6.57212E+05    3.20E+02   1.975E-10   4.854E-10   6.998E-01   6.998E-01   1.562E-06   2.000E-03   1.306E-10   1.412E-29   3.989E-11   2.991E-14   2.912E-13  -5.035E-04   1.496E-14  
+      6 -6.56572E+05    3.20E+02   1.974E-10   4.856E-10   6.997E-01   6.997E-01   1.563E-06   3.001E-03   1.306E-10   1.442E-29   6.412E-11   2.997E-14   2.917E-13   1.932E-03   1.498E-14  
+      8 -6.55932E+05    3.20E+02   1.973E-10   4.857E-10   6.996E-01   6.996E-01   1.564E-06   4.001E-03   1.307E-10   1.472E-29   8.858E-11   3.003E-14   2.922E-13   3.611E-03   1.501E-14  
+     10 -6.55293E+05    3.19E+02   1.973E-10   4.856E-10   6.994E-01   6.994E-01   1.566E-06   5.001E-03   1.307E-10   1.501E-29   1.133E-10   3.008E-14   2.926E-13   4.617E-03   1.504E-14  
+     12 -6.54655E+05    3.19E+02   1.972E-10   4.853E-10   6.993E-01   6.993E-01   1.567E-06   6.001E-03   1.307E-10   1.529E-29   1.381E-10   3.014E-14   2.931E-13   7.762E-03   1.507E-14  
+     14 -6.54017E+05    3.19E+02   1.971E-10   4.849E-10   6.992E-01   6.992E-01   1.568E-06   7.001E-03   1.308E-10   1.557E-29   1.632E-10   3.019E-14   2.936E-13   4.643E-03   1.510E-14  
+     16 -6.53379E+05    3.19E+02   1.970E-10   4.842E-10   6.991E-01   6.991E-01   1.570E-06   8.002E-03   1.308E-10   1.583E-29   1.884E-10   3.025E-14   2.941E-13   7.045E-03   1.512E-14  
+     18 -6.52742E+05    3.18E+02   1.969E-10   4.834E-10   6.990E-01   6.990E-01   1.571E-06   9.002E-03   1.309E-10   1.608E-29   2.137E-10   3.030E-14   2.946E-13   7.913E-03   1.515E-14
+Got:  
+ ---it--------t-----------dt---------erms--------emax--------phim-------phirms-----Hscriptm------lnam--------brms--------EEGW--------hrms------a2rhopm------a2rhom---constrainteqn--a2rhophim--  
+      0 -6.58494E+05    3.21E+02   1.976E-10   4.843E-10   7.000E-01   7.000E-01   1.559E-06   0.000E+00   1.305E-10   0.000E+00   0.000E+00   2.980E-14   2.902E-13  -1.990E-03   1.490E-14  
+      2 -6.57853E+05    3.20E+02   1.975E-10   4.849E-10   6.999E-01   6.999E-01   1.560E-06   1.000E-03   1.305E-10   6.599E-33   2.786E-13   2.986E-14   2.907E-13   3.848E-04   1.493E-14  
+      4 -6.57212E+05    3.20E+02   1.975E-10   4.854E-10   6.998E-01   6.998E-01   1.562E-06   2.000E-03   1.306E-10   2.133E-32   1.009E-12   2.991E-14   2.912E-13  -5.035E-04   1.496E-14  
+      6 -6.56572E+05    3.20E+02   1.974E-10   4.856E-10   6.997E-01   6.997E-01   1.563E-06   3.001E-03   1.306E-10   4.436E-32   2.153E-12   2.997E-14   2.917E-13   1.932E-03   1.498E-14  
+      8 -6.55932E+05    3.20E+02   1.973E-10   4.857E-10   6.996E-01   6.996E-01   1.564E-06   4.001E-03   1.307E-10   7.560E-32   3.710E-12   3.003E-14   2.922E-13   3.611E-03   1.501E-14  
+     10 -6.55293E+05    3.19E+02   1.973E-10   4.856E-10   6.994E-01   6.994E-01   1.566E-06   5.001E-03   1.307E-10   1.149E-31   5.677E-12   3.008E-14   2.926E-13   4.617E-03   1.504E-14  
+     12 -6.54655E+05    3.19E+02   1.972E-10   4.853E-10   6.993E-01   6.993E-01   1.567E-06   6.001E-03   1.307E-10   1.622E-31   8.050E-12   3.014E-14   2.931E-13   7.762E-03   1.507E-14  
+     14 -6.54017E+05    3.19E+02   1.971E-10   4.849E-10   6.992E-01   6.992E-01   1.568E-06   7.001E-03   1.308E-10   2.172E-31   1.083E-11   3.019E-14   2.936E-13   4.643E-03   1.510E-14  
+     16 -6.53379E+05    3.19E+02   1.970E-10   4.842E-10   6.991E-01   6.991E-01   1.570E-06   8.002E-03   1.308E-10   2.798E-31   1.401E-11   3.025E-14   2.941E-13   7.045E-03   1.512E-14  
+     18 -6.52742E+05    3.18E+02   1.969E-10   4.834E-10   6.990E-01   6.990E-01   1.571E-06   9.002E-03   1.309E-10   3.498E-31   1.758E-11   3.030E-14   2.946E-13   7.913E-03   1.515E-14
+===> Test failed at latest with revision:
+SVN: 46517
+GIT: <a href="https://github.com/pencil-code/pencil-code/commit/662d2216912e5f9d38b732e3c10efbf98f0b95ed">662d2216912e5f9d38b732e3c10efbf98f0b95ed</a>
+Sat Nov 28 05:14:18 2026
+    Time used:                                        03:19 = 03:19 + 00:00
+
+</pre>
+<a id="Schwinger"></a>
+<pre>bonn-intel/samples/Schwinger: (85/87)
+    Compiling..                               ok        03:40   [<a href="Schwinger/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="Schwinger/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="Schwinger/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:42 = 03:40 + 00:02
+
+</pre>
+<a id="Schwinger2"></a>
+<pre>bonn-intel/samples/Schwinger2: (86/87)
+    Compiling..                               ok        03:39   [<a href="Schwinger2/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="Schwinger2/start.log">log</a>]
+    Running..                                 ok        00:01   [<a href="Schwinger2/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        03:41 = 03:39 + 00:02
+
+</pre>
+<a id="electroweak_SU2_Higgs"></a>
+<pre>bonn-intel/samples/electroweak_SU2_Higgs: (87/87)
+    Compiling..                               ok        02:53   [<a href="electroweak_SU2_Higgs/build.log">log</a>]
+    Starting..                                ok        00:00   [<a href="electroweak_SU2_Higgs/start.log">log</a>]
+    Running..                                 ok        00:00   [<a href="electroweak_SU2_Higgs/run.log">log</a>]
+    Validating results..                      ok      
+    Time used:                                        02:54 = 02:53 + 00:00
+
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_details" -->
+<div id="div_summary">
+<h1>Summary</h1>
+<pre>
+### auto-test failed ###
+Failed 8 test(s) out of 87:
+</pre>
+<ul>
+<li><a href="#1d-tests/sine-Gordon_doublet"><code>1d-tests/sine-Gordon_doublet</code></a> <code>(running)</code>
+<li><a href="#2d-tests/eccentricity-decay"><code>2d-tests/eccentricity-decay</code></a> <code>(results)</code>
+<li><a href="#GravitationalWaves"><code>GravitationalWaves</code></a> <code>(results)</code>
+<li><a href="#backreact_infl"><code>backreact_infl</code></a> <code>(results)</code>
+<li><a href="#backreact_infl2"><code>backreact_infl2</code></a> <code>(results)</code>
+<li><a href="#corona"><code>corona</code></a> <code>(running)</code>
+<li><a href="#interstellar"><code>interstellar</code></a> <code>(results)</code>
+<li><a href="#kin-dynamo"><code>kin-dynamo</code></a> <code>(running)</code>
+</ul>
+<pre>
+CPU time (including compilation): 03:13:38u 28:02s
+Total wall-clock time:            02:54:31 = 02:51:15 + 03:11
+
+----------------------------------------------------------------------
+The following configuration has been used:
+$config = {
+            'environment' => {
+                               'MODULE_INFIX' => '_mp_',
+                               'MODULE_PREFIX' => '',
+                               'MODULE_SUFFIX' => '_'
+                             },
+            'runtime' => {
+                           'mpiexec_opts' => '',
+                           'mpiexec' => 'mpiexec',
+                           'mpiexec_opts2' => ''
+                         },
+            'makefile' => {
+                            'FFLAGS_FFTW3' => '',
+                            'CFLAGS_FFTW2' => '',
+                            'MAKE_VAR1' => '-j',
+                            'LD_MPI' => '',
+                            'CFLAGS_DOUBLE' => '-DDOUBLE_PRECISION',
+                            'FSTD_2003' => '-std03',
+                            'LDFLAGS' => '-Bdynamic',
+                            'FC' => 'mpiifx',
+                            'FSTD_2008' => '-std08',
+                            'CC' => 'mpiicx',
+                            'FFLAGS_DOUBLE' => '-r8',
+                            'CFLAGS_FFTW3' => '',
+                            'FFLAGS_FFTW2' => '',
+                            'F77' => '$(FC)',
+                            'FSTD_95' => '-std95',
+                            'FSTD_2018' => '-std08',
+                            'LD_FFTW3' => '',
+                            'FFLAGS' => '-implicitnone',
+                            'PPFLAGS' => '-fpp',
+                            'LD_FFTW2' => '',
+                            'OMPFFLAGS' => '-qopenmp',
+                            'CFLAGS' => '-DFUNDERSC=1'
+                          }
+          };
+Perl version v5.40.1
+SVN: 46517
+GIT: 662d2216912e5f9d38b732e3c10efbf98f0b95ed
+----------------------------------------------------------------------
+</pre>
+</div> <!-- id="div_summary" -->
+<div id="div_footer">
+Sat Nov 28 05:24:37 2026
+</div> <!-- id="div_footer" -->
+</div> <!-- id="flex" -->
+</body>
+</html>

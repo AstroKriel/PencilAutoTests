@@ -1,0 +1,86 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in           v. 12078   (2009-11-14 16:52:27) ajohan
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          64          64           1
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  -5.99146454710798       5.000000000000000E-002  2.500000000000000E-003
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: non-smoothed newtonian gravity
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+WARNING: 
+ initialize_energy: llocal_iso=T. Make sure you have the appropriate INITIAL_CON
+ DITION in Makefile.local!
+ select_eos_variable: Using rho and cs2
+ dist_particles_evenly_procs: npar_loc_array     =         128         128
+         128         128         128         128         128         128
+ dist_particles_evenly_procs: npar_per_species   =         256
+ dist_particles_evenly_procs: ipar_fence_species =         256         512
+         768        1024
+ initialize_particles: Number of particle species =            4
+ initialize_particles: tausp_species =   1.000000000000000E-002
+  0.100000000000000       0.300000000000000        1.00000000000000     
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  1.722656250000000E-004
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  4.000000000000000E-002
+ initialize_particles_map: particle_mesh = tsc
+ init_uu: nothing
+ centrifugal_balance: initializing velocity field
+ initial_condition_lnrho: locally isothermal approximation
+ Radial stratification with power law=  0.500000000000000     
+ Correcting density gradient on the centrifugal force
+ Correcting for self-gravity on the centrifugal force
+ Entered inverse_laplacian_expandgrid
+ Temperature gradient with power law=   1.00000000000000     
+ Max global cs2 =   1.554583974287186E-003
+ Sum global cs2 =   0.598870571141295     
+ Max global glnTT(1) =   0.310981535471331     
+ Sum global glnTT(1) =  -8.881784197001252E-016
+ thermodynamical quantities successfully set
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=  2.500000000000000E-003  2.500000000000000E-003
+ init_particles: Random particle cylindrical positions with power-law = 
+  0.500000000000000     
+ init_particles: Keplerian velocity
+ Maximum used memory per cpu [MBytes] =    50.285
+ Maximum used memory [MBytes] =      387.258
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.36
+user 0.32
+sys 0.18

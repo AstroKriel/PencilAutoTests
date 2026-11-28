@@ -1,0 +1,75 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.3     (2024/05/11 11:52:38) brandenb
+SVN: run.in,v           v. 1.3     (2024/05/11 11:52:38) brandenb
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=         128           1           1
+ Lx, Ly, Lz=   20.0000000000000        1.57080000000000     
+   1.57080000000000     
+       Vbox=   20.0000000000000     
+ rsnap: read snapshot var.dat in   1.999999949475750E-004  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: diagnostics ...
+ dspecial_dt: SOLVE dspecial_dt
+ 
+ ---it-----t------dt--------phim-------phirms------dphim------dphirms------phi2m-------dphi2m---
+      0   0.00 1.00E-01  3.1416E+00  4.4017E+00 -2.8053E-01  1.2145E+00  1.9375E+01  1.4749E+00
+WARNING: 
+ assign_slices_f_scal: output may be at the wrong timestep; replace by assign_sl
+ ices_before_ts (to be used in get_fslices_*) or assign_slices_after_ts (to be u
+ sed in get_slices_*) to silence this warning!
+      5   0.50 1.00E-01  3.0013E+00  4.3004E+00 -2.8077E-01  1.2118E+00  1.8493E+01  1.4685E+00
+     10   1.00 1.00E-01  2.8609E+00  4.1966E+00 -2.8093E-01  1.2092E+00  1.7611E+01  1.4621E+00
+     15   1.50 1.00E-01  2.7204E+00  4.0901E+00 -2.8075E-01  1.2065E+00  1.6729E+01  1.4555E+00
+     20   2.00 1.00E-01  2.5802E+00  3.9808E+00 -2.8027E-01  1.2037E+00  1.5847E+01  1.4488E+00
+     25   2.50 1.00E-01  2.4402E+00  3.8685E+00 -2.7971E-01  1.2007E+00  1.4965E+01  1.4418E+00
+     30   3.00 1.00E-01  2.3005E+00  3.7529E+00 -2.7937E-01  1.1977E+00  1.4084E+01  1.4344E+00
+     35   3.50 1.00E-01  2.1608E+00  3.6338E+00 -2.7929E-01  1.1945E+00  1.3204E+01  1.4269E+00
+     40   4.00 1.00E-01  2.0212E+00  3.5108E+00 -2.7927E-01  1.1913E+00  1.2326E+01  1.4192E+00
+     45   4.50 1.00E-01  1.8816E+00  3.3835E+00 -2.7906E-01  1.1881E+00  1.1448E+01  1.4116E+00
+ 
+ Simulation finished after           50  time-steps
+ 
+ Writing final snapshot at time t =   5.00000000000000     
+ 
+ Wall clock time [hours] =  7.472E-06 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  4.17    
+ Wall clock time/timestep/meshpoint [microsec] =  4.203125    
+ Wall clock time/timestep/local meshpoint [microsec] =  4.203125    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 1.5624998E-02
+ Maximum used memory per cpu [MBytes] =     9.387
+ Maximum used memory [MBytes] =        9.387
+ 
+real 0.02
+user 0.01
+sys 0.01

@@ -1,0 +1,105 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2015/05/11 19:37:40) wlyra
+SVN: run.in,v           v. 1.1     (2015/05/11 19:37:40) wlyra
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: gravity_r.f90,v    v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: newton_cooling.f90 v. 1.2     (2015/12/11 02:56:37) wlyra
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          32          16          78
+ Lx, Ly, Lz=   2.10000000000000       0.560000000000000     
+   6.28318540000000     
+       Vbox=   18.0133490349790     
+ rsnap: read snapshot var.dat in   2.954746596515179E-004  seconds
+ units_general: unit_velocity=   1306000.00000000     
+ units_general: unit_density=  1.999999999999995E-011
+ units_general: unit_length=   77850000000000.1     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=   1.00000000000000     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=  7.291225735436743E-005
+   5.12402445180035       7.000000000000001E-002  8.190000000000010E-003
+  4.874705205977712E-005
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ initialize_diagnostics: volume averages are calculated wrongly for nonequidista
+ nt grids unless lproper_averages=T.!
+ initialize_gravity: non-smoothed newtonian gravity
+ diffusion: Dhyper/pi^4 *(Delta(rho))^6/Deltaq^2
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using lnrho and ss
+ initialize_energy: nheatc_max,iheatcond=           4 
+ hyper3-sph                              
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ heat conduction: hyperdiffusivity of ss
+ viscous force: nu_hyper3/pi^4 *(Deltav)^6/Deltaq^2
+ viscous force: nu_shock*(XXXXXXXXXXX)
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: call gij_etc
+ calc_pencils_hydro: max(advec_uu) =   38.2840199830217     
+ calc_pencils_energy: max(advec_cs2) =   93.2044848055071     
+WARNING: 
+ calc_pencils_viscosity: viscous heating not implemented for lvisc_hyper3_polar!
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     out>, y: <       s>,  z: <       p>
+Bcs for         uy,  x: <       s>, y: <     out>,  z: <       p>
+Bcs for         uz,  x: <      a2>, y: <      a2>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <      a2>, y: <     str>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3=  1.000000000000000E-003
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  4.951835065097110E-002
+ denergy_dt: SOLVE denergy_dt
+Bcs for         ss,  x: <      a2>, y: <      a2>,  z: <       p>
+ denergy_dt: lnTT,cs2,cp1=   6.08003837490667       1.274640317931888E-002
+  0.000000000000000E+000
+ calc_heatcond_hyper3_polar: chi_hyper3=  1.000000000000000E-003
+ calc_heatcond_hyper3_polar: added thdiff
+ 
+ ---it-------t---------dt---------dtv------rhomin------rhom------rhomax-------TTm-------TTmin------TTmax-------uz2m-------taucoolm----taucoolmax---taucoolmin--
+      0     0.0000  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+      5     0.0050  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     10     0.0100  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     15     0.0150  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     20     0.0200  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     25     0.0250  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     30     0.0300  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     35     0.0350  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+     40     0.0400  1.000E-03  1.198E-01  4.176E-06  1.129E-01  3.763E+00  7.902E+01  6.722E+01  4.370E+02  8.71197E-01  8.06383E+00  7.69498E+01  1.00000E-03
+ 
+ Simulation finished after           41  time-steps
+ 
+ Writing final snapshot at time t =  4.100000000000002E-002
+ 
+ Wall clock time [hours] =  2.430E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  4.27    
+ Wall clock time/timestep/meshpoint [microsec] = 0.5342997    
+ Wall clock time/timestep/local meshpoint [microsec] =  4.274398    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  1.371788    
+ Maximum used memory per cpu [MBytes] =    57.773
+ Maximum used memory [MBytes] =      452.559
+ 
+real 1.21
+user 4.55
+sys 1.08

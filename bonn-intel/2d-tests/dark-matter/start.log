@@ -1,0 +1,59 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ nxgrid, nygrid, nzgrid=          64          64           1
+ units_general: unit_velocity=   100000.000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=  3.090000000000000E+021
+ units_general: unit_magnetic=   1.00000000000000     
+ units_eos: unit_temperature=   1.00000000000000     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=  8.314472688702992E-003
+   4.78975758522094        1.00000000000000        1.00000000000000     
+  8.314472688702992E-003
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ select_eos_variable: Using lnrho and cs2
+ dist_particles_evenly_procs: npar_per_species   =      102400
+ dist_particles_evenly_procs: ipar_fence_species =      102400
+ initialize_particles: dust-to-gas ratio eps_dtog=  1.000000000000000E-002
+ initialize_particles: mass per constituent particle mpmat=
+  0.000000000000000E+000
+ initialize_particles: mass per superparticle mp_swarm =  3.855314219175531E-006
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+  4.000000000000000E-004
+ initialize_particles_map: particle_mesh = cic
+ init_particles: Gaussian particle positions+random
+ init_particles: Constant particle velocity
+ init_particles: vpx0, vpy0, vpz0=  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000
+ Maximum used memory per cpu [MBytes] =    29.617
+ Maximum used memory [MBytes] =       29.617
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.06
+user 0.04
+sys 0.01

@@ -1,0 +1,131 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) no cvsid is given i
+SVN: -------            v.         (                   ) no cvsid is given i
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: particles_dust.f90 v. 1.1     (2018/08/24 15:48:10) wlyra
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=         128         256           1
+ Lx, Ly, Lz=  0.200000000000000       0.400000000000000     
+   2.00000000000000     
+       Vbox=  8.000000000000002E-002
+ rsnap: read snapshot var.dat in   1.499999998486601E-003  seconds
+ setup_slices: slice_position = p
+ setup_slices: ix_loc,iy_loc,iz_loc, (video files) = 4 4 4                      
+                                                      
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  4.810888374719019E-009
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+   6.39692965521614        20.0000000000000        239.999999999999     
+  0.400000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: nothing (i.e. no mass diffusion)
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and ss
+ viscous force: nu*(del2u+graddivu/3+2S.glnrho)
+ By using fbc[x,y,z] I found the flow direction to be in the 
+   2.00000000000000       direction.
+ initialize_particles: dust-to-gas ratio eps_dtog=   1.00000000000000     
+ initialize_particles: mass per constituent particle mpmat=
+  2.873091201462986E-008
+ initialize_particles: mass per superparticle mp_swarm =  4.000000000000001E-003
+ initialize_particles: number density per superparticle np_swarm=
+  0.000000000000000E+000
+ initialize_particles: mass density per superparticle rhop_swarm=
+   1638.40000000000     
+ initialize particles: set minimum collisional time-scale equal to two times the
+  Courant time-step.
+ initialize_particles_map: selected cloud-in-cell for particle-mesh method. 
+ initialize_particles_radius: mass per dust grain mpmat=  2.873091201462986E-008
+ pencil_consistency_check: checking pencil case
+ dxxp_dt: Calculate dxxp_dt
+ dxxp_dt: Particles boundary condition bcpx=p      
+ dxxp_dt: Particles boundary condition bcpy=rmv    
+ dxxp_dt: Particles boundary condition bcpz=p      
+ dxxp_dt: Set rate of change of particle position equal to particle velocity.
+ dvvp_dt: Calculate dvvp_dt
+ particle_gravity: Calculating gravity
+ particle_gravity: No gravity in x-direction.
+ particle_gravity: No gravity in z-direction.
+ particle_gravity: No radial gravity
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =   3439.49039545110     
+ calc_pencils_energy: max(advec_cs2) =   326402500.000000     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <      e2>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <      e2>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <      e2>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <      e2>,  z: <       p>
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.000000000000000E+000
+ dvvp_dt_pencil: calculate dvvp_dt
+ dvvp_dt_pencil: ldraglaw_purestokes= F
+ dvvp_dt: Add drag force; tausp=  0.000000000000000E+000
+ inlet_profile: uniform
+ inlet_YY_profile: uniform,
+ 
+ ---it----------t---------------dt---------------urms-------------umax-------------rhom----------------ozm------------------oz2m----------------vpxmax--------------vpymax--------------vpzmax-------------c_dragx-------------c_dragy-------
+       0      0.000000    1.5959793897E-05     5.0724107723     9.3062488478     1.0000000000      -8.08093282E-03      1.0372069552E+05    1.0792421268E-01    5.1005706624E+00    1.7864723862E-01   -5.4527607994E-03    8.6859838834E-01
+      10      0.000157    1.5360722548E-05     5.0675209861     9.7737254937     0.9999738337      -1.82013455E-03      8.3351549507E+04    1.0799875229E-01    5.0999457161E+00    1.7751175660E-01   -6.9433866025E-02    2.4747227511E+00
+      20      0.000311    1.5561133351E-05     5.0646483705     9.8435208743     0.9999275608       1.70355839E-03      7.3233643547E+04    1.0692140498E-01    5.0989685502E+00    1.7541776670E-01    5.2280257525E-02    2.1502691308E+00
+      30      0.000468    1.5904334171E-05     5.0625654390     9.1630038818     0.9998866582       1.61394303E-03      6.7214216205E+04    1.0509602520E-01    5.0979298633E+00    1.7308877100E-01    3.8787003496E-02    2.1542941656E+00
+      40      0.000628    1.6003888115E-05     5.0609051508     8.9766850719     0.9998551785      -9.21934338E-04      6.3304604192E+04    1.0378993004E-01    5.0970533100E+00    1.7057608641E-01    3.7526160098E-02    2.3671957780E+00
+      50      0.000789    1.6196264694E-05     5.0594402009     8.8721945663     0.9998373262      -3.36716931E-03      6.0665829991E+04    1.0221959987E-01    5.0954227043E+00    1.6793690431E-01    2.5748899706E-02    2.5425171830E+00
+      60      0.000951    1.6179860353E-05     5.0580828520     8.7110633022     0.9998254465      -3.89412670E-03      5.8875864702E+04    1.0089326862E-01    5.0942858101E+00    1.6509047001E-01   -2.8353266960E-02    2.5154539235E+00
+      70      0.001113    1.6311146372E-05     5.0568363983     8.7485931535     0.9998175744      -2.16006826E-03      5.7500653348E+04    9.9720051036E-02    5.0929658459E+00    1.6220677971E-01   -5.8804014716E-03    2.5181525895E+00
+      80      0.001277    1.6376894860E-05     5.0556141018     8.7595984582     0.9998059871      -2.36452614E-05      5.6381377836E+04    9.8291032861E-02    5.0924226952E+00    1.5932095321E-01    2.1652223508E-02    2.5204865642E+00
+      90      0.001441    1.6372577963E-05     5.0545104459     8.7471531174     0.9997925026       5.47962900E-04      5.5491352458E+04    9.6657371243E-02    5.0910655090E+00    1.5641668455E-01    1.5340784611E-02    2.4177485102E+00
+ 
+ Simulation finished after           91  time-steps
+ 
+ Writing final snapshot at time t =  1.456966614388170E-003
+ 
+ Wall clock time [hours] =  3.136E-04 (+/-  2.7778E-08)
+ Wall clock time/timestep/(meshpoint+particle) [microsec] = 0.378    
+ Wall clock time/timestep/meshpoint [microsec] = 0.3786192    
+ Wall clock time/timestep/local meshpoint [microsec] = 0.3786192    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.2345829    
+ Maximum used memory per cpu [MBytes] =    70.375
+ Maximum used memory [MBytes] =       70.375
+ 
+real 1.13
+user 1.09
+sys 0.03

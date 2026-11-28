@@ -1,0 +1,78 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) 20a96485a          
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+WARNING:  register_io: HDF5 files are possibly locked; writing may fail!
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+ nxgrid, nygrid, nzgrid=          16          16         200
+ units_general: unit_velocity=   97781.2299489507     
+ units_general: unit_density=  1.673723600000000E-024
+ units_general: unit_length=  3.085677580000000E+021
+ units_general: unit_magnetic=  4.484378871687490E-007
+ units_eos: unit_temperature=   36.6371811569230     
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.50000000000000     
+  0.000000000000000E+000   1.00000000000000       0.318600000000000     
+  0.318600000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ initialize_gravity: no x-gravity
+ initialize_gravity: no y-gravity
+ diffusion: nothing (i.e. no mass diffusion)
+ select_eos_variable: Using rho and ss
+ initialize_energy: nheatc_max,iheatcond=           4 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ nothing                                 
+ heat conduction: nothing
+ resistivity: constant eta
+ initialize_interstellar: t_next_SNI = 0.00000000E+00
+ initialize_interstellar: solar_mass = 0.4045E-07
+ initialize_interstellar:   SFt_norm = 0.2732E-04
+ initialize_interstellar:   SFr_norm = 0.1723E-01
+ initialize_interstellar: sedov_norm = 0.3560E+01
+ initialize_interstellar: kfrac_norm = 0.3201E-02
+ initialize_interstellar: eampl_SN, kampl_SN =  0.2127E+01 0.0000E+00
+ initialize_interstellar: Lxyzmin =  0.1149E-01
+ select_cooling: WSW cooling fct
+ initialize_interstellar: unit_Lambda 0.1810E+18
+ initialize_interstellar: unit_Gamma 0.3030E-06
+ initialize_interstellar: t_interval_SNI, SNI rate = 0.6105E-01 0.3999E+04
+ initialize_interstellar: average_SNI_heating = 0
+ initialize_interstellar: average_SNII_heating =0
+ initialize_interstellar: nseed,seed           1           0
+ initialize_interstellar: finished
+ initialize_interstellar: t_next_SNI, t_next_SNII= 0.00000000E+00 0.00000000E+00
+ init_uu: nothing
+ init_lnrho: nothing
+ init_lnrho: cs2bot,cs2top=   1.00000000000000        1.00000000000000     
+ init_energy: nothing
+ init_aa: nothing
+ position_SN_gaussianz: ENTER
+ explode_SN:    step, time =        0 0.00000E+00
+ init_interstellar: initinterstellar(1) = multiple
+ Maximum used memory per cpu [MBytes] =    63.758
+ Maximum used memory [MBytes] =      240.926
+ 
+ 
+ start.x has completed successfully
+ 
+real 0.34
+user 0.19
+sys 0.11

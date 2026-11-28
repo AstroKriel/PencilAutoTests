@@ -1,0 +1,91 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 1-D run
+ nxgrid, nygrid, nzgrid=          16           1           1
+ Lx, Ly, Lz=   6.28318530717959        12.5663800000000     
+   12.5663800000000     
+       Vbox=   6.28318530717959     
+ rsnap: read snapshot var.dat in   1.000000047497451E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.000000000000000E+000   1.00000000000000        1.00000000000000     
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: mesh hyperdiffusion
+ diffusion: (d^6/dx^6+d^6/dy^6+d^6/dz^6)rho
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and cs2
+ pencil_consistency_check: checking pencil case
+ pencil_consistency_check: checking requested pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: results are independent of pencil initialization
+ pencil_consistency_check: checking diagnostics pencils
+ pencil_consistency_check: performing small pencil check
+ pencil_consistency_check: the small pencil check reported no problems
+ pencil_consistency_check: set lpencil_check_diagnos_opti=T in run.in to report
+ pencil_consistency_check: optimisation possibilities for diagnostics pencils
+ pencil_consistency_check: checking dependence on pencil initialization
+ pencil_consistency_check: diagnostics are independent of pencil initialization
+ pencil_consistency_check: all tests passed
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =  0.000000000000000E+000
+ calc_pencils_energy: max(advec_cs2) =   6.48455575310962     
+ duu_dt: SOLVE
+Bcs for         ux,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <       p>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <       p>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3=  1.000000000000000E-006
+ dlnrho_dt: diffrho_hyper3_mesh=   5.00000000000000     
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  2.726720892556681E-004
+ 
+ ---it-------t----------dt-------------umax-------------rhomax------------rhomin-------------rhom-------
+      0     0.000  1.545530E-01  0.0000000000E+00  2.0000000000E+00  5.0000000000E-01  1.2500000000E+00
+      1     0.155  1.545530E-01  0.0000000000E+00  1.9928328466E+00  5.0716715345E-01  1.2500000000E+00
+ 
+ Simulation finished after            2  time-steps
+ 
+ Writing final snapshot at time t =  0.309106048125002     
+ 
+ Wall clock time [hours] =  6.750E-06 (+/-  2.7778E-08)
+ Wall clock time/timestep/meshpoint [microsec] =  715.    
+ Wall clock time/timestep/meshpoint [microsec] =  759.3750    
+ Wall clock time/timestep/local meshpoint [microsec] =  759.3750    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  0.000000    
+ Maximum used memory per cpu [MBytes] =    10.422
+ Maximum used memory [MBytes] =       10.422
+ 
+real 0.02
+user 0.01
+sys 0.00

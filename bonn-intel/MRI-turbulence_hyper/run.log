@@ -1,0 +1,120 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$               
+SVN: -------            v.         (                   ) $Id$               
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 3-D run
+ nxgrid, nygrid, nzgrid=          32          32          32
+ Lx, Ly, Lz=   1.32000000000000        1.32000000000000     
+   1.32000000000000     
+       Vbox=   2.29996800000000     
+ rsnap: read snapshot var.dat in   3.790257032960653E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ units_eos: unit_temperature=  1.202722093679754E-008
+ units_eos: cp, lnTT0, cs0, pp0, Rgas=   1.00000000000000     
+  0.000000000000000E+000   1.00000000000000        1.00000000000000     
+   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+ diffusion: (d^6/dx^6+d^6/dy^6+d^6/dz^6)rho
+ initialize_density: no need to read initial stratification for lanti_shockdiffu
+ sion=F.
+ select_eos_variable: Using rho and cs2
+ resistivity: hyper3
+ initialize_dustvelocity: dust_chemistry = 
+ nothing                                 
+ recalculated: md0=   1.00000000000000     
+ initialize_dustvelocity: minmax(ad)=  0.620350490899400     
+  0.620350490899400     
+ initialize_dustvelocity: no betad calculation for draglaw=epstein_cst.
+ initialize_dustvelocity: dust geometry = sphere
+ initialize_dustdensity: ldustcoagulation,ldustcondensation = F F
+ initialize_dustdensity: ldustcoagulation_simplified,ldustcondensation_simplifie
+ d = F F
+ advec_ddensity: plain vanilla scheme
+ dust diffusion: (d^6/dx^6+d^6/dy^6+d^6/dz^6)nd
+ viscous force(i): nu_hyper/rho*(del6ui+der5(divu,i))
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ calc_pencils_hydro: max(advec_uu) =  0.112331271311063     
+ calc_pencils_energy: max(advec_cs2) =   1763.08539944904     
+ calc_pencils_magnetic_fres: iresistivity=
+ hyper3                                  
+                                         
+                                         
+                                         
+ duu_dt: SOLVE
+Bcs for         ux,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uy,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         uz,  x: <     she>, y: <       p>,  z: <       p>
+ coriolis_cartesian: add Coriolis force; Omega=   1.00000000000000     
+ dlnrho_dt: SOLVE
+Bcs for      lnrho,  x: <     she>, y: <       p>,  z: <       p>
+ dlnrho_dt: diffrho_hyper3=  6.000000000000000E-010
+ dlnrho_dt: max(diffus_diffrho ) =  0.000000000000000E+000
+ dlnrho_dt: max(diffus_diffrho3) =  0.365366552888932     
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         Ay,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for         Az,  x: <     she>, y: <       p>,  z: <       p>
+ daa_dt: max(diffus_eta)  =  0.000000000000000E+000
+ daa_dt: max(diffus_eta2) =  0.000000000000000E+000
+ daa_dt: max(diffus_eta3) =  0.365366552888932     
+ duud_dt: SOLVE duud_dt
+Bcs for        udx,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for        udy,  x: <     she>, y: <       p>,  z: <       p>
+Bcs for        udz,  x: <     she>, y: <       p>,  z: <       p>
+ dndmd_dt: SOLVE dnd_dt, dmd_dt, dmi_dt
+Bcs for         nd,  x: <     she>, y: <       p>,  z: <       p>
+ shearing: Sshear,Sshear1=  -1.50000000000000       -1.50000000000000     
+ shearing: qshear,qshear0=   1.50000000000000       0.000000000000000E+000
+ 
+ ---it-------t----------dt--------ux2m-------uy2m-------uz2m-------uxuym-------rhom-------rhomin------rhomax-------bx2m--------by2m--------bz2m-------bxbym---------ndm--------ndmin------ndmax----
+      0    0.00000  5.9531E-03  1.000E-06  9.993E-07  9.981E-07 -2.869E-10  1.00000E+00  1.000E+00  1.0000E+00  4.5315E-03  0.0000E+00  4.5315E-03  0.0000E+00  1.00000E+00  1.000E+00  1.0000E+00
+     10    0.05935  5.9166E-03  6.682E-06  3.916E-06  6.687E-06  8.151E-08  1.00000E+00  9.950E-01  1.0062E+00  4.5225E-03  3.5861E-05  4.5225E-03 -4.0268E-04  1.00000E+00  9.952E-01  1.0059E+00
+     20    0.11840  5.8952E-03  1.604E-05  9.891E-06  1.621E-05  2.680E-08  1.00000E+00  9.864E-01  1.0184E+00  4.4995E-03  1.4204E-04  4.4995E-03 -7.9938E-04  1.00000E+00  9.867E-01  1.0179E+00
+     30    0.17733  5.8941E-03  1.722E-05  1.459E-05  1.779E-05 -8.945E-08  1.00000E+00  9.785E-01  1.0293E+00  4.4720E-03  3.1666E-04  4.4722E-03 -1.1899E-03  1.00000E+00  9.787E-01  1.0291E+00
+     40    0.23627  5.8870E-03  1.363E-05  2.114E-05  1.363E-05  1.779E-06  1.00000E+00  9.757E-01  1.0322E+00  4.4499E-03  5.5867E-04  4.4501E-03 -1.5766E-03  1.00000E+00  9.757E-01  1.0326E+00
+     50    0.29504  5.8729E-03  1.365E-05  3.171E-05  1.099E-05  6.897E-06  1.00000E+00  9.784E-01  1.0260E+00  4.4383E-03  8.6686E-04  4.4384E-03 -1.9613E-03  1.00000E+00  9.784E-01  1.0265E+00
+     60    0.35378  5.8777E-03  2.328E-05  4.487E-05  1.443E-05  1.604E-05  1.00000E+00  9.774E-01  1.0277E+00  4.4365E-03  1.2415E-03  4.4360E-03 -2.3467E-03  1.00000E+00  9.773E-01  1.0275E+00
+     70    0.41262  5.8892E-03  4.445E-05  5.764E-05  2.674E-05  2.745E-05  1.00000E+00  9.825E-01  1.0213E+00  4.4399E-03  1.6831E-03  4.4382E-03 -2.7333E-03  1.00000E+00  9.824E-01  1.0218E+00
+     80    0.47149  5.8832E-03  6.579E-05  6.790E-05  4.688E-05  3.319E-05  1.00000E+00  9.861E-01  1.0136E+00  4.4432E-03  2.1892E-03  4.4405E-03 -3.1182E-03  1.00000E+00  9.860E-01  1.0137E+00
+     90    0.53028  5.8718E-03  7.706E-05  8.240E-05  6.790E-05  3.127E-05  1.00000E+00  9.836E-01  1.0147E+00  4.4414E-03  2.7544E-03  4.4395E-03 -3.4967E-03  1.00000E+00  9.838E-01  1.0154E+00
+ 
+ Simulation finished after           91  time-steps
+ 
+ Writing final snapshot at time t =  0.536151532704435     
+ 
+ Wall clock time [hours] =  5.945E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] =  2.87    
+ Wall clock time/timestep/meshpoint [microsec] = 0.7177424    
+ Wall clock time/timestep/local meshpoint [microsec] =  2.870970    
+ Rhs wall clock time/timestep/local meshpoint [microsec] =  1.629400    
+ Maximum used memory per cpu [MBytes] =    60.160
+ Maximum used memory [MBytes] =      236.672
+ 
+real 2.43
+user 8.56
+sys 0.10

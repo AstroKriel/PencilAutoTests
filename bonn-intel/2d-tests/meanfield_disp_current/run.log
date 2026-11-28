@@ -1,0 +1,84 @@
+SVN: -------            v.         (                   ) $Id$
+SVN: start.in,v         v. 1.1     (2025/12/04 17:42:37) brandenb
+SVN: run.in,v           v. 1.1     (2025/12/04 17:42:37) brandenb
+ initialize_mpicomm: enabled MPI
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id$
+SVN: -------            v.         (                   ) $Id
+ The verbose level is ip=          14  (ldebug= F )
+ This is a 2-D run
+ nxgrid, nygrid, nzgrid=         128          16           1
+ Lx, Ly, Lz=   99.8000000000000        1.57079632679490     
+   50.2654824574367     
+       Vbox=   2094395.08563804     
+ rsnap: read snapshot var.dat in   1.895794412121177E-004  seconds
+ units_general: unit_velocity=   1.00000000000000     
+ units_general: unit_density=   1.00000000000000     
+ units_general: unit_length=   1.00000000000000     
+ units_general: unit_magnetic=   3.54490770181103     
+ unit temperature   1.00000000000000     
+ alpha_fine =  7.297352564300000E-003
+ sigma_Thomson_cgs =  6.652458732160000E-025
+WARNING: 
+ get_gamma_etc: gamma, cp, and cv are undefined in noeos.
+The values provided ar
+ e for one-atomic ideal gas. Use at own risk!
+ resistivity: constant eta
+ lalpha_aniso= F
+ lalpha_tensor= F
+ leta_tensor= F
+ initialize_magn_mf: lweyl_gauge= F
+ pde: ENTER
+SVN: -------            v.         (                   ) $Id$
+ duu_dt: diagnostics ...
+ daa_dt: SOLVE
+Bcs for         Ax,  x: <       s>, y: <       s>,  z: <       p>
+Bcs for         Ay,  x: <       a>, y: <       a>,  z: <       p>
+Bcs for         Az,  x: <       a>, y: <       s>,  z: <       p>
+ dspecial_dt: SOLVE dSPECIAL_dt
+Bcs for         ee,  x: <       s>, y: <       s>,  z: <       p>
+ 
+ ---it--------t--------dt--------arms---------erms---------brms--------bmax-------jbm-------epsM------jrms------emag-------abm-------alpKm-----alpKjbm--
+       0       0.00 5.00E-03 1.711243E-05 0.000000E+00 1.977481E-05 1.085E-03  0.000E+00 0.000E+00 0.000E+00 4.095E-04  6.349E-12  3.713E-07  0.000E+00
+     300       1.50 5.00E-03 1.708917E-05 4.715804E-08 1.972864E-05 5.108E-04  1.593E+05 1.112E+04 2.358E+11 4.076E-04  6.300E-12  3.713E-07 -4.412E+01
+     600       3.00 5.00E-03 1.702072E-05 9.240566E-08 1.959312E-05 5.600E-04  3.091E+05 4.269E+04 4.620E+11 4.020E-04  6.159E-12  3.713E-07  1.067E+01
+     900       4.50 5.00E-03 1.690957E-05 1.355220E-07 1.937251E-05 6.986E-04  4.454E+05 9.183E+04 6.776E+11 3.930E-04  5.931E-12  3.713E-07  7.647E+01
+    1200       6.00 5.00E-03 1.675881E-05 1.763770E-07 1.907130E-05 1.050E-03  5.655E+05 1.555E+05 8.819E+11 3.809E-04  5.627E-12  3.713E-07  2.306E+01
+    1500       7.50 5.00E-03 1.657214E-05 2.148162E-07 1.869443E-05 1.498E-03  6.675E+05 2.307E+05 1.074E+12 3.660E-04  5.255E-12  3.713E-07 -1.103E+02
+    1800       9.00 5.00E-03 1.635373E-05 2.506155E-07 1.824744E-05 2.523E-03  7.495E+05 3.140E+05 1.253E+12 3.487E-04  4.828E-12  3.713E-07 -1.732E+02
+    2100      10.50 5.00E-03 1.610821E-05 2.835617E-07 1.773606E-05 5.776E-04  8.099E+05 4.020E+05 1.418E+12 3.294E-04  4.358E-12  3.713E-07 -1.180E+02
+    2400      12.00 5.00E-03 1.584055E-05 3.135101E-07 1.716726E-05 1.612E-03  8.476E+05 4.914E+05 1.568E+12 3.086E-04  3.859E-12  3.713E-07 -4.618E+01
+    2700      13.50 5.00E-03 1.555601E-05 3.403838E-07 1.654804E-05 1.773E-03  8.629E+05 5.793E+05 1.702E+12 2.868E-04  3.343E-12  3.713E-07 -7.294E+01
+ 
+ Simulation finished after         3000  time-steps
+ 
+ Writing final snapshot at time t =   15.0000000000010     
+ 
+ Wall clock time [hours] =  2.521E-04 (+/-  8.9722E-14)
+ Wall clock time/timestep/meshpoint [microsec] = 0.591    
+ Wall clock time/timestep/meshpoint [microsec] = 0.1477370    
+ Wall clock time/timestep/local meshpoint [microsec] = 0.5909479    
+ Rhs wall clock time/timestep/local meshpoint [microsec] = 0.4244348    
+ Maximum used memory per cpu [MBytes] =    48.195
+ Maximum used memory [MBytes] =      189.930
+ 
+real 1.19
+user 3.63
+sys 0.08
